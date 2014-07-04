@@ -1,0 +1,73 @@
+{{ template "theme/partials/header.html" . }}
+  <div id="article">
+      <h3>{{ .Site.Params.Subtitle }}</h3> 
+
+
+      <h3>RTPProxy Enables:</h3>
+      <ul>
+        <li>VoIP traverse NAT firewalls</li>
+        <li>Relaying of voice, video or any RTP stream of data</li>
+        <li>Playing of pre-encoded in-band announcements</li>
+        <li>RTP payload re-framing</li>
+        <li>Optimizing packet flow</li>
+        <li>Routing VoIP calls over VPN links</li>
+        <li>Real-time stream copying</li>
+      </ul>
+			<h3>RTPProxy provides:</h3>
+      <ul>
+				<li>Support for FreeBSD and Linux</li>
+				<li>A simple control protocol allowing for integration with other systems</li>
+				<li>BSD Clause-2 licensed code</li>
+				<li>Clustering across geographic areas (with assistance from rtp_cluser)
+				<li>Integration with SER, Kamailio and Sippy b2bua</li>
+      </ul>
+      <h3>RTPProxy works with:</h3>
+      <div class="row">
+        <div class="col-sm-2">
+          <p>
+            <img src="/img/ser_logo.jpg">
+          </p>
+          <p class="text-center">
+            <a href="http://www.iptel.org/ser">SIP Express Router (SER)</a>
+          </p>
+        </div>
+        <div class="col-sm-2">
+          <p>
+            <img src="/img/kamailio_logo.jpg">
+          </p>
+          <p class="text-center">
+            <a href="http://www.kamailio.org/w/">Kamailio</a>
+          </p>
+        </div>
+        <div class="col-sm-2">
+          <p>
+            <img src="/img/b2bua_logo.png">
+          </p>
+          <p class="text-center">
+            <a href="http://github.com/sippy/b2bua">Sippy B2BUA</a>
+          </p>
+        </div>
+        <div class="col-sm-2">
+          <p>
+            <img src="/img/resiprocate_logo.png">
+          </p>       
+          <p class="text-center">
+            <a href="https://github.com/resiprocate/legacy-b2bua">reSIProcate B2BUA</a>
+          </p>
+        </div>
+        <div class="col-sm-2">
+          <p>
+            <img src="/img/opensips_logo.jpg">
+          </p>       
+          <p class="text-center">
+            <a href="http://www.opensips.org">OpenSIPS</a>
+          </p>
+        </div>
+				
+      </div>
+  <ul class="posts">
+      {{ range .Data.Pages }}
+      <li><span><a href="{{ .Permalink }}">{{ .Title }}</a><time class="pull-right post-list">{{ .Date.Format "Mon, Jan 2, 2006" }}</h3></time></span></span></li>
+      {{ end }}
+  </ul>
+{{ template "theme/partials/footer.html" }}
