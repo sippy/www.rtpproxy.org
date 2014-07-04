@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Solaris on RTPProxy </title>
+      <generator uri="https://hugo.spf13.com">Hugo</generator>
+    <link>http://www.rtpproxy.org/tags/solaris/index.xml</link>
+    <language>en-us</language>
+    
+    
+    <updated>Tue, 11 Nov 2008 03:56:51 UTC</updated>
+    
+    <item>
+      <title>Solaris, improved re-INVITES, port randomness and more.</title>
+      <link>http://www.rtpproxy.org/post/ability_to_fork</link>
+      <pubDate>Tue, 11 Nov 2008 03:56:51 UTC</pubDate>
+      
+      <guid>http://www.rtpproxy.org/post/ability_to_fork</guid>
+      <description>&lt;p&gt;Latest snapshot of development 1.2 version of RTPproxy has been released.&lt;/p&gt;
+
+&lt;p&gt;This release includes many bug fixes and new features, including:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Solaris compatibility fixes&lt;/li&gt;
+&lt;li&gt;Support for the new &lt;code&gt;rtpproxy_stream2xxx()&lt;/code&gt; command in SER&lt;/li&gt;
+&lt;li&gt;Improved support for re-INVITE&lt;/li&gt;
+&lt;li&gt;Port randomization support&lt;/li&gt;
+&lt;li&gt;syslog support.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
