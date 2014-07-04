@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Posts on RTPProxy </title>
+      <generator uri="https://hugo.spf13.com">Hugo</generator>
+    <link>http://www.rtpproxy.org/post/index.xml</link>
+    <language>en-us</language>
+    
+    
+    <updated>Thu, 19 Jun 2014 17:36:05 UTC</updated>
+    
+    <item>
+      <title>Reorganization &amp; new developments for RTPProxy</title>
+      <link>http://www.rtpproxy.org/post/reorganization</link>
+      <pubDate>Thu, 19 Jun 2014 17:36:05 UTC</pubDate>
+      
+      <guid>http://www.rtpproxy.org/post/reorganization</guid>
+      <description>
+
+&lt;h2 id=&#34;toc_0&#34;&gt;Why the changes?&lt;/h2&gt;
+
+&lt;p&gt;There are a number of new features and improvements in in the pipeline for both projects. We want to make these changes, and the projects in general, more accessible to the community.&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_1&#34;&gt;What is changing?&lt;/h2&gt;
+
+&lt;h3 id=&#34;toc_2&#34;&gt;Source Code and Issue Tracking&lt;/h3&gt;
+
+&lt;p&gt;We have moved the rtpproxy and b2bua projects from Sourceforge to github.com. We will publish future work under the same github organizational account.&lt;/p&gt;
+
+&lt;p&gt;The equivalent URLs are as follows:&lt;/p&gt;
+
+&lt;p&gt;Sippy organizational page&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://sourceforge.net/projects/sippy/&#34;&gt;https://sourceforge.net/projects/sippy/&lt;/a&gt; -&amp;gt; &lt;a href=&#34;https://github.com/sippy&#34;&gt;https://github.com/sippy&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://sourceforge.net/p/sippy/rtpproxy/&#34;&gt;https://sourceforge.net/p/sippy/rtpproxy/&lt;/a&gt; -&amp;gt; &lt;a href=&#34;https://github.com/sippy/rtpproxy&#34;&gt;https://github.com/sippy/rtpproxy&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://sourceforge.net/p/sippy/sippy&#34;&gt;https://sourceforge.net/p/sippy/sippy&lt;/a&gt; -&amp;gt; &lt;a href=&#34;https://github.com/sippy/b2bua&#34;&gt;https://github.com/sippy/b2bua&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;toc_3&#34;&gt;Mailing Lists&lt;/h3&gt;
+
+&lt;p&gt;The mailing lists have both been migrated from mailman to Google Groups.&lt;/p&gt;
+
+&lt;p&gt;rtpproxy: &lt;a href=&#34;https://groups.google.com/forum/#!forum/rtpproxy&#34;&gt;https://groups.google.com/forum/#!forum/rtpproxy&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;b2bua: &lt;a href=&#34;https://groups.google.com/forum/#!forum/b2bua&#34;&gt;https://groups.google.com/forum/#!forum/b2bua&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;We have merged -user and -devel mailing lists for both projects, as the mailing list traffic is relatively low, and users of these projects are all technical enough not to be scared by developers talking about developer things.&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_4&#34;&gt;Twitter&lt;/h3&gt;
+
+&lt;p&gt;Finally, for the twitter users out there, you can follow @sippylabs which will post  only about new releases or changes that we merit as interesting. There will be no marketing related activity on this handle.&lt;/p&gt;
+
+&lt;p&gt;All questions welcome!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://twitter.com/jevonearth&#34;&gt;@jevonearth&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Beta 1.2</title>
+      <link>http://www.rtpproxy.org/post/beta_one_point_two</link>
+      <pubDate>Mon, 12 Jan 2009 04:09:26 UTC</pubDate>
+      
+      <guid>http://www.rtpproxy.org/post/beta_one_point_two</guid>
+      <description>&lt;p&gt;New beta snapshot of 1.2 version of RTPproxy has been released.&lt;/p&gt;
+
+&lt;p&gt;This snapshot includes;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Linux build fixes&lt;/li&gt;
+&lt;li&gt;Improvements in re-packetization feature.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>New Snapshot: Solaris, you compile me.</title>
+      <link>http://www.rtpproxy.org/post/solaris_you_compile_me</link>
+      <pubDate>Mon, 08 Dec 2008 04:04:56 UTC</pubDate>
+      
+      <guid>http://www.rtpproxy.org/post/solaris_you_compile_me</guid>
+      <description>&lt;p&gt;New snapshot from the 1.2 development branch.&lt;/p&gt;
+
+&lt;p&gt;This snapshot includes Sun Solaris fixes (now it should compile and run clearly) and improvments to the disconnect notification feature.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Solaris, improved re-INVITES, port randomness and more.</title>
+      <link>http://www.rtpproxy.org/post/ability_to_fork</link>
+      <pubDate>Tue, 11 Nov 2008 03:56:51 UTC</pubDate>
+      
+      <guid>http://www.rtpproxy.org/post/ability_to_fork</guid>
+      <description>&lt;p&gt;Latest snapshot of development 1.2 version of RTPproxy has been released.&lt;/p&gt;
+
+&lt;p&gt;This release includes many bug fixes and new features, including:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Solaris compatibility fixes&lt;/li&gt;
+&lt;li&gt;Support for the new &lt;code&gt;rtpproxy_stream2xxx()&lt;/code&gt; command in SER&lt;/li&gt;
+&lt;li&gt;Improved support for re-INVITE&lt;/li&gt;
+&lt;li&gt;Port randomization support&lt;/li&gt;
+&lt;li&gt;syslog support.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
