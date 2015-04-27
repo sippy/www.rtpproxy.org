@@ -1,29 +1,218 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-      <title>Posts on RTPProxy </title>
-      <generator uri="https://hugo.spf13.com">Hugo</generator>
-    <link>http://www.rtpproxy.org/post/index.xml</link>
+    <title>Posts on RTPProxy</title>
+    <link>http://www.rtpproxy.org/post/</link>
+    <description>Recent content in Posts on RTPProxy</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Mon, 09 Mar 2015 02:00:51 +0000</lastBuildDate>
+    <atom:link href="http://www.rtpproxy.org/post/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <updated>Thu, 19 Jun 2014 17:36:05 UTC</updated>
+    <item>
+      <title>rtpproxy v2.0.0 release</title>
+      <link>http://www.rtpproxy.org/post/v2release/</link>
+      <pubDate>Mon, 09 Mar 2015 02:00:51 +0000</pubDate>
+      
+      <guid>http://www.rtpproxy.org/post/v2release/</guid>
+      <description>
+
+&lt;h1 id=&#34;rtpproxy-v2-0-0-release-notes:39975d7131f83cd906347984452b2b92&#34;&gt;rtpproxy v2.0.0 Release Notes&lt;/h1&gt;
+
+&lt;p&gt;This is the first official release since version 1.2 in March 2009. v2.0 release brings 5-years worth of extensive improvements in performance, quality, and test coverage. This release has been heavily tested in production environments, and has had significant contributions from the open-source community.&lt;/p&gt;
+
+&lt;p&gt;This is the first release since we moved the project to github, and travis-ci for automated test coverage.&lt;/p&gt;
+
+&lt;p&gt;rtpproxy is a &lt;a href=&#34;http://www.sippysoft.com/&#34;&gt;Sippy Software, Inc&lt;/a&gt; open source project. The rtpproxy is part of Sippy&amp;rsquo;s commercial soft switch product, and Sippy&amp;rsquo;s clustered media gateway project. rtpproxy is also widely used in other VoIP service provider networks.
+rptproxy supports &lt;a href=&#34;http://www.opensips.org/&#34;&gt;Opensips&lt;/a&gt;, &lt;a href=&#34;http://www.kamailio.org&#34;&gt;Kamailio&lt;/a&gt;, and Sippy&amp;rsquo;s own open source &lt;a href=&#34;https://github.com/sippy/b2bua&#34;&gt;b2bua&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;notable-changes:39975d7131f83cd906347984452b2b92&#34;&gt;Notable Changes&lt;/h2&gt;
+
+&lt;h3 id=&#34;performance-quality:39975d7131f83cd906347984452b2b92&#34;&gt;Performance / Quality&lt;/h3&gt;
+
+&lt;p&gt;Reduction in CPU usage by 40% to 60% has been observed on production deployments.
+Jitter (measured using wire shark) characteristics have improved significantly.&lt;/p&gt;
+
+&lt;p&gt;These quality and performance improvements come mostly from improvements in the following areas:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;send receive threads are now asynchronous&lt;/li&gt;
+&lt;li&gt;poll() is called more intelligently thanks to a PLL timing loop, resulting in much better jitter characteristics&lt;/li&gt;
+&lt;li&gt;poll() is called less frequently for &lt;code&gt;RTCP&lt;/code&gt; than for &lt;code&gt;RTP&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;command processing I/O happens on separate background thread&lt;/li&gt;
+&lt;li&gt;Overall reduction in poll() overhead&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;new-stats-counters:39975d7131f83cd906347984452b2b92&#34;&gt;New stats counters&lt;/h2&gt;
+
+&lt;p&gt;The rtp command protocol (rtpp) has a new command &lt;code&gt;G&lt;/code&gt; that gives access to the following counters:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;nsess_created&lt;/code&gt; Number of RTP sessions created&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;nsess_destroyed&lt;/code&gt; Number of RTP sessions destroyed&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;nsess_timeout&lt;/code&gt; Number of RTP sessions ended due to media timeout&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;nsess_complete&lt;/code&gt; Number of RTP sessions fully setup&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;nsess_timeout&lt;/code&gt; Number of sessions ended due to media timeout&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;nsess_nortp&lt;/code&gt; Number of sessions that had no RTP neither in nor out&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;nsess_owrtp&lt;/code&gt; Number of sessions that had one-way RTP only&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;nsess_nortcp&lt;/code&gt; Number of sessions that had no RTCP neither in nor out&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;nsess_owrtcp&lt;/code&gt; Number of sessions that had one-way RTCP only&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;nplrs_created&lt;/code&gt; Number of RTP players created&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;nplrs_destroyed&lt;/code&gt; Number of RTP players destroyed&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;npkts_rcvd&lt;/code&gt; Total number of RTP/RTPC packets received&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;npkts_played&lt;/code&gt; Total number of RTP packets locally generated (played out)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;npkts_relayed&lt;/code&gt; Total number of RTP/RTPC packets relayed&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;npkts_resizer_in&lt;/code&gt; Total number of RTP packets going into re-sizer (re-packetizer)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;npkts_resizer_out&lt;/code&gt; Total number of RTP packets coming out of re-sizer (re-packetizer)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;npkts_resizer_discard&lt;/code&gt; Number of RTP packets discarded by the re-sizer (re-packetizer)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;npkts_discard&lt;/code&gt; Total number of RTP/RTPC packets discarded&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;total_duration&lt;/code&gt; Cumulative duration of all sessions&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ncmds_rcvd&lt;/code&gt; Total number of control commands received&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ncmds_succd&lt;/code&gt; Total number of control commands successfully processed&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ncmds_errs&lt;/code&gt; Total number of control commands ended up with an error&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ncmds_repld&lt;/code&gt; Total number of control commands that had a reply generated&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;re-packetization-support-to-resize-rtp-packet-sizes:39975d7131f83cd906347984452b2b92&#34;&gt;Re-packetization support to resize rtp packet sizes.&lt;/h2&gt;
+
+&lt;p&gt;Re-packetization allows providers to resize the rtp frame size between a caller and a callee. This is useful for saving bandwidth between pops, or for interoperability with vendors who require a non-standard ptime. For example, the standard ptime for g.729 is 20 msec, but a vendor may require that ptime be 60msec. Re-packetization allows this resizing to happen on the fly. See also the monitoring counters &lt;code&gt;npkts_resizer_in&lt;/code&gt;, &lt;code&gt;npkts_resizer_out&lt;/code&gt; and &lt;code&gt;npkts_resizer_discard&lt;/code&gt; that relates to this feature.&lt;/p&gt;
+
+&lt;h2 id=&#34;sighup-for-graceful-shutdown:39975d7131f83cd906347984452b2b92&#34;&gt;SIGHUP for graceful shutdown&lt;/h2&gt;
+
+&lt;p&gt;The SIGHUP signal will initiate a slow shut down. In this mode any new rtpp requests for a new session will be rejected with a E99 code. The rtpproxy will exit only after all active sessions have ended. This feature simplifies planned maintenance.&lt;/p&gt;
+
+&lt;h2 id=&#34;updated-makeann-utility:39975d7131f83cd906347984452b2b92&#34;&gt;Updated &lt;code&gt;makeann&lt;/code&gt; utility&lt;/h2&gt;
+
+&lt;p&gt;The &lt;code&gt;makeann&lt;/code&gt; utility takes 16-bit signed linear encoded audio and produces a file for each supported codec.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;makeann&lt;/code&gt; codecs are supported:
+  - G.711u
+  - G.711a
+  - G.722 (new in 2.0)
+  - G.729 (new in 2.0)
+  - GSM (new in 2.0)&lt;/p&gt;
+
+&lt;h2 id=&#34;new-extractaudio-utility:39975d7131f83cd906347984452b2b92&#34;&gt;New &lt;code&gt;extractaudio&lt;/code&gt; Utility&lt;/h2&gt;
+
+&lt;p&gt;The &lt;code&gt;extractaudio&lt;/code&gt; utility extracts audio streams and writes the recording to disk in wav format.  The utility existed before 2.0, but it was not connected to the autoconf/automake build and as such required manual intervention to compile. The test suite uses this utility to verify that audio is transmitted correctly. The utility can be used for recording purposes also.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;extractaudio&lt;/code&gt; supported codecs:
+  - G.711u
+  - G.711a
+  - G.722 (new in 2.0)
+  - G.729 (new in 2.0)
+  - GSM (new in 2.0)&lt;/p&gt;
+
+&lt;p&gt;The new flag &lt;code&gt;-n&lt;/code&gt; has been added in 2.0 to avoid inserting blank audio periods to keep streams synchronized to real time. Mostly intended for CI use to provide predictable output.&lt;/p&gt;
+
+&lt;h2 id=&#34;logging:39975d7131f83cd906347984452b2b92&#34;&gt;Logging&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Call-ID is now recorded in log files&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;rtpp-command-channel-improvements:39975d7131f83cd906347984452b2b92&#34;&gt;RTPP Command Channel Improvements&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Improved stream-based communication support to accept more than one command in the batch, don&amp;rsquo;t expect sender to pause and wait for the reply after issuing a command.&lt;/li&gt;
+&lt;li&gt;the rtpprroxy improved performance by using a hash table for look ups&lt;/li&gt;
+&lt;li&gt;new &lt;code&gt;G&lt;/code&gt; command to retrieve stat counters;&lt;/li&gt;
+&lt;li&gt;new &lt;code&gt;s&lt;/code&gt; modifier for the &lt;code&gt;R&lt;/code&gt; command to record both streams into a single file (requires PCAP recording mode to be enabled via &lt;code&gt;-P&lt;/code&gt; command-line option).&lt;/li&gt;
+&lt;li&gt;simple commands are now executed without holding global lock, which should increase total throughput in terms of maximum numbers of commands that can be processed per unit of time and reduce interference between command and rtp processing threads. Those commands are &lt;code&gt;V&#39;,&lt;/code&gt;VF&amp;rsquo; and `G&amp;rsquo;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;new-types-of-control-channels:39975d7131f83cd906347984452b2b92&#34;&gt;New Types of Control Channels&lt;/h2&gt;
+
+&lt;p&gt;In 2.0, we&amp;rsquo;ve added the following 3 new control channels &lt;code&gt;cunix&lt;/code&gt;, &lt;code&gt;stdio&lt;/code&gt; and &lt;code&gt;systemd&lt;/code&gt;, in addition to &lt;code&gt;unix&lt;/code&gt; and &lt;code&gt;udp&lt;/code&gt; as supported since v1.2:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;cunix&lt;/code&gt;, similar to &lt;code&gt;unix&lt;/code&gt; except the server (e.g. rtpproxy) is not closing session after processing a command, so more commands can be posted and processed in sequence, thereby reducing overhead and complexity of the client code. Intended to become the default channel for local IPC;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;stdio&lt;/code&gt;, commands are read from stdin, replies are posted to stdout. Primarily designed to be used for CI. Example: &lt;code&gt;rtpproxy -s stdio: -f &amp;lt; some.commands&lt;/code&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;systemd&lt;/code&gt;, get command from / post replies to the file descriptor provided by the &lt;code&gt;systemd&lt;/code&gt; daemon. Only supported on Linux;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The control channel system has been overhauled to enable more than one channel to be used simultaneously.&lt;/p&gt;
+
+&lt;h2 id=&#34;new-and-updated-command-line-flags:39975d7131f83cd906347984452b2b92&#34;&gt;New and updated command line flags&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;-s&lt;/code&gt; now accepts &lt;code&gt;stdio&lt;/code&gt;, &lt;code&gt;cunix:&lt;/code&gt; and &lt;code&gt;systemd:&lt;/code&gt; as an argument. rtpproxy can accept -s multiple times, which will cause it to listen on multiple control sockets. More than one control channels can be used independently.
+&lt;code&gt;-V&lt;/code&gt; Show command protocol version.
+&lt;code&gt;-L&lt;/code&gt; Adjust the number of simultaneous open connections. Note that each RTP media stream requires four open connections. A SIP call can open more than one RTP media stream depending on the client&amp;rsquo;s setup.
+&lt;code&gt;-A address&lt;/code&gt; Sets the advertised IP address.  &lt;code&gt;-A addr1/addr2&lt;/code&gt; can also be used for bridging mode
+&lt;code&gt;-W setup_ttl&lt;/code&gt; Implements &amp;ldquo;Call Establishment Phase Timeout&amp;rdquo; as originally implemented in &lt;a href=&#34;https://github.com/OpenSIPS/opensips/blob/master/modules/rtpproxy/patches/rtpproxy_timeout_notification.fix_patch&#34;&gt;this&lt;/a&gt; opensips patch
+&lt;code&gt;-w&lt;/code&gt; Set access mode for the controlling UNIX-socket (if used). Only applies if rtpproxy runs under a different GID using &lt;code&gt;-u&lt;/code&gt; option.
+&lt;code&gt;-b&lt;/code&gt; Don&amp;rsquo;t randomize allocated ports, primarily aimed for debugging to provide more predictable behaviour&lt;/p&gt;
+
+&lt;h2 id=&#34;new-continuous-integration-ci-testing-suite:39975d7131f83cd906347984452b2b92&#34;&gt;New Continuous Integration (CI) / Testing suite&lt;/h2&gt;
+
+&lt;p&gt;Automated tests are now run using &lt;a href=&#34;http://www.travis-ci.com&#34;&gt;travis-ci&lt;/a&gt;
+There are two groups of tests, tests bundled with the rtpproxy distribution, that can be run using the &lt;code&gt;make check&lt;/code&gt; target, and a suit of integration tests (opensips, kamailio, sippy b2bua).&lt;/p&gt;
+
+&lt;h3 id=&#34;see-github-com-sippy-voiptests-https-github-com-sippy-voiptests-for-the-integration-test-suite:39975d7131f83cd906347984452b2b92&#34;&gt;See &lt;a href=&#34;https://github.com/sippy/voiptests&#34;&gt;github.com/sippy/voiptests&lt;/a&gt; for the integration test suite.&lt;/h3&gt;
+
+&lt;h3 id=&#34;summary-of-tests-that-run-from-the-make-check-target:39975d7131f83cd906347984452b2b92&#34;&gt;Summary of tests that run from the &lt;code&gt;make check&lt;/code&gt; target&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;makeann&lt;/code&gt; tests for all supported codecs&lt;/li&gt;
+&lt;li&gt;Forwarding tests that verifies media from sender to receiver &amp;amp; the reverse&lt;/li&gt;
+&lt;li&gt;Recording tests that verifies recording capability of the rtpproxy in both AdHoc and PCAP formats&lt;/li&gt;
+&lt;li&gt;Simple command parser tests&lt;/li&gt;
+&lt;li&gt;Playback tests that streams sample payload, captures packets from network, decodes and verifies the captured payload against the source payload.&lt;/li&gt;
+&lt;li&gt;memdeb is an opt-in memory allocation tracker useful for detecting memory leaks&lt;/li&gt;
+&lt;li&gt;session_timeout tests both types of session timeouts for both call establishment phase and session timeouts&lt;/li&gt;
+&lt;li&gt;Re-packetization tests to verify proper functionality of the lossless re-packetization feature&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;See &lt;a href=&#34;https://github.com/sippy/rtpproxy/tree/master/tests&#34;&gt;rtpproxy/test/&lt;/a&gt; for more details.&lt;/p&gt;
+
+&lt;h2 id=&#34;lossless-rtp-payload-resize:39975d7131f83cd906347984452b2b92&#34;&gt;Lossless RTP Payload Resize&lt;/h2&gt;
+
+&lt;p&gt;The Lossless RTP Payload Resize feature has been promoted from experimental to fully supported feature and has been extensively tested with all supported codecs, which currently include the following codecs:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;G.711u&lt;/li&gt;
+&lt;li&gt;G.711a&lt;/li&gt;
+&lt;li&gt;G.729&lt;/li&gt;
+&lt;li&gt;G.722 (new in 2.0)&lt;/li&gt;
+&lt;li&gt;GSM (new in 2.0)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;miscellaneous:39975d7131f83cd906347984452b2b92&#34;&gt;Miscellaneous&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;make will build a &lt;code&gt;rtpproxy&lt;/code&gt; binary and a &lt;code&gt;rtpproxy_debug&lt;/code&gt; binary. The latter includes memdebug&lt;/li&gt;
+&lt;li&gt;systemd support on Linux&lt;/li&gt;
+&lt;li&gt;udp_storm - a utility to stress-test rtpproxy with the RTP-like traffic.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;sponsors-contributors:39975d7131f83cd906347984452b2b92&#34;&gt;Sponsors &amp;amp; Contributors&lt;/h2&gt;
+
+&lt;p&gt;Thank you to our contributors!
+- @sobomax
+- @bogdan-iancu
+- @jevonearth
+- @lemenkov
+- @miconda
+- @oej
+- @taisph&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Reorganization &amp; new developments for RTPProxy</title>
-      <link>http://www.rtpproxy.org/post/reorganization</link>
-      <pubDate>Thu, 19 Jun 2014 17:36:05 UTC</pubDate>
+      <link>http://www.rtpproxy.org/post/reorganization/</link>
+      <pubDate>Thu, 19 Jun 2014 17:36:05 +0000</pubDate>
       
-      <guid>http://www.rtpproxy.org/post/reorganization</guid>
+      <guid>http://www.rtpproxy.org/post/reorganization/</guid>
       <description>
 
-&lt;h2 id=&#34;toc_0&#34;&gt;Why the changes?&lt;/h2&gt;
+&lt;h2 id=&#34;why-the-changes:94f1539f9405d7ce7a7f5befd46f2ad4&#34;&gt;Why the changes?&lt;/h2&gt;
 
 &lt;p&gt;There are a number of new features and improvements in in the pipeline for both projects. We want to make these changes, and the projects in general, more accessible to the community.&lt;/p&gt;
 
-&lt;h2 id=&#34;toc_1&#34;&gt;What is changing?&lt;/h2&gt;
+&lt;h2 id=&#34;what-is-changing:94f1539f9405d7ce7a7f5befd46f2ad4&#34;&gt;What is changing?&lt;/h2&gt;
 
-&lt;h3 id=&#34;toc_2&#34;&gt;Source Code and Issue Tracking&lt;/h3&gt;
+&lt;h3 id=&#34;source-code-and-issue-tracking:94f1539f9405d7ce7a7f5befd46f2ad4&#34;&gt;Source Code and Issue Tracking&lt;/h3&gt;
 
 &lt;p&gt;We have moved the rtpproxy and b2bua projects from Sourceforge to github.com. We will publish future work under the same github organizational account.&lt;/p&gt;
 
@@ -37,7 +226,7 @@
 &lt;li&gt;&lt;a href=&#34;https://sourceforge.net/p/sippy/sippy&#34;&gt;https://sourceforge.net/p/sippy/sippy&lt;/a&gt; -&amp;gt; &lt;a href=&#34;https://github.com/sippy/b2bua&#34;&gt;https://github.com/sippy/b2bua&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;toc_3&#34;&gt;Mailing Lists&lt;/h3&gt;
+&lt;h3 id=&#34;mailing-lists:94f1539f9405d7ce7a7f5befd46f2ad4&#34;&gt;Mailing Lists&lt;/h3&gt;
 
 &lt;p&gt;The mailing lists have both been migrated from mailman to Google Groups.&lt;/p&gt;
 
@@ -47,7 +236,7 @@
 
 &lt;p&gt;We have merged -user and -devel mailing lists for both projects, as the mailing list traffic is relatively low, and users of these projects are all technical enough not to be scared by developers talking about developer things.&lt;/p&gt;
 
-&lt;h3 id=&#34;toc_4&#34;&gt;Twitter&lt;/h3&gt;
+&lt;h3 id=&#34;twitter:94f1539f9405d7ce7a7f5befd46f2ad4&#34;&gt;Twitter&lt;/h3&gt;
 
 &lt;p&gt;Finally, for the twitter users out there, you can follow @sippylabs which will post  only about new releases or changes that we merit as interesting. There will be no marketing related activity on this handle.&lt;/p&gt;
 
@@ -59,10 +248,10 @@
     
     <item>
       <title>Beta 1.2</title>
-      <link>http://www.rtpproxy.org/post/beta_one_point_two</link>
-      <pubDate>Mon, 12 Jan 2009 04:09:26 UTC</pubDate>
+      <link>http://www.rtpproxy.org/post/beta_one_point_two/</link>
+      <pubDate>Mon, 12 Jan 2009 04:09:26 +0000</pubDate>
       
-      <guid>http://www.rtpproxy.org/post/beta_one_point_two</guid>
+      <guid>http://www.rtpproxy.org/post/beta_one_point_two/</guid>
       <description>&lt;p&gt;New beta snapshot of 1.2 version of RTPproxy has been released.&lt;/p&gt;
 
 &lt;p&gt;This snapshot includes;&lt;/p&gt;
@@ -76,10 +265,10 @@
     
     <item>
       <title>New Snapshot: Solaris, you compile me.</title>
-      <link>http://www.rtpproxy.org/post/solaris_you_compile_me</link>
-      <pubDate>Mon, 08 Dec 2008 04:04:56 UTC</pubDate>
+      <link>http://www.rtpproxy.org/post/solaris_you_compile_me/</link>
+      <pubDate>Mon, 08 Dec 2008 04:04:56 +0000</pubDate>
       
-      <guid>http://www.rtpproxy.org/post/solaris_you_compile_me</guid>
+      <guid>http://www.rtpproxy.org/post/solaris_you_compile_me/</guid>
       <description>&lt;p&gt;New snapshot from the 1.2 development branch.&lt;/p&gt;
 
 &lt;p&gt;This snapshot includes Sun Solaris fixes (now it should compile and run clearly) and improvments to the disconnect notification feature.&lt;/p&gt;
@@ -88,10 +277,10 @@
     
     <item>
       <title>Solaris, improved re-INVITES, port randomness and more.</title>
-      <link>http://www.rtpproxy.org/post/ability_to_fork</link>
-      <pubDate>Tue, 11 Nov 2008 03:56:51 UTC</pubDate>
+      <link>http://www.rtpproxy.org/post/ability_to_fork/</link>
+      <pubDate>Tue, 11 Nov 2008 03:56:51 +0000</pubDate>
       
-      <guid>http://www.rtpproxy.org/post/ability_to_fork</guid>
+      <guid>http://www.rtpproxy.org/post/ability_to_fork/</guid>
       <description>&lt;p&gt;Latest snapshot of development 1.2 version of RTPproxy has been released.&lt;/p&gt;
 
 &lt;p&gt;This release includes many bug fixes and new features, including:&lt;/p&gt;
