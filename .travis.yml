@@ -1,5 +1,9 @@
 # force run: 1
 dist: xenial
+language: minimal
+install:
+  - sudo apt-get --yes install snapd
+  - sudo snap install hugo
 script: true
 stages:
   - name: Publish Web Site
