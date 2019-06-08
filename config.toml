@@ -3,8 +3,8 @@ languageCode = "en-us"
 title = "RTPProxy"
 [params]
   Subtitle = "A high-performance software proxy that brings control to your VoIP network"
-  twitter = "http://twitter.com/sippylabs"
-  github = "http://github.com/sippy/rtpproxy"
+  twitter = "https://twitter.com/sippylabs"
+  github = "https://github.com/sippy/rtpproxy"
   mailinglist = "https://groups.google.com/forum/#!forum/rtpproxy"
 [taxonomies]
   vendor = "vendors"
