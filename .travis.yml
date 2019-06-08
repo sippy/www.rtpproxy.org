@@ -1,0 +1,11 @@
+# force run: 1
+dist: xenial
+stages:
+  - name: Publish Web Site
+    if: branch = master AND type = push
+jobs:
+  include:
+    - stage: Publish Web Site
+      name: Publish Web Site to the www.rtpproxy.org
+      script:
+        - git subtree push --prefix=public git@${GITHUB_TOKEN}@github.com:sippy/www.rtpproxy.org.git gh-pages
