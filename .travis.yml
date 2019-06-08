@@ -1,5 +1,6 @@
 # force run: 1
 dist: xenial
+script: true
 stages:
   - name: Publish Web Site
     if: branch = master AND type = push
