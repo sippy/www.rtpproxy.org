@@ -1,4 +1,4 @@
-baseurl = "http://www.rtpproxy.org/"
+baseurl = "https://www.rtpproxy.org/"
 languageCode = "en-us"
 title = "RTPProxy"
 [params]
