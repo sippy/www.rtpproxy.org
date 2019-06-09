@@ -11,7 +11,6 @@ fi
 echo "\033[0;32mDeploying updates to Github...\033[0m"
 
 OWN_REPO="https://${GITHUB_TOKEN}@github.com/sippy/www.rtpproxy.org.git"
-TMP_BRANCH="${TRAVIS_BRANCH}_foo"
 
 git remote add origin_rw "${OWN_REPO}"
 #git fetch origin_rw
