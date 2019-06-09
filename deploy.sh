@@ -35,6 +35,7 @@ then
 
   # Push source and build repos.
   git push origin_rw ${TRAVIS_BRANCH}
+  git pull origin
   git subtree push --prefix=public "${OWN_REPO}" gh-pages
 else
   echo "\033[0;32mNothing to do, everything is up to date already.\033[0m"
