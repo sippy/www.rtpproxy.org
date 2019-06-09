@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<html lang="en-us">
+    
+    
+
+
+    <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -6,8 +12,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
   <link href="" rel="alternate" type="application/rss+xml" title="RTPProxy" />
-  <link href="https://www.rtpproxy.org/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://www.rtpproxy.org/css/hc.css" rel="stylesheet">
+  <link href="https://www.rtpproxy.org//css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://www.rtpproxy.org//css/hc.css" rel="stylesheet">
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
   
     
@@ -30,8 +36,11 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-          <li><a href="https://www.rtpproxy.org/post/">Posts</a></li>
-          <li><a href="https://www.rtpproxy.org/about/">About</a></li>
+          <li><a href="https://www.rtpproxy.org//post/">Posts</a></li>
+          <li><a href="https://www.rtpproxy.org//about/">About</a></li>
+          <li><a href="https://github.com/sippy/rtpproxy/releases">Releases</a></li>
+          <li><a href="/doc/master/user_manual.html">User Manual</a></li>
+          <li><a href="/doc/master/release_info.html">Release Information</a></li>
           </ul>
         </div>
       </div>
@@ -42,16 +51,20 @@
        
        <div id="sidebar-wrapper">
         <ul class="sidebar-nav">
-          <li class="sidebar-brand"><a href="https://www.rtpproxy.org/"><h1 class="brand">RTPProxy</h1></a><h3></h3></li>
+          <li class="sidebar-brand"><a href="https://www.rtpproxy.org//"><h1 class="brand">RTPProxy</h1></a><h3></h3></li>
           <hr />
-          <li><a href="https://www.rtpproxy.org/post/">Posts</a></li>
-          <li><a href="https://www.rtpproxy.org/about/">About</a></li>
+          <li><a href="https://www.rtpproxy.org//post/">Posts</a></li>
+          <li><a href="https://www.rtpproxy.org//about/">About</a></li>
+          <li><a href="https://github.com/sippy/rtpproxy/releases">Releases</a></li>
+          <li><a href="/doc/master/user_manual.html">User Manual</a></li>
+          <li><a href="/doc/master/release_info.html">Release Information</a></li>
           <hr />
           <div id="social-wrapper">
            <li> <a href="https://twitter.com/sippylabs"><i class="fa fa-twitter-square"></i> @twitter</a></li>
            
            
            <li> <a href="https://github.com/sippy/rtpproxy"><i class="fa fa-github-square"></i> github</a> </li>
+           <li> <a href="https://groups.google.com/forum/#!forum/rtpproxy"><i class="fa fa-envelope"></i> mailing list</a> </li>
          </div>
        </ul>
      </div>
@@ -61,19 +74,95 @@
      <div class="container">
 
 
-  <div id="article">
-   <div class="article-title">Reorganization &amp; new developments for RTPProxy</div>
-   <p class="meta"><small>&nbsp;<i class="fa fa-calendar-o"></i> 2014-06-19</small></p> <hr/>
-   <div class="post">
-     
 
-<h2 id="why-the-changes:94f1539f9405d7ce7a7f5befd46f2ad4">Why the changes?</h2>
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://www.rtpproxy.org/">RTPProxy</a>
+      </span>
+      
+      
+      <p class="site__description">
+        
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">RTPProxy</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		
+		</li>
+	</ul>
+</div>
+
+        <section class="social">
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</section>
+
+      </div>
+    </div>
+    
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>Reorganization &amp; new developments for RTPProxy</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Jun 19, 2014
+    
+    
+    
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 1 min read
+</div>
+
+
+  </header>
+  
+  
+  <div class="post">
+    
+
+<h2 id="why-the-changes">Why the changes?</h2>
 
 <p>There are a number of new features and improvements in in the pipeline for both projects. We want to make these changes, and the projects in general, more accessible to the community.</p>
 
-<h2 id="what-is-changing:94f1539f9405d7ce7a7f5befd46f2ad4">What is changing?</h2>
+<h2 id="what-is-changing">What is changing?</h2>
 
-<h3 id="source-code-and-issue-tracking:94f1539f9405d7ce7a7f5befd46f2ad4">Source Code and Issue Tracking</h3>
+<h3 id="source-code-and-issue-tracking">Source Code and Issue Tracking</h3>
 
 <p>We have moved the rtpproxy and b2bua projects from Sourceforge to github.com. We will publish future work under the same github organizational account.</p>
 
@@ -87,7 +176,7 @@
 <li><a href="https://sourceforge.net/p/sippy/sippy">https://sourceforge.net/p/sippy/sippy</a> -&gt; <a href="https://github.com/sippy/b2bua">https://github.com/sippy/b2bua</a></li>
 </ul>
 
-<h3 id="mailing-lists:94f1539f9405d7ce7a7f5befd46f2ad4">Mailing Lists</h3>
+<h3 id="mailing-lists">Mailing Lists</h3>
 
 <p>The mailing lists have both been migrated from mailman to Google Groups.</p>
 
@@ -97,40 +186,63 @@
 
 <p>We have merged -user and -devel mailing lists for both projects, as the mailing list traffic is relatively low, and users of these projects are all technical enough not to be scared by developers talking about developer things.</p>
 
-<h3 id="twitter:94f1539f9405d7ce7a7f5befd46f2ad4">Twitter</h3>
+<h3 id="twitter">Twitter</h3>
 
 <p>Finally, for the twitter users out there, you can follow @sippylabs which will post  only about new releases or changes that we merit as interesting. There will be no marketing related activity on this handle.</p>
 
 <p>All questions welcome!</p>
 
-<p><a href="https://twitter.com/sobomax">@sobomax</a></p>
+<p><a href="http://twitter.com/jevonearth">@jevonearth</a></p>
 
-   </div>
- </div>
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/post/beta_one_point_two/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">Beta 1.2</span>
+    </a>
+    
+    
+    <a href="/post/v2release/" class="navigation-next">
+      <span class="navigation-tittle">rtpproxy v2.0.0 release</span>
+      <i aria-hidden="true" class="fa fa-chevron-right"></i>
+    </a>
+    
+</div>
 
 
- <a href="https://twitter.com/share" class="twitter-share-button " data-size="small" data-count="none">Tweet</a>
- <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+  
 
- <ul class="pager">
-      &nbsp;<li class="previous"><a href="https://www.rtpproxy.org/post/v2release/"> rtpproxy v2.0.0 release</a></li>
-      &nbsp;<li class="next"><a href="https://www.rtpproxy.org/about/"> Backstory</a></li>
-</ul>
+  
+    
 
 
+</article>
 
-    </ul>
-    </div>
-    <footer>
 
-        <p class="text-muted credit">&copy; . All rights reserved. </p>
-    </footer>
- 
-    <script src="/js/jquery-1.10.2.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/bootstrap.js"></script>
-    <script type="text/javascript" src="/js/hc.js"></script>
-</body>
+        </div>
+        
+    
 
+<script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script>
+
+
+    
+    
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+
+    
+
+
+
+    </body>
 </html>
-
