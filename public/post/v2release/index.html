@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<html lang="en-us">
+    
+    
+
+
+    <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -6,8 +12,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
   <link href="" rel="alternate" type="application/rss+xml" title="RTPProxy" />
-  <link href="https://www.rtpproxy.org/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://www.rtpproxy.org/css/hc.css" rel="stylesheet">
+  <link href="https://www.rtpproxy.org//css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://www.rtpproxy.org//css/hc.css" rel="stylesheet">
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
   
     
@@ -30,8 +36,11 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-          <li><a href="https://www.rtpproxy.org/post/">Posts</a></li>
-          <li><a href="https://www.rtpproxy.org/about/">About</a></li>
+          <li><a href="https://www.rtpproxy.org//post/">Posts</a></li>
+          <li><a href="https://www.rtpproxy.org//about/">About</a></li>
+          <li><a href="https://github.com/sippy/rtpproxy/releases">Releases</a></li>
+          <li><a href="/doc/master/user_manual.html">User Manual</a></li>
+          <li><a href="/doc/master/release_info.html">Release Information</a></li>
           </ul>
         </div>
       </div>
@@ -42,16 +51,20 @@
        
        <div id="sidebar-wrapper">
         <ul class="sidebar-nav">
-          <li class="sidebar-brand"><a href="https://www.rtpproxy.org/"><h1 class="brand">RTPProxy</h1></a><h3></h3></li>
+          <li class="sidebar-brand"><a href="https://www.rtpproxy.org//"><h1 class="brand">RTPProxy</h1></a><h3></h3></li>
           <hr />
-          <li><a href="https://www.rtpproxy.org/post/">Posts</a></li>
-          <li><a href="https://www.rtpproxy.org/about/">About</a></li>
+          <li><a href="https://www.rtpproxy.org//post/">Posts</a></li>
+          <li><a href="https://www.rtpproxy.org//about/">About</a></li>
+          <li><a href="https://github.com/sippy/rtpproxy/releases">Releases</a></li>
+          <li><a href="/doc/master/user_manual.html">User Manual</a></li>
+          <li><a href="/doc/master/release_info.html">Release Information</a></li>
           <hr />
           <div id="social-wrapper">
            <li> <a href="https://twitter.com/sippylabs"><i class="fa fa-twitter-square"></i> @twitter</a></li>
            
            
            <li> <a href="https://github.com/sippy/rtpproxy"><i class="fa fa-github-square"></i> github</a> </li>
+           <li> <a href="https://groups.google.com/forum/#!forum/rtpproxy"><i class="fa fa-envelope"></i> mailing list</a> </li>
          </div>
        </ul>
      </div>
@@ -61,24 +74,110 @@
      <div class="container">
 
 
-  <div id="article">
-   <div class="article-title">rtpproxy v2.0.0 release</div>
-   <p class="meta"><small>&nbsp;<i class="fa fa-calendar-o"></i> 2015-03-09</small></p> <hr/>
-   <div class="post">
-     
 
-<h1 id="rtpproxy-v2-0-0-release-notes:39975d7131f83cd906347984452b2b92">rtpproxy v2.0.0 Release Notes</h1>
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://www.rtpproxy.org/">RTPProxy</a>
+      </span>
+      
+      
+      <p class="site__description">
+        
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">RTPProxy</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		
+		</li>
+	</ul>
+</div>
+
+        <section class="social">
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</section>
+
+      </div>
+    </div>
+    
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>rtpproxy v2.0.0 release</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Mar 09, 2015
+    
+    
+    
+    
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="badge badge-tag" href="/tags/releases">releases</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 7 min read
+</div>
+
+
+  </header>
+  
+  
+  <div class="post">
+    
+
+<h1 id="rtpproxy-v2-0-0-release-notes">rtpproxy v2.0.0 Release Notes</h1>
 
 <p>This is the first official release since version 1.2 in March 2009. v2.0 release brings 5-years worth of extensive improvements in performance, quality, and test coverage. This release has been heavily tested in production environments, and has had significant contributions from the open-source community.</p>
 
 <p>This is the first release since we moved the project to github, and travis-ci for automated test coverage.</p>
 
-<p>rtpproxy is a <a href="https://www.sippysoft.com/">Sippy Software, Inc</a> open source project. The rtpproxy is part of Sippy&rsquo;s commercial soft switch product, and Sippy&rsquo;s clustered media gateway project. rtpproxy is also widely used in other VoIP service provider networks.
-rptproxy supports <a href="https://www.opensips.org/">Opensips</a>, <a href="https://www.kamailio.org">Kamailio</a>, and Sippy&rsquo;s own open source <a href="https://github.com/sippy/b2bua">B2BUA</a></p>
+<p>rtpproxy is a <a href="http://www.sippysoft.com/">Sippy Software, Inc</a> open source project. The rtpproxy is part of Sippy&rsquo;s commercial soft switch product, and Sippy&rsquo;s clustered media gateway project. rtpproxy is also widely used in other VoIP service provider networks.
+rptproxy supports <a href="http://www.opensips.org/">Opensips</a>, <a href="http://www.kamailio.org">Kamailio</a>, and Sippy&rsquo;s own open source <a href="https://github.com/sippy/b2bua">b2bua</a></p>
 
-<h2 id="notable-changes:39975d7131f83cd906347984452b2b92">Notable Changes</h2>
+<h2 id="notable-changes">Notable Changes</h2>
 
-<h3 id="performance-quality:39975d7131f83cd906347984452b2b92">Performance / Quality</h3>
+<h3 id="performance-quality">Performance / Quality</h3>
 
 <p>Reduction in CPU usage by 40% to 60% has been observed on production deployments.
 Jitter (measured using wire shark) characteristics have improved significantly.</p>
@@ -93,7 +192,7 @@ Jitter (measured using wire shark) characteristics have improved significantly.<
 <li>Overall reduction in poll() overhead</li>
 </ul>
 
-<h2 id="new-stats-counters:39975d7131f83cd906347984452b2b92">New stats counters</h2>
+<h2 id="new-stats-counters">New stats counters</h2>
 
 <p>The rtp command protocol (rtpp) has a new command <code>G</code> that gives access to the following counters:</p>
 
@@ -123,15 +222,15 @@ Jitter (measured using wire shark) characteristics have improved significantly.<
 <li><code>ncmds_repld</code> Total number of control commands that had a reply generated</li>
 </ul>
 
-<h2 id="re-packetization-support-to-resize-rtp-packet-sizes:39975d7131f83cd906347984452b2b92">Re-packetization support to resize rtp packet sizes.</h2>
+<h2 id="re-packetization-support-to-resize-rtp-packet-sizes">Re-packetization support to resize rtp packet sizes.</h2>
 
 <p>Re-packetization allows providers to resize the rtp frame size between a caller and a callee. This is useful for saving bandwidth between pops, or for interoperability with vendors who require a non-standard ptime. For example, the standard ptime for g.729 is 20 msec, but a vendor may require that ptime be 60msec. Re-packetization allows this resizing to happen on the fly. See also the monitoring counters <code>npkts_resizer_in</code>, <code>npkts_resizer_out</code> and <code>npkts_resizer_discard</code> that relates to this feature.</p>
 
-<h2 id="sighup-for-graceful-shutdown:39975d7131f83cd906347984452b2b92">SIGHUP for graceful shutdown</h2>
+<h2 id="sighup-for-graceful-shutdown">SIGHUP for graceful shutdown</h2>
 
 <p>The SIGHUP signal will initiate a slow shut down. In this mode any new rtpp requests for a new session will be rejected with a E99 code. The rtpproxy will exit only after all active sessions have ended. This feature simplifies planned maintenance.</p>
 
-<h2 id="updated-makeann-utility:39975d7131f83cd906347984452b2b92">Updated <code>makeann</code> utility</h2>
+<h2 id="updated-makeann-utility">Updated <code>makeann</code> utility</h2>
 
 <p>The <code>makeann</code> utility takes 16-bit signed linear encoded audio and produces a file for each supported codec.</p>
 
@@ -142,7 +241,7 @@ Jitter (measured using wire shark) characteristics have improved significantly.<
   - G.729 (new in 2.0)
   - GSM (new in 2.0)</p>
 
-<h2 id="new-extractaudio-utility:39975d7131f83cd906347984452b2b92">New <code>extractaudio</code> Utility</h2>
+<h2 id="new-extractaudio-utility">New <code>extractaudio</code> Utility</h2>
 
 <p>The <code>extractaudio</code> utility extracts audio streams and writes the recording to disk in wav format.  The utility existed before 2.0, but it was not connected to the autoconf/automake build and as such required manual intervention to compile. The test suite uses this utility to verify that audio is transmitted correctly. The utility can be used for recording purposes also.</p>
 
@@ -155,13 +254,13 @@ Jitter (measured using wire shark) characteristics have improved significantly.<
 
 <p>The new flag <code>-n</code> has been added in 2.0 to avoid inserting blank audio periods to keep streams synchronized to real time. Mostly intended for CI use to provide predictable output.</p>
 
-<h2 id="logging:39975d7131f83cd906347984452b2b92">Logging</h2>
+<h2 id="logging">Logging</h2>
 
 <ul>
 <li>Call-ID is now recorded in log files</li>
 </ul>
 
-<h2 id="rtpp-command-channel-improvements:39975d7131f83cd906347984452b2b92">RTPP Command Channel Improvements</h2>
+<h2 id="rtpp-command-channel-improvements">RTPP Command Channel Improvements</h2>
 
 <ul>
 <li>Improved stream-based communication support to accept more than one command in the batch, don&rsquo;t expect sender to pause and wait for the reply after issuing a command.</li>
@@ -171,7 +270,7 @@ Jitter (measured using wire shark) characteristics have improved significantly.<
 <li>simple commands are now executed without holding global lock, which should increase total throughput in terms of maximum numbers of commands that can be processed per unit of time and reduce interference between command and rtp processing threads. Those commands are <code>V',</code>VF&rsquo; and `G&rsquo;.</li>
 </ul>
 
-<h2 id="new-types-of-control-channels:39975d7131f83cd906347984452b2b92">New Types of Control Channels</h2>
+<h2 id="new-types-of-control-channels">New Types of Control Channels</h2>
 
 <p>In 2.0, we&rsquo;ve added the following 3 new control channels <code>cunix</code>, <code>stdio</code> and <code>systemd</code>, in addition to <code>unix</code> and <code>udp</code> as supported since v1.2:</p>
 
@@ -183,7 +282,7 @@ Jitter (measured using wire shark) characteristics have improved significantly.<
 
 <p>The control channel system has been overhauled to enable more than one channel to be used simultaneously.</p>
 
-<h2 id="new-and-updated-command-line-flags:39975d7131f83cd906347984452b2b92">New and updated command line flags</h2>
+<h2 id="new-and-updated-command-line-flags">New and updated command line flags</h2>
 
 <p><code>-s</code> now accepts <code>stdio</code>, <code>cunix:</code> and <code>systemd:</code> as an argument. rtpproxy can accept -s multiple times, which will cause it to listen on multiple control sockets. More than one control channels can be used independently.
 <code>-V</code> Show command protocol version.
@@ -193,14 +292,14 @@ Jitter (measured using wire shark) characteristics have improved significantly.<
 <code>-w</code> Set access mode for the controlling UNIX-socket (if used). Only applies if rtpproxy runs under a different GID using <code>-u</code> option.
 <code>-b</code> Don&rsquo;t randomize allocated ports, primarily aimed for debugging to provide more predictable behaviour</p>
 
-<h2 id="new-continuous-integration-ci-testing-suite:39975d7131f83cd906347984452b2b92">New Continuous Integration (CI) / Testing suite</h2>
+<h2 id="new-continuous-integration-ci-testing-suite">New Continuous Integration (CI) / Testing suite</h2>
 
-<p>Automated tests are now run using <a href="https://www.travis-ci.com">travis-ci</a>
+<p>Automated tests are now run using <a href="http://www.travis-ci.com">travis-ci</a>
 There are two groups of tests, tests bundled with the rtpproxy distribution, that can be run using the <code>make check</code> target, and a suit of integration tests (opensips, kamailio, sippy b2bua).</p>
 
-<h3 id="see-github-com-sippy-voiptests-https-github-com-sippy-voiptests-for-the-integration-test-suite:39975d7131f83cd906347984452b2b92">See <a href="https://github.com/sippy/voiptests">github.com/sippy/voiptests</a> for the integration test suite.</h3>
+<h3 id="see-github-com-sippy-voiptests-https-github-com-sippy-voiptests-for-the-integration-test-suite">See <a href="https://github.com/sippy/voiptests">github.com/sippy/voiptests</a> for the integration test suite.</h3>
 
-<h3 id="summary-of-tests-that-run-from-the-make-check-target:39975d7131f83cd906347984452b2b92">Summary of tests that run from the <code>make check</code> target</h3>
+<h3 id="summary-of-tests-that-run-from-the-make-check-target">Summary of tests that run from the <code>make check</code> target</h3>
 
 <ul>
 <li><code>makeann</code> tests for all supported codecs</li>
@@ -215,7 +314,7 @@ There are two groups of tests, tests bundled with the rtpproxy distribution, tha
 
 <p>See <a href="https://github.com/sippy/rtpproxy/tree/master/tests">rtpproxy/test/</a> for more details.</p>
 
-<h2 id="lossless-rtp-payload-resize:39975d7131f83cd906347984452b2b92">Lossless RTP Payload Resize</h2>
+<h2 id="lossless-rtp-payload-resize">Lossless RTP Payload Resize</h2>
 
 <p>The Lossless RTP Payload Resize feature has been promoted from experimental to fully supported feature and has been extensively tested with all supported codecs, which currently include the following codecs:</p>
 
@@ -227,7 +326,7 @@ There are two groups of tests, tests bundled with the rtpproxy distribution, tha
 <li>GSM (new in 2.0)</li>
 </ul>
 
-<h2 id="miscellaneous:39975d7131f83cd906347984452b2b92">Miscellaneous</h2>
+<h2 id="miscellaneous">Miscellaneous</h2>
 
 <ul>
 <li>make will build a <code>rtpproxy</code> binary and a <code>rtpproxy_debug</code> binary. The latter includes memdebug</li>
@@ -235,7 +334,7 @@ There are two groups of tests, tests bundled with the rtpproxy distribution, tha
 <li>udp_storm - a utility to stress-test rtpproxy with the RTP-like traffic.</li>
 </ul>
 
-<h2 id="sponsors-contributors:39975d7131f83cd906347984452b2b92">Sponsors &amp; Contributors</h2>
+<h2 id="sponsors-contributors">Sponsors &amp; Contributors</h2>
 
 <p>Thank you to our contributors!
 - @sobomax
@@ -246,32 +345,50 @@ There are two groups of tests, tests bundled with the rtpproxy distribution, tha
 - @oej
 - @taisph</p>
 
-   </div>
- </div>
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/post/reorganization/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">Reorganization &amp; new developments for RTPProxy</span>
+    </a>
+    
+    
+</div>
 
 
- <a href="https://twitter.com/share" class="twitter-share-button " data-size="small" data-count="none">Tweet</a>
- <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+  
 
- <ul class="pager">
-     
-      &nbsp;<li class="next"><a href="https://www.rtpproxy.org/post/reorganization/"> Reorganization &amp; new developments for RTPProxy</a></li>
-</ul>
+  
+    
 
 
+</article>
 
-    </ul>
-    </div>
-    <footer>
 
-        <p class="text-muted credit">&copy; . All rights reserved. </p>
-    </footer>
- 
-    <script src="/js/jquery-1.10.2.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/bootstrap.js"></script>
-    <script type="text/javascript" src="/js/hc.js"></script>
-</body>
+        </div>
+        
+    
 
+<script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script>
+
+
+    
+    
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+
+    
+
+
+
+    </body>
 </html>
-

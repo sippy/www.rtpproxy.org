@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<html lang="en-us">
+    
+    
+
+
+    <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -6,8 +12,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
   <link href="" rel="alternate" type="application/rss+xml" title="RTPProxy" />
-  <link href="https://www.rtpproxy.org/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://www.rtpproxy.org/css/hc.css" rel="stylesheet">
+  <link href="https://www.rtpproxy.org//css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://www.rtpproxy.org//css/hc.css" rel="stylesheet">
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
   
     
@@ -30,8 +36,11 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-          <li><a href="https://www.rtpproxy.org/post/">Posts</a></li>
-          <li><a href="https://www.rtpproxy.org/about/">About</a></li>
+          <li><a href="https://www.rtpproxy.org//post/">Posts</a></li>
+          <li><a href="https://www.rtpproxy.org//about/">About</a></li>
+          <li><a href="https://github.com/sippy/rtpproxy/releases">Releases</a></li>
+          <li><a href="/doc/master/user_manual.html">User Manual</a></li>
+          <li><a href="/doc/master/release_info.html">Release Information</a></li>
           </ul>
         </div>
       </div>
@@ -42,16 +51,20 @@
        
        <div id="sidebar-wrapper">
         <ul class="sidebar-nav">
-          <li class="sidebar-brand"><a href="https://www.rtpproxy.org/"><h1 class="brand">RTPProxy</h1></a><h3></h3></li>
+          <li class="sidebar-brand"><a href="https://www.rtpproxy.org//"><h1 class="brand">RTPProxy</h1></a><h3></h3></li>
           <hr />
-          <li><a href="https://www.rtpproxy.org/post/">Posts</a></li>
-          <li><a href="https://www.rtpproxy.org/about/">About</a></li>
+          <li><a href="https://www.rtpproxy.org//post/">Posts</a></li>
+          <li><a href="https://www.rtpproxy.org//about/">About</a></li>
+          <li><a href="https://github.com/sippy/rtpproxy/releases">Releases</a></li>
+          <li><a href="/doc/master/user_manual.html">User Manual</a></li>
+          <li><a href="/doc/master/release_info.html">Release Information</a></li>
           <hr />
           <div id="social-wrapper">
            <li> <a href="https://twitter.com/sippylabs"><i class="fa fa-twitter-square"></i> @twitter</a></li>
            
            
            <li> <a href="https://github.com/sippy/rtpproxy"><i class="fa fa-github-square"></i> github</a> </li>
+           <li> <a href="https://groups.google.com/forum/#!forum/rtpproxy"><i class="fa fa-envelope"></i> mailing list</a> </li>
          </div>
        </ul>
      </div>
@@ -61,11 +74,87 @@
      <div class="container">
 
 
-  <div id="article">
-   <div class="article-title">Backstory</div>
-   <p class="meta"><small>&nbsp;<i class="fa fa-calendar-o"></i> 2014-06-19</small></p> <hr/>
-   <div class="post">
-     <p>RTPProxy was originally developed by Maxim Sobolyev in 2003 for the purpose of enabling VoIP calls to/from SIP User Agents located behind NAT firewalls. Several case existed where direct end-to-end communication between NATed SIP User Agents was not possible. RTPProxy, in conjunction with a SIP proxy overcomes these impediments by acting as a go between for the RTP streams.</p>
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://www.rtpproxy.org/">RTPProxy</a>
+      </span>
+      
+      
+      <p class="site__description">
+        
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">RTPProxy</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		
+		</li>
+	</ul>
+</div>
+
+        <section class="social">
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</section>
+
+      </div>
+    </div>
+    
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>Backstory</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Jun 19, 2014
+    
+    
+    
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 1 min read
+</div>
+
+
+  </header>
+  
+  
+  <div class="post">
+    <p>RTPProxy was originally developed by Maxim Sobolyev in 2003 for the purpose of enabling VoIP calls to/from SIP User Agents located behind NAT firewalls. Several case existed where direct end-to-end communication between NATed SIP User Agents was not possible. RTPProxy, in conjunction with a SIP proxy overcomes these impediments by acting as a go between for the RTP streams.</p>
 
 <p>Subsequently, the RTPProxy became widely used by VoIP service providers that needed to optimize traffic flow in their networks.</p>
 
@@ -73,34 +162,47 @@
 
 <p>The RTPproxy supports some advanced features, such as remote control mode, allowing building scalable distributed SIP VoIP networks. The nathelper module included into the SIP Express Router (SER), OpenSIPS or Kamailio as well Sippy B2BUA allow using multiple RTPproxy instances running on remote machines for fault-tolerance and load-balancing purposes.</p>
 
-<p>RTPproxy is actively maintained by the <a href="https://www.sippysoft.com">Sippy Software, Inc.</a> and is available on <a href="https://github.com/sippy/rtpproxy">GitHub</a></p>
+<p>RTPproxy is actively maintained by the <a href="http://www.sippysoft.com">Sippy Software, Inc.</a> and is available on <a href="http://github.com/sippy/rtpproxy">GitHub</a></p>
 
-   </div>
- </div>
+  </div>
+  
 
-
- <a href="https://twitter.com/share" class="twitter-share-button " data-size="small" data-count="none">Tweet</a>
- <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
- <ul class="pager">
-      &nbsp;<li class="previous"><a href="https://www.rtpproxy.org/post/reorganization/"> Reorganization &amp; new developments for RTPProxy</a></li>
-      &nbsp;<li class="next"><a href="https://www.rtpproxy.org/post/beta_one_point_two/"> Beta 1.2</a></li>
-</ul>
+<div class="navigation navigation-single">
+    
+    
+</div>
 
 
+  
 
-    </ul>
-    </div>
-    <footer>
+  
+    
 
-        <p class="text-muted credit">&copy; . All rights reserved. </p>
-    </footer>
- 
-    <script src="/js/jquery-1.10.2.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/bootstrap.js"></script>
-    <script type="text/javascript" src="/js/hc.js"></script>
-</body>
 
+</article>
+
+
+        </div>
+        
+    
+
+<script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script>
+
+
+    
+    
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+
+    
+
+
+
+    </body>
 </html>
-
