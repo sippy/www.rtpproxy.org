@@ -7,7 +7,7 @@ echo -e "\033[0;32mDeploying updates to Github...\033[0m"
 OWN_REPO="https://${GITHUB_TOKEN}@github.com/sippy/www.rtpproxy.org.git"
 
 # Build the project.
-hugo -t herring-cove
+hugo -debug -t herring-cove
 
 # Add changes to git.
 #git add -A
