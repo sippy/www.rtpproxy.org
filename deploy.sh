@@ -7,7 +7,8 @@ echo -e "\033[0;32mDeploying updates to Github...\033[0m"
 OWN_REPO="https://${GITHUB_TOKEN}@github.com/sippy/www.rtpproxy.org.git"
 
 # Build the project.
-echo hugo -debug -t herring-cove
+git clone https://github.com/htr3n/hyde-hyde.git themes/hyde-hyde
+hugo -debug -t hyde-hyde
 
 # Add changes to git.
 #git add -A
