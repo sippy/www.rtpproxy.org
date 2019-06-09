@@ -1,0 +1,13 @@
+baseurl: 'https://www.rtpproxy.org'
+languageCode: en-us
+title: RTPProxy
+params:
+  Subtitle: A high-performance software proxy that brings control to your VoIP network
+  twitter: 'https://twitter.com/sippylabs'
+  github: 'https://github.com/sippy/rtpproxy'
+  mailinglist: 'https://groups.google.com/forum/#!forum/rtpproxy'
+  links:
+    User Manual: "/doc/master/user_manual.html"
+    Latest Release: "/doc/master/release_info.html"
+taxonomies:
+  vendor: vendors
