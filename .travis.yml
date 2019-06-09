@@ -8,5 +8,8 @@ jobs:
   include:
     - stage: Publish Web Site
       name: Publish Web Site to the www.rtpproxy.org
+      install:
+        - sudo apt-get --yes install snapd
+        - sudo snap install hugo
       script:
         - sh -x deploy.sh
