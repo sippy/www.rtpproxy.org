@@ -7,16 +7,16 @@ echo -e "\033[0;32mDeploying updates to Github...\033[0m"
 OWN_REPO="https://${GITHUB_TOKEN}@github.com/sippy/www.rtpproxy.org.git"
 
 # Build the project.
-git clone https://github.com/htr3n/hyde-hyde.git themes/hyde-hyde
-##hugo -debug -t hyde-hyde
+##git clone https://github.com/htr3n/hyde-hyde.git themes/hyde-hyde
+git rm -r `find public/ \! -name doc -depth 1`
+hugo -debug -t herring-cove
 
 # Add changes to git.
-#git add -A
+git add -A public
 
 NCHG=`git diff ${TRAVIS_COMMIT} public | wc -l`
 if [ ${NCHG} -gt 0 ]
 then
-  false
   # Commit changes.
   msg="rebuilding site `date`"
   if [ $# -eq 1 ]
@@ -27,5 +27,7 @@ then
 
   # Push source and build repos.
   git push origin_rw master
+else
+  git reset --hard
 fi
 git subtree push --prefix=public "${OWN_REPO}" gh-pages
