@@ -8,7 +8,7 @@ OWN_REPO="https://${GITHUB_TOKEN}@github.com/sippy/www.rtpproxy.org.git"
 
 # Build the project.
 ##git clone https://github.com/htr3n/hyde-hyde.git themes/hyde-hyde
-git rm -r `find public/ \! -name doc -depth 1`
+git rm -r `find public/ -depth 1 \! -name doc`
 hugo -debug -t herring-cove
 
 # Add changes to git.
