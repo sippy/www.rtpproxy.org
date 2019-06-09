@@ -2,12 +2,19 @@
 
 set -e
 
-echo -e "\033[0;32mDeploying updates to Github...\033[0m"
+if [ "${TRAVIS_BRANCH}" != "master" ]
+then
+  echo "Oops, this is not expected to run on anything but master" 1>&2
+  exit 1
+fi
+
+echo "\033[0;32mDeploying updates to Github...\033[0m"
 
 OWN_REPO="https://${GITHUB_TOKEN}@github.com/sippy/www.rtpproxy.org.git"
 
+git remote add origin_rw "${OWN_REPO}"
+git checkout -b ${TRAVIS_BRANCH} origin_rw/${TRAVIS_BRANCH}
 # Build the project.
-##git clone https://github.com/htr3n/hyde-hyde.git themes/hyde-hyde
 git rm -r `find public/ -maxdepth 1 \! -name doc`
 hugo --debug -t herring-cove
 
@@ -23,10 +30,9 @@ then
     then msg="$1"
   fi
   git commit -m "$msg" public
-  git remote add origin_rw "${OWN_REPO}"
 
   # Push source and build repos.
-  git push origin_rw master
+  git push origin_rw ${TRAVIS_BRANCH}
 else
   git reset --hard
 fi
