@@ -1,6 +1,6 @@
     <footer>
 
-        <p class="text-muted credit">{{ with .Site.Params.Copyright }}{{.}}{{ else }}&copy; {{.Now.Format "2006"}}. All rights reserved. {{end}}</p>
+        <p class="text-muted credit">{{ with .Site.Params.Copyright }}{{.}}{{ else }}&copy; {{now.Format "2006"}}. All rights reserved. {{end}}</p>
     </footer>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -13,10 +13,10 @@
 
     </script>
  <!-- Bootstrap core JavaScript-->
-    <script src="{{ .Site.BaseUrl }}/js/jquery-1.10.2.min.js"></script>
-    <script src="{{ .Site.BaseUrl }}/js/bootstrap.min.js"></script>
-    <script src="{{ .Site.BaseUrl }}/js/bootstrap.js"></script>
-    <script type="text/javascript" src="{{ .Site.BaseUrl }}/js/hc.js"></script>
+    <script src="{{ .Site.BaseURL }}/js/jquery-1.10.2.min.js"></script>
+    <script src="{{ .Site.BaseURL }}/js/bootstrap.min.js"></script>
+    <script src="{{ .Site.BaseURL }}/js/bootstrap.js"></script>
+    <script type="text/javascript" src="{{ .Site.BaseURL }}/js/hc.js"></script>
 </body>
 
 </html>
