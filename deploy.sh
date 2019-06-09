@@ -7,7 +7,7 @@ echo -e "\033[0;32mDeploying updates to Github...\033[0m"
 OWN_REPO="https://${GITHUB_TOKEN}@github.com/sippy/www.rtpproxy.org.git"
 
 # Build the project.
-hugo -debug -t herring-cove
+echo hugo -debug -t herring-cove
 
 # Add changes to git.
 #git add -A
@@ -15,6 +15,7 @@ hugo -debug -t herring-cove
 NCHG=`git diff public | wc -l`
 if [ ${NCHG} -gt 0 ]
 then
+  false
   # Commit changes.
   msg="rebuilding site `date`"
   if [ $# -eq 1 ]
