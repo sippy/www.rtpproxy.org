@@ -8,12 +8,12 @@ OWN_REPO="https://${GITHUB_TOKEN}@github.com/sippy/www.rtpproxy.org.git"
 
 # Build the project.
 git clone https://github.com/htr3n/hyde-hyde.git themes/hyde-hyde
-hugo -debug -t hyde-hyde
+##hugo -debug -t hyde-hyde
 
 # Add changes to git.
 #git add -A
 
-NCHG=`git diff public | wc -l`
+NCHG=`git diff ${TRAVIS_COMMIT} public | wc -l`
 if [ ${NCHG} -gt 0 ]
 then
   false
