@@ -14,16 +14,17 @@ OWN_REPO="https://${GITHUB_TOKEN}@github.com/sippy/www.rtpproxy.org.git"
 
 git remote add origin_rw "${OWN_REPO}"
 #git fetch origin_rw
-git checkout ${TRAVIS_BRANCH}
+git clone -b gh-pages --depth 1 "${OWN_REPO}" public
+PUB_GIT="git -C public"
 #-b ${TMP_BRANCH} origin_rw/${TRAVIS_BRANCH}
 # Build the project.
-git rm -r `find public/ -maxdepth 1 \! -name doc`
+${PUB_GIT} rm -r .
 hugo --debug -t herring-cove
 
 # Add changes to git.
-git add -A public
+${PUB_GIT} add -A .
 
-NCHG=`git diff ${TRAVIS_COMMIT} public | wc -l`
+NCHG=`${PUB_GIT} diff origin/gh-pages | wc -l`
 if [ ${NCHG} -gt 0 ]
 then
   # Commit changes.
@@ -31,12 +32,10 @@ then
   if [ $# -eq 1 ]
     then msg="$1"
   fi
-  git commit -m "$msg" public
+  ${PUB_GIT} commit -m "$msg" .
 
   # Push source and build repos.
-  git push origin_rw ${TRAVIS_BRANCH}
-  git pull origin
-  git subtree push --prefix=public "${OWN_REPO}" gh-pages
+  ${PUB_GIT} push
 else
   echo "\033[0;32mNothing to do, everything is up to date already.\033[0m"
 fi
