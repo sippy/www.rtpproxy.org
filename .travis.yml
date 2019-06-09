@@ -9,4 +9,4 @@ jobs:
     - stage: Publish Web Site
       name: Publish Web Site to the www.rtpproxy.org
       script:
-        - git subtree push --prefix=public https://${GITHUB_TOKEN}@github.com/sippy/www.rtpproxy.org.git gh-pages
+        - sh -x deploy.sh
