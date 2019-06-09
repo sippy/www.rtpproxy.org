@@ -11,10 +11,12 @@ fi
 echo "\033[0;32mDeploying updates to Github...\033[0m"
 
 OWN_REPO="https://${GITHUB_TOKEN}@github.com/sippy/www.rtpproxy.org.git"
+TMP_BRANCH="${TRAVIS_BRANCH}_foo"
 
 git remote add origin_rw "${OWN_REPO}"
-git fetch origin_rw
-git checkout -b ${TRAVIS_BRANCH} origin_rw/${TRAVIS_BRANCH}
+#git fetch origin_rw
+git checkout ${TRAVIS_BRANCH}
+#-b ${TMP_BRANCH} origin_rw/${TRAVIS_BRANCH}
 # Build the project.
 git rm -r `find public/ -maxdepth 1 \! -name doc`
 hugo --debug -t herring-cove
