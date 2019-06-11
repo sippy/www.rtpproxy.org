@@ -9,8 +9,8 @@ params:
   links:
     Posts: '/post/'
     About: '/about/'
-    Releases: 'https://github.com/sippy/rtpproxy/releases'
+    Release Information (stable): 'https://github.com/sippy/rtpproxy/releases/tag/v2.1.0'
     User Manual: '/doc/master/user_manual.html'
-    Latest Release: '/doc/master/release_info.html'
+    Release Information (unstable): '/doc/master/release_info.html'
 taxonomies:
   vendor: vendors
