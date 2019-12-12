@@ -5,7 +5,7 @@
   <title>rtpproxy v2.0.0 release</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.60.0" />
+  <meta name="generator" content="Hugo 0.61.0" />
   <link href="" rel="alternate" type="application/rss+xml" title="RTPProxy" />
   <link href="https://www.rtpproxy.org/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://www.rtpproxy.org/css/hc.css" rel="stylesheet">
@@ -130,7 +130,7 @@ Jitter (measured using wire shark) characteristics have improved significantly.<
 <li><code>ncmds_errs</code> Total number of control commands ended up with an error</li>
 <li><code>ncmds_repld</code> Total number of control commands that had a reply generated</li>
 </ul>
-<h2 id="repacketization-support-to-resize-rtp-packet-sizes">Re-packetization support to resize rtp packet sizes.</h2>
+<h2 id="re-packetization-support-to-resize-rtp-packet-sizes">Re-packetization support to resize rtp packet sizes.</h2>
 <p>Re-packetization allows providers to resize the rtp frame size between a caller and a callee. This is useful for saving bandwidth between pops, or for interoperability with vendors who require a non-standard ptime. For example, the standard ptime for g.729 is 20 msec, but a vendor may require that ptime be 60msec. Re-packetization allows this resizing to happen on the fly. See also the monitoring counters <code>npkts_resizer_in</code>, <code>npkts_resizer_out</code> and <code>npkts_resizer_discard</code> that relates to this feature.</p>
 <h2 id="sighup-for-graceful-shutdown">SIGHUP for graceful shutdown</h2>
 <p>The SIGHUP signal will initiate a slow shut down. In this mode any new rtpp requests for a new session will be rejected with a E99 code. The rtpproxy will exit only after all active sessions have ended. This feature simplifies planned maintenance.</p>
