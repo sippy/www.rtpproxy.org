@@ -8,11 +8,6 @@
   </url>
   
   <url>
-    <loc>https://www.rtpproxy.org/</loc>
-    <lastmod>2015-03-09T02:00:51+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.rtpproxy.org/post/v2release/</loc>
     <lastmod>2015-03-09T02:00:51+00:00</lastmod>
   </url>
@@ -24,6 +19,11 @@
   
   <url>
     <loc>https://www.rtpproxy.org/about/</loc>
+    <lastmod>2014-06-19T14:50:26+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.rtpproxy.org/</loc>
     <lastmod>2014-06-19T14:50:26+00:00</lastmod>
   </url>
   

@@ -5,7 +5,7 @@
   <title>rtpproxy v2.0.0 release</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.62.1" />
+  <meta name="generator" content="Hugo 0.65.3" />
   <link href="" rel="alternate" type="application/rss+xml" title="RTPProxy" />
   <link href="https://www.rtpproxy.org/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://www.rtpproxy.org/css/hc.css" rel="stylesheet">
@@ -89,8 +89,8 @@
      <h1 id="rtpproxy-v200-release-notes">rtpproxy v2.0.0 Release Notes</h1>
 <p>This is the first official release since version 1.2 in March 2009. v2.0 release brings 5-years worth of extensive improvements in performance, quality, and test coverage. This release has been heavily tested in production environments, and has had significant contributions from the open-source community.</p>
 <p>This is the first release since we moved the project to github, and travis-ci for automated test coverage.</p>
-<p>rtpproxy is a <a href="http://www.sippysoft.com/">Sippy Software, Inc</a> open source project. The rtpproxy is part of Sippy's commercial soft switch product, and Sippy's clustered media gateway project. rtpproxy is also widely used in other VoIP service provider networks.
-rptproxy supports <a href="http://www.opensips.org/">Opensips</a>, <a href="http://www.kamailio.org">Kamailio</a>, and Sippy's own open source <a href="https://github.com/sippy/b2bua">b2bua</a></p>
+<p>rtpproxy is a <a href="http://www.sippysoft.com/">Sippy Software, Inc</a> open source project. The rtpproxy is part of Sippy&rsquo;s commercial soft switch product, and Sippy&rsquo;s clustered media gateway project. rtpproxy is also widely used in other VoIP service provider networks.
+rptproxy supports <a href="http://www.opensips.org/">Opensips</a>, <a href="http://www.kamailio.org">Kamailio</a>, and Sippy&rsquo;s own open source <a href="https://github.com/sippy/b2bua">b2bua</a></p>
 <h2 id="notable-changes">Notable Changes</h2>
 <h3 id="performance--quality">Performance / Quality</h3>
 <p>Reduction in CPU usage by 40% to 60% has been observed on production deployments.
@@ -161,14 +161,14 @@ Jitter (measured using wire shark) characteristics have improved significantly.<
 </ul>
 <h2 id="rtpp-command-channel-improvements">RTPP Command Channel Improvements</h2>
 <ul>
-<li>Improved stream-based communication support to accept more than one command in the batch, don't expect sender to pause and wait for the reply after issuing a command.</li>
+<li>Improved stream-based communication support to accept more than one command in the batch, don&rsquo;t expect sender to pause and wait for the reply after issuing a command.</li>
 <li>the rtpprroxy improved performance by using a hash table for look ups</li>
 <li>new <code>G</code> command to retrieve stat counters;</li>
 <li>new <code>s</code> modifier for the <code>R</code> command to record both streams into a single file (requires PCAP recording mode to be enabled via <code>-P</code> command-line option).</li>
 <li>simple commands are now executed without holding global lock, which should increase total throughput in terms of maximum numbers of commands that can be processed per unit of time and reduce interference between command and rtp processing threads. Those commands are <code>V', </code>VF&rsquo; and `G&rsquo;.</li>
 </ul>
 <h2 id="new-types-of-control-channels">New Types of Control Channels</h2>
-<p>In 2.0, we've added the following 3 new control channels <code>cunix</code>, <code>stdio</code> and <code>systemd</code>, in addition to <code>unix</code> and <code>udp</code> as supported since v1.2:</p>
+<p>In 2.0, we&rsquo;ve added the following 3 new control channels <code>cunix</code>, <code>stdio</code> and <code>systemd</code>, in addition to <code>unix</code> and <code>udp</code> as supported since v1.2:</p>
 <ul>
 <li><code>cunix</code>, similar to <code>unix</code> except the server (e.g. rtpproxy) is not closing session after processing a command, so more commands can be posted and processed in sequence, thereby reducing overhead and complexity of the client code. Intended to become the default channel for local IPC;</li>
 <li><code>stdio</code>, commands are read from stdin, replies are posted to stdout. Primarily designed to be used for CI. Example: <code>rtpproxy -s stdio: -f &lt; some.commands</code>;</li>
@@ -178,11 +178,11 @@ Jitter (measured using wire shark) characteristics have improved significantly.<
 <h2 id="new-and-updated-command-line-flags">New and updated command line flags</h2>
 <p><code>-s</code> now accepts <code>stdio</code>, <code>cunix:</code> and <code>systemd:</code> as an argument. rtpproxy can accept -s multiple times, which will cause it to listen on multiple control sockets. More than one control channels can be used independently.
 <code>-V</code> Show command protocol version.
-<code>-L</code> Adjust the number of simultaneous open connections. Note that each RTP media stream requires four open connections. A SIP call can open more than one RTP media stream depending on the client's setup.
+<code>-L</code> Adjust the number of simultaneous open connections. Note that each RTP media stream requires four open connections. A SIP call can open more than one RTP media stream depending on the client&rsquo;s setup.
 <code>-A address</code> Sets the advertised IP address.  <code>-A addr1/addr2</code> can also be used for bridging mode
 <code>-W setup_ttl</code> Implements &ldquo;Call Establishment Phase Timeout&rdquo; as originally implemented in <a href="https://github.com/OpenSIPS/opensips/blob/master/modules/rtpproxy/patches/rtpproxy_timeout_notification.fix_patch">this</a> opensips patch
 <code>-w</code> Set access mode for the controlling UNIX-socket (if used). Only applies if rtpproxy runs under a different GID using <code>-u</code> option.
-<code>-b</code> Don't randomize allocated ports, primarily aimed for debugging to provide more predictable behaviour</p>
+<code>-b</code> Don&rsquo;t randomize allocated ports, primarily aimed for debugging to provide more predictable behaviour</p>
 <h2 id="new-continuous-integration-ci--testing-suite">New Continuous Integration (CI) / Testing suite</h2>
 <p>Automated tests are now run using <a href="http://www.travis-ci.com">travis-ci</a>
 There are two groups of tests, tests bundled with the rtpproxy distribution, that can be run using the <code>make check</code> target, and a suit of integration tests (opensips, kamailio, sippy b2bua).</p>
