@@ -1,209 +1,162 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta name="generator" content=
-  "HTML Tidy for Linux (vers 25 March 2009), see www.w3.org" />
+  "HTML Tidy for HTML5 for Linux version 5.2.0" />
   <meta http-equiv="Content-Type" content=
   "text/html; charset=utf-8" />
-
   <title>RTPProxy 2.2 Manual</title>
   <meta name="generator" content=
   "DocBook XSL Stylesheets V1.79.1" />
 </head>
-
 <body>
   <div class="book">
     <div class="titlepage">
       <div>
         <div>
-          <h1 class="title"><a id="idm45305315891472" name=
-          "idm45305315891472"></a>RTPProxy 2.2 Manual</h1>
+          <h1 class="title"><a id="idm1" name="idm1"></a>RTPProxy
+          2.2 Manual</h1>
         </div>
-
         <div>
           <div class="author">
             <h3 class="author"><span class=
             "firstname">Maksym</span> <span class=
             "surname">Sobolyev</span></h3>
-
             <div class="affiliation">
               <span class="orgname">Sippy Labs<br /></span>
             </div><code class="email">&lt;<a class="email" href=
             "mailto:sobomax@gmail.com">sobomax@gmail.com</a>&gt;</code>
           </div>
         </div>
-
         <div>
           <div class="author">
             <h3 class="author"><span class="surname">Donat
             Zenichev</span></h3>
           </div>
         </div>
-
         <div>
           <p class="copyright">Copyright © 2006-20019 Maksym
           Sobolyev <a class="ulink" href="mailto:sobomax@gmail.com"
           target="_top">&lt;sobomax@gmail.com&gt;</a></p>
         </div>
-
         <div>
           <p class="copyright">Copyright © 2019 Donat Zenichev</p>
         </div>
-
         <div>
           <p class="copyright">Copyright © 2006 Jan Janak <a class=
           "ulink" href="mailto:janakj@users.berlios.de" target=
           "_top">&lt;janakj@users.berlios.de&gt;</a></p>
         </div>
-
         <div>
           <p class="pubdate">30 May 2019</p>
         </div>
       </div>
       <hr />
     </div>
-
     <div class="toc">
       <p><strong>Table of Contents</strong></p>
-
       <dl class="toc">
-        <dt><span class="chapter"><a href="#idm45305315676352">1.
+        <dt><span class="chapter"><a href="#idm24">1.
         Introduction</a></span></dt>
-
         <dd>
           <dl>
+            <dt><span class="section"><a href="#idm26">What is
+            RTPProxy</a></span></dt>
             <dt><span class="section"><a href=
-            "#idm45305315675680">What is RTPProxy</a></span></dt>
-
+            "#idm32">Backstory</a></span></dt>
             <dt><span class="section"><a href=
-            "#idm45305315673264">Backstory</a></span></dt>
-
-            <dt><span class="section"><a href=
-            "#idm45305315666976">Capabilities</a></span></dt>
-
-            <dt><span class="section"><a href=
-            "#idm45305315663104">Principles of
-            Operation</a></span></dt>
-
-            <dt><span class="section"><a href=
-            "#idm45305315655904">Content of the
-            Package</a></span></dt>
+            "#idm43">Capabilities</a></span></dt>
+            <dt><span class="section"><a href="#idm50">Principles
+            of Operation</a></span></dt>
+            <dt><span class="section"><a href="#idm61">Content of
+            the Package</a></span></dt>
           </dl>
         </dd>
-
-        <dt><span class="chapter"><a href="#idm45305315645888">2.
-        Installation of RTPProxy</a></span></dt>
-
+        <dt><span class="chapter"><a href="#idm83">2. Installation
+        of RTPProxy</a></span></dt>
         <dd>
           <dl>
-            <dt><span class="section"><a href=
-            "#idm45305315645200">Pre-built RTPProxy</a></span></dt>
-
+            <dt><span class="section"><a href="#idm85">Pre-built
+            RTPProxy</a></span></dt>
             <dt><span class="section"><a href=
             "#MAKESRC">Compilation from sources</a></span></dt>
           </dl>
         </dd>
-
-        <dt><span class="chapter"><a href="#idm45305315810864">3.
-        Getting Started</a></span></dt>
-
+        <dt><span class="chapter"><a href="#idm221">3. Getting
+        Started</a></span></dt>
         <dt><span class="chapter"><a href="#CONFIGURATION">4.
         Configuration</a></span></dt>
-
         <dd>
           <dl>
+            <dt><span class="section"><a href="#idm337">Command
+            Line Parameters</a></span></dt>
             <dt><span class="section"><a href=
-            "#idm45305310269792">Command Line
-            Parameters</a></span></dt>
-
+            "#idm640">Configuration File</a></span></dt>
+            <dt><span class="section"><a href="#idm643">Startup
+            Script</a></span></dt>
             <dt><span class="section"><a href=
-            "#idm45305310265296">Configuration File</a></span></dt>
-
+            "#idm652">Logging</a></span></dt>
             <dt><span class="section"><a href=
-            "#idm45305310264144">Startup Script</a></span></dt>
-
-            <dt><span class="section"><a href=
-            "#idm45305310258496">Logging</a></span></dt>
-
-            <dt><span class="section"><a href=
-            "#idm45305310238784">Configuration of control socket
-            (using systemd)</a></span></dt>
+            "#idm691">Configuration of control socket (using
+            systemd)</a></span></dt>
           </dl>
         </dd>
       </dl>
     </div>
-
     <div class="chapter">
       <div class="titlepage">
         <div>
           <div>
-            <h1 class="title"><a id="idm45305315676352" name=
-            "idm45305315676352"></a>Chapter&nbsp;1.&nbsp;Introduction</h1>
+            <h1 class="title"><a id="idm24" name=
+            "idm24"></a>Chapter&nbsp;1.&nbsp;Introduction</h1>
           </div>
         </div>
       </div>
-
       <div class="toc">
         <p><strong>Table of Contents</strong></p>
-
         <dl class="toc">
+          <dt><span class="section"><a href="#idm26">What is
+          RTPProxy</a></span></dt>
           <dt><span class="section"><a href=
-          "#idm45305315675680">What is RTPProxy</a></span></dt>
-
+          "#idm32">Backstory</a></span></dt>
           <dt><span class="section"><a href=
-          "#idm45305315673264">Backstory</a></span></dt>
-
-          <dt><span class="section"><a href=
-          "#idm45305315666976">Capabilities</a></span></dt>
-
-          <dt><span class="section"><a href=
-          "#idm45305315663104">Principles of
+          "#idm43">Capabilities</a></span></dt>
+          <dt><span class="section"><a href="#idm50">Principles of
           Operation</a></span></dt>
-
-          <dt><span class="section"><a href=
-          "#idm45305315655904">Content of the
+          <dt><span class="section"><a href="#idm61">Content of the
           Package</a></span></dt>
         </dl>
       </div>
-
       <div class="section">
         <div class="titlepage">
           <div>
             <div>
-              <h2 class="title" style="clear: both"><a id=
-              "idm45305315675680" name="idm45305315675680"></a>What
-              is RTPProxy</h2>
+              <h2 class="title" style="clear: both"><a id="idm26"
+              name="idm26"></a>What is RTPProxy</h2>
             </div>
           </div>
         </div>
-
         <p>The RTPProxy is a high-performance software proxy for
         RTP streams that can work together with Sippy B2BUA,
         Kamailio, OpenSIPs and SER (SIP Express Router).</p>
-
         <div class="note" style=
         "margin-left: 0.5in; margin-right: 0.5in;">
           <h3 class="title">Note</h3>
-
           <p>For the current moment the newest stable version is -
           <span class="emphasis"><em>RTPProxy 2.2</em></span></p>
         </div>
       </div>
-
       <div class="section">
         <div class="titlepage">
           <div>
             <div>
-              <h2 class="title" style="clear: both"><a id=
-              "idm45305315673264" name=
-              "idm45305315673264"></a>Backstory</h2>
+              <h2 class="title" style="clear: both"><a id="idm32"
+              name="idm32"></a>Backstory</h2>
             </div>
           </div>
         </div>
-
         <p>RTPProxy was originally developed by <span class=
         "authorinitials">Maxim Sobolyev</span> in 2003 with a
         purpose of VoIP calls facilitation to/from SIP User Agents
@@ -212,17 +165,14 @@
         users behind the NAT was not possible. RTPProxy, in common
         with a SIP proxy, overcomes those obstacles by acting as an
         intermediary point for the RTP streams.</p>
-
         <p>Afterwards, the RTPProxy has become widely used by VoIP
         service providers that are in a demand for optimizing a
         traffic flow in their networks.</p>
-
         <p>Later on it became apparent that there are many other
         possible uses of this software. It can be used in common
         with a signaling element (SIP Proxy or SIP B2BUA) to build
         complex VoIP networks, to optimize a traffic flow, to
         collect voice quality information and so on.</p>
-
         <p>RTPProxy is now actively developed and maintained by the
         <a class="ulink" href="https://sippysoft.com" target=
         "_top"><span class="bold"><strong>Sippy Software,
@@ -230,35 +180,29 @@
         Sippy Labs - <a class="ulink" href=
         "https://github.com/sippy/rtpproxy" target=
         "_top">https://github.com/sippy/rtpproxy</a>.</p>
-
         <p>Over the years, many other individuals and organizations
         has contributed features and fixes into the code base,
         including Vonage, SipPulse, Voicenter, RateTel, either
         directly or by sponsoring respective development efforts
         (often both).</p>
       </div>
-
       <div class="section">
         <div class="titlepage">
           <div>
             <div>
-              <h2 class="title" style="clear: both"><a id=
-              "idm45305315666976" name=
-              "idm45305315666976"></a>Capabilities</h2>
+              <h2 class="title" style="clear: both"><a id="idm43"
+              name="idm43"></a>Capabilities</h2>
             </div>
           </div>
         </div>
-
         <p>Originally it was designed for handling of NAT
         scenarios. It can also act as a generic media relay, as
         well as a gateway for RTP sessions between IPv4 and IPv6
         networks.</p>
-
         <p>It can perform number of additional functions on RTP
         streams, including call recording, playing pre-recorded
         announcements, real-time stream copying and RTP payload
         re-framing.</p>
-
         <p>The RTPProxy supports some advanced features, such as
         remote control mode, allowing a building of scalable
         distributed SIP VoIP networks. The nathelper module
@@ -267,27 +211,22 @@
         allow using multiple RTPProxy instances running on remote
         machines for fault-tolerance and load-balancing
         purposes.</p>
-
         <p>An advanced high-capacity clustering and a load
         balancing is available through the use of RTP Cluster
         middleware.</p>
-
         <p>The software also supports MOH/pre-recorded prompts
         injection, video relaying and RTP session recording to a
         local file or remote UDP listener(s).</p>
       </div>
-
       <div class="section">
         <div class="titlepage">
           <div>
             <div>
-              <h2 class="title" style="clear: both"><a id=
-              "idm45305315663104" name=
-              "idm45305315663104"></a>Principles of Operation</h2>
+              <h2 class="title" style="clear: both"><a id="idm50"
+              name="idm50"></a>Principles of Operation</h2>
             </div>
           </div>
         </div>
-
         <div class="orderedlist">
           <ol class="orderedlist" type="1">
             <li class="listitem">
@@ -306,7 +245,6 @@
               point to the media proxy and then it forwards a
               request as usually.</p>
             </li>
-
             <li class="listitem">
               <p>When it comes to receiving of non-negative SIP
               reply with the SDP body, then SIP proxy again
@@ -322,7 +260,6 @@
               that SIP reply, in order to point to the rtpproxy and
               then forwards this reply as usually.</p>
             </li>
-
             <li class="listitem">
               <p>After the session has been created, the rtpproxy
               listens on the port it has allocated for that
@@ -336,11 +273,9 @@
             </li>
           </ol>
         </div>
-
         <div class="important" style=
         "margin-left: 0.5in; margin-right: 0.5in;">
           <h3 class="title">Important</h3>
-
           <p>A good advantage of the RTPProxy is, that it tracks
           idle time for each existing session (the period of time
           within which no packets were relayed) and automatically
@@ -349,21 +284,17 @@
           default).</p>
         </div>
       </div>
-
       <div class="section">
         <div class="titlepage">
           <div>
             <div>
-              <h2 class="title" style="clear: both"><a id=
-              "idm45305315655904" name=
-              "idm45305315655904"></a>Content of the Package</h2>
+              <h2 class="title" style="clear: both"><a id="idm61"
+              name="idm61"></a>Content of the Package</h2>
             </div>
           </div>
         </div>
-
         <p>The RTPProxy package by default provides the following
         components:</p>
-
         <div class="itemizedlist">
           <ul class="itemizedlist" style="list-style-type: disc;">
             <li class="listitem">
@@ -371,34 +302,29 @@
               "bold"><strong>rtpproxy</strong></span> - main RTP
               proxy server binary (production build)</p>
             </li>
-
             <li class="listitem">
               <p><span class=
               "bold"><strong>rtpproxy_debug</strong></span> - Main
               RTP proxy server binary (debug and profiling
               build)</p>
             </li>
-
             <li class="listitem">
               <p><span class="bold"><strong>makeann</strong></span>
               - Utility to pre-encode prompts and announcements
               (production build)</p>
             </li>
-
             <li class="listitem">
               <p><span class=
               "bold"><strong>makeann_debug</strong></span> -
               Utility to pre-encode prompts and announcements
               (debug and profiling build)</p>
             </li>
-
             <li class="listitem">
               <p><span class=
               "bold"><strong>extractaudio</strong></span> - Utility
               to convert recorded sessions into plain audio files
               (production build)</p>
             </li>
-
             <li class="listitem">
               <p><span class=
               "bold"><strong>extractaudio_debug</strong></span> -
@@ -409,69 +335,56 @@
         </div>
       </div>
     </div>
-
     <div class="chapter">
       <div class="titlepage">
         <div>
           <div>
-            <h1 class="title"><a id="idm45305315645888" name=
-            "idm45305315645888"></a>Chapter&nbsp;2.&nbsp;Installation
-            of RTPProxy</h1>
+            <h1 class="title"><a id="idm83" name=
+            "idm83"></a>Chapter&nbsp;2.&nbsp;Installation of
+            RTPProxy</h1>
           </div>
         </div>
       </div>
-
       <div class="toc">
         <p><strong>Table of Contents</strong></p>
-
         <dl class="toc">
-          <dt><span class="section"><a href=
-          "#idm45305315645200">Pre-built RTPProxy</a></span></dt>
-
+          <dt><span class="section"><a href="#idm85">Pre-built
+          RTPProxy</a></span></dt>
           <dt><span class="section"><a href="#MAKESRC">Compilation
           from sources</a></span></dt>
         </dl>
       </div>
-
       <div class="section">
         <div class="titlepage">
           <div>
             <div>
-              <h2 class="title" style="clear: both"><a id=
-              "idm45305315645200" name=
-              "idm45305315645200"></a>Pre-built RTPProxy</h2>
+              <h2 class="title" style="clear: both"><a id="idm85"
+              name="idm85"></a>Pre-built RTPProxy</h2>
             </div>
           </div>
         </div>
-
         <p>In case you want to use per-built RTPProxy package, then
         use your system's package manager to set this up:</p>
-
         <p><span class="application">dpkg</span> - for <span class=
         "productname">Debian</span>™ based systems(including
         <span class="productname">Ubuntu</span>™), when installing
         .deb packages.</p>
-
         <p><span class="application">apt-get</span> / <span class=
         "package">aptitude</span> - for <span class=
         "productname">Debian</span>™ based systems (including
         <span class="productname">Ubuntu</span>™), when installing
         from a repository.</p>
-
         <p><span class="application">rpm</span> - for <span class=
         "productname">CentOS</span>™ when installing .rpm
         packages.</p>
-
         <p><span class="application">pkg</span> - for <span class=
         "productname">FreeBSD</span>™ when installing from a
         repository or packages.</p>
-
         <p>In case you want to compile RTPProxy from sources, use
         the following section <a class="link" href="#MAKESRC"
         title="Compilation from sources">"Compilation from
         sources"</a>.</p>
       </div>
-
       <div class="section">
         <div class="titlepage">
           <div>
@@ -481,37 +394,30 @@
             </div>
           </div>
         </div>
-
         <div class="simplesect">
           <div class="titlepage">
             <div>
               <div>
-                <h3 class="title"><a id="idm45305311826912" name=
-                "idm45305311826912"></a>Installing
-                Dependencies</h3>
+                <h3 class="title"><a id="idm107" name=
+                "idm107"></a>Installing Dependencies</h3>
               </div>
             </div>
           </div>
-
           <p>The RTPProxy package has several optional dependencies
           that are detected at the configure stage and an
           appropriate functionality is enabled.</p>
-
           <p>Those dependencies and their impact on the RTPProxy
           build are listed below:</p>
-
           <div class="itemizedlist">
             <ul class="itemizedlist" style=
             "list-style-type: disc;">
               <li class="listitem">
                 <p><span class="package">bcg729</span> - Enables
                 G.729 support in several tools.</p>
-
                 <p><a class="ulink" href=
                 "https://linphone.org/releases/sources/bcg729/"
                 target=
                 "_top">https://linphone.org/releases/sources/bcg729/</a></p>
-
                 <p><span class="bold"><strong>Affected
                 binaries:</strong></span> <span class=
                 "emphasis"><em><span class=
@@ -519,31 +425,25 @@
                 <span class=
                 "command"><strong>makeann</strong></span></em></span></p>
               </li>
-
               <li class="listitem">
                 <p><span class="package">libsndfile</span> - Allows
                 decoded audio to be saved in a number of popular
                 audio formats instead of just RAW signed-linear
                 16bit.</p>
-
                 <p><a class="ulink" href=
                 "http://www.mega-nerd.com/libsndfile/files/"
                 target="_top">http://www.mega-nerd.com/libsndfile/files/</a></p>
-
                 <p><span class="bold"><strong>Affected
                 binaries:</strong></span> <span class=
                 "emphasis"><em><span class=
                 "command"><strong>extractaudio</strong></span></em></span></p>
               </li>
-
               <li class="listitem">
                 <p><span class="package">libg722</span> - Enables
                 G.722 support in several tools.</p>
-
                 <p><a class="ulink" href=
                 "https://github.com/sippy/libg722" target=
                 "_top">https://github.com/sippy/libg722</a></p>
-
                 <p><span class="bold"><strong>Affected
                 binaries:</strong></span> <span class=
                 "emphasis"><em><span class=
@@ -551,39 +451,30 @@
                 <span class=
                 "command"><strong>makeann</strong></span></em></span></p>
               </li>
-
               <li class="listitem">
                 <p><span class="package">libsrtp</span> - Enables
                 decoding recordings of SRTP streams.</p>
-
                 <p><a class="ulink" href=
                 "https://github.com/cisco/libsrtp.git" target=
                 "_top">https://github.com/cisco/libsrtp.git</a></p>
-
                 <p><span class="bold"><strong>Affected
                 binaries:</strong></span> <span class=
                 "emphasis"><em><span class=
                 "command"><strong>extractaudio</strong></span></em></span></p>
               </li>
-
               <li class="listitem">
                 <p><span class="package">libsystemd-dev</span> -
                 allows for a tighter systemd integration.<a href=
-                "#ftn.idm45305315614688" class="footnote" id=
-                "idm45305315614688" name=
-                "idm45305315614688"><sup class=
-                "footnote">[1]</sup></a></p>
-
+                "#ftn.idm153" class="footnote" id="idm153" name=
+                "idm153"><sup class="footnote">[1]</sup></a></p>
                 <p><a class="ulink" href=
                 "https://github.com/systemd/systemd/src/libsystemd"
                 target="_top">libsystemd@github</a></p>
-
                 <p><span class="bold"><strong>Affected
                 binaries:</strong></span> <span class=
                 "emphasis"><em><span class=
                 "command"><strong>rtpproxy</strong></span></em></span></p>
               </li>
-
               <li class="listitem">
                 <p><a id="deps.libelperiodic" name=
                 "deps.libelperiodic"></a><span class=
@@ -594,12 +485,10 @@
                 system location or python environment. <span class=
                 "command"><strong>make check</strong></span> will
                 fail if it's not installed.</p>
-
                 <p><a class="ulink" href=
                 "https://github.com/sobomax/libelperiodic.git"
                 target=
                 "_top">https://github.com/sobomax/libelperiodic.git</a></p>
-
                 <p><span class="bold"><strong>Affected
                 tools:</strong></span> <span class=
                 "emphasis"><em><span class=
@@ -609,7 +498,6 @@
                 <span class=
                 "command"><strong>getmonotime.py</strong></span></em></span></p>
               </li>
-
               <li class="listitem">
                 <p><a id="deps.tcpdump" name=
                 "deps.tcpdump"></a><span class=
@@ -618,12 +506,10 @@
                 features. <span class="command"><strong>make
                 check</strong></span> will fail if it's not
                 installed.</p>
-
                 <p><a class="ulink" href=
                 "http://www.tcpdump.org/release/" target=
                 "_top">http://www.tcpdump.org/release/</a></p>
               </li>
-
               <li class="listitem">
                 <p><a id="deps.sudo" name=
                 "deps.sudo"></a><span class="package">sudo</span> -
@@ -632,27 +518,22 @@
                 elevated privileges. <span class=
                 "command"><strong>make check</strong></span> will
                 fail if it's not installed.</p>
-
                 <p><a class="ulink" href="http://www.sudo.ws/"
                 target="_top">http://www.sudo.ws/</a></p>
               </li>
             </ul>
           </div>
-
           <div class="important" style=
           "margin-left: 0.5in; margin-right: 0.5in;">
             <h3 class="title">Important</h3>
-
             <p>Do not forget about your compiler! To build this
             version of the RTPProxy you would need either:</p>
-
             <div class="itemizedlist">
               <ul class="itemizedlist" style=
               "list-style-type: disc;">
                 <li class="listitem">
                   <p>GCC compiler, version 5.0 or higher, or</p>
                 </li>
-
                 <li class="listitem">
                   <p>Clang compiler, version 6.0 or higher</p>
                 </li>
@@ -660,42 +541,30 @@
             </div>
           </div>
         </div>
-
         <div class="simplesect">
           <div class="titlepage">
             <div>
               <div>
-                <h3 class="title"><a id="idm45305315826624" name=
-                "idm45305315826624"></a>Compilation of the Source
-                Code</h3>
+                <h3 class="title"><a id="idm194" name=
+                "idm194"></a>Compilation of the Source Code</h3>
               </div>
             </div>
           </div>
-
           <p>Pull the latest stable version from a git master
           branch (into a directory where you want to store
           compilation sources, usually it's /usr/src/):</p>
-          <pre class="programlisting">
-     cd /usr/src
-     git clone -b master https://github.com/sippy/rtpproxy.git
-</pre>
-
+          <pre class="programlisting">     cd /usr/src
+     git clone -b master https://github.com/sippy/rtpproxy.git</pre>
           <p>Make sure you bring rtpprpoxy git submodules:</p>
           <pre class="programlisting">
-     git -C rtpproxy submodule update --init --recursive
-</pre>
-
+          git -C rtpproxy submodule update --init --recursive</pre>
           <p>Now compile a binary file using sources using the
           following commands:</p>
-
           <p>A sequence for users:</p>
-          <pre class="programlisting">
-     cd rtpproxy
+          <pre class="programlisting">     cd rtpproxy
      ./configure
      make clean all
-     make install
-</pre>
-
+     make install</pre>
           <p>For developers might also be useful to include
           <span class="command"><strong>make check</strong></span>
           in the sequence. Make sure you have <a class="link" href=
@@ -703,17 +572,13 @@
           href="#deps.sudo">sudo</a> and <a class="link" href=
           "#deps.tcpdump">tcpdump</a> installed for that step to
           complete:</p>
-          <pre class="programlisting">
-     cd rtpproxy
+          <pre class="programlisting">     cd rtpproxy
      ./configure
      make clean all
      make check
-     make install
-</pre>
-
+     make install</pre>
           <p>After a successful compilation, you have the following
           binaries</p>
-
           <div class="itemizedlist">
             <ul class="itemizedlist" style=
             "list-style-type: disc;">
@@ -721,7 +586,6 @@
                 <p>Main RTP proxy server binary - <span class=
                 "bold"><strong>production</strong></span>
                 build.</p>
-
                 <p>After the compilation is done, you have a binary
                 file stored in the /usr/local/bin/ folder. You can
                 test this out, checking the version of the
@@ -729,12 +593,10 @@
                 "bold"><strong>/usr/local/bin/rtpproxy
                 -V</strong></span></p>
               </li>
-
               <li class="listitem">
                 <p>Main RTP proxy server binary - <span class=
                 "bold"><strong>debug</strong></span> and profiling
                 build.</p>
-
                 <p>You will also have a second binary file for
                 debug and profiling: <span class=
                 "bold"><strong>/usr/local/bin/rtpproxy_debug</strong></span></p>
@@ -743,13 +605,11 @@
           </div>
         </div>
       </div>
-
       <div class="footnotes">
         <br />
         <hr style="width:100; text-align:left;margin-left: 0" />
-
-        <div id="ftn.idm45305315614688" class="footnote">
-          <p><a href="#idm45305315614688" class="para"><sup class=
+        <div id="ftn.idm153" class="footnote">
+          <p><a href="#idm153" class="para"><sup class=
           "para">[1]</sup></a> Also requires --enable-systemd
           configure argument to enable. See <a class="link" href=
           "#enable-systemd">section</a> on enabling systemd support
@@ -757,44 +617,36 @@
         </div>
       </div>
     </div>
-
     <div class="chapter">
       <div class="titlepage">
         <div>
           <div>
-            <h1 class="title"><a id="idm45305315810864" name=
-            "idm45305315810864"></a>Chapter&nbsp;3.&nbsp;Getting
-            Started</h1>
+            <h1 class="title"><a id="idm221" name=
+            "idm221"></a>Chapter&nbsp;3.&nbsp;Getting Started</h1>
           </div>
         </div>
       </div>
-
       <div class="highlights">
         <p>A good way to maintain your RTPProxy is to start it
         using a certain Service Manager, such as systemd.</p>
-
         <p>Systemd is a latest and the most known Service Manager
         application in most UNIX based systems:</p>
-
         <div class="itemizedlist">
           <ul class="itemizedlist" style="list-style-type: disc;">
             <li class="listitem">
               <p>Ubuntu 15.04 is the first version (of Ubuntu) that
               uses systemd by default;</p>
             </li>
-
             <li class="listitem">
               <p>Debian 8 (Jessie) is the first version (of Debian)
               that uses systemd by default;</p>
             </li>
-
             <li class="listitem">
               <p>Red Hat-based distributions are migrating to
               systemd as well. It has been the default system and
               services manager in Red Hat 7, CentOs7 and Fedora
               since the release of Fedora 15;</p>
             </li>
-
             <li class="listitem">
               <p>There is huge list of other distributions, that
               use the systemd as a System Manager by default now as
@@ -803,22 +655,18 @@
           </ul>
         </div>
       </div>
-
       <p>In case you have a system, that doesn't support the
       <span class="bold"><strong>systemd</strong></span>, you can
       use any other Service Managers as you want to (for e.g.
       init.d start scripts in Debian systems older than 8th
       one).</p>
-
       <p>Link to an <span class="bold"><strong>init.d start/stop
       script</strong></span>: <a class="ulink" href=
       "https://link.here.com" target=
       "_top">https://link.here.com</a> (TO DO)</p>
-
       <p>But, as it was said that the systemd is the most relevant
       solution for this, because it provides the following
       capabilities:</p>
-
       <div class="itemizedlist">
         <ul class="itemizedlist" style="list-style-type: disc;">
           <li class="listitem">
@@ -826,39 +674,33 @@
             file, and use those options as a variable in the start
             row 'ExecStart='</p>
           </li>
-
           <li class="listitem">
             <p>You're able to react on a failure of an application
             using a special parameter 'OnFailure=' (and to send
             notification for e.g.)</p>
           </li>
-
           <li class="listitem">
             <p>You can specify a list of pre-actions to be
             performed, before systemd launches binary file
             'ExecStartPre=' (for e.g. creation of /var/run/rtproxy
             directory and adding user/group rights to it)</p>
           </li>
-
           <li class="listitem">
             <p>As well as you can add pre-start actions, you can
             perform post-stop actions for cases when application
             stops running 'ExecStopPost=' (for e.g. deletion of the
             /var/run/rtpproxy directory)</p>
           </li>
-
           <li class="listitem">
             <p>You can set a policy for cases when application
             stops improperly (not a manual stop of the
             application), for e.g. restarting always with
             'Restart=always'</p>
           </li>
-
           <li class="listitem">
             <p>You may also want to add a time delay between
             restart attempts with 'RestartSec=5'</p>
           </li>
-
           <li class="listitem">
             <p>You can deal with different things related to
             logging or syslogging (for e.g. changing of a name
@@ -866,43 +708,33 @@
             or specifying a different logfacility level with
             'StandardOutput=' and 'StandardError=' )</p>
           </li>
-
           <li class="listitem">
             <p>User/Group to be used for running an application</p>
           </li>
-
           <li class="listitem">
             <p>and many many other things..</p>
           </li>
         </ul>
       </div>
-
       <p>The link to an instance of the systemd service file (for
       the RTPProxy): <a class="link" href=
       "#rtpproxy.service"><span class="bold"><strong>systemd
       configuration file instance</strong></span> -&gt;
       <span class="bold"><strong>Instance of the systemd service
       file</strong></span></a></p>
-
       <p>After you downloaded your systemd service file, adjust
       OPTIONS <a class="link" href="#CL_OPTIONS" title=
       "OPTIONS">parameters</a>.</p>
-
       <p>Set you own IP address for listening, or leave it with
       0.0.0.0 (manual way)</p>
-      <pre class="programlisting">
--l 0.0.0.0
-</pre>
-
+      <pre class="programlisting">-l 0.0.0.0</pre>
       <p>Set upper bound on number of file descriptors the rtpproxy
       service instance might be using. Rule of thumb is that 4 file
       descriptors are needed for a fully established session (two
       RTP endpoints and two RTCP ones).</p>
-
       <div class="important" style=
       "margin-left: 0.5in; margin-right: 0.5in;">
         <h3 class="title">Important</h3>
-
         <p>Make the value reasonably high to match your load
         expectations in terms of number of concurrent sessions but
         not excessively high, as it may cause rtpproxy to fail
@@ -910,29 +742,20 @@
         enforces upper bound on this value that varies from system
         to system:</p>
       </div>
-      <pre class="programlisting">
--L 4096
-</pre>
-
+      <pre class="programlisting">-L 4096</pre>
       <p>You may also want to change a port range for opening UDP
       ports:</p>
       <pre class="programlisting">
--m &lt;min number&gt; -M &lt;max number&gt;
+      -m &lt;min number&gt; -M &lt;max number&gt;
 
-e.g.: -m 10000 -M 40000
-</pre>
-
+e.g.: -m 10000 -M 40000</pre>
       <p>Change you log facility level if you want to:</p>
-      <pre class="programlisting">
--d INFO:&lt;LOG_LOCAL_NUMBER&gt;
+      <pre class="programlisting">-d INFO:&lt;LOG_LOCAL_NUMBER&gt;
 
 e.g.: -d INFO:LOG_LOCAL5
-      -d DBUG:LOG_LOCAL5
-</pre>
-
+      -d DBUG:LOG_LOCAL5</pre>
       <p>Another great reason to use systemd, is a possibility of
       systemd to create control sockets for rtpproxy.</p>
-
       <p>The benefit of this is, that even rtpproxy is down for
       some reason, remote daemons (such as OpenSIPS or Kamailio) do
       not lose a connection with a control file descriptor, thus do
@@ -940,147 +763,114 @@ e.g.: -d INFO:LOG_LOCAL5
       rtpproxy (still you can get timeout errors, but they can be
       not that critical as a complete loss of control socket
       connection).</p>
-
       <p>During the period of time rtpproxy is down, all control
       commands sent to it, are to be caught after rtpproxy is back.
       Thus systemd keeps all commands in a buffer for future
       usage.</p>
-
       <p>To let this be working, follow this guide: <a class="link"
       href="#CONFIGURATION" title=
       "Chapter&nbsp;4.&nbsp;Configuration"><span class=
       "guibutton">Configuration section -&gt; 5. Configuration of
       control socket</span>.</a></p>
-
       <p>Other than that, for better view of how to configure your
       startup line, you can use this <a class="link" href=
       "#CONFIGURATION" title=
       "Chapter&nbsp;4.&nbsp;Configuration"><span class=
       "guibutton">Configuration section</span>.</a></p>
-
       <p>After you're done with customizing of your systemd service
       file for RTPProxy, follow this sequence to finish it:</p>
-
       <div class="itemizedlist">
         <ul class="itemizedlist" style="list-style-type: disc;">
           <li class="listitem">
             <p>copy it to the /lib/systemd/system/ directory</p>
           </li>
-
           <li class="listitem">
             <p>reload systemd configuration with:</p>
             <pre class="programlisting">
-bash&gt; sudo systemctl daemon-reload
-</pre>
+            bash&gt; sudo systemctl daemon-reload</pre>
           </li>
-
           <li class="listitem">
             <p>enable the service:</p>
             <pre class="programlisting">
-bash&gt; sudo systemctl enable rtpproxy.service
-</pre>
+            bash&gt; sudo systemctl enable rtpproxy.service</pre>
           </li>
-
           <li class="listitem">
             <p>Now you can start your RTPProxy using the commands
             given below</p>
           </li>
         </ul>
       </div>
-
       <p>Working with a systemd, you may need to know a list of
       general commands to manage with your RTPProxy service, here
       they are:</p>
-
       <div class="itemizedlist">
         <ul class="itemizedlist" style="list-style-type: disc;">
           <li class="listitem">
             <p>Start of the service:</p>
             <pre class="programlisting">
-bash&gt; sudo systemctl start rtpproxy.service
-</pre>
+            bash&gt; sudo systemctl start rtpproxy.service</pre>
           </li>
-
           <li class="listitem">
             <p>Stop of the service:</p>
             <pre class="programlisting">
-bash&gt; sudo systemctl stop rtpproxy.service
-</pre>
+            bash&gt; sudo systemctl stop rtpproxy.service</pre>
           </li>
-
           <li class="listitem">
             <p>Restart of the service:</p>
             <pre class="programlisting">
-bash&gt; sudo systemctl restart rtpproxy.service
-</pre>
+            bash&gt; sudo systemctl restart rtpproxy.service</pre>
           </li>
-
           <li class="listitem">
             <p>Check status of the service:</p>
             <pre class="programlisting">
-bash&gt; sudo systemctl status rtpproxy.service
-</pre>
+            bash&gt; sudo systemctl status rtpproxy.service</pre>
           </li>
-
           <li class="listitem">
             <p>Show systemd configuration file of the service:</p>
             <pre class="programlisting">
-bash&gt; sudo systemctl show rtpproxy.service
-</pre>
+            bash&gt; sudo systemctl show rtpproxy.service</pre>
           </li>
         </ul>
       </div>
-
       <p>To see an output after you started you RTPProxy, or even
       just to keep a track on how it's working, you can use the
       following commands:</p>
-
       <div class="itemizedlist">
         <ul class="itemizedlist" style="list-style-type: disc;">
           <li class="listitem">
             <p>Look into a journal:</p>
             <pre class="programlisting">
-bash&gt; sudo journalctl -xe -u rtpproxy.service
-</pre>
+            bash&gt; sudo journalctl -xe -u rtpproxy.service</pre>
           </li>
-
           <li class="listitem">
             <p>You can configure logging to a separate logfile, to
             do this, follow the manual (or you can use manual
             logging to a syslog file) listed in the:</p>
-
             <p><a class="link" href="#logsepfile" title=
             "Logging to a separate file"><span class=
             "bold"><strong>Configuration section</strong></span>
             -&gt; <span class="bold"><strong>Logging to a separate
             file</strong></span></a></p>
           </li>
-
           <li class="listitem">
             <p>You can see an output of the systemctl tool:</p>
             <pre class="programlisting">
-bash&gt; sudo systemctl status rtpproxy.service
-</pre>
+            bash&gt; sudo systemctl status rtpproxy.service</pre>
           </li>
         </ul>
       </div>
-
       <div class="important" style=
       "margin-left: 0.5in; margin-right: 0.5in;">
         <h3 class="title">Important</h3>
-
         <p>Interaction of a SIP proxy server with RTPProxy
         application is supported via</p>
-
         <p><code class="filename">rtpproxy.sock</code> - control
         socket created by the RTPProxy</p>
-
         <p><code class="filename">rtpproxy_timeout.sock</code> - a
         socket for timeout notifications created by the SIP
         proxy</p>
       </div>
     </div>
-
     <div class="chapter">
       <div class="titlepage">
         <div>
@@ -1090,57 +880,44 @@ bash&gt; sudo systemctl status rtpproxy.service
           </div>
         </div>
       </div>
-
       <div class="toc">
         <p><strong>Table of Contents</strong></p>
-
         <dl class="toc">
-          <dt><span class="section"><a href=
-          "#idm45305310269792">Command Line
+          <dt><span class="section"><a href="#idm337">Command Line
           Parameters</a></span></dt>
-
+          <dt><span class="section"><a href="#idm640">Configuration
+          File</a></span></dt>
+          <dt><span class="section"><a href="#idm643">Startup
+          Script</a></span></dt>
           <dt><span class="section"><a href=
-          "#idm45305310265296">Configuration File</a></span></dt>
-
-          <dt><span class="section"><a href=
-          "#idm45305310264144">Startup Script</a></span></dt>
-
-          <dt><span class="section"><a href=
-          "#idm45305310258496">Logging</a></span></dt>
-
-          <dt><span class="section"><a href=
-          "#idm45305310238784">Configuration of control socket
-          (using systemd)</a></span></dt>
+          "#idm652">Logging</a></span></dt>
+          <dt><span class="section"><a href="#idm691">Configuration
+          of control socket (using systemd)</a></span></dt>
         </dl>
       </div>
-
       <p>Historically, primary configuration method for the
       RTPProxy was done via command-line parameters. Starting with
       version 2.2 certain advanced parameters (particularly
       loadable modules configuration) have been moved into
       configuration file.</p>
-
       <div class="section">
         <div class="titlepage">
           <div>
             <div>
-              <h2 class="title" style="clear: both"><a id=
-              "idm45305310269792" name=
-              "idm45305310269792"></a>Command Line Parameters</h2>
+              <h2 class="title" style="clear: both"><a id="idm337"
+              name="idm337"></a>Command Line Parameters</h2>
             </div>
           </div>
         </div>
-
         <div class="simplesect">
           <div class="titlepage">
             <div>
               <div>
-                <h3 class="title"><a id="idm45305310269152" name=
-                "idm45305310269152"></a>SYNOPSIS</h3>
+                <h3 class="title"><a id="idm339" name=
+                "idm339"></a>SYNOPSIS</h3>
               </div>
             </div>
           </div>
-
           <div class="cmdsynopsis">
             <p><a id="SYNOPSIS" name="SYNOPSIS"></a><code class=
             "command">rtpproxy</code> [<code class=
@@ -1192,7 +969,6 @@ bash&gt; sudo systemctl status rtpproxy.service
             "replaceable"><code>setup_ttl</code></em>]</p>
           </div>
         </div>
-
         <div class="simplesect">
           <div class="titlepage">
             <div>
@@ -1202,80 +978,62 @@ bash&gt; sudo systemctl status rtpproxy.service
               </div>
             </div>
           </div>
-
           <p>The following command-line parameters are
           supported:</p>
-
           <div class="variablelist">
             <a id="OPTIONS" name="OPTIONS"></a>
-
             <dl class="variablelist">
               <dt><span class="term"><code class=
               "option">-?</code></span></dt>
-
               <dd>
                 <p>Show summary of options.</p>
               </dd>
-
               <dt><span class="term"><code class=
               "option">-2</code></span></dt>
-
               <dd>
                 <p>Send every RTP packet twice in sessions that use
                 low-bitrate codecs. Only packets that are smaller
                 than 128 bytes will be sent twice. This option can
                 improve audio quality on lossy links.</p>
               </dd>
-
               <dt><span class="term"><code class=
               "option">-f</code></span></dt>
-
               <dd>
                 <p>rtpproxy will stay in foreground mode if this
                 option is set.</p>
               </dd>
-
               <dt><span class="term"><code class=
               "option">-V</code></span></dt>
-
               <dd>
                 <p>Show version of program.</p>
               </dd>
-
               <dt><span class="term"><code class=
               "option">-v</code></span></dt>
-
               <dd>
                 <p>Show supported rtpp command protocol
                 revisions.</p>
               </dd>
-
               <dt><span class="term"><code class="option">-l</code>
               <em class="replaceable"><code>addr1[<span class=
               "optional">/addr2</span>]</code></em></span></dt>
-
               <dd>
                 <p>IPv4 listen IP address(es). You can specify
                 either one or two addresses. If two addresses are
                 specified, the rtpproxy will work in bridging
                 mode.</p>
               </dd>
-
               <dt><span class="term"><code class="option">-6</code>
               <em class="replaceable"><code>addr1[<span class=
               "optional">/addr2</span>]</code></em></span></dt>
-
               <dd>
                 <p>IPv6 listen IP address(es). You can specify
                 either one or two addresses. If two addresses are
                 specified, the rtpproxy will work in bridging
                 mode.</p>
               </dd>
-
               <dt><span class="term"><code class="option">-s</code>
               <em class=
               "replaceable"><code>ctrl_socket</code></em></span></dt>
-
               <dd>
                 <p>This parameter configures rtpproxy control
                 socket. The control socket is used by the call
@@ -1287,7 +1045,6 @@ bash&gt; sudo systemctl status rtpproxy.service
                 "replaceable"><code>ctrl_socket</code></em> is
                 &lt;type&gt;:&lt;socket&gt;. Following types are
                 supported:</p>
-
                 <div class="itemizedlist">
                   <ul class="itemizedlist" style=
                   "list-style-type: disc;">
@@ -1297,18 +1054,14 @@ bash&gt; sudo systemctl status rtpproxy.service
                       control socket. In this mode rtpproxy will
                       listen on a UDP socket for control messages
                       from the call controlle.</p>
-
                       <p>Example: -s udp:127.0.0.1:9000</p>
-
                       <p>IP address can be '*' in which case
                       rtpproxy will listen on all local interfaces.
                       If port is omitted then port 22222 will be
                       used.</p>
-
                       <div class="note" style=
                       "margin-left: 0.5in; margin-right: 0.5in;">
                         <h3 class="title">Note</h3>
-
                         <p>rtpproxy control protocol has no
                         built-in security mechanisms. Make sure
                         that you protect the listening IP and port
@@ -1316,37 +1069,30 @@ bash&gt; sudo systemctl status rtpproxy.service
                         control socket.</p>
                       </div>
                     </li>
-
                     <li class="listitem">
                       <p><a id="udp6" name="udp6"></a><span class=
                       "emphasis"><em>udp6:</em></span> Create IPv6
                       UDP control socket. In this mode rtpproxy
                       will listen on UDP/IPv6 for control messages
                       from the SIP Controller.</p>
-
                       <p>Example: -s udp6:::1:9000</p>
                     </li>
-
                     <li class="listitem">
                       <p><a id="tcp" name="tcp"></a><span class=
                       "emphasis"><em>tcp:</em></span> Create IPv4
                       TCP control socket. In this mode rtpproxy
                       will listen on TCP/IPv4 for control messages
                       from the SIP Controller.</p>
-
                       <p>Example: -s tcp:192.168.0.1:9001</p>
                     </li>
-
                     <li class="listitem">
                       <p><a id="tcp6" name="tcp6"></a><span class=
                       "emphasis"><em>tcp6:</em></span> Create IPv6
                       TCP control socket. In this mode rtpproxy
                       will listen on TCP/IPv6 for control messages
                       from the SIP Controller.</p>
-
                       <p>Example: -s tcp6:::1:9002</p>
                     </li>
-
                     <li class="listitem">
                       <p><a id="unix" name="unix"></a><span class=
                       "emphasis"><em>unix:</em></span> Create UNIX
@@ -1357,11 +1103,9 @@ bash&gt; sudo systemctl status rtpproxy.service
                       rtpproxy would close connection after
                       processing each command and sending
                       reply.</p>
-
                       <p>Example: -s
                       unix:/var/run/rtpproxy.sock</p>
                     </li>
-
                     <li class="listitem">
                       <p><a id="cunix" name=
                       "cunix"></a><span class="emphasis"><em>cunix:</em></span>
@@ -1373,21 +1117,17 @@ bash&gt; sudo systemctl status rtpproxy.service
                       the rtpproxy would keep control socket open
                       and accept multiple commands via the same
                       connection.</p>
-
                       <p>Example: -s
                       cunix:/var/run/rtpproxy.sock</p>
                     </li>
                   </ul>
                 </div>
-
                 <p>Default value is <code class=
                 "filename">unix:/var/run/rtpproxy.sock</code>.</p>
               </dd>
-
               <dt><span class="term"><code class="option">-t</code>
               <em class=
               "replaceable"><code>tos</code></em></span></dt>
-
               <dd>
                 <p>Set ToS (Type of Service) in the outgoing IP
                 header. Default value is 0xB8. Setting this
@@ -1395,19 +1135,15 @@ bash&gt; sudo systemctl status rtpproxy.service
                 operating system default ToS being used
                 instead.</p>
               </dd>
-
               <dt><span class="term"><code class="option">-r</code>
               <em class=
               "replaceable"><code>rec_dir</code></em></span></dt>
-
               <dd>
                 <p>Directory to write recorded RTP sessions.</p>
               </dd>
-
               <dt><span class="term"><code class="option">-S</code>
               <em class=
               "replaceable"><code>spool_dir</code></em></span></dt>
-
               <dd>
                 <p>Spool directory for recording of RTP streams.
                 When the session is stopped, the recording will be
@@ -1415,61 +1151,49 @@ bash&gt; sudo systemctl status rtpproxy.service
                 directory as specified by the <code class=
                 "option">-r</code> option.</p>
               </dd>
-
               <dt><span class="term"><code class=
               "option">-R</code></span></dt>
-
               <dd>
                 <p>Prevent rtpproxy from recording RTCP when
                 recording RTP. rtpproxy records RTCP by default
                 when RTP recording is enabled.</p>
               </dd>
-
               <dt><span class="term"><code class="option">-p</code>
               <em class=
               "replaceable"><code>pid_file</code></em></span></dt>
-
               <dd>
                 <p>This parameter configures the name of the file
                 where PID of running rtpproxy will be stored.
                 Default is <code class=
                 "filename">/var/run/rtpproxy.pid</code>.</p>
               </dd>
-
               <dt><span class="term"><code class="option">-T</code>
               <em class=
               "replaceable"><code>max_ttl</code></em></span></dt>
-
               <dd>
                 <p>Specify the RTP inactivity timer. Defaults to 60
                 seconds.</p>
-
                 <p>If the rtpproxy does not receive any RTP packets
                 for more than <em class=
                 "replaceable"><code>max_ttl</code></em> it will
                 then delete the session.</p>
               </dd>
-
               <dt><span class="term"><code class="option">-L</code>
               <em class=
               "replaceable"><code>nofile_limit</code></em></span></dt>
-
               <dd>
                 <p>Set the maximum number of open file descriptors
                 per process. The default maximum is set by the
                 operating system, and can be overridden using the
                 <code class="option">-L</code> flag.</p>
-
                 <p>The rtpproxy requires four file descriptors per
                 session to ensure that it can reliably identify
                 where each stream is coming from in a NAT firewall
                 scenario.</p>
               </dd>
-
               <dt><span class="term"><code class="option">-A</code>
               <em class="replaceable"><code>advaddr1[<span class=
               "optional">/advaddr2</span>]</code></em></span></dt>
-
               <dd>
                 <p>Set advertised address of rtpproxy. Useful if
                 the rtpproxy is behind a NAT firewall. (Amazon EC2)
@@ -1478,33 +1202,27 @@ bash&gt; sudo systemctl status rtpproxy.service
                 specified by the <code class="option">-A</code>
                 option.</p>
               </dd>
-
               <dt><span class="term"><code class="option">-m</code>
               <em class=
               "replaceable"><code>min_port</code></em></span></dt>
-
               <dd>
                 <p>Set lower limit on UDP ports range that the
                 rtpproxy uses for RTP/RTCP sessions to <em class=
                 "replaceable"><code>min_port</code></em>. Default
                 is 35000.</p>
               </dd>
-
               <dt><span class="term"><code class="option">-M</code>
               <em class=
               "replaceable"><code>max_port</code></em></span></dt>
-
               <dd>
                 <p>Set upper limit on UDP ports range that the
                 rtpproxy uses for RTP/RTCP sessions to <em class=
                 "replaceable"><code>max_port</code></em>. Default
                 is 65000.</p>
               </dd>
-
               <dt><span class="term"><code class="option">-u</code>
               <em class="replaceable"><code>uname[<span class=
               "optional">:gname</span>]</code></em></span></dt>
-
               <dd>
                 <p>Switch rtpproxy to UID identified by the
                 <em class="replaceable"><code>uname</code></em> and
@@ -1512,31 +1230,25 @@ bash&gt; sudo systemctl status rtpproxy.service
                 "replaceable"><code>gname</code></em> when proxy is
                 up and running.</p>
               </dd>
-
               <dt><span class="term"><code class="option">-w</code>
               <em class=
               "replaceable"><code>sock_mode</code></em></span></dt>
-
               <dd>
                 <p>Set access mode for the controlling UNIX-socket
                 (if used). Only applies if rtpproxy runs under a
                 different GID using <code class="option">-u</code>
                 option.</p>
               </dd>
-
               <dt><span class="term"><code class=
               "option">-F</code></span></dt>
-
               <dd>
                 <p>By default the rtpproxy will warn user if
                 running as superuser (UID 0) in local control mode
                 and refuse to run in remote control mode at all.
                 This switch removes the check.</p>
               </dd>
-
               <dt><span class="term"><code class=
               "option">-i</code></span></dt>
-
               <dd>
                 <p>Enable independent RTP activity timeout mode. By
                 default, a timeout (which results in automatic
@@ -1550,17 +1262,14 @@ bash&gt; sudo systemctl status rtpproxy.service
                 from only one side of conversation (i.e. when the
                 second party has muted its audio).</p>
               </dd>
-
               <dt><span class="term"><code class="option">-n</code>
               <em class=
               "replaceable"><code>timeout_socket</code></em></span></dt>
-
               <dd>
                 <p>This parameter specifies permitted notification
                 sockets only. The listening socket must be created
                 by another application, preferably before starting
                 rtpproxy.</p>
-
                 <p>Timeout notifications must be enabled by the SIP
                 controller when setting up the session. The SIP
                 Controller must specify the timeout_socket, and a
@@ -1568,19 +1277,16 @@ bash&gt; sudo systemctl status rtpproxy.service
                 string that can be used by the SIP controller to
                 identify which session a received time out
                 notification relates to.</p>
-
                 <p>If a SIP Controller specifies a notification
                 socket for a session, and that socket is not
                 specified using the <code class="option">-n</code>
                 flag, the rtpproxy will not send a notification,
                 and will not produce an error. It will ignore the
                 notification request.</p>
-
                 <p>Format of <em class=
                 "replaceable"><code>timeout_socket</code></em> is
                 &lt;type&gt;:&lt;socket&gt;. Following types are
                 supported:</p>
-
                 <div class="itemizedlist">
                   <ul class="itemizedlist" style=
                   "list-style-type: disc;">
@@ -1591,11 +1297,9 @@ bash&gt; sudo systemctl status rtpproxy.service
                       notifications. In this mode B2BUA and
                       rtpproxy must be running on the same
                       host.</p>
-
                       <p>Example: -n
                       unix:/var/run/rtpproxy_timeout.sock</p>
                     </li>
-
                     <li class="listitem">
                       <p><span class=
                       "emphasis"><em>tcp:</em></span> Connect to a
@@ -1604,22 +1308,18 @@ bash&gt; sudo systemctl status rtpproxy.service
                       "replaceable"><code>socket</code></em>
                       parameter in this case is
                       &lt;host&gt;:&lt;port&gt;.</p>
-
                       <p>Example: -n tcp:10.20.30:12345</p>
                     </li>
                   </ul>
                 </div>
-
                 <p>There is no default value, notifications are not
                 sent and not permitted unless a value is specified
                 explicitly. Multiple notification sockets can be
                 provided by specifying the <code class=
                 "option">-n</code> flag more than once.</p>
               </dd>
-
               <dt><span class="term"><code class=
               "option">-P</code></span></dt>
-
               <dd>
                 <p>Record sessions using libpcap file format
                 instead of non-standard ad-hoc format. The libpcap
@@ -1631,35 +1331,28 @@ bash&gt; sudo systemctl status rtpproxy.service
                 (extra 12 bytes for every saved RTP packet for
                 IPv4).</p>
               </dd>
-
               <dt><span class="term"><code class=
               "option">-a</code></span></dt>
-
               <dd>
                 <p>Record all sessions going through the rtpproxy
                 unconditionally. By default rtpproxy expects the
                 SIP controller to enable recording on a per-session
                 basis.</p>
               </dd>
-
               <dt><span class="term"><code class="option">-d</code>
               <em class="replaceable"><code>log_level[<span class=
               "optional">:log_facility</span>]</code></em></span></dt>
-
               <dd>
                 <p>Configures the verbosity level of the log
                 output. Possible <em class=
                 "replaceable"><code>log_level</code></em> values in
                 the order from the most verbose to the least
                 verbose are: DBUG, INFO, WARN, ERR and CRIT.</p>
-
                 <p>The optional <em class=
                 "replaceable"><code>log_facility</code></em>
                 parameter sets syslog(3) facility assigned to log
                 messages.</p>
-
                 <p>Example: -d WARN:LOG_LOCAL5</p>
-
                 <p>The default level in foreground mode is is DBUG,
                 in background - WARN and facility is
                 LOG_DAEMON.</p>
@@ -1668,60 +1361,50 @@ bash&gt; sudo systemctl status rtpproxy.service
           </div>
         </div>
       </div>
-
       <div class="section">
         <div class="titlepage">
           <div>
             <div>
-              <h2 class="title" style="clear: both"><a id=
-              "idm45305310265296" name=
-              "idm45305310265296"></a>Configuration File</h2>
+              <h2 class="title" style="clear: both"><a id="idm640"
+              name="idm640"></a>Configuration File</h2>
             </div>
           </div>
         </div>
-
         <p>TODO</p>
       </div>
-
       <div class="section">
         <div class="titlepage">
           <div>
             <div>
-              <h2 class="title" style="clear: both"><a id=
-              "idm45305310264144" name=
-              "idm45305310264144"></a>Startup Script</h2>
+              <h2 class="title" style="clear: both"><a id="idm643"
+              name="idm643"></a>Startup Script</h2>
             </div>
           </div>
         </div>
-
         <p>The way you integrate RTPProxy into your system startup
         sequence is highly OS-version dependent. If you are using
         per-built RTPProxy package then most likely such method
         will be provided as part of that package and the best
         course of actions is to use that facility.</p>
-
         <p>However, if you are a package maintainer or system
         builder you might need to create such configuration from
         scratch. In the next sections we would provide some basic
         guidelines on how to launch RTPProxy in some common
         cases.</p>
-
         <div class="simplesect">
           <div class="titlepage">
             <div>
               <div>
-                <h3 class="title"><a id="idm45305310262176" name=
-                "idm45305310262176"></a>Systemd based systems</h3>
+                <h3 class="title"><a id="idm647" name=
+                "idm647"></a>Systemd based systems</h3>
               </div>
             </div>
           </div>
-
           <p>On most modern Linux-based systems <span class=
           "application">systemd</span> is the recommended method to
           start the RTPProxy.</p><a id="rtpproxy.service" name=
           "rtpproxy.service"></a>
-          <pre class="programlisting">
-[Unit]
+          <pre class="programlisting">[Unit]
 Description=RTPProxy media server
 After=network.target
 Requires=network.target
@@ -1752,22 +1435,18 @@ TimeoutStartSec=10
 TimeoutStopSec=10
 
 [Install]
-WantedBy=multi-user.target
-</pre>
+WantedBy=multi-user.target</pre>
         </div>
       </div>
-
       <div class="section">
         <div class="titlepage">
           <div>
             <div>
-              <h2 class="title" style="clear: both"><a id=
-              "idm45305310258496" name=
-              "idm45305310258496"></a>Logging</h2>
+              <h2 class="title" style="clear: both"><a id="idm652"
+              name="idm652"></a>Logging</h2>
             </div>
           </div>
         </div>
-
         <p>Logging is a very important aspect of the RTPProxy
         operation that should not be overlooked. In our experience,
         properly configured and tested RTPProxy instance can keep
@@ -1779,35 +1458,29 @@ WantedBy=multi-user.target
         perform a post-mortem investigation of particular issue
         that happened days, if not weeks, ago with a relative
         ease.</p>
-
         <p>Some of the consideration one should have in mind while
         configuring logging is:</p>
-
         <div class="orderedlist">
           <ol class="orderedlist" type="a">
             <li class="listitem">
               <p>How much storage my system has for the RTPProxy to
               use?</p>
             </li>
-
             <li class="listitem">
               <p>What is the typical amount of time it takes for my
               user to report an issue and get it escalated to the
               DevOps team?</p>
             </li>
-
             <li class="listitem">
               <p>What is the typical amount of time it takes for
               the DevOps team to act on issue and look at the logs
               in question?</p>
             </li>
-
             <li class="listitem">
               <p>How much detail do I need? The answer to this
               might depends on whether this is a development/QA or
               a production system.</p>
             </li>
-
             <li class="listitem">
               <p>Are there any other non-technical consideration
               that might influence those decisions? For example:
@@ -1816,7 +1489,6 @@ WantedBy=multi-user.target
             </li>
           </ol>
         </div>
-
         <div class="simplesect">
           <div class="titlepage">
             <div>
@@ -1826,7 +1498,6 @@ WantedBy=multi-user.target
               </div>
             </div>
           </div>
-
           <div class="itemizedlist">
             <ul class="itemizedlist" style=
             "list-style-type: disc;">
@@ -1835,13 +1506,11 @@ WantedBy=multi-user.target
                 use for logging and give it proper permissions
                 (according to a user/group starting RTPProxy):</p>
                 <pre class="programlisting">
-touch /var/log/rtpproxy.log
-chown rtpproxy:rtpproxy /var/log/rtpproxy.log
-</pre>
+                touch /var/log/rtpproxy.log
+chown rtpproxy:rtpproxy /var/log/rtpproxy.log</pre>
               </li>
             </ul>
           </div>
-
           <div class="itemizedlist">
             <ul class="itemizedlist" style=
             "list-style-type: disc;">
@@ -1850,15 +1519,13 @@ chown rtpproxy:rtpproxy /var/log/rtpproxy.log
                 configuration file (add a row at the bottom of the
                 file) and restart rsyslog server:</p>
                 <pre class="programlisting">
-vim /etc/rsyslog.d/50-default.conf
+                vim /etc/rsyslog.d/50-default.conf
  local5.*        /var/log/rtpproxy.log
 
-systemctl restart rsyslog.service
-</pre>
+systemctl restart rsyslog.service</pre>
               </li>
             </ul>
           </div>
-
           <div class="itemizedlist">
             <ul class="itemizedlist" style=
             "list-style-type: disc;">
@@ -1867,10 +1534,8 @@ systemctl restart rsyslog.service
                 this log file (that's a good way of handling
                 overfilled log files):</p>
                 <pre class="programlisting">
-vim /etc/logrotate.d/rtpproxy
-</pre>
-                <pre class="programlisting">
-/var/log/rtpproxy.log {
+                vim /etc/logrotate.d/rtpproxy</pre>
+                <pre class="programlisting">/var/log/rtpproxy.log {
   missingok
   compress
   delaycompress
@@ -1878,12 +1543,10 @@ vim /etc/logrotate.d/rtpproxy
   copytruncate
   rotate 5
   daily
-}
-</pre>
+}</pre>
               </li>
             </ul>
           </div>
-
           <div class="itemizedlist">
             <ul class="itemizedlist" style=
             "list-style-type: disc;">
@@ -1891,12 +1554,10 @@ vim /etc/logrotate.d/rtpproxy
                 <p>Now add a log facility level to your start row
                 of the RTPProxy:</p>
                 <pre class="programlisting">
--d INFO:LOG_LOCAL5
-</pre>
+                -d INFO:LOG_LOCAL5</pre>
               </li>
             </ul>
           </div>
-
           <div class="itemizedlist">
             <ul class="itemizedlist" style=
             "list-style-type: disc;">
@@ -1904,39 +1565,31 @@ vim /etc/logrotate.d/rtpproxy
                 <p>Reload systemd configuration (to apply previous
                 change) and restart your RTPProxy server. Now
                 logging should be done using new output file:</p>
-                <pre class="programlisting">
-systemctl daemon reload
+                <pre class="programlisting">systemctl daemon reload
 
-systemctl restart rtpproxy.service
-</pre>
+systemctl restart rtpproxy.service</pre>
               </li>
             </ul>
           </div>
         </div>
       </div>
-
       <div class="section">
         <div class="titlepage">
           <div>
             <div>
-              <h2 class="title" style="clear: both"><a id=
-              "idm45305310238784" name=
-              "idm45305310238784"></a>Configuration of control
-              socket (using systemd)</h2>
+              <h2 class="title" style="clear: both"><a id="idm691"
+              name="idm691"></a>Configuration of control socket
+              (using systemd)</h2>
             </div>
           </div>
         </div>
-
         <p>As it was said earlier, keeping of the control socket
         using systemd, is a good reason to start using systemd.</p>
-
         <p>A configuration process is pretty simple, there are just
         a few steps you need to implement to start using of it.</p>
-
         <p><span class="bold"><strong>1.</strong></span> Firstly,
         you need to install package requirements: <span class=
         "package">libsystemd-dev</span></p>
-
         <p><a id="enable-systemd" name=
         "enable-systemd"></a><span class=
         "bold"><strong>2.</strong></span> Secondly, you need to
@@ -1944,24 +1597,19 @@ systemctl restart rtpproxy.service
         process, just add an option to a <span class=
         "emphasis"><em>configure</em></span> execution):</p>
         <pre class="programlisting">
-./configure --enable-systemd
-</pre>
-
+        ./configure --enable-systemd</pre>
         <p><span class="bold"><strong>3.</strong></span> A third
         step, you need to create <span class=
         "bold"><strong>rtpproxy.socket</strong></span> systemd unit
         file, that will be responsible for keeping your control
         socket:</p>
-
         <p>An example:</p>
-
         <p><span class=
         "bold"><strong>/etc/systemd/system/sockets.target.wants/rtpproxy.socket
         (better to create it in
         /lib/systemd/system/sockets.target.wants/ and symlink
         it)</strong></span></p>
-        <pre class="programlisting">
-[Socket]
+        <pre class="programlisting">[Socket]
 ListenStream=/var/run/rtpproxy/rtpproxy.sock
 SocketUser=rtpproxy
 SocketGroup=rtpproxy
@@ -1971,44 +1619,33 @@ ExecStartPost=-/bin/chown rtpproxy:rtpproxy /var/run/rtpproxy
 [Install]
 WantedBy=sockets.target
 </pre>
-
         <p><span class="bold"><strong>4.</strong></span> Set a
         parameter in startup row of <span class=
         "bold"><strong>rtpproxy.service</strong></span> unit (you
         don't need to provide a path to socket file):</p>
-        <pre class="programlisting">
--s systemd:
-</pre>
-
+        <pre class="programlisting">-s systemd:</pre>
         <p>an example:</p>
         <pre class="programlisting">
-ExecStart=/usr/local/bin/rtpproxy -p /var/run/rtpproxy/rtpproxy.pid -s systemd: -u rtpproxy:rtpproxy -n unix:/var/run/rtpproxy/rtpproxy_timeout.sock -f -l 0.0.0.0 -m 10000 -M 20000 -d INFO:LOG_DAEMON
-</pre>
-
+        ExecStart=/usr/local/bin/rtpproxy -p /var/run/rtpproxy/rtpproxy.pid -s systemd: -u rtpproxy:rtpproxy -n unix:/var/run/rtpproxy/rtpproxy_timeout.sock -f -l 0.0.0.0 -m 10000 -M 20000 -d INFO:LOG_DAEMON</pre>
         <p>When you're done with all above, do not forget to reload
         systemd configuration and enable socket unit:</p>
         <pre class="programlisting">
-bash&gt; sudo systemctl daemon-reload
+        bash&gt; sudo systemctl daemon-reload
 
-bash&gt; sudo systemctl enable rtpproxy.socket
-</pre>
-
+bash&gt; sudo systemctl enable rtpproxy.socket</pre>
         <p>(btw here is a nice article of how to configure systemd
         socket unit files - <a class="ulink" href=
         "http://0pointer.de/blog/projects/socket-activation.html?fbclid=IwAR2aIYwttyFOc_7rXarlYaz0SexTxMverWF42Xpg5yX96eytkmhFhtsI49M"
         target=
         "_top">http://0pointer.de/blog/projects/socket-activation.html?fbclid=IwAR2aIYwttyFOc_7rXarlYaz0SexTxMverWF42Xpg5yX96eytkmhFhtsI49M</a>)</p>
-
         <p>Now start <span class=
         "bold"><strong>rtpproxy.socket</strong></span> and
         <span class="bold"><strong>rtpproxy,service</strong></span>
         just after that:</p>
         <pre class="programlisting">
-bash&gt; sudo systemctl start rtpproxy.socket
+        bash&gt; sudo systemctl start rtpproxy.socket
 
-bash&gt; sudo systemctl start rtpproxy.service
-</pre>
-
+bash&gt; sudo systemctl start rtpproxy.service</pre>
         <p>At this stage, your rtpproxy.service should catch up a
         socket created by systemd and start working properly. If
         you see some kind of errors, then you're missing one of the
