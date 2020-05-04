@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/sippy/www.rtpproxy.org.svg?branch=master)](https://travis-ci.com/sippy/www.rtpproxy.org)
+
 www.rtpproxy.org
 ================
 
