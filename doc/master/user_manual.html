@@ -93,13 +93,13 @@
             <dt><span class="section"><a href="#idm337">Command
             Line Parameters</a></span></dt>
             <dt><span class="section"><a href=
-            "#idm640">Configuration File</a></span></dt>
-            <dt><span class="section"><a href="#idm643">Startup
+            "#idm647">Configuration File</a></span></dt>
+            <dt><span class="section"><a href="#idm650">Startup
             Script</a></span></dt>
             <dt><span class="section"><a href=
-            "#idm652">Logging</a></span></dt>
+            "#idm659">Logging</a></span></dt>
             <dt><span class="section"><a href=
-            "#idm691">Configuration of control socket (using
+            "#idm698">Configuration of control socket (using
             systemd)</a></span></dt>
           </dl>
         </dd>
@@ -885,13 +885,13 @@ e.g.: -d INFO:LOG_LOCAL5
         <dl class="toc">
           <dt><span class="section"><a href="#idm337">Command Line
           Parameters</a></span></dt>
-          <dt><span class="section"><a href="#idm640">Configuration
+          <dt><span class="section"><a href="#idm647">Configuration
           File</a></span></dt>
-          <dt><span class="section"><a href="#idm643">Startup
+          <dt><span class="section"><a href="#idm650">Startup
           Script</a></span></dt>
           <dt><span class="section"><a href=
-          "#idm652">Logging</a></span></dt>
-          <dt><span class="section"><a href="#idm691">Configuration
+          "#idm659">Logging</a></span></dt>
+          <dt><span class="section"><a href="#idm698">Configuration
           of control socket (using systemd)</a></span></dt>
         </dl>
       </div>
@@ -966,7 +966,8 @@ e.g.: -d INFO:LOG_LOCAL5
             <em class="replaceable"><code>log_level[<span class=
             "optional">:log_facility</span>]</code></em>]
             [<code class="option">-W</code> <em class=
-            "replaceable"><code>setup_ttl</code></em>]</p>
+            "replaceable"><code>setup_ttl</code></em>]
+            [<code class="option">--force_asymmetric</code>]</p>
           </div>
         </div>
         <div class="simplesect">
@@ -1357,6 +1358,13 @@ e.g.: -d INFO:LOG_LOCAL5
                 in background - WARN and facility is
                 LOG_DAEMON.</p>
               </dd>
+              <dt><span class="term"><code class=
+              "option">--force_asymmetric</code></span></dt>
+              <dd>
+                <p>Treat all RTP/RTCP sessions as "assymetric",
+                i.e. disable any NAT traversal features
+                unconditionally.</p>
+              </dd>
             </dl>
           </div>
         </div>
@@ -1365,8 +1373,8 @@ e.g.: -d INFO:LOG_LOCAL5
         <div class="titlepage">
           <div>
             <div>
-              <h2 class="title" style="clear: both"><a id="idm640"
-              name="idm640"></a>Configuration File</h2>
+              <h2 class="title" style="clear: both"><a id="idm647"
+              name="idm647"></a>Configuration File</h2>
             </div>
           </div>
         </div>
@@ -1376,8 +1384,8 @@ e.g.: -d INFO:LOG_LOCAL5
         <div class="titlepage">
           <div>
             <div>
-              <h2 class="title" style="clear: both"><a id="idm643"
-              name="idm643"></a>Startup Script</h2>
+              <h2 class="title" style="clear: both"><a id="idm650"
+              name="idm650"></a>Startup Script</h2>
             </div>
           </div>
         </div>
@@ -1395,8 +1403,8 @@ e.g.: -d INFO:LOG_LOCAL5
           <div class="titlepage">
             <div>
               <div>
-                <h3 class="title"><a id="idm647" name=
-                "idm647"></a>Systemd based systems</h3>
+                <h3 class="title"><a id="idm654" name=
+                "idm654"></a>Systemd based systems</h3>
               </div>
             </div>
           </div>
@@ -1442,8 +1450,8 @@ WantedBy=multi-user.target</pre>
         <div class="titlepage">
           <div>
             <div>
-              <h2 class="title" style="clear: both"><a id="idm652"
-              name="idm652"></a>Logging</h2>
+              <h2 class="title" style="clear: both"><a id="idm659"
+              name="idm659"></a>Logging</h2>
             </div>
           </div>
         </div>
@@ -1577,8 +1585,8 @@ systemctl restart rtpproxy.service</pre>
         <div class="titlepage">
           <div>
             <div>
-              <h2 class="title" style="clear: both"><a id="idm691"
-              name="idm691"></a>Configuration of control socket
+              <h2 class="title" style="clear: both"><a id="idm698"
+              name="idm698"></a>Configuration of control socket
               (using systemd)</h2>
             </div>
           </div>
