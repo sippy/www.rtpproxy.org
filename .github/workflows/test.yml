@@ -1,0 +1,35 @@
+name: Update Branch
+
+on:
+  push:
+    branches:
+      - gha_move # trigger this action when a push event occurs on the main branch
+
+jobs:
+  update-branch:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+      with:
+        persist-credentials: false # this removes any credentials to avoid accidental pushes
+
+    - name: Configure Git
+      run: |
+        git config --global user.email "sobomax@sippysoft.com"
+        git config --global user.name "Automerge Robot"
+
+    - name: Checkout to other branch
+      run: |
+        git checkout -b other-branch
+
+    - name: Make changes
+      run: |
+        echo "Some changes" >> README.md
+
+    - name: Commit and Push
+      run: |
+        git add .
+        git commit -m "Automated changes"
+        git push origin other-branch
