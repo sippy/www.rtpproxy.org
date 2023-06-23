@@ -1,0 +1,35 @@
+name: Publish Web Site
+
+on:
+  push:
+  pull_request:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build-publish:
+    name: Publish Web Site to the www.rtpproxy.org
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+      with:
+        persist-credentials: false
+        token: ${{ secrets.GH_PAT }}
+
+    - name: Configure Git
+      run: |
+        git config --global user.email "sobomax@sippysoft.com"
+        git config --global user.name "Automerge Robot"
+
+    - name:  Install Dependencies
+      run: |
+        sudo apt-get --yes install snapd
+        sudo snap install hugo
+
+    - name: Build & Deploy
+      env:
+        GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+        OUR_BRANCH: ${{ github.ref }}
+      run: sh -x deploy.sh

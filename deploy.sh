@@ -2,10 +2,14 @@
 
 set -e
 
-if [ "${TRAVIS_BRANCH}" != "master" ]
+run_hugo() {
+  hugo --debug -t herring-cove
+}
+
+if [ "${OUR_BRANCH}" != "refs/heads/master" ]
 then
-  echo "Oops, this is not expected to run on anything but master" 1>&2
-  exit 1
+  run_hugo
+  exit
 fi
 
 echo "\033[0;32mDeploying updates to Github...\033[0m"
@@ -16,10 +20,10 @@ git remote add origin_rw "${OWN_REPO}"
 #git fetch origin_rw
 git clone -b gh-pages --depth 1 "${OWN_REPO}" public
 PUB_GIT="git -C public"
-#-b ${TMP_BRANCH} origin_rw/${TRAVIS_BRANCH}
+#-b ${TMP_BRANCH} origin_rw/${OUR_BRANCH}
 # Build the project.
 ${PUB_GIT} rm -r .
-hugo --debug -t herring-cove
+run_hugo
 
 # Add changes to git.
 ${PUB_GIT} add -A .
