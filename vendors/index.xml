@@ -5,10 +5,6 @@
     <link>https://www.rtpproxy.org/vendors/</link>
     <description>Recent content in Vendors on RTPProxy</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    
-	<atom:link href="https://www.rtpproxy.org/vendors/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en-us</language><atom:link href="https://www.rtpproxy.org/vendors/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

@@ -6,11 +6,7 @@
     <description>Recent content on RTPProxy</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 09 Mar 2015 02:00:51 +0000</lastBuildDate>
-    
-	<atom:link href="https://www.rtpproxy.org/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 09 Mar 2015 02:00:51 +0000</lastBuildDate><atom:link href="https://www.rtpproxy.org/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>rtpproxy v2.0.0 release</title>
       <link>https://www.rtpproxy.org/post/v2release/</link>
@@ -51,7 +47,7 @@ Subsequently, the RTPProxy became widely used by VoIP service providers that nee
       <guid>https://www.rtpproxy.org/post/beta_one_point_two/</guid>
       <description>New beta snapshot of 1.2 version of RTPproxy has been released.
 This snapshot includes;
- Linux build fixes Improvements in re-packetization feature.  </description>
+Linux build fixes Improvements in re-packetization feature. </description>
     </item>
     
     <item>
@@ -72,7 +68,7 @@ This snapshot includes Sun Solaris fixes (now it should compile and run clearly)
       <guid>https://www.rtpproxy.org/post/ability_to_fork/</guid>
       <description>Latest snapshot of development 1.2 version of RTPproxy has been released.
 This release includes many bug fixes and new features, including:
- Solaris compatibility fixes Support for the new rtpproxy_stream2xxx() command in SER Improved support for re-INVITE Port randomization support syslog support.  </description>
+Solaris compatibility fixes Support for the new rtpproxy_stream2xxx() command in SER Improved support for re-INVITE Port randomization support syslog support. </description>
     </item>
     
   </channel>
