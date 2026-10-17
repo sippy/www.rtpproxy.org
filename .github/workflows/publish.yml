@@ -10,13 +10,15 @@ jobs:
   build-publish:
     name: Publish Web Site to the www.rtpproxy.org
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v5
       with:
         persist-credentials: false
-        token: ${{ secrets.GH_PAT }}
+        submodules: true
 
     - name: Configure Git
       run: |
@@ -30,6 +32,6 @@ jobs:
 
     - name: Build & Deploy
       env:
-        GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         OUR_BRANCH: ${{ github.ref }}
       run: sh -x deploy.sh
