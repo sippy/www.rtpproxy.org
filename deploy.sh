@@ -2,6 +2,8 @@
 
 set -e
 
+sh -x ./gendocs.sh
+
 run_hugo() {
   hugo --logLevel debug -t herring-cove
 }

@@ -3,6 +3,9 @@ name: Publish Web Site
 on:
   push:
   pull_request:
+  # Pick up documentation changes in the rtpproxy repository
+  schedule:
+    - cron: '17 4 1 * *'
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -20,6 +23,15 @@ jobs:
         persist-credentials: false
         submodules: true
 
+    - name: Checkout rtpproxy documentation
+      uses: actions/checkout@v5
+      with:
+        repository: sippy/rtpproxy
+        ref: master
+        path: rtpproxy
+        persist-credentials: false
+        sparse-checkout: doc
+
     - name: Configure Git
       run: |
         git config --global user.email "sobomax@sippysoft.com"
@@ -27,11 +39,12 @@ jobs:
 
     - name:  Install Dependencies
       run: |
-        sudo apt-get --yes install snapd
+        sudo apt-get --yes install snapd xsltproc docbook-xsl docbook-xml
         sudo snap install hugo
 
     - name: Build & Deploy
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         OUR_BRANCH: ${{ github.ref }}
+        RTPPROXY_DIR: rtpproxy
       run: sh -x deploy.sh
