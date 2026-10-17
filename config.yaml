@@ -14,3 +14,6 @@ params:
     Release Information (unstable): '/doc/master/release_info.html'
 taxonomies:
   vendor: vendors
+privacy:
+  youtube:
+    privacyEnhanced: true
