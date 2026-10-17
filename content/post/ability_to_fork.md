@@ -8,7 +8,7 @@ author = "@sobomax"
 
 +++
 
-Latest snapshot of development 1.2 version of RTPproxy has been released.
+Latest snapshot of development 1.2 version of RTPProxy has been released.
 
 This release includes many bug fixes and new features, including:
 

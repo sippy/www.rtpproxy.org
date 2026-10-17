@@ -2,20 +2,20 @@
 date = 2015-03-09T02:00:51Z
 draft = false
 slug = "v2release"
-title = "rtpproxy v2.0.0 release"
+title = "RTPProxy v2.0.0 release"
 tags = ["releases"]
 author = "@sobomax"
 
 +++
 
-# rtpproxy v2.0.0 Release Notes
+# RTPProxy v2.0.0 Release Notes
 
 This is the first official release since version 1.2 in March 2009. v2.0 release brings 5-years worth of extensive improvements in performance, quality, and test coverage. This release has been heavily tested in production environments, and has had significant contributions from the open-source community.
 
 This is the first release since we moved the project to github, and travis-ci for automated test coverage.
 
-rtpproxy is a [Sippy Software, Inc](http://www.sippysoft.com/) open source project. The rtpproxy is part of Sippy's commercial soft switch product, and Sippy's clustered media gateway project. rtpproxy is also widely used in other VoIP service provider networks.
-rptproxy supports [Opensips](http://www.opensips.org/), [Kamailio](http://www.kamailio.org), and Sippy's own open source [b2bua](https://github.com/sippy/b2bua)
+RTPProxy is a [Sippy Software, Inc](http://www.sippysoft.com/) open source project. The RTPProxy is part of Sippy's commercial soft switch product, and Sippy's clustered media gateway project. RTPProxy is also widely used in other VoIP service provider networks.
+RTPProxy supports [Opensips](http://www.opensips.org/), [Kamailio](http://www.kamailio.org), and Sippy's own open source [b2bua](https://github.com/sippy/b2bua)
 
 ## Notable Changes
 
@@ -66,7 +66,7 @@ Re-packetization allows providers to resize the rtp frame size between a caller 
 
 ## SIGHUP for graceful shutdown
 
-The SIGHUP signal will initiate a slow shut down. In this mode any new rtpp requests for a new session will be rejected with a E99 code. The rtpproxy will exit only after all active sessions have ended. This feature simplifies planned maintenance.
+The SIGHUP signal will initiate a slow shut down. In this mode any new rtpp requests for a new session will be rejected with a E99 code. The RTPProxy will exit only after all active sessions have ended. This feature simplifies planned maintenance.
 
 ## Updated `makeann` utility
 
@@ -108,7 +108,7 @@ The new flag `-n` has been added in 2.0 to avoid inserting blank audio periods t
 
 In 2.0, we've added the following 3 new control channels `cunix`, `stdio` and `systemd`, in addition to `unix` and `udp` as supported since v1.2:
 
-- `cunix`, similar to `unix` except the server (e.g. rtpproxy) is not closing session after processing a command, so more commands can be posted and processed in sequence, thereby reducing overhead and complexity of the client code. Intended to become the default channel for local IPC;
+- `cunix`, similar to `unix` except the server (e.g. RTPProxy) is not closing session after processing a command, so more commands can be posted and processed in sequence, thereby reducing overhead and complexity of the client code. Intended to become the default channel for local IPC;
 - `stdio`, commands are read from stdin, replies are posted to stdout. Primarily designed to be used for CI. Example: `rtpproxy -s stdio: -f < some.commands`;
 - `systemd`, get command from / post replies to the file descriptor provided by the `systemd` daemon. Only supported on Linux;
 
@@ -116,24 +116,24 @@ The control channel system has been overhauled to enable more than one channel t
 
 ## New and updated command line flags
 
-`-s` now accepts `stdio`, `cunix:` and `systemd:` as an argument. rtpproxy can accept -s multiple times, which will cause it to listen on multiple control sockets. More than one control channels can be used independently. 
+`-s` now accepts `stdio`, `cunix:` and `systemd:` as an argument. RTPProxy can accept -s multiple times, which will cause it to listen on multiple control sockets. More than one control channels can be used independently. 
 `-V` Show command protocol version.
 `-L` Adjust the number of simultaneous open connections. Note that each RTP media stream requires four open connections. A SIP call can open more than one RTP media stream depending on the client's setup.
 `-A address` Sets the advertised IP address.  `-A addr1/addr2` can also be used for bridging mode
 `-W setup_ttl` Implements "Call Establishment Phase Timeout" as originally implemented in [this](https://github.com/OpenSIPS/opensips/blob/master/modules/rtpproxy/patches/rtpproxy_timeout_notification.fix_patch) opensips patch
-`-w` Set access mode for the controlling UNIX-socket (if used). Only applies if rtpproxy runs under a different GID using `-u` option.
+`-w` Set access mode for the controlling UNIX-socket (if used). Only applies if RTPProxy runs under a different GID using `-u` option.
 `-b` Don't randomize allocated ports, primarily aimed for debugging to provide more predictable behaviour
 
 ## New Continuous Integration (CI) / Testing suite
 
 Automated tests are now run using [travis-ci](http://www.travis-ci.com)
-There are two groups of tests, tests bundled with the rtpproxy distribution, that can be run using the `make check` target, and a suit of integration tests (opensips, kamailio, sippy b2bua).
+There are two groups of tests, tests bundled with the RTPProxy distribution, that can be run using the `make check` target, and a suit of integration tests (opensips, kamailio, sippy b2bua).
 ### See [github.com/sippy/voiptests](https://github.com/sippy/voiptests) for the integration test suite.
 
 ### Summary of tests that run from the `make check` target
 - `makeann` tests for all supported codecs
 - Forwarding tests that verifies media from sender to receiver & the reverse
-- Recording tests that verifies recording capability of the rtpproxy in both AdHoc and PCAP formats
+- Recording tests that verifies recording capability of the RTPProxy in both AdHoc and PCAP formats
 - Simple command parser tests
 - Playback tests that streams sample payload, captures packets from network, decodes and verifies the captured payload against the source payload.
 - memdeb is an opt-in memory allocation tracker useful for detecting memory leaks
@@ -156,7 +156,7 @@ The Lossless RTP Payload Resize feature has been promoted from experimental to f
 
 - make will build a `rtpproxy` binary and a `rtpproxy_debug` binary. The latter includes memdebug
 - systemd support on Linux
-- udp_storm - a utility to stress-test rtpproxy with the RTP-like traffic.
+- udp_storm - a utility to stress-test RTPProxy with the RTP-like traffic.
 
 ## Sponsors & Contributors
 

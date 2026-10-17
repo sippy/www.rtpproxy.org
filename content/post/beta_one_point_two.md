@@ -6,7 +6,7 @@ slug = "beta_one_point_two"
 author = "@sobomax"
 
 +++
-New beta snapshot of 1.2 version of RTPproxy has been released.
+New beta snapshot of 1.2 version of RTPProxy has been released.
 
 This snapshot includes;
 

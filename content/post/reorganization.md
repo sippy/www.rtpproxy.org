@@ -15,7 +15,7 @@ There are a number of new features and improvements in in the pipeline for both 
 ## What is changing?
 
 ### Source Code and Issue Tracking
-We have moved the rtpproxy and b2bua projects from Sourceforge to github.com. We will publish future work under the same github organizational account.
+We have moved the RTPProxy and b2bua projects from Sourceforge to github.com. We will publish future work under the same github organizational account.
 
 The equivalent URLs are as follows:
 
@@ -29,7 +29,7 @@ Sippy organizational page
 
 The mailing lists have both been migrated from mailman to Google Groups.
 
-rtpproxy: https://groups.google.com/forum/#!forum/rtpproxy
+RTPProxy: https://groups.google.com/forum/#!forum/rtpproxy
 
 b2bua: https://groups.google.com/forum/#!forum/b2bua
 
