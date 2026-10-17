@@ -3,7 +3,7 @@
 set -e
 
 run_hugo() {
-  hugo --debug -t herring-cove
+  hugo --logLevel debug -t herring-cove
 }
 
 if [ "${OUR_BRANCH}" != "refs/heads/master" ]
