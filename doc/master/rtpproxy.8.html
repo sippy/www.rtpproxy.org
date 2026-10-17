@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>rtpproxy</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" /></head><body><div class="refentry"><a id="id1337"></a><div class="titlepage"></div><div class="refnamediv"><a id="refnamediv"></a><h2>Name</h2><p>rtpproxy — RTP (Real-time Transport Protocol) Proxy Server</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="cmdsynopsis"><p><a id="SYNOPSIS"></a><code class="command">rtpproxy</code>  [<code class="option">-?</code>] [<code class="option">-2</code>] [<code class="option">-f</code>] [<code class="option">-v</code>] [<code class="option">-V</code>] [<code class="option">-R</code>] [<code class="option">-l</code>
+      <em class="replaceable"><code>addr1[<span class="optional">/addr2</span>]</code></em>...] [<code class="option">-l</code>
+      <em class="replaceable"><code>[<span class="optional">label@</span>]address[<span class="optional">=advertized_address</span>]</code></em>...] [<code class="option">-6</code>
+      <em class="replaceable"><code>addr1[<span class="optional">/addr2</span>]</code></em>...] [<code class="option">-6</code>
+      <em class="replaceable"><code>[<span class="optional">label@</span>]address[<span class="optional">=advertized_address</span>]</code></em>...] [<code class="option">-s</code>
+      <em class="replaceable"><code>ctrl_socket</code></em>] [<code class="option">-t</code>
+      <em class="replaceable"><code>tos</code></em>] [<code class="option">-p</code>
+      <em class="replaceable"><code>pidfile</code></em>] [<code class="option">-T</code>
+      <em class="replaceable"><code>max_ttl</code></em>] [<code class="option">--maxpps</code>
+      <em class="replaceable"><code>pps[<span class="optional">,rtcp_pps</span>]</code></em>] [<code class="option">--maxpsize</code>
+      <em class="replaceable"><code>size[<span class="optional">,rtcp_size</span>]</code></em>] [<code class="option">-r</code> <em class="replaceable"><code>rdir</code></em>
+       [<code class="option">-S</code>
+      <em class="replaceable"><code>sdir</code></em>]] [<code class="option">-L</code>
+      <em class="replaceable"><code>nofile_limit</code></em>] [<code class="option">-A</code>
+      <em class="replaceable"><code>advaddr1[<span class="optional">/advaddr2</span>]</code></em>] [<code class="option">-m</code>
+      <em class="replaceable"><code>min_port</code></em>] [<code class="option">-M</code>
+      <em class="replaceable"><code>max_port</code></em>] [<code class="option">-u</code>
+      <em class="replaceable"><code>uname[<span class="optional">:gname</span>]</code></em>] [<code class="option">-w</code>
+      <em class="replaceable"><code>sock_mode</code></em>] [<code class="option">-F</code>] [<code class="option">-i</code>] [<code class="option">-n</code>
+      <em class="replaceable"><code>timeout_socket</code></em>] [<code class="option">-P</code>] [<code class="option">-a</code>] [<code class="option">-d</code>
+      <em class="replaceable"><code>log_level[<span class="optional">:log_facility</span>]</code></em>] [<code class="option">-W</code>
+      <em class="replaceable"><code>setup_ttl</code></em>] [<code class="option">--force_asymmetric</code>]</p></div></div><div class="refsect1"><a id="id1338"></a><h2>DESCRIPTION</h2><div class="highlights"><a id="DESCRIPTION"></a><p>The <span class="command"><strong>rtpproxy</strong></span> is a generic-purpose RTP proxy
+      server designed to be used in conjunction with a SIP Controller capable
+      of rewriting SDP contents. OpenSIPS, Kamailio, and Sippy B2BUA support
+      <span class="command"><strong>rtpproxy</strong></span>.</p><p>The rtpproxy can be used to facilitate RTP sessions between SIP
+      user agents that are behind a NAT(s) (Network Address Translator)
+      firewall. Several cases exists when direct end-to-end communication is
+      not possible and RTP streams have to be relayed through another host.
+      rtpproxy can be used to setup such a relaying host.</p><p>The rtpproxy can also operate as a application level bridge by
+      specifying two interfaces to listen on. In bridging mode rtpproxy
+      forwards RTP packets received on one interface to the other interface
+      and vice versa. This mode can be used to forward RTP packets between
+      networks without direct network level connectivity (provided that the
+      host running rtpproxy has an interface connected to both networks). One
+      particular application of bridging mode is IPv4/IPv6 traversal of RTP
+      packets.</p><p>When instructed by the call controller rtpproxy will record the
+      entire RTP session to the local hard disk, fork-off (copy) to a remote
+      server and/or play a pre-recorded file to the user agent (comfort ring
+      replacement, Music-on-Hold, disclaimer announcements etc).</p><p>The rtpproxy tracks various important operational metrics about
+      RTP sessions (calls), such as number of packets sent, received, lost,
+      forwarded and so forth. Real-time metrics can then be retrieved by
+      issuing appropriate command via control socket interface.</p></div></div><div class="refsect1"><a id="id1339"></a><h2>OPTIONS</h2><div class="variablelist"><a id="OPTIONS"></a><dl class="variablelist"><dt><span class="term"><code class="option">-?</code></span></dt><dd><p>Show summary of options.</p></dd><dt><span class="term"><code class="option">-2</code></span></dt><dd><p>Send every RTP packet twice in sessions that use low-bitrate
+          codecs. Only packets that are smaller than 128 bytes will be sent
+          twice. This option can improve audio quality on lossy links.</p></dd><dt><span class="term"><code class="option">-f</code></span></dt><dd><p>rtpproxy will stay in foreground mode if this option is
+          set.</p></dd><dt><span class="term"><code class="option">-V</code></span></dt><dd><p>Show version of program.</p></dd><dt><span class="term"><code class="option">-v</code></span></dt><dd><p>Show supported rtpp command protocol revisions.</p></dd><dt><span class="term"><code class="option">-l</code>
+        <em class="replaceable"><code>addr1[<span class="optional">/addr2</span>]</code></em></span></dt><dd><p>IPv4 listen IP address(es). This option can be specified
+          multiple times. Bridging mode can be enabled when the first IPv4 (or
+          first IPv6) listen argument is specified as
+          <em class="replaceable"><code>addr1/addr2</code></em>.</p><p>Additional labeled listen addresses use the separate format
+          <em class="replaceable"><code>[label@]address[=advertized_address]</code></em>. The
+          <em class="replaceable"><code>/addr2</code></em> form is not valid for labeled
+          entries.</p><p>When multiple listen addresses are configured, all addresses
+          after the first must have unique labels. Such labels are accepted by
+          the <code class="literal">l{label}</code> argument in <code class="literal">U</code> and
+          <code class="literal">L</code> commands.</p></dd><dt><span class="term"><code class="option">-6</code>
+        <em class="replaceable"><code>addr1[<span class="optional">/addr2</span>]</code></em></span></dt><dd><p>IPv6 listen IP address(es). This option can be specified
+          multiple times. Two argument formats are supported:
+          <em class="replaceable"><code>addr1[/addr2]</code></em> and
+          <em class="replaceable"><code>[label@]address[=advertized_address]</code></em>.</p></dd><dt><span class="term"><code class="option">-s</code>
+        <em class="replaceable"><code>ctrl_socket</code></em></span></dt><dd><p>This parameter configures rtpproxy control socket. The control
+          socket is used by the call controller for the purpose of creating,
+          modifying, and deleting RTP sessions. The control socket can also be
+          used to fetch stats from the rtpproxy process, or about specific
+          media sessions. Format of <em class="replaceable"><code>ctrl_socket</code></em> is
+          &lt;type&gt;:&lt;socket&gt;. Following types are supported:
+          </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><a id="udp"></a><span class="emphasis"><em>udp:</em></span> Create UDP control socket. In
+                this mode rtpproxy will listen on a UDP socket for control
+                messages from the call controlle.</p><p>Example: -s udp:127.0.0.1:9000</p><p>IP address can be '*' in which case rtpproxy will listen
+                on all local interfaces. If port is omitted then port 22222
+                will be used.</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>rtpproxy control protocol has no built-in security
+                  mechanisms. Make sure that you protect the listening IP and
+                  port properly when using rtpproxy with UDP control
+                  socket.</p></div></li><li class="listitem"><p><a id="udp6"></a><span class="emphasis"><em>udp6:</em></span> Create IPv6 UDP control
+                socket. In this mode rtpproxy will listen on UDP/IPv6 for
+                control messages from the SIP Controller.</p><p>Example: -s udp6:::1:9000</p></li><li class="listitem"><p><a id="tcp"></a><span class="emphasis"><em>tcp:</em></span> Create IPv4 TCP control
+                socket. In this mode rtpproxy will listen on TCP/IPv4 for
+                control messages from the SIP Controller.</p><p>Example: -s tcp:192.168.0.1:9001</p></li><li class="listitem"><p><a id="tcp6"></a><span class="emphasis"><em>tcp6:</em></span> Create IPv6 TCP control
+                socket. In this mode rtpproxy will listen on TCP/IPv6 for
+                control messages from the SIP Controller.</p><p>Example: -s tcp6:::1:9002</p></li><li class="listitem"><p><a id="unix"></a><span class="emphasis"><em>unix:</em></span> Create UNIX domain socket in
+                a datagram-like mode for control interface. In this mode the
+                SIP Controller and rtpproxy must be running on the same host.
+                This is traditional mode when rtpproxy would close connection
+                after processing each command and sending reply.</p><p>Example: -s unix:/var/run/rtpproxy.sock</p></li><li class="listitem"><p><a id="cunix"></a><span class="emphasis"><em>cunix:</em></span> Create UNIX domain socket
+                for control interface. In this mode the SIP Controller and
+                rtpproxy must be running on the same host. Similar to
+                <span class="emphasis"><em>unix:</em></span> above, but the rtpproxy would keep
+                control socket open and accept multiple commands via the same
+                connection.</p><p>Example: -s cunix:/var/run/rtpproxy.sock</p></li></ul></div><p>Default value is
+          <code class="filename">unix:/var/run/rtpproxy.sock</code>.</p></dd><dt><span class="term"><code class="option">-t</code> <em class="replaceable"><code>tos</code></em></span></dt><dd><p>Set ToS (Type of Service) in the outgoing IP header. Default
+          value is 0xB8. Setting this parameter to -1 disables setting ToS
+          resulting in operating system default ToS being used instead.</p></dd><dt><span class="term"><code class="option">-r</code> <em class="replaceable"><code>rec_dir</code></em></span></dt><dd><p>Directory to write recorded RTP sessions.</p></dd><dt><span class="term"><code class="option">-S</code> <em class="replaceable"><code>spool_dir</code></em></span></dt><dd><p>Spool directory for recording of RTP streams. When the session
+          is stopped, the recording will be moved from the spool directory to
+          the rec_dir directory as specified by the <code class="option">-r</code>
+          option.</p></dd><dt><span class="term"><code class="option">-R</code></span></dt><dd><p>Prevent rtpproxy from recording RTCP when recording RTP.
+          rtpproxy records RTCP by default when RTP recording is
+          enabled.</p></dd><dt><span class="term"><code class="option">-p</code> <em class="replaceable"><code>pid_file</code></em></span></dt><dd><p>This parameter configures the name of the file where PID of
+          running rtpproxy will be stored. Default is
+          <code class="filename">/var/run/rtpproxy.pid</code>.</p></dd><dt><span class="term"><code class="option">-T</code> <em class="replaceable"><code>max_ttl</code></em></span></dt><dd><p>Specify the RTP inactivity timer. Defaults to 60
+          seconds.</p><p>If the rtpproxy does not receive any RTP packets for more than
+          <em class="replaceable"><code>max_ttl</code></em> it will then delete the
+          session.</p></dd><dt><span class="term"><code class="option">--maxpps</code>
+        <em class="replaceable"><code>pps[<span class="optional">,rtcp_pps</span>]</code></em></span></dt><dd><p>Set the default per-stream packet-per-second limit for newly
+          created RTP/RTCP streams. The first value applies to RTP streams.
+          The optional second value applies to RTCP streams; if omitted, the
+          RTP value is used for RTCP as well. A value of 0 disables the
+          default limit, which is the default behavior. The limit can be
+          changed for an existing session using the <code class="literal">S pps=</code>
+          control sub-command.</p></dd><dt><span class="term"><code class="option">--maxpsize</code>
+        <em class="replaceable"><code>size[<span class="optional">,rtcp_size</span>]</code></em></span></dt><dd><p>Set the default maximum allowed incoming packet size in bytes
+          for newly created RTP/RTCP streams. The first value applies to RTP
+          streams. The optional second value applies to RTCP streams; if
+          omitted, the RTP value is used for RTCP as well. Packets larger than
+          the configured size are dropped. A value of 0 disables the default
+          limit, which is the default behavior. The limit can be changed for
+          an existing session using the <code class="literal">S mps=</code> control
+          sub-command.</p></dd><dt><span class="term"><code class="option">-L</code>
+        <em class="replaceable"><code>nofile_limit</code></em></span></dt><dd><p>Set the maximum number of open file descriptors per process.
+          The default maximum is set by the operating system, and can be
+          overridden using the <code class="option">-L</code> flag.</p><p>The rtpproxy requires four file descriptors per session to
+          ensure that it can reliably identify where each stream is coming
+          from in a NAT firewall scenario.</p></dd><dt><span class="term"><code class="option">-A</code>
+        <em class="replaceable"><code>advaddr1[<span class="optional">/advaddr2</span>]</code></em></span></dt><dd><p>Set advertised address of rtpproxy. Useful if the rtpproxy is
+          behind a NAT firewall. (Amazon EC2) When the rtpproxy receives a
+          session request from a SIP controller it will return the IP
+          address(es) specified by the <code class="option">-A</code> option.</p><p>This option configures the legacy bridge
+          <em class="replaceable"><code>internal/external</code></em> address pair. For
+          per-address advertised overrides with multiple
+          <code class="option">-l</code>/<code class="option">-6</code> entries, use
+          <em class="replaceable"><code>=advertized_address</code></em> inside each listen
+          address argument.</p></dd><dt><span class="term"><code class="option">-m</code> <em class="replaceable"><code>min_port</code></em></span></dt><dd><p>Set lower limit on UDP ports range that the rtpproxy uses for
+          RTP/RTCP sessions to <em class="replaceable"><code>min_port</code></em>. Default is
+          35000.</p></dd><dt><span class="term"><code class="option">-M</code> <em class="replaceable"><code>max_port</code></em></span></dt><dd><p>Set upper limit on UDP ports range that the rtpproxy uses for
+          RTP/RTCP sessions to <em class="replaceable"><code>max_port</code></em>. Default is
+          65000.</p></dd><dt><span class="term"><code class="option">-u</code>
+        <em class="replaceable"><code>uname[<span class="optional">:gname</span>]</code></em></span></dt><dd><p>Switch rtpproxy to UID identified by the
+          <em class="replaceable"><code>uname</code></em> and optional GID identified by
+          <em class="replaceable"><code>gname</code></em> when proxy is up and
+          running.</p></dd><dt><span class="term"><code class="option">-w</code> <em class="replaceable"><code>sock_mode</code></em></span></dt><dd><p>Set access mode for the controlling UNIX-socket (if used).
+          Only applies if rtpproxy runs under a different GID using
+          <code class="option">-u</code> option.</p></dd><dt><span class="term"><code class="option">-F</code></span></dt><dd><p>By default the rtpproxy will warn user if running as superuser
+          (UID 0) in local control mode and refuse to run in remote control
+          mode at all. This switch removes the check.</p></dd><dt><span class="term"><code class="option">-i</code></span></dt><dd><p>Enable independent RTP activity timeout mode. By default, a
+          timeout (which results in automatic destruction of the session) can
+          only occur if no RTP packets are received on any of the session's
+          ports. This option, if set, varies that behaviour, such that a
+          timeout will occur if packets are still being received on one port
+          but not the other. The option should be used with caution since in
+          some cases it's perfectly fine to have packets coming from only one
+          side of conversation (i.e. when the second party has muted its
+          audio).</p></dd><dt><span class="term"><code class="option">-n</code>
+        <em class="replaceable"><code>timeout_socket</code></em></span></dt><dd><p>This parameter specifies permitted notification sockets only.
+          The listening socket must be created by another application,
+          preferably before starting rtpproxy.</p><p>Timeout notifications must be enabled by the SIP controller
+          when setting up the session. The SIP Controller must specify the
+          timeout_socket, and a notify_tag, which is expected to be an
+          arbitrary string that can be used by the SIP controller to identify
+          which session a received time out notification relates to.</p><p>If a SIP Controller specifies a notification socket for a
+          session, and that socket is not specified using the
+          <code class="option">-n</code> flag, the rtpproxy will not send a notification,
+          and will not produce an error. It will ignore the notification
+          request.</p><p>Format of <em class="replaceable"><code>timeout_socket</code></em> is
+          &lt;type&gt;:&lt;socket&gt;. Following types are supported:
+          </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><span class="emphasis"><em>unix:</em></span> Connect to UNIX domain socket
+                for sending timeout notifications. In this mode B2BUA and
+                rtpproxy must be running on the same host.</p><p>Example: -n unix:/var/run/rtpproxy_timeout.sock</p></li><li class="listitem"><p><span class="emphasis"><em>tcp:</em></span> Connect to a remote host using
+                TCP/IP for sending timeout notifications. Format of the
+                <em class="replaceable"><code>socket</code></em> parameter in this case is
+                &lt;host&gt;:&lt;port&gt;.</p><p>Example: -n tcp:10.20.30:12345</p></li></ul></div><p>There is no default value, notifications are not sent and not
+          permitted unless a value is specified explicitly. Multiple
+          notification sockets can be provided by specifying the
+          <code class="option">-n</code> flag more than once.</p></dd><dt><span class="term"><code class="option">-P</code></span></dt><dd><p>Record sessions using libpcap file format instead of
+          non-standard ad-hoc format. The libpcap format, which is the
+          de-facto standard for packet capturing software, has the advantage
+          of being compatible with numerous third-party tools and utilities,
+          such as tcpdump or Wireshark. The drawback of libpcap is slightly
+          larger overhead (extra 12 bytes for every saved RTP packet for
+          IPv4).</p></dd><dt><span class="term"><code class="option">-a</code></span></dt><dd><p>Record all sessions going through the rtpproxy
+          unconditionally. By default rtpproxy expects the SIP controller to
+          enable recording on a per-session basis.</p></dd><dt><span class="term"><code class="option">-d</code>
+        <em class="replaceable"><code>log_level[<span class="optional">:log_facility</span>]</code></em></span></dt><dd><p>Configures the verbosity level of the log output. Possible
+          <em class="replaceable"><code>log_level</code></em> values in the order from the
+          most verbose to the least verbose are: DBUG, INFO, WARN, ERR and
+          CRIT.</p><p>The optional <em class="replaceable"><code>log_facility</code></em> parameter
+          sets syslog(3) facility assigned to log messages.</p><p>Example: -d WARN:LOG_LOCAL5</p><p>The default level in foreground mode is is DBUG, in background
+          - WARN and facility is LOG_DAEMON.</p></dd><dt><span class="term"><code class="option">--force_asymmetric</code></span></dt><dd><p>Treat all RTP/RTCP sessions as "assymetric", i.e. disable any NAT
+          traversal features unconditionally.</p></dd></dl></div></div><div class="refsect1"><a id="id1340"></a><h2>PRINCIPLES OF OPERATION</h2><p>When the SIP controller receives an INVITE request, it extracts the
+    Call-ID and from_tag from INVITE. The call controller communicates it with
+    the rtpproxy via Unix domain socket or a UDP socket. rtpproxy looks for an
+    existing session with the given Call-ID and from_tag.</p><p>If rtpproxy finds a session that is already associated with the
+    given Call-ID, it will return the UDP port number that is already
+    associated with that session.</p><p>If the given Call-ID and from_tag is not associated with an existing
+    session, it will create a new session by randomly choosing a free UDP port
+    from the usable UDP port range. The UDP port number will be provided as a
+    response to the SIP controllers request.</p><p>The SIP controller is then expected to rewrite the SDP, replacing
+    the ip:port to that of the IP address of the rtpproxy, and the port number
+    allocated by the rtpproxy. The user agent reading the SDP will then send
+    its RTP stream to the rtpproxy.</p><p>When the SIP Controller receives a non-negative SIP reply with SDP
+    it extracts the Call-ID, from_tag and to_tag from the SIP message and
+    sends a request to the rtpproxy with Call-ID, from_tag and to_tag.</p><p>The rtpproxy looks for an existing session based on the Call-ID and
+    from_tag, which it should find. It will then randomly choose another port
+    and "connect" this port with the earlier allocated port, forming the proxy
+    between both sides.</p><p>When the SIP controller recieves the new port number from the
+    rtpproxy, the SIP controller is expected to rewrite the SDP in the SIP
+    message body by replacing the ip:port to that of the IP address and new
+    udp port number provided by rtpproxy. The SIP controller is expected to
+    send the reply to the user agent that initiated the call.</p><p>After the session has been created, the proxy listens on the ports
+    it has allocated for that session and waits for receiving at least one UDP
+    packet from each of the two parties participating in the call. Once a
+    packet is received, the proxy fills one of two IP:port structures
+    associated with respective stream with the source IP:port of that packet.
+    When both structures are filled in, the proxy starts relaying UDP packets
+    between the parties.</p><p>The rtpproxy tracks idle time for each of existing sessions (i.e.
+    time interval within which there were no packets relayed), and
+    automatically cleans up a sessions whose idle times exceed the idle time
+    (60 seconds by default).</p></div><div class="refsect1"><a id="id1341"></a><h2>FILES</h2><p><code class="filename">rtpproxy</code></p><p><code class="filename">makeann</code></p><p><code class="filename">extractaudio</code></p></div><div class="refsect1"><a id="id1342"></a><h2>LICENSE</h2><p>All components of the rtpproxy are licensed under the BSD 2-Clause
+    License. See <code class="filename">LICENSE</code> file in the top of source tree
+    for details.</p></div><div class="refsect1"><a id="id1343"></a><h2>AVAILABILITY</h2><p>The latest version of this program and its components can be found
+    at <a class="ulink" href="http://www.rtpproxy.org/" target="_top">http://www.rtpproxy.org/</a>.</p></div></div></body></html>
