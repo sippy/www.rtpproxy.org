@@ -1,75 +1,59 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>RTPProxy</title>
-    <link>https://www.rtpproxy.org/</link>
-    <description>Recent content on RTPProxy</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Mon, 09 Mar 2015 02:00:51 +0000</lastBuildDate><atom:link href="https://www.rtpproxy.org/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>rtpproxy v2.0.0 release</title>
-      <link>https://www.rtpproxy.org/post/v2release/</link>
-      <pubDate>Mon, 09 Mar 2015 02:00:51 +0000</pubDate>
-      
-      <guid>https://www.rtpproxy.org/post/v2release/</guid>
-      <description>rtpproxy v2.0.0 Release Notes This is the first official release since version 1.2 in March 2009. v2.0 release brings 5-years worth of extensive improvements in performance, quality, and test coverage. This release has been heavily tested in production environments, and has had significant contributions from the open-source community.
-This is the first release since we moved the project to github, and travis-ci for automated test coverage.
-rtpproxy is a Sippy Software, Inc open source project.</description>
-    </item>
-    
-    <item>
-      <title>Reorganization &amp; new developments for RTPProxy</title>
-      <link>https://www.rtpproxy.org/post/reorganization/</link>
-      <pubDate>Thu, 19 Jun 2014 17:36:05 +0000</pubDate>
-      
-      <guid>https://www.rtpproxy.org/post/reorganization/</guid>
-      <description>Why the changes? There are a number of new features and improvements in in the pipeline for both projects. We want to make these changes, and the projects in general, more accessible to the community.
-What is changing? Source Code and Issue Tracking We have moved the rtpproxy and b2bua projects from Sourceforge to github.com. We will publish future work under the same github organizational account.
-The equivalent URLs are as follows:</description>
-    </item>
-    
-    <item>
-      <title>Backstory</title>
-      <link>https://www.rtpproxy.org/about/</link>
-      <pubDate>Thu, 19 Jun 2014 14:50:26 +0000</pubDate>
-      
-      <guid>https://www.rtpproxy.org/about/</guid>
-      <description>RTPProxy was originally developed by Maxim Sobolyev in 2003 for the purpose of enabling VoIP calls to/from SIP User Agents located behind NAT firewalls. Several case existed where direct end-to-end communication between NATed SIP User Agents was not possible. RTPProxy, in conjunction with a SIP proxy overcomes these impediments by acting as a go between for the RTP streams.
-Subsequently, the RTPProxy became widely used by VoIP service providers that needed to optimize traffic flow in their networks.</description>
-    </item>
-    
-    <item>
-      <title>Beta 1.2</title>
-      <link>https://www.rtpproxy.org/post/beta_one_point_two/</link>
-      <pubDate>Mon, 12 Jan 2009 04:09:26 +0000</pubDate>
-      
-      <guid>https://www.rtpproxy.org/post/beta_one_point_two/</guid>
-      <description>New beta snapshot of 1.2 version of RTPproxy has been released.
-This snapshot includes;
-Linux build fixes Improvements in re-packetization feature. </description>
-    </item>
-    
-    <item>
-      <title>New Snapshot: Solaris, you compile me.</title>
-      <link>https://www.rtpproxy.org/post/solaris_you_compile_me/</link>
-      <pubDate>Mon, 08 Dec 2008 04:04:56 +0000</pubDate>
-      
-      <guid>https://www.rtpproxy.org/post/solaris_you_compile_me/</guid>
-      <description>New snapshot from the 1.2 development branch.
-This snapshot includes Sun Solaris fixes (now it should compile and run clearly) and improvments to the disconnect notification feature.</description>
-    </item>
-    
-    <item>
-      <title>Solaris, improved re-INVITES, port randomness and more.</title>
-      <link>https://www.rtpproxy.org/post/ability_to_fork/</link>
-      <pubDate>Tue, 11 Nov 2008 03:56:51 +0000</pubDate>
-      
-      <guid>https://www.rtpproxy.org/post/ability_to_fork/</guid>
-      <description>Latest snapshot of development 1.2 version of RTPproxy has been released.
-This release includes many bug fixes and new features, including:
-Solaris compatibility fixes Support for the new rtpproxy_stream2xxx() command in SER Improved support for re-INVITE Port randomization support syslog support. </description>
-    </item>
-    
-  </channel>
+	<channel>
+		<title>RTPProxy</title>
+		<link>https://www.rtpproxy.org/</link>
+		<description>Recent content on RTPProxy</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+		
+			<lastBuildDate>Mon, 09 Mar 2015 02:00:51 +0000</lastBuildDate>
+		
+			<atom:link href="https://www.rtpproxy.org/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>rtpproxy v2.0.0 release</title>
+				<link>https://www.rtpproxy.org/post/v2release/</link>
+				<pubDate>Mon, 09 Mar 2015 02:00:51 +0000</pubDate>
+				<guid>https://www.rtpproxy.org/post/v2release/</guid>
+				<description>&lt;h1 id=&#34;rtpproxy-v200-release-notes&#34;&gt;rtpproxy v2.0.0 Release Notes&lt;/h1&gt;&#xA;&lt;p&gt;This is the first official release since version 1.2 in March 2009. v2.0 release brings 5-years worth of extensive improvements in performance, quality, and test coverage. This release has been heavily tested in production environments, and has had significant contributions from the open-source community.&lt;/p&gt;&#xA;&lt;p&gt;This is the first release since we moved the project to github, and travis-ci for automated test coverage.&lt;/p&gt;&#xA;&lt;p&gt;rtpproxy is a &lt;a href=&#34;http://www.sippysoft.com/&#34;&gt;Sippy Software, Inc&lt;/a&gt; open source project. The rtpproxy is part of Sippy&amp;rsquo;s commercial soft switch product, and Sippy&amp;rsquo;s clustered media gateway project. rtpproxy is also widely used in other VoIP service provider networks.&#xA;rptproxy supports &lt;a href=&#34;http://www.opensips.org/&#34;&gt;Opensips&lt;/a&gt;, &lt;a href=&#34;http://www.kamailio.org&#34;&gt;Kamailio&lt;/a&gt;, and Sippy&amp;rsquo;s own open source &lt;a href=&#34;https://github.com/sippy/b2bua&#34;&gt;b2bua&lt;/a&gt;&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Reorganization &amp; new developments for RTPProxy</title>
+				<link>https://www.rtpproxy.org/post/reorganization/</link>
+				<pubDate>Thu, 19 Jun 2014 17:36:05 +0000</pubDate>
+				<guid>https://www.rtpproxy.org/post/reorganization/</guid>
+				<description>&lt;h2 id=&#34;why-the-changes&#34;&gt;Why the changes?&lt;/h2&gt;&#xA;&lt;p&gt;There are a number of new features and improvements in in the pipeline for both projects. We want to make these changes, and the projects in general, more accessible to the community.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-is-changing&#34;&gt;What is changing?&lt;/h2&gt;&#xA;&lt;h3 id=&#34;source-code-and-issue-tracking&#34;&gt;Source Code and Issue Tracking&lt;/h3&gt;&#xA;&lt;p&gt;We have moved the rtpproxy and b2bua projects from Sourceforge to github.com. We will publish future work under the same github organizational account.&lt;/p&gt;&#xA;&lt;p&gt;The equivalent URLs are as follows:&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Backstory</title>
+				<link>https://www.rtpproxy.org/about/</link>
+				<pubDate>Thu, 19 Jun 2014 14:50:26 +0000</pubDate>
+				<guid>https://www.rtpproxy.org/about/</guid>
+				<description>&lt;p&gt;RTPProxy was originally developed by Maxim Sobolyev in 2003 for the purpose of enabling VoIP calls to/from SIP User Agents located behind NAT firewalls. Several case existed where direct end-to-end communication between NATed SIP User Agents was not possible. RTPProxy, in conjunction with a SIP proxy overcomes these impediments by acting as a go between for the RTP streams.&lt;/p&gt;&#xA;&lt;p&gt;Subsequently, the RTPProxy became widely used by VoIP service providers that needed to optimize traffic flow in their networks.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Beta 1.2</title>
+				<link>https://www.rtpproxy.org/post/beta_one_point_two/</link>
+				<pubDate>Mon, 12 Jan 2009 04:09:26 +0000</pubDate>
+				<guid>https://www.rtpproxy.org/post/beta_one_point_two/</guid>
+				<description>&lt;p&gt;New beta snapshot of 1.2 version of RTPproxy has been released.&lt;/p&gt;&#xA;&lt;p&gt;This snapshot includes;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Linux build fixes&lt;/li&gt;&#xA;&lt;li&gt;Improvements in re-packetization feature.&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>New Snapshot: Solaris, you compile me.</title>
+				<link>https://www.rtpproxy.org/post/solaris_you_compile_me/</link>
+				<pubDate>Mon, 08 Dec 2008 04:04:56 +0000</pubDate>
+				<guid>https://www.rtpproxy.org/post/solaris_you_compile_me/</guid>
+				<description>&lt;p&gt;New snapshot from the 1.2 development branch.&lt;/p&gt;&#xA;&lt;p&gt;This snapshot includes Sun Solaris fixes (now it should compile and run clearly) and improvments to the disconnect notification feature.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Solaris, improved re-INVITES, port randomness and more.</title>
+				<link>https://www.rtpproxy.org/post/ability_to_fork/</link>
+				<pubDate>Tue, 11 Nov 2008 03:56:51 +0000</pubDate>
+				<guid>https://www.rtpproxy.org/post/ability_to_fork/</guid>
+				<description>&lt;p&gt;Latest snapshot of development 1.2 version of RTPproxy has been released.&lt;/p&gt;&#xA;&lt;p&gt;This release includes many bug fixes and new features, including:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Solaris compatibility fixes&lt;/li&gt;&#xA;&lt;li&gt;Support for the new &lt;code&gt;rtpproxy_stream2xxx()&lt;/code&gt; command in SER&lt;/li&gt;&#xA;&lt;li&gt;Improved support for re-INVITE&lt;/li&gt;&#xA;&lt;li&gt;Port randomization support&lt;/li&gt;&#xA;&lt;li&gt;syslog support.&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+	</channel>
 </rss>
