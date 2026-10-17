@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>rtpproxy v3.0.0 release</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <link href="https://www.rtpproxy.org/index.xml" rel="alternate" type="application/rss+xml" title="RTPProxy" />
+  <link href="https://www.rtpproxy.org//css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://www.rtpproxy.org//css/hc.css" rel="stylesheet">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  
+    
+    </head>
+    <body>
+<div class="nav-toggle"><i class="fa fa-bars fa-2x"></i> Herring Cove </div>
+      <div id = "wrapper">
+
+
+<div class="navbar navbar-default" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="https://www.rtpproxy.org//"><p class="navbar-brand">RTPProxy</p></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+					
+					
+					<li><a href="/about/">About</a></li>
+					
+					<li><a href="/post/">Posts</a></li>
+					
+					<li><a href="https://github.com/sippy/rtpproxy/releases/latest">Release Information (Stable)</a></li>
+					
+					<li><a href="/doc/master/release_info.html">Release Information (Unstable)</a></li>
+					
+					<li><a href="/doc/master/user_manual.html">User Manual</a></li>
+					
+					<li><a href="/doc/master/rtpproxy.8.html">Manual Page: rtpproxy(8)</a></li>
+					
+					<li><a href="/doc/master/extractaudio.1.html">Manual Page: extractaudio(1)</a></li>
+					
+					<li><a href="/doc/master/makeann.1.html">Manual Page: makeann(1)</a></li>
+					
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+
+       
+       <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+          <li class="sidebar-brand"><a href="https://www.rtpproxy.org//"><h1 class="brand">RTPProxy</h1></a><h3></h3></li>
+          <hr />
+					
+						<li><a href="/about/">About</a></li>
+					
+						<li><a href="/post/">Posts</a></li>
+					
+						<li><a href="https://github.com/sippy/rtpproxy/releases/latest">Release Information (Stable)</a></li>
+					
+						<li><a href="/doc/master/release_info.html">Release Information (Unstable)</a></li>
+					
+						<li><a href="/doc/master/user_manual.html">User Manual</a></li>
+					
+						<li><a href="/doc/master/rtpproxy.8.html">Manual Page: rtpproxy(8)</a></li>
+					
+						<li><a href="/doc/master/extractaudio.1.html">Manual Page: extractaudio(1)</a></li>
+					
+						<li><a href="/doc/master/makeann.1.html">Manual Page: makeann(1)</a></li>
+					
+          <hr />
+          <div id="social-wrapper">
+           <li> <a href="https://twitter.com/sippylabs"><i class="fa fa-twitter-square"></i> @SippyLabs</a></li>
+           
+           
+           <li> <a href="https://github.com/sippy/rtpproxy"><i class="fa fa-github-square"></i> Sippy/RTPProxy</a> </li>
+           <li> <a href="https://groups.google.com/forum/#!forum/rtpproxy"><i class="fa fa-envelope"></i> Mailing List</a> </li>
+         </div>
+       </ul>
+     </div>
+
+
+
+     <div class="container">
+
+
+  <div id="article">
+   <div class="article-title">rtpproxy v3.0.0 release</div>
+   <p class="meta"><small>&nbsp;<i class="fa fa-calendar-o"></i> 2023-05-21</small></p> <hr/>
+   <div class="post">
+     <h1 id="rtpproxy-30-release-notes">rtpproxy 3.0 Release Notes</h1>
+<p>Sippy Labs is thrilled to introduce RTPProxy 3.0. This release introduces significant enhancements and new features since the previous release, 2.2, four years ago.</p>
+<p>See the <a href="https://github.com/sippy/rtpproxy/releases/tag/v3.0.0">GitHub release</a> for downloads.</p>
+<h2 id="major-improvements">Major Improvements</h2>
+<ul>
+<li><strong>Revamped architecture</strong>: we have re-architected major subsystems for more parallelism, significantly improving performance.</li>
+<li><strong>Enhanced compatibility</strong>: RTPProxy 3.0 ensures extended support for third-party extension modules.</li>
+<li><strong>Full support for video and encrypted calls</strong>: the new release can handle video and encrypted calls, solidifying RTPProxy&rsquo;s position as a comprehensive solution for real-time communication needs.</li>
+</ul>
+<h2 id="performance-enhancements">Performance Enhancements</h2>
+<ul>
+<li><strong>Polling</strong>: we&rsquo;ve replaced the use of <code>poll()</code> with <code>epoll()</code>/<code>kqueue()</code> for RTP/RTCP socket polling.</li>
+<li><strong>RTCP handling</strong>: now runs in its own dedicated thread.</li>
+<li><strong>Media generation</strong>: playback now runs in a separate thread.</li>
+<li><strong>Elimination of a bottleneck</strong>: we&rsquo;ve eliminated a significant synchronization bottleneck that was affecting the command-processing thread.</li>
+<li><strong>Hashing algorithm</strong>: for the session hash tables, we&rsquo;ve switched to xxHash, a high-performance hashing algorithm.</li>
+</ul>
+<h2 id="new-features">New Features</h2>
+<ul>
+<li><strong>Library version of RTPProxy</strong>: allows RTPProxy to be embedded into other real-time communication software.</li>
+<li><strong>DTLS gateway module</strong>: this new module can translate between encrypted and non-encrypted streams, and perform back-to-back re-encryption of already encrypted streams for recording purposes.</li>
+<li><strong>Automated Docker builds</strong>: starting with 3.0, we are publishing official RTPProxy Docker images to Docker Hub with every release and every commit to the master branch.</li>
+</ul>
+<p>For more detailed information, please refer to the full <a href="/doc/master/release_info.html">RTPProxy 3.0 Release Information</a>.</p>
+
+   </div>
+ </div>
+
+
+ <a href="https://twitter.com/share" class="twitter-share-button " data-size="small" data-count="none">Tweet</a>
+ <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+ <ul class="pager">
+      &nbsp;<li class="previous"><a href="https://www.rtpproxy.org/post/v2.1.1release/"> rtpproxy v2.1.1 release</a></li>
+      &nbsp;<li class="next"><a href="https://www.rtpproxy.org/post/v3.0.1release/"> rtpproxy v3.0.1 release</a></li>
+</ul>
+
+
+
+    </ul>
+    </div>
+    <footer>
+
+        <p class="text-muted credit">&copy; 2026. All rights reserved. </p>
+    </footer>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-2295417-4', 'rtpproxy.org');
+      ga('send', 'pageview');
+
+    </script>
+ 
+    <script src="https://www.rtpproxy.org//js/jquery-1.10.2.min.js"></script>
+    <script src="https://www.rtpproxy.org//js/bootstrap.min.js"></script>
+    <script src="https://www.rtpproxy.org//js/bootstrap.js"></script>
+    <script type="text/javascript" src="https://www.rtpproxy.org//js/hc.js"></script>
+</body>
+
+</html>
+
