@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>rtpproxy v2.1.0 release</title>
+  <title>RTPProxy v2.1.0 release</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
   <link href="https://www.rtpproxy.org/index.xml" rel="alternate" type="application/rss+xml" title="RTPProxy" />
@@ -94,13 +94,13 @@
 
 
   <div id="article">
-   <div class="article-title">rtpproxy v2.1.0 release</div>
+   <div class="article-title">RTPProxy v2.1.0 release</div>
    <p class="meta"><small>&nbsp;<i class="fa fa-calendar-o"></i> 2019-06-09</small></p> <hr/>
    <div class="post">
-     <h1 id="rtpproxy-v210-release-notes">rtpproxy v2.1.0 Release Notes</h1>
-<p>Version 2.1.0 of the rtpproxy brings 3+ years of improvements and fixes into our 2.0 version. The goal of this release has been to stabilize the new code and subsystems added in 2.0.</p>
-<p>We heavily focused on developing a test framework that is based on high-level functional testing, and fixed the issues as we went. Basic testing is done in the rtpproxy repository itself.</p>
-<p>For more advanced test scenarios that use external components, an additional repository has been created, <a href="https://github.com/sippy/voiptests">sippy/voiptests</a>. The code in that repository builds on our Python SIP stack and brings together many different versions of Kamailio, OpenSIPS, rtpproxy, Sippy B2BUA (Python) and our recent addition Sippy B2BUA (Go), to test that they can perform the basic functions a user might want them to perform. So if we (god forbid!) break our ability to work with any of those by making changes to our code, we are instantly notified. And in reverse, if any of those nice folks break (never happens! :) whatever we consider a basic level of support for the rtpproxy, we are aware of it and do our best to bring the issue to light.</p>
+     <h1 id="rtpproxy-v210-release-notes">RTPProxy v2.1.0 Release Notes</h1>
+<p>Version 2.1.0 of the RTPProxy brings 3+ years of improvements and fixes into our 2.0 version. The goal of this release has been to stabilize the new code and subsystems added in 2.0.</p>
+<p>We heavily focused on developing a test framework that is based on high-level functional testing, and fixed the issues as we went. Basic testing is done in the RTPProxy repository itself.</p>
+<p>For more advanced test scenarios that use external components, an additional repository has been created, <a href="https://github.com/sippy/voiptests">sippy/voiptests</a>. The code in that repository builds on our Python SIP stack and brings together many different versions of Kamailio, OpenSIPS, RTPProxy, Sippy B2BUA (Python) and our recent addition Sippy B2BUA (Go), to test that they can perform the basic functions a user might want them to perform. So if we (god forbid!) break our ability to work with any of those by making changes to our code, we are instantly notified. And in reverse, if any of those nice folks break (never happens! :) whatever we consider a basic level of support for the RTPProxy, we are aware of it and do our best to bring the issue to light.</p>
 <p>See the <a href="https://github.com/sippy/rtpproxy/releases/tag/v2.1.0">GitHub release</a> for downloads.</p>
 <h2 id="notable-changes">Notable Changes</h2>
 <h3 id="improved-session-latching">Improved session latching</h3>
@@ -111,11 +111,11 @@
 <li>Its sequence number is greater than the sequence number saved during the previous latching.</li>
 </ol>
 <p>If any of (1)-(3) fails, the old behaviour of disallowing a new update within <code>UPDATE_WINDOW</code> after the previous one applies.</p>
-<p>This fixes the issue when an endpoint generates 3 packets from the proper IP, but then switches to a completely different port and sticks with it for the rest of the session. Previously, the rtpproxy would latch to the first of those 3 packets and discard the rest as garbage.</p>
+<p>This fixes the issue when an endpoint generates 3 packets from the proper IP, but then switches to a completely different port and sticks with it for the rest of the session. Previously, the RTPProxy would latch to the first of those 3 packets and discard the rest as garbage.</p>
 <p>The SSRC and initial sequence number are now logged while latching, which helps to identify the session in the log.
 (<a href="https://github.com/sippy/rtpproxy/commit/fb594fb7c2ef28407e4450913bf8cf348198f7b7">fb594fb</a>)</p>
 <h3 id="count-ignored-packets">Count ignored packets</h3>
-<p>rtpproxy now counts the number of ignored packets per session, i.e. packets coming from unrecognized IP addresses/ports.
+<p>RTPProxy now counts the number of ignored packets per session, i.e. packets coming from unrecognized IP addresses/ports.
 (<a href="https://github.com/sippy/rtpproxy/commit/0020e458313cf4b6d58eb123571ecd42e0723662">0020e45</a>)</p>
 <h3 id="new-n-modifier-for-ul-commands-to-allocate-new-rtprtcp-ports">New <code>n</code> modifier for <code>U</code>/<code>L</code> commands to allocate new RTP/RTCP ports</h3>
 <p>The new <code>n</code> modifier for the <code>U</code>/<code>L</code> commands forces a new pair of RTP/RTCP ports to be allocated and the old ones released. This is useful when a call route-advances or fails over to a new destination, where the failed route may still be sending superfluous traffic to the previous ports.
@@ -125,7 +125,7 @@
 <p>Example: <code>Q call-id from_tag to_tag rtpa_nsent rtpa_nrcvd rtpa_ndups rtpa_nlost</code>
 (<a href="https://github.com/sippy/rtpproxy/commit/273292bbf1166f0ee80684ae40b3bc68bc4772af">273292b</a>)</p>
 <h3 id="new-stats-counters-to-track-overall-packet-loss">New stats counters to track overall packet loss</h3>
-<p>The <code>rtpa_nsent</code>, <code>rtpa_nrcvd</code> and <code>rtpa_ndups</code> counters allow monitoring overall packet loss in all streams going to the rtpproxy as a function of time.
+<p>The <code>rtpa_nsent</code>, <code>rtpa_nrcvd</code> and <code>rtpa_ndups</code> counters allow monitoring overall packet loss in all streams going to the RTPProxy as a function of time.
 (<a href="https://github.com/sippy/rtpproxy/commit/4f58b4a7061479d6977f9c3a12e6551936cc1c2c">4f58b4a</a>)</p>
 <h3 id="ssrc-packet-tracking">SSRC packet tracking</h3>
 <p>Work in progress (<a href="https://github.com/sippy/rtpproxy/commit/b1ac79e5c650a640f26badd3cc434d5b9f6ef019">b1ac79e</a>)</p>
@@ -135,11 +135,11 @@
 <h3 id="notification-socket-wildcard">Notification socket wildcard</h3>
 <p>The notification wildcard <code>%%CC_SELF%%</code> can be used to automatically register notification sockets for callers of the <code>U</code> and <code>L</code> commands.
 (<a href="https://github.com/sippy/rtpproxy/commit/83b09c91053216215811c380cb093a4067c9f6b9">83b09c9</a>)</p>
-<h3 id="the-sighup-signal-shuts-the-rtpproxy-down-gracefully">The <code>SIGHUP</code> signal shuts the rtpproxy down gracefully</h3>
+<h3 id="the-sighup-signal-shuts-the-rtpproxy-down-gracefully">The <code>SIGHUP</code> signal shuts the RTPProxy down gracefully</h3>
 <p>Use <code>SIGHUP</code> instead of <code>SIGTERM</code> to shut down the proxy. The difference is that <code>SIGTERM</code> tries to tear down everything from the signal handler, while <code>SIGHUP</code> makes <code>main()</code> exit gracefully, so there is no race between <code>main()</code> posting an event into the <code>rtpp_proc</code> queue and <code>rtpp_proc</code> actually exiting.
 (<a href="https://github.com/sippy/rtpproxy/commit/55438f1093beebadb1b003981b07268f0d0ac063">55438f1</a>)</p>
 <h3 id="improved-test-coverage">Improved test coverage</h3>
-<p>The rtpproxy test suite has grown, and covers all common use cases, including re-packetization.</p>
+<p>The RTPProxy test suite has grown, and covers all common use cases, including re-packetization.</p>
 <h3 id="new-pertoolsudp_contention-tool-to-simulate-udp-traffic">New <code>pertools/udp_contention</code> tool to simulate UDP traffic</h3>
 <p>(<a href="https://github.com/sippy/rtpproxy/commit/3025a331790ddea80d7e4506aa95e6e4f328625c">3025a33</a>)</p>
 <h3 id="z-option-of-the-u-and-l-commands-to-set-ptime"><code>z</code> option of the <code>U</code> and <code>L</code> commands to set ptime</h3>
@@ -153,7 +153,7 @@
 <p><code>struct rtpp_session</code> is now <code>struct rtpp_session_obj</code>, and <code>sp-&gt;stream[N]</code> is a pointer, not a sub-structure. This also deals with some API changes in the <code>weakref</code> code and elsewhere.
 (<a href="https://github.com/sippy/rtpproxy/commit/29bb9e15af3cb557eb0c2c20d5d2c4d9bc46654f">29bb9e1</a>)</p>
 <h3 id="jitter-tracking">Jitter tracking</h3>
-<p>rtpproxy now tracks jitter metrics as per Appendix A.8 of RFC 3550.
+<p>RTPProxy now tracks jitter metrics as per Appendix A.8 of RFC 3550.
 (<a href="https://github.com/sippy/rtpproxy/commit/e545b08bc637c47a83e4821ccc900a66f9604302">e545b08</a>)</p>
 <h3 id="dynamically-loadable-modules">Dynamically loadable modules</h3>
 <p>Infrastructure to support dynamically loadable modules has been implemented, and it is used for the new Accounting CSV module.
@@ -178,8 +178,8 @@
  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
  <ul class="pager">
-      &nbsp;<li class="previous"><a href="https://www.rtpproxy.org/post/v2release/"> rtpproxy v2.0.0 release</a></li>
-      &nbsp;<li class="next"><a href="https://www.rtpproxy.org/post/v2.2release/"> rtpproxy v2.2.0 release</a></li>
+      &nbsp;<li class="previous"><a href="https://www.rtpproxy.org/post/2019-opensips-summit-srtp/"> Talk: Secure RTP support in the RTPProxy</a></li>
+      &nbsp;<li class="next"><a href="https://www.rtpproxy.org/post/2019-januscon/"> Talk: Designing a Better Real-Time Media Control Protocol</a></li>
 </ul>
 
 

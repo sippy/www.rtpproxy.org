@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>rtpproxy v2.0.0 release</title>
+  <title>RTPProxy v2.0.0 release</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
   <link href="https://www.rtpproxy.org/index.xml" rel="alternate" type="application/rss+xml" title="RTPProxy" />
@@ -94,14 +94,14 @@
 
 
   <div id="article">
-   <div class="article-title">rtpproxy v2.0.0 release</div>
+   <div class="article-title">RTPProxy v2.0.0 release</div>
    <p class="meta"><small>&nbsp;<i class="fa fa-calendar-o"></i> 2015-03-09</small></p> <hr/>
    <div class="post">
-     <h1 id="rtpproxy-v200-release-notes">rtpproxy v2.0.0 Release Notes</h1>
+     <h1 id="rtpproxy-v200-release-notes">RTPProxy v2.0.0 Release Notes</h1>
 <p>This is the first official release since version 1.2 in March 2009. v2.0 release brings 5-years worth of extensive improvements in performance, quality, and test coverage. This release has been heavily tested in production environments, and has had significant contributions from the open-source community.</p>
 <p>This is the first release since we moved the project to github, and travis-ci for automated test coverage.</p>
-<p>rtpproxy is a <a href="http://www.sippysoft.com/">Sippy Software, Inc</a> open source project. The rtpproxy is part of Sippy&rsquo;s commercial soft switch product, and Sippy&rsquo;s clustered media gateway project. rtpproxy is also widely used in other VoIP service provider networks.
-rptproxy supports <a href="http://www.opensips.org/">Opensips</a>, <a href="http://www.kamailio.org">Kamailio</a>, and Sippy&rsquo;s own open source <a href="https://github.com/sippy/b2bua">b2bua</a></p>
+<p>RTPProxy is a <a href="http://www.sippysoft.com/">Sippy Software, Inc</a> open source project. The RTPProxy is part of Sippy&rsquo;s commercial soft switch product, and Sippy&rsquo;s clustered media gateway project. RTPProxy is also widely used in other VoIP service provider networks.
+RTPProxy supports <a href="http://www.opensips.org/">Opensips</a>, <a href="http://www.kamailio.org">Kamailio</a>, and Sippy&rsquo;s own open source <a href="https://github.com/sippy/b2bua">b2bua</a></p>
 <h2 id="notable-changes">Notable Changes</h2>
 <h3 id="performance--quality">Performance / Quality</h3>
 <p>Reduction in CPU usage by 40% to 60% has been observed on production deployments.
@@ -144,7 +144,7 @@ Jitter (measured using wire shark) characteristics have improved significantly.<
 <h2 id="re-packetization-support-to-resize-rtp-packet-sizes">Re-packetization support to resize rtp packet sizes.</h2>
 <p>Re-packetization allows providers to resize the rtp frame size between a caller and a callee. This is useful for saving bandwidth between pops, or for interoperability with vendors who require a non-standard ptime. For example, the standard ptime for g.729 is 20 msec, but a vendor may require that ptime be 60msec. Re-packetization allows this resizing to happen on the fly. See also the monitoring counters <code>npkts_resizer_in</code>, <code>npkts_resizer_out</code> and <code>npkts_resizer_discard</code> that relates to this feature.</p>
 <h2 id="sighup-for-graceful-shutdown">SIGHUP for graceful shutdown</h2>
-<p>The SIGHUP signal will initiate a slow shut down. In this mode any new rtpp requests for a new session will be rejected with a E99 code. The rtpproxy will exit only after all active sessions have ended. This feature simplifies planned maintenance.</p>
+<p>The SIGHUP signal will initiate a slow shut down. In this mode any new rtpp requests for a new session will be rejected with a E99 code. The RTPProxy will exit only after all active sessions have ended. This feature simplifies planned maintenance.</p>
 <h2 id="updated-makeann-utility">Updated <code>makeann</code> utility</h2>
 <p>The <code>makeann</code> utility takes 16-bit signed linear encoded audio and produces a file for each supported codec.</p>
 <p><code>makeann</code> codecs are supported:</p>
@@ -181,28 +181,28 @@ Jitter (measured using wire shark) characteristics have improved significantly.<
 <h2 id="new-types-of-control-channels">New Types of Control Channels</h2>
 <p>In 2.0, we&rsquo;ve added the following 3 new control channels <code>cunix</code>, <code>stdio</code> and <code>systemd</code>, in addition to <code>unix</code> and <code>udp</code> as supported since v1.2:</p>
 <ul>
-<li><code>cunix</code>, similar to <code>unix</code> except the server (e.g. rtpproxy) is not closing session after processing a command, so more commands can be posted and processed in sequence, thereby reducing overhead and complexity of the client code. Intended to become the default channel for local IPC;</li>
+<li><code>cunix</code>, similar to <code>unix</code> except the server (e.g. RTPProxy) is not closing session after processing a command, so more commands can be posted and processed in sequence, thereby reducing overhead and complexity of the client code. Intended to become the default channel for local IPC;</li>
 <li><code>stdio</code>, commands are read from stdin, replies are posted to stdout. Primarily designed to be used for CI. Example: <code>rtpproxy -s stdio: -f &lt; some.commands</code>;</li>
 <li><code>systemd</code>, get command from / post replies to the file descriptor provided by the <code>systemd</code> daemon. Only supported on Linux;</li>
 </ul>
 <p>The control channel system has been overhauled to enable more than one channel to be used simultaneously.</p>
 <h2 id="new-and-updated-command-line-flags">New and updated command line flags</h2>
-<p><code>-s</code> now accepts <code>stdio</code>, <code>cunix:</code> and <code>systemd:</code> as an argument. rtpproxy can accept -s multiple times, which will cause it to listen on multiple control sockets. More than one control channels can be used independently.
+<p><code>-s</code> now accepts <code>stdio</code>, <code>cunix:</code> and <code>systemd:</code> as an argument. RTPProxy can accept -s multiple times, which will cause it to listen on multiple control sockets. More than one control channels can be used independently.
 <code>-V</code> Show command protocol version.
 <code>-L</code> Adjust the number of simultaneous open connections. Note that each RTP media stream requires four open connections. A SIP call can open more than one RTP media stream depending on the client&rsquo;s setup.
 <code>-A address</code> Sets the advertised IP address.  <code>-A addr1/addr2</code> can also be used for bridging mode
 <code>-W setup_ttl</code> Implements &ldquo;Call Establishment Phase Timeout&rdquo; as originally implemented in <a href="https://github.com/OpenSIPS/opensips/blob/master/modules/rtpproxy/patches/rtpproxy_timeout_notification.fix_patch">this</a> opensips patch
-<code>-w</code> Set access mode for the controlling UNIX-socket (if used). Only applies if rtpproxy runs under a different GID using <code>-u</code> option.
+<code>-w</code> Set access mode for the controlling UNIX-socket (if used). Only applies if RTPProxy runs under a different GID using <code>-u</code> option.
 <code>-b</code> Don&rsquo;t randomize allocated ports, primarily aimed for debugging to provide more predictable behaviour</p>
 <h2 id="new-continuous-integration-ci--testing-suite">New Continuous Integration (CI) / Testing suite</h2>
 <p>Automated tests are now run using <a href="http://www.travis-ci.com">travis-ci</a>
-There are two groups of tests, tests bundled with the rtpproxy distribution, that can be run using the <code>make check</code> target, and a suit of integration tests (opensips, kamailio, sippy b2bua).</p>
+There are two groups of tests, tests bundled with the RTPProxy distribution, that can be run using the <code>make check</code> target, and a suit of integration tests (opensips, kamailio, sippy b2bua).</p>
 <h3 id="see-githubcomsippyvoiptests-for-the-integration-test-suite">See <a href="https://github.com/sippy/voiptests">github.com/sippy/voiptests</a> for the integration test suite.</h3>
 <h3 id="summary-of-tests-that-run-from-the-make-check-target">Summary of tests that run from the <code>make check</code> target</h3>
 <ul>
 <li><code>makeann</code> tests for all supported codecs</li>
 <li>Forwarding tests that verifies media from sender to receiver &amp; the reverse</li>
-<li>Recording tests that verifies recording capability of the rtpproxy in both AdHoc and PCAP formats</li>
+<li>Recording tests that verifies recording capability of the RTPProxy in both AdHoc and PCAP formats</li>
 <li>Simple command parser tests</li>
 <li>Playback tests that streams sample payload, captures packets from network, decodes and verifies the captured payload against the source payload.</li>
 <li>memdeb is an opt-in memory allocation tracker useful for detecting memory leaks</li>
@@ -223,7 +223,7 @@ There are two groups of tests, tests bundled with the rtpproxy distribution, tha
 <ul>
 <li>make will build a <code>rtpproxy</code> binary and a <code>rtpproxy_debug</code> binary. The latter includes memdebug</li>
 <li>systemd support on Linux</li>
-<li>udp_storm - a utility to stress-test rtpproxy with the RTP-like traffic.</li>
+<li>udp_storm - a utility to stress-test RTPProxy with the RTP-like traffic.</li>
 </ul>
 <h2 id="sponsors--contributors">Sponsors &amp; Contributors</h2>
 <p>Thank you to our contributors!</p>
@@ -246,7 +246,7 @@ There are two groups of tests, tests bundled with the rtpproxy distribution, tha
 
  <ul class="pager">
       &nbsp;<li class="previous"><a href="https://www.rtpproxy.org/post/reorganization/"> Reorganization &amp; new developments for RTPProxy</a></li>
-      &nbsp;<li class="next"><a href="https://www.rtpproxy.org/post/v2.1release/"> rtpproxy v2.1.0 release</a></li>
+      &nbsp;<li class="next"><a href="https://www.rtpproxy.org/post/2015-scaling-rtpproxy/"> Talk: Scaling RTPProxy</a></li>
 </ul>
 
 

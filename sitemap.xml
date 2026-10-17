@@ -2,14 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://www.rtpproxy.org/post/2026-opensips-summit-demo/</loc>
+    <lastmod>2026-04-30T12:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://www.rtpproxy.org/post/</loc>
-    <lastmod>2026-03-16T22:19:39+00:00</lastmod>
+    <lastmod>2026-04-30T12:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.rtpproxy.org/</loc>
-    <lastmod>2026-03-16T22:19:39+00:00</lastmod>
+    <lastmod>2026-04-30T12:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.rtpproxy.org/post/v3.2release/</loc>
     <lastmod>2026-03-16T22:19:39+00:00</lastmod>
+  </url><url>
+    <loc>https://www.rtpproxy.org/post/2025-opensips-summit-demo/</loc>
+    <lastmod>2025-05-29T12:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.rtpproxy.org/post/2025-opensips-summit-webrtc/</loc>
+    <lastmod>2025-05-28T12:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.rtpproxy.org/post/v3.1.1release/</loc>
     <lastmod>2025-02-25T20:56:51+00:00</lastmod>
@@ -20,8 +29,14 @@
     <loc>https://www.rtpproxy.org/post/v3.0.1release/</loc>
     <lastmod>2023-10-04T17:12:55+00:00</lastmod>
   </url><url>
+    <loc>https://www.rtpproxy.org/post/2023-kamailio-world/</loc>
+    <lastmod>2023-06-07T12:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://www.rtpproxy.org/post/v3.0release/</loc>
     <lastmod>2023-05-21T19:20:51+00:00</lastmod>
+  </url><url>
+    <loc>https://www.rtpproxy.org/post/2022-opensips-summit-demo/</loc>
+    <lastmod>2022-09-29T06:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.rtpproxy.org/post/v2.1.1release/</loc>
     <lastmod>2020-10-06T22:23:08+00:00</lastmod>
@@ -29,8 +44,23 @@
     <loc>https://www.rtpproxy.org/post/v2.2release/</loc>
     <lastmod>2020-10-06T21:40:53+00:00</lastmod>
   </url><url>
+    <loc>https://www.rtpproxy.org/post/2020-opensips-summit/</loc>
+    <lastmod>2020-09-10T07:06:39+00:00</lastmod>
+  </url><url>
+    <loc>https://www.rtpproxy.org/post/2019-januscon/</loc>
+    <lastmod>2019-09-27T07:47:38+00:00</lastmod>
+  </url><url>
     <loc>https://www.rtpproxy.org/post/v2.1release/</loc>
     <lastmod>2019-06-09T17:56:16+00:00</lastmod>
+  </url><url>
+    <loc>https://www.rtpproxy.org/post/2019-opensips-summit-srtp/</loc>
+    <lastmod>2019-05-06T18:49:04+00:00</lastmod>
+  </url><url>
+    <loc>https://www.rtpproxy.org/post/2017-opensips-summit/</loc>
+    <lastmod>2017-05-02T12:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.rtpproxy.org/post/2015-scaling-rtpproxy/</loc>
+    <lastmod>2015-12-09T17:27:25+00:00</lastmod>
   </url><url>
     <loc>https://www.rtpproxy.org/post/v2release/</loc>
     <lastmod>2015-03-09T02:00:51+00:00</lastmod>
