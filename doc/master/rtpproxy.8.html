@@ -20,7 +20,11 @@
       <em class="replaceable"><code>sock_mode</code></em>] [<code class="option">-F</code>] [<code class="option">-i</code>] [<code class="option">-n</code>
       <em class="replaceable"><code>timeout_socket</code></em>] [<code class="option">-P</code>] [<code class="option">-a</code>] [<code class="option">-d</code>
       <em class="replaceable"><code>log_level[<span class="optional">:log_facility</span>]</code></em>] [<code class="option">-W</code>
-      <em class="replaceable"><code>setup_ttl</code></em>] [<code class="option">--force_asymmetric</code>]</p></div></div><div class="refsect1"><a id="id1338"></a><h2>DESCRIPTION</h2><div class="highlights"><a id="DESCRIPTION"></a><p>The <span class="command"><strong>rtpproxy</strong></span> is a generic-purpose RTP proxy
+      <em class="replaceable"><code>setup_ttl</code></em>] [<code class="option">--force_asymmetric</code>] [<code class="option">-b</code>] [<code class="option">-c</code>
+      <em class="replaceable"><code>fifo|rr</code></em>] [<code class="option">--nice</code>
+      <em class="replaceable"><code>level</code></em>] [<code class="option">-D</code>] [<code class="option">--no_redirect</code>] [<code class="option">--config</code>
+      <em class="replaceable"><code>config_file</code></em>] [<code class="option">--dso</code>
+      <em class="replaceable"><code>module</code></em>...] [<code class="option">--bridge_symmetric</code>] [<code class="option">--no_resolve</code>]</p></div><div class="cmdsynopsis"><p><code class="command">rtpproxy</code>   <code class="option">-C</code> </p></div></div><div class="refsect1"><a id="id1338"></a><h2>DESCRIPTION</h2><div class="highlights"><a id="DESCRIPTION"></a><p>The <span class="command"><strong>rtpproxy</strong></span> is a generic-purpose RTP proxy
       server designed to be used in conjunction with a SIP Controller capable
       of rewriting SDP contents. OpenSIPS, Kamailio, and Sippy B2BUA support
       <span class="command"><strong>rtpproxy</strong></span>.</p><p>The rtpproxy can be used to facilitate RTP sessions between SIP
@@ -182,9 +186,33 @@
           <em class="replaceable"><code>log_level</code></em> values in the order from the
           most verbose to the least verbose are: DBUG, INFO, WARN, ERR and
           CRIT.</p><p>The optional <em class="replaceable"><code>log_facility</code></em> parameter
-          sets syslog(3) facility assigned to log messages.</p><p>Example: -d WARN:LOG_LOCAL5</p><p>The default level in foreground mode is is DBUG, in background
-          - WARN and facility is LOG_DAEMON.</p></dd><dt><span class="term"><code class="option">--force_asymmetric</code></span></dt><dd><p>Treat all RTP/RTCP sessions as "assymetric", i.e. disable any NAT
-          traversal features unconditionally.</p></dd></dl></div></div><div class="refsect1"><a id="id1340"></a><h2>PRINCIPLES OF OPERATION</h2><p>When the SIP controller receives an INVITE request, it extracts the
+          sets syslog(3) facility assigned to log messages.</p><p>Example: -d WARN:LOG_LOCAL5</p><p>The default level in foreground mode is DBUG, in background
+          - WARN and facility is LOG_DAEMON.</p></dd><dt><span class="term"><code class="option">--force_asymmetric</code></span></dt><dd><p>Treat all RTP/RTCP sessions as "asymmetric", i.e. disable any NAT
+          traversal features unconditionally.</p></dd><dt><span class="term"><code class="option">-W</code> <em class="replaceable"><code>setup_ttl</code></em></span></dt><dd><p>Specify the inactivity timer for sessions that have not been
+          fully set up yet, i.e. before the rtpproxy has received the matching
+          <span class="command"><strong>L</strong></span> command. Defaults to the value of
+          <code class="option">-T</code>.</p></dd><dt><span class="term"><code class="option">-b</code></span></dt><dd><p>Allocate UDP ports for new sessions sequentially instead of
+          randomly. Mostly intended for debugging, to make the behaviour more
+          predictable.</p></dd><dt><span class="term"><code class="option">-c</code> <em class="replaceable"><code>fifo|rr</code></em></span></dt><dd><p>Switch the rtpproxy process to the
+          <code class="literal">SCHED_FIFO</code> (<em class="replaceable"><code>fifo</code></em>) or
+          <code class="literal">SCHED_RR</code> (<em class="replaceable"><code>rr</code></em>)
+          real-time scheduling policy, at the maximum priority for that
+          policy.</p></dd><dt><span class="term"><code class="option">--nice</code> <em class="replaceable"><code>level</code></em></span></dt><dd><p>Set the scheduling priority (nice value) of the rtpproxy
+          process to <em class="replaceable"><code>level</code></em>.</p></dd><dt><span class="term"><code class="option">-D</code></span></dt><dd><p>Do not change the working directory to <code class="filename">/</code>
+          when switching into the background mode.</p></dd><dt><span class="term"><code class="option">--no_redirect</code></span></dt><dd><p>Do not redirect the standard output and the standard error to
+          <code class="filename">/dev/null</code> when switching into the background
+          mode.</p></dd><dt><span class="term"><code class="option">-C</code></span></dt><dd><p>Print the name of the monotonic clock used by the rtpproxy and
+          exit.</p></dd><dt><span class="term"><code class="option">--config</code> <em class="replaceable"><code>config_file</code></em></span></dt><dd><p>Read the configuration of the loadable modules from
+          <em class="replaceable"><code>config_file</code></em>, in the UCL format. An
+          example is provided in <code class="filename">doc/rtpproxy.conf.sample</code>
+          in the source tree.</p></dd><dt><span class="term"><code class="option">--dso</code> <em class="replaceable"><code>module</code></em></span></dt><dd><p>Load <em class="replaceable"><code>module</code></em>, specified as a path to
+          the shared object of a dynamically loadable module, or as a name of
+          a module compiled in statically. This option can be specified
+          multiple times. Modules that require configuration cannot be loaded
+          this way, use <code class="option">--config</code> instead.</p></dd><dt><span class="term"><code class="option">--bridge_symmetric</code></span></dt><dd><p>In the bridging mode, do not treat all sessions as asymmetric,
+          which is the default in that mode for historical reasons.</p></dd><dt><span class="term"><code class="option">--no_resolve</code></span></dt><dd><p>Only accept numeric IP addresses, in the command line
+          arguments and in the control commands, instead of resolving host
+          names.</p></dd></dl></div></div><div class="refsect1"><a id="id1340"></a><h2>PRINCIPLES OF OPERATION</h2><p>When the SIP controller receives an INVITE request, it extracts the
     Call-ID and from_tag from INVITE. The call controller communicates it with
     the rtpproxy via Unix domain socket or a UDP socket. rtpproxy looks for an
     existing session with the given Call-ID and from_tag.</p><p>If rtpproxy finds a session that is already associated with the
@@ -200,20 +228,22 @@
     sends a request to the rtpproxy with Call-ID, from_tag and to_tag.</p><p>The rtpproxy looks for an existing session based on the Call-ID and
     from_tag, which it should find. It will then randomly choose another port
     and "connect" this port with the earlier allocated port, forming the proxy
-    between both sides.</p><p>When the SIP controller recieves the new port number from the
+    between both sides.</p><p>When the SIP controller receives the new port number from the
     rtpproxy, the SIP controller is expected to rewrite the SDP in the SIP
     message body by replacing the ip:port to that of the IP address and new
     udp port number provided by rtpproxy. The SIP controller is expected to
     send the reply to the user agent that initiated the call.</p><p>After the session has been created, the proxy listens on the ports
-    it has allocated for that session and waits for receiving at least one UDP
-    packet from each of the two parties participating in the call. Once a
-    packet is received, the proxy fills one of two IP:port structures
-    associated with respective stream with the source IP:port of that packet.
-    When both structures are filled in, the proxy starts relaying UDP packets
-    between the parties.</p><p>The rtpproxy tracks idle time for each of existing sessions (i.e.
+    it has allocated for that session and relays UDP packets between the
+    parties. Initially, packets are sent to the addresses provided by the SIP
+    controller, i.e. taken from the SDP. Once a packet is received from a
+    party, the proxy "latches" to the source IP:port of that packet and uses
+    it as the address of that party from then on, which allows reaching
+    parties located behind NAT. Latching is not done for asymmetric
+    parties.</p><p>The rtpproxy tracks idle time for each of existing sessions (i.e.
     time interval within which there were no packets relayed), and
-    automatically cleans up a sessions whose idle times exceed the idle time
-    (60 seconds by default).</p></div><div class="refsect1"><a id="id1341"></a><h2>FILES</h2><p><code class="filename">rtpproxy</code></p><p><code class="filename">makeann</code></p><p><code class="filename">extractaudio</code></p></div><div class="refsect1"><a id="id1342"></a><h2>LICENSE</h2><p>All components of the rtpproxy are licensed under the BSD 2-Clause
+    automatically cleans up sessions whose idle times exceed the idle time
+    (60 seconds by default).</p></div><div class="refsect1"><a id="id1341"></a><h2>FILES</h2><p><code class="filename">rtpproxy</code></p><p><code class="filename">makeann</code></p><p><code class="filename">extractaudio</code></p></div><div class="refsect1"><a id="id1342"></a><h2>SEE ALSO</h2><p><span class="citerefentry"><span class="refentrytitle">extractaudio</span>(1)</span>,
+    <span class="citerefentry"><span class="refentrytitle">makeann</span>(1)</span></p></div><div class="refsect1"><a id="id1343"></a><h2>LICENSE</h2><p>All components of the rtpproxy are licensed under the BSD 2-Clause
     License. See <code class="filename">LICENSE</code> file in the top of source tree
-    for details.</p></div><div class="refsect1"><a id="id1343"></a><h2>AVAILABILITY</h2><p>The latest version of this program and its components can be found
+    for details.</p></div><div class="refsect1"><a id="id1344"></a><h2>AVAILABILITY</h2><p>The latest version of this program and its components can be found
     at <a class="ulink" href="http://www.rtpproxy.org/" target="_top">http://www.rtpproxy.org/</a>.</p></div></div></body></html>

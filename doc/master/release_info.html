@@ -1,56 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>RTPProxy 3.0 Release Information</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" /></head><body><div class="book"><div class="titlepage"><div><div><h1 class="title"><a id="id1337"></a>RTPProxy 3.0 Release Information</h1></div><div><div class="author"><h3 class="author"><span class="firstname">Maksym</span> <span class="surname">Sobolyev</span></h3><div class="affiliation"><span class="orgname">Sippy Labs<br /></span></div><code class="email">&lt;<a class="email" href="mailto:sobomax@gmail.com">sobomax@gmail.com</a>&gt;</code></div></div><div><p class="copyright">Copyright © 2023 Maksym Sobolyev &lt;sobomax@sippysoft.com&gt;</p></div><div><p class="pubdate">21 May 2023</p></div></div><hr /></div><div class="toc"><p><strong>Table of Contents</strong></p><dl class="toc"><dt><span class="chapter"><a href="#id1340">1. Introduction</a></span></dt><dd><dl><dt><span class="section"><a href="#id1339">Welcome to RTPProxy 3.0</a></span></dt></dl></dd><dt><span class="chapter"><a href="#id1342">2. Release Highlights</a></span></dt><dd><dl><dt><span class="section"><a href="#id1341">Major Improvements</a></span></dt></dl></dd><dt><span class="chapter"><a href="#id1345">3. New Features</a></span></dt><dd><dl><dt><span class="section"><a href="#id1343">Embedding RTPProxy</a></span></dt><dt><span class="section"><a href="#id1344">DTLS Gateway Module</a></span></dt></dl></dd><dt><span class="chapter"><a href="#id1347">4. Fixed Bugs</a></span></dt><dd><dl><dt><span class="section"><a href="#id1346"></a></span></dt></dl></dd><dt><span class="chapter"><a href="#id1349">5. Configuration Changes</a></span></dt><dd><dl><dt><span class="section"><a href="#id1348"></a></span></dt></dl></dd></dl></div><div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a id="id1340"></a>Chapter 1. Introduction</h1></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl class="toc"><dt><span class="section"><a href="#id1339">Welcome to RTPProxy 3.0</a></span></dt></dl></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1339"></a>Welcome to RTPProxy 3.0</h2></div></div></div><p>
-      We are excited to introduce RTPProxy 3.0, the latest milestone in our
-      journey of refining the proxy system for Real-Time Transport Protocol
-      (RTP) streams. This release marks an evolutionary leap from RTPProxy 2.2,
-      released four years ago.
-
-      Our team at Sippy Labs has rearchitected major subsystems to allow
-      more parallelism, resulting in significant performance improvements.
-      Our commitment to versatility has led to enhanced support for
-      third-party extension modules and robust handling of both video and
-      encrypted calls. Another remarkable addition is the introduction of
-      a library version of RTPProxy, enabling its embedding into other
-      real-time communication software.
-
-      This document will guide you through all the new enhancements, features,
-      and improvements that make RTPProxy 3.0 an industry benchmark in the
-      real-time multimedia data streaming space.
-      </p></div></div><div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a id="id1342"></a>Chapter 2. Release Highlights</h1></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl class="toc"><dt><span class="section"><a href="#id1341">Major Improvements</a></span></dt></dl></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1341"></a>Major Improvements</h2></div></div></div><p>
-      With RTPProxy 3.0, we are introducing a revamped architecture that
-      boosts parallelism and improves overall performance significantly.
-      These enhancements are a result of extensive rework of our
-      processes and algorithms, leading to a more reliable, efficient, and
-      powerful system. Key changes include:
-      </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>Replacing the use of poll() with epoll()/kqueue() for
-            less overhead doing RTP/RTCP sockets polling.</p></li><li class="listitem"><p>Moving RTCP handling into its own dedicated thread, freeing
-            up resources and optimizing performance.</p></li><li class="listitem"><p>Running media generation (playback) in a separate thread,
-            allowing for more streamlined operations.</p></li><li class="listitem"><p>Eliminating a major synchronization bottleneck that
-            previously hindered the command-processing thread from
-            reaching its full capacity.</p></li><li class="listitem"><p>Upgrading the hashing algorithm for handling sessions hash
-            tables to xxHash. This state-of-the-art algorithm significantly
-            outperforms the previously used Pearson implementation, leading
-            to faster and more efficient processing.</p></li></ul></div><p>
-      Additionally, we have worked hard to ensure compatibility and extend
-      support for third-party extension modules. Notably, the new release
-      comes with full support for handling video and encrypted calls,
-      solidifying RTPProxy's position as a comprehensive solution for
-      real-time communication needs. These improvements, along with
-      numerous others, set a new standard for RTP proxy systems.
-      </p></div></div><div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a id="id1345"></a>Chapter 3. New Features</h1></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl class="toc"><dt><span class="section"><a href="#id1343">Embedding RTPProxy</a></span></dt><dt><span class="section"><a href="#id1344">DTLS Gateway Module</a></span></dt></dl></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1343"></a>Embedding RTPProxy</h2></div></div></div><p>
-      One of the most exciting new features of RTPProxy 3.0 is the
-      availability of a library version of the software. This breakthrough
-      development allows for the embedding of RTPProxy into other real-time
-      communication software, thereby expanding its utility and enabling a
-      broader range of applications. This represents a major stride in our
-      ongoing efforts to make RTPProxy as adaptable and user-friendly as
-      possible.
-      </p></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1344"></a>DTLS Gateway Module</h2></div></div></div><p>
-      Another significant feature introduced in RTPProxy 3.0 is the dtls_gw
-      module. This new addition allows RTPProxy to translate between encrypted
-      and non-encrypted streams. More impressively, it can perform back-to-back
-      re-encryption of already encrypted streams, which is particularly useful
-      for secure recording purposes. This feature enhances RTPProxy's ability to
-      handle encrypted calls, providing users with increased flexibility and
-      security in their real-time communication needs.
-      </p></div></div><div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a id="id1347"></a>Chapter 4. Fixed Bugs</h1></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl class="toc"><dt><span class="section"><a href="#id1346"></a></span></dt></dl></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1346"></a></h2></div></div></div><p></p></div></div><div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a id="id1349"></a>Chapter 5. Configuration Changes</h1></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl class="toc"><dt><span class="section"><a href="#id1348"></a></span></dt></dl></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1348"></a></h2></div></div></div><p></p></div></div></div></body></html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>RTPProxy Release Information: Changes Since 3.2</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" /></head><body><div class="book"><div class="titlepage"><div><div><h1 class="title"><a id="id1337"></a>RTPProxy Release Information: Changes Since 3.2</h1></div><div><div class="author"><h3 class="author"><span class="firstname">Maksym</span> <span class="surname">Sobolyev</span></h3><div class="affiliation"><span class="orgname">Sippy Labs<br /></span></div><code class="email">&lt;<a class="email" href="mailto:sobomax@sippysoft.com">sobomax@sippysoft.com</a>&gt;</code></div></div><div><p class="copyright">Copyright © 2023-2026 Maksym Sobolyev &lt;sobomax@sippysoft.com&gt;</p></div></div><hr /></div><div class="toc"><p><strong>Table of Contents</strong></p><dl class="toc"><dt><span class="chapter"><a href="#id1339">1. Introduction</a></span></dt><dt><span class="chapter"><a href="#id1345">2. New Features</a></span></dt><dd><dl><dt><span class="section"><a href="#id1340">RTP Flood Mitigation</a></span></dt><dt><span class="section"><a href="#id1341">Packet Port API for Embedding Applications</a></span></dt><dt><span class="section"><a href="#id1342">acct_csv: logfile Parameter</a></span></dt><dt><span class="section"><a href="#id1343">ICE-Lite: Peer-Reflexive Candidates</a></span></dt><dt><span class="section"><a href="#id1344">extractaudio</a></span></dt></dl></dd><dt><span class="chapter"><a href="#id1346">3. Fixed Bugs</a></span></dt><dt><span class="chapter"><a href="#id1347">4. Performance Improvements</a></span></dt><dt><span class="chapter"><a href="#id1348">5. Documentation</a></span></dt><dt><span class="chapter"><a href="#id1349">6. Build and Testing</a></span></dt></dl></div><div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a id="id1339"></a>Chapter 1. Introduction</h1></div></div></div><p>This document describes changes made in the development version of
+    the RTPProxy since the latest stable release, RTPProxy 3.2.0 (March
+    2026). These changes are not part of any release yet.</p><p>Release notes for the stable releases are available on the <a class="ulink" href="https://github.com/sippy/rtpproxy/releases" target="_top">GitHub releases
+    page</a>.</p></div><div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a id="id1345"></a>Chapter 2. New Features</h1></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl class="toc"><dt><span class="section"><a href="#id1340">RTP Flood Mitigation</a></span></dt><dt><span class="section"><a href="#id1341">Packet Port API for Embedding Applications</a></span></dt><dt><span class="section"><a href="#id1342">acct_csv: logfile Parameter</a></span></dt><dt><span class="section"><a href="#id1343">ICE-Lite: Peer-Reflexive Candidates</a></span></dt><dt><span class="section"><a href="#id1344">extractaudio</a></span></dt></dl></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1340"></a>RTP Flood Mitigation</h2></div></div></div><p>Two new command-line options and two matching per-stream session
+      parameters allow mitigating the effects of RTP floods (reported by
+      Sandro Gauci):</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><code class="option">--maxpps</code>=<em class="replaceable"><code>rtp_pps</code></em>[,<em class="replaceable"><code>rtcp_pps</code></em>]
+          and the <code class="literal">S pps=</code><em class="replaceable"><code>rtp_pps</code></em>[,<em class="replaceable"><code>rtcp_pps</code></em>]
+          session parameter set the maximum allowed rate of incoming packets
+          per second. Packets exceeding that rate are dropped early in the
+          processing.</p></li><li class="listitem"><p><code class="option">--maxpsize</code>=<em class="replaceable"><code>rtp_mps</code></em>[,<em class="replaceable"><code>rtcp_mps</code></em>]
+          and the <code class="literal">S mps=</code><em class="replaceable"><code>rtp_mps</code></em>[,<em class="replaceable"><code>rtcp_mps</code></em>]
+          session parameter set the maximum allowed size of incoming packets.
+          Packets exceeding that size are discarded the same way.</p></li></ul></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1341"></a>Packet Port API for Embedding Applications</h2></div></div></div><p>Applications embedding the RTPProxy library can now plug into its
+      packet handling pipeline directly via shared memory packet rings
+      (<code class="literal">rtpp_packetport</code>, built on the bundled libRTQueue),
+      instead of exchanging packets over sockets. A packet port is used as
+      the remote target of a session in the special
+      <code class="literal">RTQ:0x</code><em class="replaceable"><code>pointer</code></em>
+      <em class="replaceable"><code>port_tag</code></em> format, and the flushing policy of
+      its outbound queue can be set when it is created. This API is a work in
+      progress.</p></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1342"></a>acct_csv: logfile Parameter</h2></div></div></div><p>The location of the CSV file written by the
+      <code class="literal">acct_csv</code> module can now be set with the new
+      <code class="literal">logfile</code> parameter. Since the parameter is optional,
+      the module can still be loaded with the <code class="option">--dso</code>
+      command-line option.</p></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1343"></a>ICE-Lite: Peer-Reflexive Candidates</h2></div></div></div><p>The <code class="literal">ice_lite</code> module now adds the remote
+      candidate as a peer-reflexive one when it receives a STUN request from
+      an unknown candidate, instead of dropping the request.</p></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1344"></a>extractaudio</h2></div></div></div><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>16 kHz output (<code class="option">-r 16000</code>). G.722 is decoded at
+          its native rate and narrowband codecs are upsampled, so that legs
+          using different codecs stay aligned in one file.</p></li><li class="listitem"><p>Encoder options: Opus bitrate (<code class="option">-b</code>) and
+          compression level (<code class="option">-C</code>).</p></li><li class="listitem"><p>Support for the AES-192/256-CM and AES-GCM SRTP crypto
+          suites, in addition to AES-128-CM.</p></li><li class="listitem"><p>SRTP decryption now also works for recordings in the native
+          RTPProxy format, not just for pcap recordings.</p></li></ul></div></div></div><div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a id="id1346"></a>Chapter 3. Fixed Bugs</h1></div></div></div><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>The rtpproxy crashed instead of exiting with an error when the
+        configuration of a module was rejected, e.g. because of an unknown
+        or invalid parameter.</p></li></ul></div></div><div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a id="id1347"></a>Chapter 4. Performance Improvements</h1></div></div></div><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>Sockets cache their session and stream, skipping the hash table
+        lookup for the second and subsequent packets.</p></li><li class="listitem"><p>The sender of a stream is obtained via a weak reference, and
+        locking in the packet receive path has been reduced.</p></li><li class="listitem"><p>Atomic operations have been relaxed where strict ordering is
+        not needed.</p></li></ul></div></div><div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a id="id1348"></a>Chapter 5. Documentation</h1></div></div></div><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>New manual pages for <span class="command"><strong>extractaudio</strong></span>(1) and
+        <span class="command"><strong>makeann</strong></span>(1).</p></li><li class="listitem"><p>The user manual has been updated.</p></li></ul></div></div><div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a id="id1349"></a>Chapter 6. Build and Testing</h1></div></div></div><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>Fixed the build with the latest compilers on Ubuntu
+        24.04.</p></li><li class="listitem"><p>Production (non-debug) binaries are now built with
+        <code class="literal">NDEBUG</code> defined.</p></li><li class="listitem"><p>Fixed <code class="function">alloca()</code> calls in loops reported by
+        CodeQL.</p></li><li class="listitem"><p>The RPTL test scripting language can now run external commands,
+        and the recording tests have been rewritten using it, so they no
+        longer need any pre-determined ports.</p></li></ul></div></div></div></body></html>
