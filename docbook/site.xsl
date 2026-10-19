@@ -17,6 +17,8 @@
   <xsl:param name="toc.section.depth" select="2"/>
   <!-- One table of contents per book; no per-chapter ones. -->
   <xsl:param name="generate.toc">book toc,title</xsl:param>
+  <!-- No "Chapter N." prefixes on headings or in the TOC. -->
+  <xsl:param name="chapter.autolabel" select="0"/>
 
   <xsl:template name="user.head.content">
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -55,6 +57,7 @@
         <a href="https://github.com/sippy/rtpproxy/blob/master/LICENSE">BSD 2-Clause License</a>
       </div>
     </footer>
+    <script src="/js/docs.js" defer="defer"><xsl:text> </xsl:text></script>
   </xsl:template>
 
 </xsl:stylesheet>
