@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Talks &amp; demos on RTPProxy</title>
+		<link>https://www.rtpproxy.org/tags/talks/</link>
+		<description>Recent content in Talks &amp; demos on RTPProxy</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+		
+			<lastBuildDate>Thu, 30 Apr 2026 12:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://www.rtpproxy.org/tags/talks/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Demo: Sippy, 20 years from VoIP to AI and beyond</title>
+				<link>https://www.rtpproxy.org/post/2026-opensips-summit-demo/</link>
+				<pubDate>Thu, 30 Apr 2026 12:00:00 +0000</pubDate>
+				<guid>https://www.rtpproxy.org/post/2026-opensips-summit-demo/</guid>
+				<description>&lt;p&gt;&lt;strong&gt;Sippy, 20 years from VoIP to AI and beyond: gamedev with Digger, microsippy and RTP.io&lt;/strong&gt;, by Maksym Sobolyev, at OpenSIPS Summit 2026 in Bucharest.&lt;/p&gt;&#xA;&lt;p&gt;An interactive demo including RTP.io, the OpenSIPS module that runs the RTPProxy inside the OpenSIPS process. The demo is part of the recording of the interactive demos day of the summit, the link below starts at the beginning of the demo.&lt;/p&gt;&#xA;&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;&#xA;&#x9;&#x9;&#x9;&lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube-nocookie.com/embed/1m9vrvvI9fY?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=7053&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;Sippy, 20 years from VoIP to AI and beyond: gamedev with Digger, microsippy and RTP.io&#34;&gt;&lt;/iframe&gt;&#xA;&#x9;&#x9;&lt;/div&gt;&#xA;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=1m9vrvvI9fY&amp;amp;t=7053s&#34;&gt;Watch on YouTube&lt;/a&gt; (starts at 1:57:33)&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Demo: Building software-defined networks with Sippy components</title>
+				<link>https://www.rtpproxy.org/post/2025-opensips-summit-demo/</link>
+				<pubDate>Thu, 29 May 2025 12:00:00 +0000</pubDate>
+				<guid>https://www.rtpproxy.org/post/2025-opensips-summit-demo/</guid>
+				<description>&lt;p&gt;&lt;strong&gt;Building intelligent, software-defined networks with SIP Proxima, Infernos, RTPProxy, B2BUA and other open-source Sippy components. Practical example: adding local real-time ASR into the Sippy SRS&lt;/strong&gt;, by Maksym Sobolyev, at OpenSIPS Summit 2025 in Amsterdam.&lt;/p&gt;&#xA;&lt;p&gt;An interactive demo of building networks out of the open-source Sippy components, including the RTPProxy. The demo is part of the recording of the third day of the summit, the link below starts at the beginning of the demo.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Talk: Enabling WebRTC in Infernos with Embedded RTPProxy</title>
+				<link>https://www.rtpproxy.org/post/2025-opensips-summit-webrtc/</link>
+				<pubDate>Wed, 28 May 2025 12:00:00 +0000</pubDate>
+				<guid>https://www.rtpproxy.org/post/2025-opensips-summit-webrtc/</guid>
+				<description>&lt;p&gt;&lt;strong&gt;Enabling WebRTC in Infernos with Embedded RTPProxy&lt;/strong&gt;, by Maksym Sobolyev, at OpenSIPS Summit 2025 in Amsterdam.&lt;/p&gt;&#xA;&lt;p&gt;Using the RTPProxy embedded into Infernos to enable WebRTC. The talk is part of the recording of the second day of the summit, the link below starts at the beginning of the talk.&lt;/p&gt;&#xA;&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;&#xA;&#x9;&#x9;&#x9;&lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube-nocookie.com/embed/lN96vOjhhhI?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=12580&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;Enabling WebRTC in Infernos with Embedded RTPProxy&#34;&gt;&lt;/iframe&gt;&#xA;&#x9;&#x9;&lt;/div&gt;&#xA;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=lN96vOjhhhI&amp;amp;t=12580s&#34;&gt;Watch on YouTube&lt;/a&gt; (starts at 3:29:40)&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Talk: The RTPProxy: Past, Present And Future</title>
+				<link>https://www.rtpproxy.org/post/2023-kamailio-world/</link>
+				<pubDate>Wed, 07 Jun 2023 12:00:00 +0000</pubDate>
+				<guid>https://www.rtpproxy.org/post/2023-kamailio-world/</guid>
+				<description>&lt;p&gt;&lt;strong&gt;The RTPProxy: Past, Present And Future&lt;/strong&gt;, by Maksym Sobolyev, at Kamailio World 2023.&lt;/p&gt;&#xA;&lt;p&gt;A review of the history and the more recent evolution of the RTPProxy. The talk is part of the recording of the third day of the conference, the link below starts at the beginning of the talk.&lt;/p&gt;&#xA;&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;&#xA;&#x9;&#x9;&#x9;&lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube-nocookie.com/embed/yehYE34d3mI?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=16134&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;The RTPProxy: Past, Present And Future&#34;&gt;&lt;/iframe&gt;&#xA;&#x9;&#x9;&lt;/div&gt;&#xA;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=yehYE34d3mI&amp;amp;t=16134s&#34;&gt;Watch on YouTube&lt;/a&gt; (starts at 4:28:54)&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Demo: RTPProxy beyond audio forwarding</title>
+				<link>https://www.rtpproxy.org/post/2022-opensips-summit-demo/</link>
+				<pubDate>Thu, 29 Sep 2022 06:00:00 +0000</pubDate>
+				<guid>https://www.rtpproxy.org/post/2022-opensips-summit-demo/</guid>
+				<description>&lt;p&gt;&lt;strong&gt;RTPProxy: beyond audio forwarding. DTMF processing, Video calling and some other advanced functions yet to be released&lt;/strong&gt;, by Maksym Sobolyev, at OpenSIPS Summit 2022 in Athens.&lt;/p&gt;&#xA;&lt;p&gt;An interactive demo of the RTPProxy functionality beyond audio forwarding. It is the first demo in the recording of the interactive demos day of the summit.&lt;/p&gt;&#xA;&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;&#xA;&#x9;&#x9;&#x9;&lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube-nocookie.com/embed/e5HCn-7u1hQ?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;RTPProxy: beyond audio forwarding. DTMF processing, Video calling and some other advanced functions yet to be released&#34;&gt;&lt;/iframe&gt;&#xA;&#x9;&#x9;&lt;/div&gt;&#xA;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=e5HCn-7u1hQ&#34;&gt;Watch on YouTube&lt;/a&gt;&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Talk: Sippy Labs Update - RTPProxy, OpenSIPIt and Microsippy</title>
+				<link>https://www.rtpproxy.org/post/2020-opensips-summit/</link>
+				<pubDate>Thu, 10 Sep 2020 07:06:39 +0000</pubDate>
+				<guid>https://www.rtpproxy.org/post/2020-opensips-summit/</guid>
+				<description>&lt;p&gt;&lt;strong&gt;Sippy Labs Update - RTPProxy, OpenSIPIt and Microsippy&lt;/strong&gt;, by Maksym Sobolyev, at OpenSIPS Summit 2020 (online).&lt;/p&gt;&#xA;&lt;p&gt;An overview of the latest activities at Sippy in the open-source SIP space, covering:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;RTPProxy 2.2: what&amp;rsquo;s new? Road towards RTPProxy 3.0;&lt;/li&gt;&#xA;&lt;li&gt;Microsippy (very small-scale SIP): where are we, what&amp;rsquo;s next?;&lt;/li&gt;&#xA;&lt;li&gt;OpenSIPIt 2020: &amp;ldquo;Stirring but not Shaking&amp;rdquo;. Open SIP interoperability testing, from idea to implementation.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;&#xA;&#x9;&#x9;&#x9;&lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube-nocookie.com/embed/rOmBc62ypjY?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;Sippy Labs Update - RTPProxy, OpenSIPIt and Microsippy&#34;&gt;&lt;/iframe&gt;&#xA;&#x9;&#x9;&lt;/div&gt;&#xA;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=rOmBc62ypjY&#34;&gt;Watch on YouTube&lt;/a&gt;&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Talk: Designing a Better Real-Time Media Control Protocol</title>
+				<link>https://www.rtpproxy.org/post/2019-januscon/</link>
+				<pubDate>Fri, 27 Sep 2019 07:47:38 +0000</pubDate>
+				<guid>https://www.rtpproxy.org/post/2019-januscon/</guid>
+				<description>&lt;p&gt;&lt;strong&gt;Designing a Better Real-Time Media Control Protocol for a Smarter World&lt;/strong&gt;, by Maksym Sobolyev, at JanusCon 2019.&lt;/p&gt;&#xA;&lt;p&gt;The RTPProxy has seen quite a lot of adoption in the telco world in the last 15 years, in a big part thanks to some of the key decisions around designing and extending its control protocol. There are some challenges that require a near-complete overhaul to provide for previously unforeseen scenarios.&lt;/p&gt;&#xA;&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;&#xA;&#x9;&#x9;&#x9;&lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube-nocookie.com/embed/vhk6Um_fEL4?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;Designing a Better Real-Time Media Control Protocol for a Smarter World&#34;&gt;&lt;/iframe&gt;&#xA;&#x9;&#x9;&lt;/div&gt;&#xA;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=vhk6Um_fEL4&#34;&gt;Watch on YouTube&lt;/a&gt;&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Talk: Secure RTP support in the RTPProxy</title>
+				<link>https://www.rtpproxy.org/post/2019-opensips-summit-srtp/</link>
+				<pubDate>Mon, 06 May 2019 18:49:04 +0000</pubDate>
+				<guid>https://www.rtpproxy.org/post/2019-opensips-summit-srtp/</guid>
+				<description>&lt;p&gt;&lt;strong&gt;Secure RTP support in the RTPProxy: work in progress report&lt;/strong&gt;, by Maksym Sobolyev, at OpenSIPS Summit 2019.&lt;/p&gt;&#xA;&lt;p&gt;A work in progress report on adding Secure RTP (SRTP) support into the RTPProxy.&lt;/p&gt;&#xA;&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;&#xA;&#x9;&#x9;&#x9;&lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube-nocookie.com/embed/mJ49TERsxeQ?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;Secure RTP support in the RTPProxy: work in progress report&#34;&gt;&lt;/iframe&gt;&#xA;&#x9;&#x9;&lt;/div&gt;&#xA;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=mJ49TERsxeQ&#34;&gt;Watch on YouTube&lt;/a&gt;&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Talk: Sippy Labs Update at OpenSIPS Summit 2017</title>
+				<link>https://www.rtpproxy.org/post/2017-opensips-summit/</link>
+				<pubDate>Tue, 02 May 2017 12:00:00 +0000</pubDate>
+				<guid>https://www.rtpproxy.org/post/2017-opensips-summit/</guid>
+				<description>&lt;p&gt;&lt;strong&gt;Sippy Labs Update: Go B2BUA, RTP Cluster, RTPProxy&lt;/strong&gt;, by Maksym Sobolyev, at OpenSIPS Summit 2017 in Amsterdam.&lt;/p&gt;&#xA;&lt;p&gt;An update on the Sippy Labs open-source projects, the Go B2BUA, RTP Cluster and the RTPProxy. The talk is part of the recording of the first day of the summit, the link below starts at the beginning of the talk.&lt;/p&gt;&#xA;&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;&#xA;&#x9;&#x9;&#x9;&lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube-nocookie.com/embed/anmyMC6Ovl8?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=28723&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;Sippy Labs Update: Go B2BUA, RTP Cluster, RTPProxy&#34;&gt;&lt;/iframe&gt;&#xA;&#x9;&#x9;&lt;/div&gt;&#xA;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=anmyMC6Ovl8&amp;amp;t=28723s&#34;&gt;Watch on YouTube&lt;/a&gt; (starts at 7:58:43)&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Talk: Scaling RTPProxy</title>
+				<link>https://www.rtpproxy.org/post/2015-scaling-rtpproxy/</link>
+				<pubDate>Wed, 09 Dec 2015 17:27:25 +0000</pubDate>
+				<guid>https://www.rtpproxy.org/post/2015-scaling-rtpproxy/</guid>
+				<description>&lt;p&gt;&lt;strong&gt;Scaling RTPProxy&lt;/strong&gt;, by Maksym Sobolyev (@sobomax) and Jev Bjorsell (@jevonearth), at the OpenSIPS developer summit in Austin, Texas.&lt;/p&gt;&#xA;&lt;p&gt;A look at scaling RTPProxy: past, present and future. The talk focuses on the RTPProxy, our open-source VoIP media proxy/media relay, and also covers our rtp_cluster product.&lt;/p&gt;&#xA;&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;&#xA;&#x9;&#x9;&#x9;&lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube-nocookie.com/embed/Qq1yMPSwwJs?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;Scaling RTPProxy&#34;&gt;&lt;/iframe&gt;&#xA;&#x9;&#x9;&lt;/div&gt;&#xA;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=Qq1yMPSwwJs&#34;&gt;Watch on YouTube&lt;/a&gt; · &lt;a href=&#34;https://docs.google.com/presentation/d/1wVxQNT2I21Q09OaV1TsIcpUzRQRLtK5Y2wiKJtUVUiw/pub?start=false&amp;amp;loop=false&amp;amp;delayms=3000&#34;&gt;Slides&lt;/a&gt;&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

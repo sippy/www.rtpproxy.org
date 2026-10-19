@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>RTPProxy 3.2 Manual</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" /></head><body><div class="book"><div class="titlepage"><div><div><h1 class="title"><a id="id1337"></a>RTPProxy 3.2 Manual</h1></div><div><div class="author"><h3 class="author"><span class="firstname">Maksym</span> <span class="surname">Sobolyev</span></h3><div class="affiliation"><span class="orgname">Sippy Labs<br /></span></div><code class="email">&lt;<a class="email" href="mailto:sobomax@gmail.com">sobomax@gmail.com</a>&gt;</code></div></div><div><div class="author"><h3 class="author"><span class="surname">Donat Zenichev</span></h3></div></div><div><p class="copyright">Copyright © 2006-2026 Maksym Sobolyev <a class="ulink" href="mailto:sobomax@sippysoft.com" target="_top">&lt;sobomax@sippysoft.com&gt;</a></p></div><div><p class="copyright">Copyright © 2019 Donat Zenichev</p></div><div><p class="copyright">Copyright © 2006 Jan Janak <a class="ulink" href="mailto:janakj@users.berlios.de" target="_top">&lt;janakj@users.berlios.de&gt;</a></p></div><div><p class="pubdate">30 May 2019</p></div></div><hr /></div><div class="toc"><p><strong>Table of Contents</strong></p><dl class="toc"><dt><span class="chapter"><a href="#id1346">1. Introduction</a></span></dt><dd><dl><dt><span class="section"><a href="#id1341">What is RTPProxy</a></span></dt><dt><span class="section"><a href="#id1342">Backstory</a></span></dt><dt><span class="section"><a href="#id1343">Capabilities</a></span></dt><dt><span class="section"><a href="#id1344">Principles of Operation</a></span></dt><dt><span class="section"><a href="#id1345">Content of the Package</a></span></dt></dl></dd><dt><span class="chapter"><a href="#id1348">2. Installation of RTPProxy</a></span></dt><dd><dl><dt><span class="section"><a href="#id1347">Pre-built RTPProxy</a></span></dt><dt><span class="section"><a href="#MAKESRC">Compilation from sources</a></span></dt></dl></dd><dt><span class="chapter"><a href="#id1349">3. Getting Started</a></span></dt><dt><span class="chapter"><a href="#CONFIGURATION">4. Configuration</a></span></dt><dd><dl><dt><span class="section"><a href="#id1350">Command Line Parameters</a></span></dt><dt><span class="section"><a href="#CONFIG_FILE">Configuration File</a></span></dt><dt><span class="section"><a href="#id1351">Startup Script</a></span></dt><dt><span class="section"><a href="#id1352">Logging</a></span></dt><dt><span class="section"><a href="#id1353">Configuration of control socket (using systemd)</a></span></dt></dl></dd><dt><span class="chapter"><a href="#MODULES">5. Modules</a></span></dt><dd><dl><dt><span class="section"><a href="#id1354">Loading Modules</a></span></dt><dt><span class="section"><a href="#id1355">Controlling Modules</a></span></dt><dt><span class="section"><a href="#mod.acct_csv">acct_csv</a></span></dt><dt><span class="section"><a href="#mod.acct_rtcp_hep">acct_rtcp_hep</a></span></dt><dt><span class="section"><a href="#mod.catch_dtmf">catch_dtmf</a></span></dt><dt><span class="section"><a href="#mod.dtls_gw">dtls_gw</a></span></dt><dt><span class="section"><a href="#mod.ice_lite">ice_lite</a></span></dt></dl></dd></dl></div><div class="list-of-tables"><p><strong>List of Tables</strong></p><dl><dt>5.1. <a href="#id1356">Modules</a></dt></dl></div><div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a id="id1346"></a>Chapter 1. Introduction</h1></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl class="toc"><dt><span class="section"><a href="#id1341">What is RTPProxy</a></span></dt><dt><span class="section"><a href="#id1342">Backstory</a></span></dt><dt><span class="section"><a href="#id1343">Capabilities</a></span></dt><dt><span class="section"><a href="#id1344">Principles of Operation</a></span></dt><dt><span class="section"><a href="#id1345">Content of the Package</a></span></dt></dl></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1341"></a>What is RTPProxy</h2></div></div></div><p>The RTPProxy is a high-performance software proxy for RTP streams
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>RTPProxy 3.2 Manual</title><link rel="stylesheet" type="text/css" href="/css/site.css" /><link rel="stylesheet" type="text/css" href="/css/docs.css" /><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta name="theme-color" content="#0b1220" /><link rel="icon" href="/favicon.svg" type="image/svg+xml" /></head><body class="is-inner is-doc"><header class="site-header"><div class="wrap nav"><a class="brand" href="/" aria-label="RTPProxy home"><img class="logo" src="/favicon.svg" alt="" /><span>RTP<b>Proxy</b></span></a><nav class="nav-links doc-nav" aria-label="Main"><a href="/docs/" aria-current="page">Docs</a><a href="/post/">News</a><a href="/about/">About</a><a class="btn btn-ghost btn-sm" href="https://github.com/sippy/rtpproxy">GitHub</a></nav></div></header><div class="wrap doc-crumbs"><a href="/docs/">← Documentation</a></div><div class="book" id="id1337"><div class="titlepage"><div><div><h1 class="title">RTPProxy 3.2 Manual</h1></div><div><div class="author"><h3 class="author"><span class="firstname">Maksym</span> <span class="surname">Sobolyev</span></h3><div class="affiliation"><span class="orgname">Sippy Labs<br /></span></div><code class="email">&lt;<a class="email" href="mailto:sobomax@gmail.com">sobomax@gmail.com</a>&gt;</code></div></div><div><div class="author"><h3 class="author"><span class="surname">Donat Zenichev</span></h3></div></div><div><p class="copyright" id="c.sobomax">Copyright © 2006-2026 Maksym Sobolyev <a class="ulink" href="mailto:sobomax@sippysoft.com" target="_top">&lt;sobomax@sippysoft.com&gt;</a></p></div><div><p class="copyright">Copyright © 2019 Donat Zenichev</p></div><div><p class="copyright" id="c.janjanak">Copyright © 2006 Jan Janak <a class="ulink" href="mailto:janakj@users.berlios.de" target="_top">&lt;janakj@users.berlios.de&gt;</a></p></div><div><p class="pubdate">30 May 2019</p></div></div><hr /></div><div class="toc"><p><strong>Table of Contents</strong></p><dl class="toc"><dt><span class="chapter"><a href="#id1346">1. Introduction</a></span></dt><dd><dl><dt><span class="section"><a href="#id1341">What is RTPProxy</a></span></dt><dt><span class="section"><a href="#id1342">Backstory</a></span></dt><dt><span class="section"><a href="#id1343">Capabilities</a></span></dt><dt><span class="section"><a href="#id1344">Principles of Operation</a></span></dt><dt><span class="section"><a href="#id1345">Content of the Package</a></span></dt></dl></dd><dt><span class="chapter"><a href="#id1348">2. Installation of RTPProxy</a></span></dt><dd><dl><dt><span class="section"><a href="#id1347">Pre-built RTPProxy</a></span></dt><dt><span class="section"><a href="#MAKESRC">Compilation from sources</a></span></dt></dl></dd><dt><span class="chapter"><a href="#id1349">3. Getting Started</a></span></dt><dt><span class="chapter"><a href="#CONFIGURATION">4. Configuration</a></span></dt><dd><dl><dt><span class="section"><a href="#id1350">Command Line Parameters</a></span></dt><dt><span class="section"><a href="#CONFIG_FILE">Configuration File</a></span></dt><dt><span class="section"><a href="#id1351">Startup Script</a></span></dt><dt><span class="section"><a href="#id1352">Logging</a></span></dt><dt><span class="section"><a href="#id1353">Configuration of control socket (using systemd)</a></span></dt></dl></dd><dt><span class="chapter"><a href="#MODULES">5. Modules</a></span></dt><dd><dl><dt><span class="section"><a href="#id1354">Loading Modules</a></span></dt><dt><span class="section"><a href="#id1355">Controlling Modules</a></span></dt><dt><span class="section"><a href="#mod.acct_csv">acct_csv</a></span></dt><dt><span class="section"><a href="#mod.acct_rtcp_hep">acct_rtcp_hep</a></span></dt><dt><span class="section"><a href="#mod.catch_dtmf">catch_dtmf</a></span></dt><dt><span class="section"><a href="#mod.dtls_gw">dtls_gw</a></span></dt><dt><span class="section"><a href="#mod.ice_lite">ice_lite</a></span></dt></dl></dd><dt><span class="chapter"><a href="#DEVELOPMENT">6. Development</a></span></dt><dd><dl><dt><span class="section"><a href="#dev.librtpproxy">Embedding RTPProxy: librtpproxy</a></span></dt><dd><dl><dt><span class="section"><a href="#id1356">Building and Installing</a></span></dt><dt><span class="section"><a href="#id1357">Interface</a></span></dt><dt><span class="section"><a href="#id1358">Controlling an Embedded Instance</a></span></dt><dt><span class="section"><a href="#id1359">Packet Ports</a></span></dt></dl></dd><dt><span class="section"><a href="#dev.testing">Testing</a></span></dt><dd><dl><dt><span class="section"><a href="#id1360">Running Tests</a></span></dt><dt><span class="section"><a href="#id1361">Writing Tests with RPTL</a></span></dt></dl></dd></dl></dd></dl></div><div class="chapter" id="id1346"><div class="titlepage"><div><div><h1 class="title">Chapter 1. Introduction</h1></div></div></div><div class="section" id="id1341"><div class="titlepage"><div><div><h2 class="title">What is RTPProxy</h2></div></div></div><p>The RTPProxy is a high-performance software proxy for RTP streams
       that can work together with Sippy B2BUA, Kamailio, OpenSIPS and SER (SIP
-      Express Router).</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>The latest stable version is
-        <span class="emphasis"><em>RTPProxy 3.2</em></span></p></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1342"></a>Backstory</h2></div></div></div><p>RTPProxy was originally developed by <span class="authorinitials">Maxim
+      Express Router).</p><div class="note"><h3 class="title">Note</h3><p>The latest stable version is
+        <span class="emphasis"><em>RTPProxy 3.2</em></span></p></div></div><div class="section" id="id1342"><div class="titlepage"><div><div><h2 class="title">Backstory</h2></div></div></div><p>RTPProxy was originally developed by <span class="authorinitials">Maxim
       Sobolyev</span> in 2003 with a purpose of VoIP calls
       facilitation to/from SIP User Agents located behind NAT or firewalls.
       That time, there were a few cases where direct end-to-end communication
@@ -18,7 +18,7 @@
       <a class="ulink" href="https://github.com/sippy/rtpproxy" target="_top">https://github.com/sippy/rtpproxy</a>.</p><p>Over the years, many other individuals and organizations have
       contributed features and fixes into the code base, including Vonage,
       SipPulse, Voicenter, RateTel, either directly or by sponsoring
-      respective development efforts (often both).</p></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1343"></a>Capabilities</h2></div></div></div><p>Originally it was designed for handling of NAT scenarios. It can
+      respective development efforts (often both).</p></div><div class="section" id="id1343"><div class="titlepage"><div><div><h2 class="title">Capabilities</h2></div></div></div><p>Originally it was designed for handling of NAT scenarios. It can
       also act as a generic media relay, as well as a gateway for RTP sessions
       between IPv4 and IPv6 networks.</p><p>It can perform a number of additional functions on RTP streams,
       including call recording, playing pre-recorded announcements, real-time
@@ -30,7 +30,7 @@
       for fault-tolerance and load-balancing purposes.</p><p>An advanced high-capacity clustering and a load balancing is
       available through the use of RTP Cluster middleware.</p><p>The software also supports MOH/pre-recorded prompts injection,
       video relaying and RTP session recording to a local file or remote UDP
-      listener(s).</p></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1344"></a>Principles of Operation</h2></div></div></div><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Firstly, when a SIP proxy receives an INVITE request, it
+      listener(s).</p></div><div class="section" id="id1344"><div class="titlepage"><div><div><h2 class="title">Principles of Operation</h2></div></div></div><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Firstly, when a SIP proxy receives an INVITE request, it
           extracts a call-id from it and hands it to the proxy via the control
           socket. Then, in its turn, a proxy looks for an existing session
           with the same id. If the session exists, it returns a UDP port for
@@ -56,12 +56,12 @@
           packet is received from a party, the proxy "latches" to the source
           ip:port of that packet and uses it as the address of that party from
           then on, which allows reaching parties located behind NAT. Latching
-          is not done for parties set up as asymmetric.</p></li></ol></div><div class="important" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Important</h3><p>A good advantage of the RTPProxy is, that it tracks idle time
+          is not done for parties set up as asymmetric.</p></li></ol></div><div class="important"><h3 class="title">Important</h3><p>A good advantage of the RTPProxy is, that it tracks idle time
         for each existing session (the period of time within which no packets
         were relayed) and automatically cleans up a session, idle time of
         which exceeds the value specified at the command line (60 seconds by
-        default).</p></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1345"></a>Content of the Package</h2></div></div></div><p>The RTPProxy package by default provides the following
-      components:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><span class="bold"><strong>rtpproxy</strong></span> - main RTP proxy
+        default).</p></div></div><div class="section" id="id1345"><div class="titlepage"><div><div><h2 class="title">Content of the Package</h2></div></div></div><p>The RTPProxy package by default provides the following
+      components:</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p><span class="bold"><strong>rtpproxy</strong></span> - main RTP proxy
           server binary (production build)</p></li><li class="listitem"><p><span class="bold"><strong>rtpproxy_debug</strong></span> - Main RTP
           proxy server binary (debug and profiling build)</p></li><li class="listitem"><p><span class="bold"><strong>makeann </strong></span>- Utility to
           pre-encode prompts and announcements (production build)</p></li><li class="listitem"><p><span class="bold"><strong>makeann_debug</strong></span> - Utility to
@@ -70,7 +70,7 @@
           convert recorded sessions into plain audio files (production
           build, only built if libsndfile is available)</p></li><li class="listitem"><p><span class="bold"><strong>extractaudio_debug</strong></span> - Utility
           to convert recorded sessions into plain audio files (debug and
-          profiling build, built but not installed)</p></li></ul></div></div></div><div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a id="id1348"></a>Chapter 2. Installation of RTPProxy</h1></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl class="toc"><dt><span class="section"><a href="#id1347">Pre-built RTPProxy</a></span></dt><dt><span class="section"><a href="#MAKESRC">Compilation from sources</a></span></dt></dl></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1347"></a>Pre-built RTPProxy</h2></div></div></div><p>In case you want to use a pre-built RTPProxy package, then use your
+          profiling build, built but not installed)</p></li></ul></div></div></div><div class="chapter" id="id1348"><div class="titlepage"><div><div><h1 class="title">Chapter 2. Installation of RTPProxy</h1></div></div></div><div class="section" id="id1347"><div class="titlepage"><div><div><h2 class="title">Pre-built RTPProxy</h2></div></div></div><p>In case you want to use a pre-built RTPProxy package, then use your
       system's package manager to set this up:</p><p><span class="application">dpkg</span> - for
       <span class="productname">Debian</span>™ based systems (including
       <span class="productname">Ubuntu</span>™), when installing .deb
@@ -87,10 +87,10 @@
       (<code class="literal">ghcr.io/sippy/rtpproxy</code>) with every release and every
       commit to the master branch.</p><p>In case you want to compile RTPProxy from sources, use the
       following section <a class="link" href="#MAKESRC" title="Compilation from sources">"Compilation from
-      sources"</a>.</p></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="MAKESRC"></a>Compilation from sources</h2></div></div></div><div class="simplesect"><div class="titlepage"><div><div><h3 class="title"><a id="id1455"></a>Installing Dependencies</h3></div></div></div><p>The RTPProxy package has several optional dependencies that are
+      sources"</a>.</p></div><div class="section" id="MAKESRC"><div class="titlepage"><div><div><h2 class="title">Compilation from sources</h2></div></div></div><div class="simplesect" id="id1460"><div class="titlepage"><div><div><h3 class="title">Installing Dependencies</h3></div></div></div><p>The RTPProxy package has several optional dependencies that are
         detected at the configure stage and an appropriate functionality is
         enabled.</p><p>Those dependencies and their impact on the RTPProxy build are
-        listed below:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><span class="package">bcg729</span> - Enables G.729 support in several
+        listed below:</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p><span class="package">bcg729</span> - Enables G.729 support in several
             tools.</p><p><a class="ulink" href="https://github.com/BelledonneCommunications/bcg729" target="_top">https://github.com/BelledonneCommunications/bcg729</a></p><p><span class="bold"><strong>Affected binaries:</strong></span>
             <span class="emphasis"><em><span class="command"><strong>extractaudio</strong></span>
             <span class="command"><strong>makeann</strong></span></em></span></p></li><li class="listitem"><p><span class="package">libsndfile</span> - Required to build
@@ -109,21 +109,21 @@
             several tools.</p><p><span class="bold"><strong>Affected binaries:</strong></span>
             <span class="emphasis"><em><span class="command"><strong>extractaudio</strong></span>
             <span class="command"><strong>makeann</strong></span></em></span></p></li><li class="listitem"><p><span class="package">libsystemd-dev</span> - allows for a tighter
-            systemd integration.<a href="#ftn.id1516" class="footnote" id="id1516"><sup class="footnote">[1]</sup></a></p><p><a class="ulink" href="https://github.com/systemd/systemd/tree/main/src/libsystemd" target="_top">libsystemd@github</a></p><p><span class="bold"><strong>Affected binaries:</strong></span>
-            <span class="emphasis"><em><span class="command"><strong>rtpproxy</strong></span></em></span></p></li><li class="listitem"><p><a id="deps.libelperiodic"></a><span class="package">libelperiodic</span> - Required by several
+            systemd integration.<a href="#ftn.id1521" class="footnote"><sup class="footnote" id="id1521">[1]</sup></a></p><p><a class="ulink" href="https://github.com/systemd/systemd/tree/main/src/libsystemd" target="_top">libsystemd@github</a></p><p><span class="bold"><strong>Affected binaries:</strong></span>
+            <span class="emphasis"><em><span class="command"><strong>rtpproxy</strong></span></em></span></p></li><li class="listitem" id="deps.libelperiodic"><p><span class="package">libelperiodic</span> - Required by several
             internal tools that are used by an automated testing framework.
             If it is not installed on the system, the copy bundled as a git
             submodule is built and used instead.</p><p><a class="ulink" href="https://github.com/sobomax/libelperiodic.git" target="_top">https://github.com/sobomax/libelperiodic.git</a></p><p><span class="bold"><strong>Affected tools:</strong></span>
             <span class="emphasis"><em><span class="command"><strong>rtpp_notify_client.py</strong></span>
             <span class="command"><strong>rtpp_query.py</strong></span>
-            <span class="command"><strong>getmonotime.py</strong></span></em></span></p></li><li class="listitem"><p><a id="deps.tcpdump"></a><span class="package">tcpdump</span> - Test framework requires it to
+            <span class="command"><strong>getmonotime.py</strong></span></em></span></p></li><li class="listitem" id="deps.tcpdump"><p><span class="package">tcpdump</span> - Test framework requires it to
             capture traffic and verify PCAP decoding features. <span class="command"><strong>make
-            check</strong></span> will fail if it's not installed.</p><p><a class="ulink" href="http://www.tcpdump.org/release/" target="_top">http://www.tcpdump.org/release/</a></p></li><li class="listitem"><p><a id="deps.sudo"></a><span class="package">sudo</span> - Test framework requires it to run
+            check</strong></span> will fail if it's not installed.</p><p><a class="ulink" href="http://www.tcpdump.org/release/" target="_top">http://www.tcpdump.org/release/</a></p></li><li class="listitem" id="deps.sudo"><p><span class="package">sudo</span> - Test framework requires it to run
             the <span class="command"><strong>tcpdump</strong></span> at elevated privileges.
             <span class="command"><strong>make check</strong></span> will fail if it's not
-            installed.</p><p><a class="ulink" href="http://www.sudo.ws/" target="_top">http://www.sudo.ws/</a></p></li></ul></div><div class="important" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Important</h3><p>Do not forget about your compiler! To build this version of
-          the RTPProxy you would need either:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>GCC compiler, version 11 or higher, or</p></li><li class="listitem"><p>Clang compiler, version 11 or higher</p></li></ul></div><p>Those are the oldest versions tested by the continuous
-          integration.</p></div></div><div class="simplesect"><div class="titlepage"><div><div><h3 class="title"><a id="id1557"></a>Compilation of the Source Code</h3></div></div></div><p>Clone the source code (into a directory where you want to store
+            installed.</p><p><a class="ulink" href="http://www.sudo.ws/" target="_top">http://www.sudo.ws/</a></p></li></ul></div><div class="important"><h3 class="title">Important</h3><p>Do not forget about your compiler! To build this version of
+          the RTPProxy you would need either:</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>GCC compiler, version 11 or higher, or</p></li><li class="listitem"><p>Clang compiler, version 11 or higher</p></li></ul></div><p>Those are the oldest versions tested by the continuous
+          integration.</p></div></div><div class="simplesect" id="id1562"><div class="titlepage"><div><div><h3 class="title">Compilation of the Source Code</h3></div></div></div><p>Clone the source code (into a directory where you want to store
         compilation sources, usually it's /usr/src/). The master branch
         contains the latest development version, use a release tag (e.g.
         v3.2.0) instead to build a stable release:</p><pre class="programlisting">     cd /usr/src
@@ -137,14 +137,14 @@
      make clean all
      make check
      make install</pre><p>After a successful compilation, you have the following
-        binaries</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>Main RTP proxy server binary - <span class="bold"><strong>production</strong></span> build.</p><p>After the compilation is done, you have a binary file stored
+        binaries</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>Main RTP proxy server binary - <span class="bold"><strong>production</strong></span> build.</p><p>After the compilation is done, you have a binary file stored
             in the /usr/local/bin/ folder. You can test this out, checking the
             version of the rtpproxy: <span class="bold"><strong>/usr/local/bin/rtpproxy -V</strong></span></p></li><li class="listitem"><p>Main RTP proxy server binary - <span class="bold"><strong>debug</strong></span> and profiling build.</p><p>You will also have a second binary file for debug and
-            profiling: <span class="bold"><strong>/usr/local/bin/rtpproxy_debug</strong></span></p></li></ul></div></div></div><div class="footnotes"><br /><hr style="width:100; text-align:left;margin-left: 0" /><div id="ftn.id1516" class="footnote"><p><a href="#id1516" class="para"><sup class="para">[1] </sup></a>Also requires --enable-systemd configure argument to
+            profiling: <span class="bold"><strong>/usr/local/bin/rtpproxy_debug</strong></span></p></li></ul></div></div></div><div class="footnotes"><br /><hr width="100" align="left" /><div id="ftn.id1521" class="footnote"><p><a href="#id1521" class="para"><sup class="para">[1] </sup></a>Also requires --enable-systemd configure argument to
                 enable. See <a class="link" href="#enable-systemd">section</a> on
-                enabling systemd support for details.</p></div></div></div><div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a id="id1349"></a>Chapter 3. Getting Started</h1></div></div></div><div class="highlights"><p>A good way to maintain your RTPProxy is to start it using a
+                enabling systemd support for details.</p></div></div></div><div class="chapter" id="id1349"><div class="titlepage"><div><div><h1 class="title">Chapter 3. Getting Started</h1></div></div></div><div class="highlights"><p>A good way to maintain your RTPProxy is to start it using a
       certain Service Manager, such as systemd.</p><p>systemd is the default service manager on most Linux
-      distributions:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>Ubuntu 15.04 is the first version (of Ubuntu) that uses
+      distributions:</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>Ubuntu 15.04 is the first version (of Ubuntu) that uses
           systemd by default;</p></li><li class="listitem"><p>Debian 8 (Jessie) is the first version (of Debian) that uses
           systemd by default;</p></li><li class="listitem"><p>It has been the default system and service manager in Red Hat
           Enterprise Linux and CentOS since version 7, and in Fedora since
@@ -153,7 +153,7 @@
           Mageia etc.) .</p></li></ul></div></div><p>In case you have a system, that doesn't support the <span class="bold"><strong>systemd</strong></span>, you can use any other Service Managers as
     you want to (e.g. init.d start scripts in Debian systems older than
     8th one).</p><p>That said, systemd is the recommended solution, because it
-    provides the following capabilities:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>Define a list of options in a separate environment file, and use
+    provides the following capabilities:</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>Define a list of options in a separate environment file, and use
         those options as a variable in the start row 'ExecStart='</p></li><li class="listitem"><p>You're able to react on a failure of an application using a
         special parameter 'OnFailure=' (and to send notification for
         e.g.)</p></li><li class="listitem"><p>You can specify a list of pre-actions to be performed, before
@@ -173,7 +173,7 @@
     (manual way)</p><pre class="programlisting">-l 0.0.0.0</pre><p>Set upper bound on number of file descriptors the rtpproxy service
     instance might be using. Rule of thumb is that 4 file descriptors are
     needed for a fully established session (two RTP endpoints and two RTCP
-    ones).</p><div class="important" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Important</h3><p>Make the value reasonably high to match your load expectations in
+    ones).</p><div class="important"><h3 class="title">Important</h3><p>Make the value reasonably high to match your load expectations in
       terms of number of concurrent sessions but not excessively high, as it
       may cause rtpproxy to fail initialization because operating system
       usually also enforces upper bound on this value that varies from system
@@ -194,21 +194,21 @@ e.g.: -d INFO:LOG_LOCAL5
     Configuration of control socket</span>.</a></p><p>Other than that, for better view of how to configure your startup
     line, you can use this <a class="link" href="#CONFIGURATION" title="Chapter 4. Configuration"><span class="guibutton">Configuration
     section</span>.</a></p><p>After you're done with customizing of your systemd service file for
-    RTPProxy, follow this sequence to finish it:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>copy it to the /etc/systemd/system/ directory</p></li><li class="listitem"><p>reload systemd configuration with: </p><pre class="programlisting">bash&gt; sudo systemctl daemon-reload</pre></li><li class="listitem"><p>enable the service: </p><pre class="programlisting">bash&gt; sudo systemctl enable rtpproxy.service</pre></li><li class="listitem"><p>Now you can start your RTPProxy using the commands given
+    RTPProxy, follow this sequence to finish it:</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>copy it to the /etc/systemd/system/ directory</p></li><li class="listitem"><p>reload systemd configuration with: </p><pre class="programlisting">bash&gt; sudo systemctl daemon-reload</pre></li><li class="listitem"><p>enable the service: </p><pre class="programlisting">bash&gt; sudo systemctl enable rtpproxy.service</pre></li><li class="listitem"><p>Now you can start your RTPProxy using the commands given
         below</p></li></ul></div><p>Working with a systemd, you may need to know a list of general
-    commands to manage with your RTPProxy service, here they are:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>Start of the service:</p><pre class="programlisting">bash&gt; sudo systemctl start rtpproxy.service</pre></li><li class="listitem"><p>Stop of the service:</p><pre class="programlisting">bash&gt; sudo systemctl stop rtpproxy.service</pre></li><li class="listitem"><p>Restart of the service:</p><pre class="programlisting">bash&gt; sudo systemctl restart rtpproxy.service</pre></li><li class="listitem"><p>Check status of the service:</p><pre class="programlisting">bash&gt; sudo systemctl status rtpproxy.service</pre></li><li class="listitem"><p>Show systemd configuration file of the service:</p><pre class="programlisting">bash&gt; sudo systemctl show rtpproxy.service</pre></li></ul></div><p>To see an output after you started your RTPProxy, or even just to
+    commands to manage with your RTPProxy service, here they are:</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>Start of the service:</p><pre class="programlisting">bash&gt; sudo systemctl start rtpproxy.service</pre></li><li class="listitem"><p>Stop of the service:</p><pre class="programlisting">bash&gt; sudo systemctl stop rtpproxy.service</pre></li><li class="listitem"><p>Restart of the service:</p><pre class="programlisting">bash&gt; sudo systemctl restart rtpproxy.service</pre></li><li class="listitem"><p>Check status of the service:</p><pre class="programlisting">bash&gt; sudo systemctl status rtpproxy.service</pre></li><li class="listitem"><p>Show systemd configuration file of the service:</p><pre class="programlisting">bash&gt; sudo systemctl show rtpproxy.service</pre></li></ul></div><p>To see an output after you started your RTPProxy, or even just to
     keep a track on how it's working, you can use the following
-    commands:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>Look into a journal:</p><pre class="programlisting">bash&gt; sudo journalctl -xe -u rtpproxy.service</pre></li><li class="listitem"><p>You can configure logging to a separate logfile, to do this,
+    commands:</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>Look into a journal:</p><pre class="programlisting">bash&gt; sudo journalctl -xe -u rtpproxy.service</pre></li><li class="listitem"><p>You can configure logging to a separate logfile, to do this,
         follow the manual (or you can use manual logging to a syslog file)
         listed in the:</p><p><a class="link" href="#logsepfile" title="Logging to a separate file"><span class="bold"><strong>Configuration
         section</strong></span> -&gt; <span class="bold"><strong>Logging to a separate
-        file</strong></span></a></p></li><li class="listitem"><p>You can see an output of the systemctl tool:</p><pre class="programlisting">bash&gt; sudo systemctl status rtpproxy.service</pre></li></ul></div><div class="important" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Important</h3><p>Interaction of a SIP proxy server with RTPProxy application is
+        file</strong></span></a></p></li><li class="listitem"><p>You can see an output of the systemctl tool:</p><pre class="programlisting">bash&gt; sudo systemctl status rtpproxy.service</pre></li></ul></div><div class="important"><h3 class="title">Important</h3><p>Interaction of a SIP proxy server with RTPProxy application is
       supported via</p><p><code class="filename">rtpproxy.sock</code> - control socket created by the
       RTPProxy</p><p><code class="filename">rtpproxy_timeout.sock</code> - a socket for timeout
-      notifications created by the SIP proxy</p></div></div><div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a id="CONFIGURATION"></a>Chapter 4. Configuration</h1></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl class="toc"><dt><span class="section"><a href="#id1350">Command Line Parameters</a></span></dt><dt><span class="section"><a href="#CONFIG_FILE">Configuration File</a></span></dt><dt><span class="section"><a href="#id1351">Startup Script</a></span></dt><dt><span class="section"><a href="#id1352">Logging</a></span></dt><dt><span class="section"><a href="#id1353">Configuration of control socket (using systemd)</a></span></dt></dl></div><p>Historically, primary configuration method for the RTPProxy was done
+      notifications created by the SIP proxy</p></div></div><div class="chapter" id="CONFIGURATION"><div class="titlepage"><div><div><h1 class="title">Chapter 4. Configuration</h1></div></div></div><p>Historically, primary configuration method for the RTPProxy was done
     via command-line parameters. Starting with version 2.2 certain advanced
     parameters (particularly loadable modules configuration) have been moved
-    into configuration file.</p><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1350"></a>Command Line Parameters</h2></div></div></div><div class="simplesect"><div class="titlepage"><div><div><h3 class="title"><a id="id1696"></a>SYNOPSIS</h3></div></div></div><div class="cmdsynopsis"><p><a id="SYNOPSIS"></a><code class="command">rtpproxy</code>  [<code class="option">-?</code>] [<code class="option">-2</code>] [<code class="option">-f</code>] [<code class="option">-v</code>] [<code class="option">-V</code>] [<code class="option">-R</code>] [<code class="option">-l</code>
+    into configuration file.</p><div class="section" id="id1350"><div class="titlepage"><div><div><h2 class="title">Command Line Parameters</h2></div></div></div><div class="simplesect" id="id1701"><div class="titlepage"><div><div><h3 class="title">SYNOPSIS</h3></div></div></div><div class="cmdsynopsis"><p id="SYNOPSIS"><code class="command">rtpproxy</code>  [<code class="option">-?</code>] [<code class="option">-2</code>] [<code class="option">-f</code>] [<code class="option">-v</code>] [<code class="option">-V</code>] [<code class="option">-R</code>] [<code class="option">-l</code>
       <em class="replaceable"><code>addr1[<span class="optional">/addr2</span>]</code></em>...] [<code class="option">-l</code>
       <em class="replaceable"><code>[<span class="optional">label@</span>]address[<span class="optional">=advertized_address</span>]</code></em>...] [<code class="option">-6</code>
       <em class="replaceable"><code>addr1[<span class="optional">/addr2</span>]</code></em>...] [<code class="option">-6</code>
@@ -233,7 +233,7 @@ e.g.: -d INFO:LOG_LOCAL5
       <em class="replaceable"><code>fifo|rr</code></em>] [<code class="option">--nice</code>
       <em class="replaceable"><code>level</code></em>] [<code class="option">-D</code>] [<code class="option">--no_redirect</code>] [<code class="option">--config</code>
       <em class="replaceable"><code>config_file</code></em>] [<code class="option">--dso</code>
-      <em class="replaceable"><code>module</code></em>...] [<code class="option">--bridge_symmetric</code>] [<code class="option">--no_resolve</code>]</p></div></div><div class="simplesect"><div class="titlepage"><div><div><h3 class="title"><a id="CL_OPTIONS"></a>OPTIONS</h3></div></div></div><p>The following command-line parameters are supported:</p><div class="variablelist"><a id="OPTIONS"></a><dl class="variablelist"><dt><span class="term"><code class="option">-?</code></span></dt><dd><p>Show summary of options.</p></dd><dt><span class="term"><code class="option">-2</code></span></dt><dd><p>Send every RTP packet twice in sessions that use low-bitrate
+      <em class="replaceable"><code>module</code></em>...] [<code class="option">--bridge_symmetric</code>] [<code class="option">--no_resolve</code>]</p></div></div><div class="simplesect" id="CL_OPTIONS"><div class="titlepage"><div><div><h3 class="title">OPTIONS</h3></div></div></div><p>The following command-line parameters are supported:</p><div class="variablelist" id="OPTIONS"><dl class="variablelist"><dt><span class="term"><code class="option">-?</code></span></dt><dd><p>Show summary of options.</p></dd><dt><span class="term"><code class="option">-2</code></span></dt><dd><p>Send every RTP packet twice in sessions that use low-bitrate
           codecs. Only packets that are smaller than 128 bytes will be sent
           twice. This option can improve audio quality on lossy links.</p></dd><dt><span class="term"><code class="option">-f</code></span></dt><dd><p>rtpproxy will stay in foreground mode if this option is
           set.</p></dd><dt><span class="term"><code class="option">-V</code></span></dt><dd><p>Show version of program.</p></dd><dt><span class="term"><code class="option">-v</code></span></dt><dd><p>Show supported rtpp command protocol revisions.</p></dd><dt><span class="term"><code class="option">-l</code>
@@ -257,29 +257,40 @@ e.g.: -d INFO:LOG_LOCAL5
           used to fetch stats from the rtpproxy process, or about specific
           media sessions. Format of <em class="replaceable"><code>ctrl_socket</code></em> is
           &lt;type&gt;:&lt;socket&gt;. Following types are supported:
-          </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><a id="udp"></a><span class="emphasis"><em>udp:</em></span> Create UDP control socket. In
+          </p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem" id="udp"><p><span class="emphasis"><em>udp:</em></span> Create UDP control socket. In
                 this mode rtpproxy will listen on a UDP socket for control
                 messages from the call controlle.</p><p>Example: -s udp:127.0.0.1:9000</p><p>IP address can be '*' in which case rtpproxy will listen
                 on all local interfaces. If port is omitted then port 22222
-                will be used.</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>rtpproxy control protocol has no built-in security
+                will be used.</p><div class="note"><h3 class="title">Note</h3><p>rtpproxy control protocol has no built-in security
                   mechanisms. Make sure that you protect the listening IP and
                   port properly when using rtpproxy with UDP control
-                  socket.</p></div></li><li class="listitem"><p><a id="udp6"></a><span class="emphasis"><em>udp6:</em></span> Create IPv6 UDP control
+                  socket.</p></div></li><li class="listitem" id="udp6"><p><span class="emphasis"><em>udp6:</em></span> Create IPv6 UDP control
                 socket. In this mode rtpproxy will listen on UDP/IPv6 for
-                control messages from the SIP Controller.</p><p>Example: -s udp6:::1:9000</p></li><li class="listitem"><p><a id="tcp"></a><span class="emphasis"><em>tcp:</em></span> Create IPv4 TCP control
+                control messages from the SIP Controller.</p><p>Example: -s udp6:::1:9000</p></li><li class="listitem" id="tcp"><p><span class="emphasis"><em>tcp:</em></span> Create IPv4 TCP control
                 socket. In this mode rtpproxy will listen on TCP/IPv4 for
-                control messages from the SIP Controller.</p><p>Example: -s tcp:192.168.0.1:9001</p></li><li class="listitem"><p><a id="tcp6"></a><span class="emphasis"><em>tcp6:</em></span> Create IPv6 TCP control
+                control messages from the SIP Controller.</p><p>Example: -s tcp:192.168.0.1:9001</p></li><li class="listitem" id="tcp6"><p><span class="emphasis"><em>tcp6:</em></span> Create IPv6 TCP control
                 socket. In this mode rtpproxy will listen on TCP/IPv6 for
-                control messages from the SIP Controller.</p><p>Example: -s tcp6:::1:9002</p></li><li class="listitem"><p><a id="unix"></a><span class="emphasis"><em>unix:</em></span> Create UNIX domain socket in
+                control messages from the SIP Controller.</p><p>Example: -s tcp6:::1:9002</p></li><li class="listitem" id="unix"><p><span class="emphasis"><em>unix:</em></span> Create UNIX domain socket in
                 a datagram-like mode for control interface. In this mode the
                 SIP Controller and rtpproxy must be running on the same host.
                 This is traditional mode when rtpproxy would close connection
-                after processing each command and sending reply.</p><p>Example: -s unix:/var/run/rtpproxy.sock</p></li><li class="listitem"><p><a id="cunix"></a><span class="emphasis"><em>cunix:</em></span> Create UNIX domain socket
+                after processing each command and sending reply.</p><p>Example: -s unix:/var/run/rtpproxy.sock</p></li><li class="listitem" id="cunix"><p><span class="emphasis"><em>cunix:</em></span> Create UNIX domain socket
                 for control interface. In this mode the SIP Controller and
                 rtpproxy must be running on the same host. Similar to
                 <span class="emphasis"><em>unix:</em></span> above, but the rtpproxy would keep
                 control socket open and accept multiple commands via the same
-                connection.</p><p>Example: -s cunix:/var/run/rtpproxy.sock</p></li></ul></div><p>Default value is
+                connection.</p><p>Example: -s cunix:/var/run/rtpproxy.sock</p></li><li class="listitem" id="fd"><p><span class="emphasis"><em>fd:</em></span> Use socket
+                <em class="replaceable"><code>N</code></em>, inherited from the parent
+                process, instead of creating one. The type of the control
+                socket is determined from the socket: a datagram IPv4/IPv6
+                socket is used as <span class="emphasis"><em>udp:</em></span> /
+                <span class="emphasis"><em>udp6:</em></span>, a listening IPv4/IPv6 or UNIX
+                domain stream socket as <span class="emphasis"><em>tcp:</em></span> /
+                <span class="emphasis"><em>tcp6:</em></span> / <span class="emphasis"><em>cunix:</em></span>,
+                and a connected stream socket as a single control channel to
+                the SIP Controller. The rtpproxy does not change the ownership
+                or permissions of such a socket, and does not remove its path
+                on exit.</p><p>Example: -s fd:3</p></li></ul></div><p>Default value is
           <code class="filename">unix:/var/run/rtpproxy.sock</code>.</p></dd><dt><span class="term"><code class="option">-t</code> <em class="replaceable"><code>tos</code></em></span></dt><dd><p>Set ToS (Type of Service) in the outgoing IP header. Default
           value is 0xB8. Setting this parameter to -1 disables setting ToS
           resulting in operating system default ToS being used instead.</p></dd><dt><span class="term"><code class="option">-r</code> <em class="replaceable"><code>rec_dir</code></em></span></dt><dd><p>Directory to write recorded RTP sessions.</p></dd><dt><span class="term"><code class="option">-S</code> <em class="replaceable"><code>spool_dir</code></em></span></dt><dd><p>Spool directory for recording of RTP streams. When the session
@@ -354,7 +365,7 @@ e.g.: -d INFO:LOG_LOCAL5
           and will not produce an error. It will ignore the notification
           request.</p><p>Format of <em class="replaceable"><code>timeout_socket</code></em> is
           &lt;type&gt;:&lt;socket&gt;. Following types are supported:
-          </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><span class="emphasis"><em>unix:</em></span> Connect to UNIX domain socket
+          </p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p><span class="emphasis"><em>unix:</em></span> Connect to UNIX domain socket
                 for sending timeout notifications. In this mode B2BUA and
                 rtpproxy must be running on the same host.</p><p>Example: -n unix:/var/run/rtpproxy_timeout.sock</p></li><li class="listitem"><p><span class="emphasis"><em>tcp:</em></span> Connect to a remote host using
                 TCP/IP for sending timeout notifications. Format of the
@@ -401,20 +412,19 @@ e.g.: -d INFO:LOG_LOCAL5
           this way, use <code class="option">--config</code> instead.</p></dd><dt><span class="term"><code class="option">--bridge_symmetric</code></span></dt><dd><p>In the bridging mode, do not treat all sessions as asymmetric,
           which is the default in that mode for historical reasons.</p></dd><dt><span class="term"><code class="option">--no_resolve</code></span></dt><dd><p>Only accept numeric IP addresses, in the command line
           arguments and in the control commands, instead of resolving host
-          names.</p></dd></dl></div></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="CONFIG_FILE"></a>Configuration File</h2></div></div></div><p>Configuration of the loadable modules is read from a
+          names.</p></dd></dl></div></div></div><div class="section" id="CONFIG_FILE"><div class="titlepage"><div><div><h2 class="title">Configuration File</h2></div></div></div><p>Configuration of the loadable modules is read from a
       configuration file in the UCL format, specified with the
       <code class="option">--config</code> command-line option. See <a class="link" href="#MODULES" title="Chapter 5. Modules">Modules</a> for the available modules and their
       parameters. An example is provided in
-      <code class="filename">doc/rtpproxy.conf.sample</code> in the source
-      tree.</p></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1351"></a>Startup Script</h2></div></div></div><p>The way you integrate RTPProxy into your system startup sequence
+      <a class="ulink" href="https://github.com/sippy/rtpproxy/blob/master/doc/rtpproxy.conf.sample" target="_top"><code class="filename">doc/rtpproxy.conf.sample</code></a>.</p></div><div class="section" id="id1351"><div class="titlepage"><div><div><h2 class="title">Startup Script</h2></div></div></div><p>The way you integrate RTPProxy into your system startup sequence
       is highly OS-version dependent. If you are using a pre-built RTPProxy
       package then most likely such method will be provided as part of that
       package and the best course of actions is to use that facility.</p><p>However, if you are a package maintainer or system builder you
       might need to create such configuration from scratch. In the next
       sections we would provide some basic guidelines on how to launch
-      RTPProxy in some common cases.</p><div class="simplesect"><div class="titlepage"><div><div><h3 class="title"><a id="id2157"></a>Systemd based systems</h3></div></div></div><p>On most modern Linux-based systems
+      RTPProxy in some common cases.</p><div class="simplesect" id="id2173"><div class="titlepage"><div><div><h3 class="title">Systemd based systems</h3></div></div></div><p>On most modern Linux-based systems
         <span class="application">systemd</span> is the recommended method to start
-        the RTPProxy.</p><a id="rtpproxy.service"></a><pre class="programlisting">[Unit]
+        the RTPProxy.</p><pre class="programlisting" id="rtpproxy.service">[Unit]
 Description=RTPProxy media server
 After=network.target
 Requires=network.target
@@ -447,7 +457,7 @@ WantedBy=multi-user.target</pre><p>The source tree also contains the unit files 
         packaging, <code class="filename">rpm/rtpproxy.service</code> and
         <code class="filename">rpm/rtpproxy.socket</code>, which are installed by the
         Debian packages. They use systemd socket activation, which requires
-        building with <code class="option">--enable-systemd</code>, see <a class="link" href="#enable-systemd">below</a>.</p></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1352"></a>Logging</h2></div></div></div><p>Logging is a very important aspect of the RTPProxy operation that
+        building with <code class="option">--enable-systemd</code>, see <a class="link" href="#enable-systemd">below</a>.</p></div></div><div class="section" id="id1352"><div class="titlepage"><div><div><h2 class="title">Logging</h2></div></div></div><p>Logging is a very important aspect of the RTPProxy operation that
       should not be overlooked. In our experience, properly configured and
       tested RTPProxy instance can keep running unattended literally for many
       years non-stop. Yet, various issues with a particular session and/or
@@ -461,15 +471,15 @@ WantedBy=multi-user.target</pre><p>The source tree also contains the unit files 
           team to act on issue and look at the logs in question?</p></li><li class="listitem"><p>How much detail do I need? The answer to this might depend on
           whether this is a development/QA or a production system.</p></li><li class="listitem"><p>Are there any other non-technical considerations that might
           influence those decisions? For example: data protection laws, law
-          enforcement requirements etc.</p></li></ol></div><div class="simplesect"><div class="titlepage"><div><div><h3 class="title"><a id="logsepfile"></a>Logging to a separate file</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>First of all you need to create a file you will use for
+          enforcement requirements etc.</p></li></ol></div><div class="simplesect" id="logsepfile"><div class="titlepage"><div><div><h3 class="title">Logging to a separate file</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>First of all you need to create a file you will use for
             logging and give it proper permissions (according to a user/group
             starting RTPProxy):</p><pre class="programlisting">touch /var/log/rtpproxy.log
-chown rtpproxy:rtpproxy /var/log/rtpproxy.log</pre></li></ul></div><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>Then define a log facility for it in rsyslog configuration
+chown rtpproxy:rtpproxy /var/log/rtpproxy.log</pre></li></ul></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>Then define a log facility for it in rsyslog configuration
             file (add a row at the bottom of the file) and restart rsyslog
             server:</p><pre class="programlisting">vim /etc/rsyslog.d/50-default.conf
  local5.*        /var/log/rtpproxy.log
 
-systemctl restart rsyslog.service</pre></li></ul></div><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>next step add a log rotation configuration for this log file
+systemctl restart rsyslog.service</pre></li></ul></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>next step add a log rotation configuration for this log file
             (that's a good way of handling overfilled log files):</p><pre class="programlisting">vim /etc/logrotate.d/rtpproxy</pre><pre class="programlisting">/var/log/rtpproxy.log {
   missingok
   compress
@@ -478,15 +488,15 @@ systemctl restart rsyslog.service</pre></li></ul></div><div class="itemizedlist"
   copytruncate
   rotate 5
   daily
-}</pre></li></ul></div><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>Now add a log facility level to your start row of the
-            RTPProxy:</p><pre class="programlisting">-d INFO:LOG_LOCAL5</pre></li></ul></div><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>Reload systemd configuration (to apply previous change) and
+}</pre></li></ul></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>Now add a log facility level to your start row of the
+            RTPProxy:</p><pre class="programlisting">-d INFO:LOG_LOCAL5</pre></li></ul></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>Reload systemd configuration (to apply previous change) and
             restart your RTPProxy server. Now logging should be done using new
             output file:</p><pre class="programlisting">systemctl daemon-reload
 
-systemctl restart rtpproxy.service</pre></li></ul></div><p></p></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1353"></a>Configuration of control socket (using systemd)</h2></div></div></div><p>As it was said earlier, keeping of the control socket using
+systemctl restart rtpproxy.service</pre></li></ul></div><p></p></div></div><div class="section" id="id1353"><div class="titlepage"><div><div><h2 class="title">Configuration of control socket (using systemd)</h2></div></div></div><p>As it was said earlier, keeping of the control socket using
       systemd, is a good reason to start using systemd.</p><p>A configuration process is pretty simple, there are just a few
       steps you need to implement to start using of it.</p><p><span class="bold"><strong>1. </strong></span>Firstly, you need to install
-      package requirements: <span class="package">libsystemd-dev</span></p><p><a id="enable-systemd"></a><span class="bold"><strong>2. </strong></span>Secondly,
+      package requirements: <span class="package">libsystemd-dev</span></p><p id="enable-systemd"><span class="bold"><strong>2. </strong></span>Secondly,
       you need to compile rtpproxy with a systemd flag (a usual compilation
       process, just add an option to a <span class="emphasis"><em>configure</em></span>
       execution): </p><pre class="programlisting">./configure --enable-systemd</pre><p><span class="bold"><strong>3.</strong></span> A third step, you need to
@@ -516,10 +526,10 @@ bash&gt; sudo systemctl enable rtpproxy.socket</pre><p>(btw here is a nice artic
 bash&gt; sudo systemctl start rtpproxy.service</pre><p>At this stage,
       your rtpproxy.service should catch up a socket created by systemd and
       start working properly. If you see some kind of errors, then you're
-      missing one of the steps defined above.</p></div></div><div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a id="MODULES"></a>Chapter 5. Modules</h1></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl class="toc"><dt><span class="section"><a href="#id1354">Loading Modules</a></span></dt><dt><span class="section"><a href="#id1355">Controlling Modules</a></span></dt><dt><span class="section"><a href="#mod.acct_csv">acct_csv</a></span></dt><dt><span class="section"><a href="#mod.acct_rtcp_hep">acct_rtcp_hep</a></span></dt><dt><span class="section"><a href="#mod.catch_dtmf">catch_dtmf</a></span></dt><dt><span class="section"><a href="#mod.dtls_gw">dtls_gw</a></span></dt><dt><span class="section"><a href="#mod.ice_lite">ice_lite</a></span></dt></dl></div><p>Some of the RTPProxy functionality is implemented as loadable
+      missing one of the steps defined above.</p></div></div><div class="chapter" id="MODULES"><div class="titlepage"><div><div><h1 class="title">Chapter 5. Modules</h1></div></div></div><p>Some of the RTPProxy functionality is implemented as loadable
     modules. A module can be loaded either via the <a class="link" href="#CONFIG_FILE" title="Configuration File">configuration file</a>, which also allows setting
     its parameters, or via the <code class="option">--dso</code> command-line option,
-    which only works for modules that take no parameters.</p><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1354"></a>Loading Modules</h2></div></div></div><p>Each module is configured in its own block of the
+    which only works for modules that take no parameters.</p><div class="section" id="id1354"><div class="titlepage"><div><div><h2 class="title">Loading Modules</h2></div></div></div><p>Each module is configured in its own block of the
       <code class="literal">modules</code> section of the configuration file. The name
       of the block is the name of the module. Unless the
       <code class="literal">load</code> parameter specifies the path to the module's
@@ -536,7 +546,7 @@ bash&gt; sudo systemctl start rtpproxy.service</pre><p>At this stage,
     }
 }</pre><p>The same module can be loaded more than once, each loaded copy
       being a separate instance, numbered from 1 in the order of
-      loading.</p></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1355"></a>Controlling Modules</h2></div></div></div><p>Modules that are controlled on a per-session basis accept
+      loading.</p></div><div class="section" id="id1355"><div class="titlepage"><div><div><h2 class="title">Controlling Modules</h2></div></div></div><p>Modules that are controlled on a per-session basis accept
       sub-commands appended to the <span class="command"><strong>U</strong></span> or
       <span class="command"><strong>L</strong></span> command after <code class="literal">&amp;&amp;</code>, in the
       form <code class="literal">M<em class="replaceable"><code>module_id</code></em>:<em class="replaceable"><code>instance</code></em>
@@ -550,7 +560,7 @@ bash&gt; sudo systemctl start rtpproxy.service</pre><p>At this stage,
       <code class="literal">&amp;&amp;</code> too. A failed sub-command is reported as
       a negative number, while one with no output is reported as
       <code class="literal">0</code>, or omitted when no sub-command after it has any
-      output.</p><div class="table"><a id="id1356"></a><p class="title"><strong>Table 5.1. Modules</strong></p><div class="table-contents"><table class="table" summary="Modules" border="1"><colgroup><col /><col /><col /></colgroup><thead><tr><th>Module</th><th>ID</th><th>Purpose</th></tr></thead><tbody><tr><td><a class="link" href="#mod.acct_csv" title="acct_csv">acct_csv</a></td><td>1</td><td>Per-session accounting into a CSV file</td></tr><tr><td><a class="link" href="#mod.acct_rtcp_hep" title="acct_rtcp_hep">acct_rtcp_hep</a></td><td>2</td><td>Reporting RTCP to a HEP (Homer) collector</td></tr><tr><td><a class="link" href="#mod.catch_dtmf" title="catch_dtmf">catch_dtmf</a></td><td>3</td><td>Notifying the call controller of DTMF events</td></tr><tr><td><a class="link" href="#mod.dtls_gw" title="dtls_gw">dtls_gw</a></td><td>4</td><td>Gateway between plain RTP and DTLS-SRTP</td></tr><tr><td><a class="link" href="#mod.ice_lite" title="ice_lite">ice_lite</a></td><td>5</td><td>ICE-Lite and RTCP multiplexing</td></tr></tbody></table></div></div><br class="table-break" /></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="mod.acct_csv"></a>acct_csv</h2></div></div></div><p>Writes one record with the session's statistics into a CSV file
+      output.</p><div class="table" id="id2291"><p class="title"><strong>Table 5.1. Modules</strong></p><div class="table-contents"><table class="table" summary="Modules" style="border-collapse: collapse;border-top: 1px solid ; border-bottom: 1px solid ; border-left: 1px solid ; border-right: 1px solid ; "><colgroup><col /><col /><col /></colgroup><thead><tr><th style="border-right: 1px solid ; border-bottom: 1px solid ; ">Module</th><th style="border-right: 1px solid ; border-bottom: 1px solid ; ">ID</th><th style="border-bottom: 1px solid ; ">Purpose</th></tr></thead><tbody><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><a class="link" href="#mod.acct_csv" title="acct_csv">acct_csv</a></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">1</td><td style="border-bottom: 1px solid ; ">Per-session accounting into a CSV file</td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><a class="link" href="#mod.acct_rtcp_hep" title="acct_rtcp_hep">acct_rtcp_hep</a></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">2</td><td style="border-bottom: 1px solid ; ">Reporting RTCP to a HEP (Homer) collector</td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><a class="link" href="#mod.catch_dtmf" title="catch_dtmf">catch_dtmf</a></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">3</td><td style="border-bottom: 1px solid ; ">Notifying the call controller of DTMF events</td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><a class="link" href="#mod.dtls_gw" title="dtls_gw">dtls_gw</a></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">4</td><td style="border-bottom: 1px solid ; ">Gateway between plain RTP and DTLS-SRTP</td></tr><tr><td style="border-right: 1px solid ; "><a class="link" href="#mod.ice_lite" title="ice_lite">ice_lite</a></td><td style="border-right: 1px solid ; ">5</td><td style="">ICE-Lite and RTCP multiplexing</td></tr></tbody></table></div></div><br class="table-break" /></div><div class="section" id="mod.acct_csv"><div class="titlepage"><div><div><h2 class="title">acct_csv</h2></div></div></div><p>Writes one record with the session's statistics into a CSV file
       for each session, when the session ends. A header line with the column
       names is written when the file is created. The columns include the
       Call-ID, the from-tag, the session setup and teardown times, and the
@@ -562,7 +572,7 @@ bash&gt; sudo systemctl start rtpproxy.service</pre><p>At this stage,
     acct_csv {
         logfile = /var/log/rtpproxy/rtpproxy_acct.csv
     }
-}</pre></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="mod.acct_rtcp_hep"></a>acct_rtcp_hep</h2></div></div></div><p>Reports every RTCP packet received, converted to JSON, to a HEP
+}</pre></div><div class="section" id="mod.acct_rtcp_hep"><div class="titlepage"><div><div><h2 class="title">acct_rtcp_hep</h2></div></div></div><p>Reports every RTCP packet received, converted to JSON, to a HEP
       (Homer) collector, using HEPv3.</p><p>The module takes no sub-commands. The parameters are:</p><div class="variablelist"><dl class="variablelist"><dt><span class="term"><code class="literal">capt_host</code></span></dt><dd><p>Address of the collector. Default:
             <code class="literal">10.0.0.1</code>.</p></dd><dt><span class="term"><code class="literal">capt_port</code></span></dt><dd><p>Port of the collector. Default:
             <code class="literal">9060</code>.</p></dd><dt><span class="term"><code class="literal">capt_ptype</code></span></dt><dd><p>Transport, <code class="literal">udp</code> or
@@ -574,7 +584,7 @@ bash&gt; sudo systemctl start rtpproxy.service</pre><p>At this stage,
         capt_ptype = udp
         capt_id = 101
     }
-}</pre></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="mod.catch_dtmf"></a>catch_dtmf</h2></div></div></div><p>Detects RFC 2833 (RFC 4733) telephone events in the stream and
+}</pre></div><div class="section" id="mod.catch_dtmf"><div class="titlepage"><div><div><h2 class="title">catch_dtmf</h2></div></div></div><p>Detects RFC 2833 (RFC 4733) telephone events in the stream and
       notifies the call controller of each DTMF digit received. Developed in
       collaboration with the OpenSIPS project. The module takes no
       parameters.</p><p>Detection is enabled per stream with the sub-command:</p><pre class="programlisting">M3:1 <em class="replaceable"><code>tag</code></em> [<em class="replaceable"><code>payload_type</code></em> [h]]</pre><div class="variablelist"><dl class="variablelist"><dt><span class="term"><em class="replaceable"><code>tag</code></em></span></dt><dd><p>URL-encoded string that is sent back with each
@@ -587,7 +597,7 @@ bash&gt; sudo systemctl start rtpproxy.service</pre><p>At this stage,
       command-line option) and the notification tag. For each digit, when
       its last packet is received, the following line is sent:</p><pre class="programlisting"><em class="replaceable"><code>tag</code></em> <em class="replaceable"><code>digit</code></em> <em class="replaceable"><code>volume</code></em> <em class="replaceable"><code>duration</code></em> <em class="replaceable"><code>side</code></em></pre><p>where <em class="replaceable"><code>duration</code></em> is in RTP timestamp
       units, and <em class="replaceable"><code>side</code></em> is 0 for the caller and 1
-      for the callee. For example:</p><pre class="programlisting">U call-id 192.0.2.1 12345 from-tag tcp:192.0.2.100:2222 ntag &amp;&amp; M3:1 caller%20dtmf 101</pre><p>would result in notifications like:</p><pre class="programlisting">caller dtmf 1 0 960 0</pre></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="mod.dtls_gw"></a>dtls_gw</h2></div></div></div><p>Gateways between plain RTP (RTP/AVP) and DTLS-SRTP
+      for the callee. For example:</p><pre class="programlisting">U call-id 192.0.2.1 12345 from-tag tcp:192.0.2.100:2222 ntag &amp;&amp; M3:1 caller%20dtmf 101</pre><p>would result in notifications like:</p><pre class="programlisting">caller dtmf 1 0 960 0</pre></div><div class="section" id="mod.dtls_gw"><div class="titlepage"><div><div><h2 class="title">dtls_gw</h2></div></div></div><p>Gateways between plain RTP (RTP/AVP) and DTLS-SRTP
       (UDP/TLS/RTP/SAVP) streams, taking care of certificate validation, key
       negotiation and SRTP encryption/decryption. It can also re-encrypt
       already encrypted streams back to back, e.g. for recording. Requires
@@ -610,8 +620,8 @@ bash&gt; sudo systemctl start rtpproxy.service</pre><p>At this stage,
 35000 &amp;&amp; actpass SHA-256 4A:AD:B9:...
 
 L call-id 192.0.2.2 23456 from-tag to-tag &amp;&amp; M4:1 P SHA-256 2C:7F:01:...
-35002</pre><p>See <code class="filename">modules/dtls_gw/README.md</code> in the source
-      tree for more scenarios.</p></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="mod.ice_lite"></a>ice_lite</h2></div></div></div><p>Implements the lite variant of ICE (RFC 5245), allowing
+35002</pre><p>See <a class="ulink" href="https://github.com/sippy/rtpproxy/blob/master/modules/dtls_gw/README.md" target="_top"><code class="filename">modules/dtls_gw/README.md</code></a>
+      for more scenarios.</p></div><div class="section" id="mod.ice_lite"><div class="titlepage"><div><div><h2 class="title">ice_lite</h2></div></div></div><p>Implements the lite variant of ICE (RFC 5245), allowing
       ICE-enabled user agents to establish media sessions through the
       RTPProxy, and RTCP multiplexing and de-multiplexing. Together with
       <code class="literal">dtls_gw</code>, it allows the RTPProxy to act as a WebRTC
@@ -622,5 +632,188 @@ L call-id 192.0.2.2 23456 from-tag to-tag &amp;&amp; M4:1 P SHA-256 2C:7F:01:...
           <em class="replaceable"><code>ice_pwd</code></em></code></span></dt><dd><p>Process an ICE offer received from the user agent,
             allocating an ICE endpoint if needed.</p></dd><dt><span class="term"><code class="literal">M5:1 C <em class="replaceable"><code>candidate</code></em></code></span></dt><dd><p>Add a single ICE candidate received from the user agent, as
             in the <code class="literal">a=candidate</code> SDP attribute. Repeat for
-            each candidate.</p></dd><dt><span class="term"><code class="literal">M5:1 D</code></span></dt><dd><p>Destroy the ICE context in the forward direction.</p></dd><dt><span class="term"><code class="literal">M5:1 U</code></span></dt><dd><p>Destroy the ICE context in the reverse direction.</p></dd></dl></div><p>For example, an incoming INVITE with an ICE offer:</p><pre class="programlisting">U call-id 192.0.2.1 12345 from-tag &amp;&amp; M5:1 A ufrag pwd &amp;&amp; M5:1 C 1 1 UDP 2130706431 192.0.2.1 12345 typ host</pre><p>See <code class="filename">modules/ice_lite/README.md</code> in the source
-      tree for more scenarios.</p></div></div></div></body></html>
+            each candidate.</p></dd><dt><span class="term"><code class="literal">M5:1 D</code></span></dt><dd><p>Destroy the ICE context in the forward direction.</p></dd><dt><span class="term"><code class="literal">M5:1 U</code></span></dt><dd><p>Destroy the ICE context in the reverse direction.</p></dd></dl></div><p>For example, an incoming INVITE with an ICE offer:</p><pre class="programlisting">U call-id 192.0.2.1 12345 from-tag &amp;&amp; M5:1 A ufrag pwd &amp;&amp; M5:1 C 1 1 UDP 2130706431 192.0.2.1 12345 typ host</pre><p>See <a class="ulink" href="https://github.com/sippy/rtpproxy/blob/master/modules/ice_lite/README.md" target="_top"><code class="filename">modules/ice_lite/README.md</code></a>
+      for more scenarios.</p></div></div><div class="chapter" id="DEVELOPMENT"><div class="titlepage"><div><div><h1 class="title">Chapter 6. Development</h1></div></div></div><p>This chapter is intended for developers who embed the RTPProxy
+    into their own applications, or who work on the RTPProxy itself and
+    need to test their changes.</p><div class="section" id="dev.librtpproxy"><div class="titlepage"><div><div><h2 class="title">Embedding RTPProxy: librtpproxy</h2></div></div></div><p>The whole RTPProxy engine is also available as a library,
+      <code class="filename">librtpproxy</code>, which allows running it inside
+      another process, e.g. a test harness, a fuzzer or an application that
+      needs a media relay of its own without managing a separate
+      daemon.</p><div class="section" id="id1356"><div class="titlepage"><div><div><h3 class="title">Building and Installing</h3></div></div></div><p>The library is always built, as it is used by the rtpproxy
+        itself, but it is only installed when the
+        <code class="option">--enable-librtpproxy</code> option is given to the
+        <span class="command"><strong>configure</strong></span> script:</p><pre class="programlisting">./configure --enable-librtpproxy
+make
+make install</pre><p>This installs a static <code class="filename">librtpproxy.a</code>,
+        which already includes the bundled libraries and the modules, and
+        the headers: <code class="filename">librtpproxy.h</code> with the main
+        interface and <code class="filename">librtpproxy/packetport.h</code>,
+        <code class="filename">librtpproxy/packet_ext.h</code> with the packet port
+        interface described below. On Debian and Ubuntu the same files are
+        provided by the <code class="literal">rtpproxy-dev</code> package.</p><p>Since the library is static, an application has to link with
+        the libraries that the rtpproxy itself has been configured with as
+        well, such as <code class="literal">-lsiplog</code>,
+        <code class="literal">-lelperiodic</code>, codec and SRTP libraries,
+        <code class="literal">-lssl -lcrypto</code>, <code class="literal">-lm</code> and
+        <code class="literal">-lpthread</code>. If the RTPProxy has been built with
+        LTO, the application has to be linked using the same
+        compiler.</p></div><div class="section" id="id1357"><div class="titlepage"><div><div><h3 class="title">Interface</h3></div></div></div><p>The main interface consists of two functions:</p><pre class="programlisting">#include &lt;librtpproxy.h&gt;
+
+struct rtpp_cfg *rtpp_main(int argc, const char * const *argv);
+void rtpp_shutdown(struct rtpp_cfg *);</pre><p><code class="function">rtpp_main()</code> takes the same arguments as
+        the rtpproxy command line (see <a class="link" href="#CONFIGURATION" title="Chapter 4. Configuration">Configuration</a>), with
+        <code class="literal">argv[0]</code> being the program name, initializes the
+        engine and starts its threads, then returns right away with a handle
+        to the running instance. The library never daemonizes, does not
+        write a PID file, does not change the current directory and does
+        not install any signal handlers, so the <code class="option">-f</code> option
+        is not needed. Instead of exiting the process, an error in the
+        arguments or during initialization makes
+        <code class="function">rtpp_main()</code> return
+        <code class="literal">NULL</code>. The global state of the
+        <code class="function">getopt()</code> is saved and restored, so the
+        application is free to use it as well.</p><p><code class="function">rtpp_shutdown()</code> stops the instance,
+        destroys all of its sessions and releases all resources associated
+        with it.</p></div><div class="section" id="id1358"><div class="titlepage"><div><div><h3 class="title">Controlling an Embedded Instance</h3></div></div></div><p>An embedded instance is controlled using the same protocol as
+        a standalone one, via any of the control sockets described in <a class="link" href="#CONFIGURATION" title="Chapter 4. Configuration">Configuration</a>. The most convenient
+        one is usually the <code class="literal">fd:</code><em class="replaceable"><code>N</code></em>
+        socket, which makes the instance use a socket created by the
+        application: one end of a connected socket pair becomes a private
+        control channel, with no need to pick an address or a path. Over
+        such a channel commands are written one per line and the replies are
+        read back the same way, without the cookies used by the network
+        control sockets:</p><pre class="programlisting">#include &lt;sys/socket.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+#include &lt;unistd.h&gt;
+
+#include &lt;librtpproxy.h&gt;
+
+int
+main(void)
+{
+    int fds[2];
+    char fdarg[16], buf[256];
+    struct rtpp_cfg *cfsp;
+    ssize_t len;
+
+    if (socketpair(AF_UNIX, SOCK_STREAM, 0, fds) != 0)
+        return (1);
+    snprintf(fdarg, sizeof(fdarg), "fd:%d", fds[1]);
+    const char *argv[] = {"rtpproxy", "-s", fdarg, "-l", "127.0.0.1",
+      "-d", "info"};
+    cfsp = rtpp_main(sizeof(argv) / sizeof(argv[0]), argv);
+    if (cfsp == NULL)
+        return (1);
+
+    const char *cmd = "U call1 127.0.0.1 12000 ftag1\n";
+    write(fds[0], cmd, strlen(cmd));
+    len = read(fds[0], buf, sizeof(buf) - 1);
+    if (len &gt; 0) {
+        buf[len] = '\0';
+        printf("allocated: %s", buf);
+    }
+
+    rtpp_shutdown(cfsp);
+    close(fds[0]);
+    return (0);
+}</pre><p>The fuzzing harnesses in <a class="ulink" href="https://github.com/sippy/rtpproxy/tree/master/scripts/fuzz" target="_top"><code class="filename">scripts/fuzz</code></a>
+        are another example of using the library.</p></div><div class="section" id="id1359"><div class="titlepage"><div><div><h3 class="title">Packet Ports</h3></div></div></div><p>Besides sending and receiving packets via sockets, an embedded
+        instance can exchange them with the application directly, through
+        shared memory packet rings called packet ports. A port is created
+        with <code class="function">rtpp_packetport_ctor()</code>, which takes the
+        capacity of the rings and the policy of flushing the outbound ring
+        (explicitly with <code class="function">rtpp_packetport_flush()</code> or
+        on a timer). The application pushes packets into the instance with
+        <code class="function">rtpp_packetport_push()</code> and friends, and pops
+        the packets sent by the instance with
+        <code class="function">rtpp_packetport_try_pop()</code> and
+        friends.</p><p>A port is referenced in the commands by its address, in the
+        <code class="literal">RTQ:0x</code><em class="replaceable"><code>pointer</code></em>
+        format: as the remote address of a stream, followed by a port tag in
+        place of the port number, to have the instance send the packets of
+        that stream into the port, or as a local address
+        (<code class="literal">l</code> modifier) to have the stream receive packets
+        from the port instead of a socket. Packet ports are only available
+        in the library. This interface is a work in progress and may change
+        in the future releases, see <a class="ulink" href="https://github.com/sippy/rtpproxy/blob/master/src/librtpproxy/packetport.h" target="_top"><code class="filename">src/librtpproxy/packetport.h</code></a>
+        for the details.</p></div></div><div class="section" id="dev.testing"><div class="titlepage"><div><div><h2 class="title">Testing</h2></div></div></div><p>The RTPProxy comes with an extensive suite of integration
+      tests, located in the <a class="ulink" href="https://github.com/sippy/rtpproxy/tree/master/tests" target="_top"><code class="filename">tests</code></a>
+      directory. Each test starts one or more rtpproxy instances, drives
+      them via their control sockets, generates and captures media, and
+      compares the results with the reference ones. The tests are also run
+      by the CI on every change, across several operating systems,
+      compilers and architectures.</p><div class="section" id="id1360"><div class="titlepage"><div><div><h3 class="title">Running Tests</h3></div></div></div><p>All tests are run with:</p><pre class="programlisting">make check</pre><p>A subset of the tests can be selected with the
+        <code class="varname">TESTS</code> variable, and several tests can be run in
+        parallel, since none of them depends on pre-determined ports:</p><pre class="programlisting">cd tests
+make -j4 check TESTS="forwarding/forwarding1 playback/playback1"</pre><p>A test can also be run directly as <span class="command"><strong>sh
+        tests/<em class="replaceable"><code>group</code></em>/<em class="replaceable"><code>test</code></em></strong></span>,
+        which prints the result of each of its steps. Besides the build
+        dependencies of the RTPProxy, the tests need Python 3 with the
+        <code class="literal">sippy</code> and <code class="literal">parsimonious</code>
+        modules (see <a class="ulink" href="https://github.com/sippy/rtpproxy/blob/master/python/tools/requirements.txt" target="_top"><code class="filename">python/tools/requirements.txt</code></a>),
+        <span class="command"><strong>ffmpeg</strong></span> and <span class="command"><strong>tcpdump</strong></span>. When the tests are run as root, the
+        rtpproxy and the tools are run as the <code class="literal">rtpproxy</code>
+        user, via <span class="command"><strong>setpriv</strong></span>.</p></div><div class="section" id="id1361"><div class="titlepage"><div><div><h3 class="title">Writing Tests with RPTL</h3></div></div></div><p>New tests are best written using the RTPProxy Testing Language
+        (RPTL), a small scripting language interpreted by <a class="ulink" href="https://github.com/sippy/rtpproxy/blob/master/python/RPTL/rptl_run.py" target="_top"><code class="filename">python/RPTL/rptl_run.py</code></a>.
+        An RPTL script starts the rtpproxy instances it needs, sends them
+        commands, checks the replies and runs external tools, passing the
+        ports allocated by one step on to the next ones, so that the tests
+        need neither pre-determined ports nor root privileges and can safely
+        run in parallel.</p><p>A script is a sequence of statements, one per line. A
+        <code class="literal">socket</code> statement defines a control connection,
+        which with an address of <code class="literal">stdio:</code> (or
+        <code class="literal">udp:</code>, <code class="literal">tcp:</code>,
+        <code class="literal">unix:</code> and so on, with nothing after the type)
+        starts a managed rtpproxy instance with the given command line
+        arguments. Every other statement either sends a command to the
+        named socket or runs a built-in, such as <code class="literal">.eval:</code>,
+        <code class="literal">.sleep:</code>, <code class="literal">.include:</code>,
+        <code class="literal">.foreach:</code> or <code class="literal">.exec:</code>, and
+        can capture the result into a variable, which is then referenced
+        as <code class="literal">%%NAME%%</code>, or pass it to a checking function.
+        Any failed check stops the script with an error:</p><pre class="programlisting"># Expects RTPPROXY_BIN to be defined
+.eval: 0 -&gt; RES_OK
+.eval: E50 -&gt; SESS_NOTFOUND
+socket r: stdio: -d info -p /dev/null -&gt; example.rout
+
+r: U call1 127.0.0.1 12000 ftag1 -&gt; validate_port(PORT_O)
+r: L call1 127.0.0.1 12002 ftag1 ttag1 -&gt; validate_port(PORT_A)
+.echo: allocated ports %%PORT_O%% and %%PORT_A%%
+r: D call1 ftag1 -&gt; str_compare(RES_OK)
+r: D call1 ftag1 -&gt; str_compare(SESS_NOTFOUND)
+
+.close: r</pre><p>A test itself is a Bourne shell script, which sets up the
+        environment using the common functions from <a class="ulink" href="https://github.com/sippy/rtpproxy/blob/master/tests/functions" target="_top"><code class="filename">tests/functions</code></a>,
+        runs the RPTL script with the <code class="varname">RPTL_INT</code>
+        interpreter, passing it the parameters with <code class="option">-D</code>,
+        and then examines the results, e.g. compares the replies logged by
+        the instances with the reference output, or decodes the recorded
+        media with <span class="command"><strong>extractaudio</strong></span> and checks its
+        checksum:</p><pre class="programlisting">#!/bin/sh
+
+BASEDIR="`dirname "${0}"`/.."
+. "${BASEDIR}/functions"
+
+${RPTL_INT} -s "${BASEDIR}/example/example.rptl" \
+ -D RTPPROXY_BIN="${RTPPROXY}"
+report "running example.rptl"
+
+${DIFF} "${BASEDIR}/example/example.output" example.rout
+report "checking rtpproxy replies"</pre><p>When the replies contain dynamically allocated ports, the
+        reference output can be a template that matches any port (see
+        <a class="ulink" href="https://github.com/sippy/rtpproxy/blob/master/scripts/revtempl.py" target="_top"><code class="filename">scripts/revtempl.py</code></a>),
+        or the ports can be replaced with a placeholder before the
+        comparison. The test, together with the files it uses, goes into a
+        directory of its group, and is registered in the
+        <code class="filename">Makefile.ami</code> of that group, after which the
+        <code class="filename">tests/Makefile.in</code> has to be regenerated with
+        <span class="command"><strong>automake</strong></span>.</p><p>The complete description of the language is available in
+        <a class="ulink" href="https://github.com/sippy/rtpproxy/blob/master/python/RPTL/README.md" target="_top"><code class="filename">python/RPTL/README.md</code></a>,
+        and the tests in <code class="filename">tests/recording</code>,
+        <code class="filename">tests/session_timeouts</code>,
+        <code class="filename">tests/forwarding</code> and
+        <code class="filename">tests/playback</code> are written in RPTL and can
+        be used as examples of more complex scenarios, such as running
+        several instances at once, replaying traffic or capturing streams
+        with external tools.</p></div></div></div></div><footer class="site-footer doc-footer"><div class="wrap footer-base"><span>Generated from the <a href="https://github.com/sippy/rtpproxy/tree/master/doc">rtpproxy source tree</a>.</span><a href="https://github.com/sippy/rtpproxy/blob/master/LICENSE">BSD 2-Clause License</a></div></footer></body></html>

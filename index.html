@@ -2,183 +2,380 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>RTPProxy</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
-  <link href="https://www.rtpproxy.org/index.xml" rel="alternate" type="application/rss+xml" title="RTPProxy" />
-  <link href="https://www.rtpproxy.org//css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://www.rtpproxy.org//css/hc.css" rel="stylesheet">
-  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-  
-    
-    	<meta name="generator" content="Hugo 0.168.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RTPProxy: A high-performance software proxy that brings control to your VoIP network</title>
+  <meta name="description" content="RTPProxy is a high-performance, BSD-licensed media relay for SIP networks: NAT traversal, IPv4/IPv6 gatewaying, WebRTC (DTLS-SRTP and ICE-lite), recording, announcements and more, controlled by …">
+  <meta name="theme-color" content="#0b1220">
+  <meta property="og:site_name" content="RTPProxy">
+  <meta property="og:title" content="RTPProxy">
+  <meta property="og:description" content="RTPProxy is a high-performance, BSD-licensed media relay for SIP networks: NAT traversal, IPv4/IPv6 gatewaying, WebRTC (DTLS-SRTP and ICE-lite), recording, announcements and more, controlled by …">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.rtpproxy.org/">
+  <link rel="canonical" href="https://www.rtpproxy.org/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="alternate" type="application/rss+xml" href="https://www.rtpproxy.org/index.xml" title="RTPProxy">
+  <link rel="stylesheet" href="/css/site.css">
+	<meta name="generator" content="Hugo 0.168.0">
 </head>
-    <body>
-<div class="nav-toggle"><i class="fa fa-bars fa-2x"></i> Herring Cove </div>
-      <div id = "wrapper">
+<body class="is-home">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="/" aria-label="RTPProxy home">
+      <svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="url(#lg)"/><path d="M6 13h6l2.5-5 3 16 2.5-11h6" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="lg" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse"><stop stop-color="#14b8a6"/><stop offset="1" stop-color="#2563eb"/></linearGradient></defs></svg>
+<span>RTP<b>Proxy</b></span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Menu"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    <nav id="nav-links" class="nav-links" aria-label="Main">
+      <a href="/#features">Features</a>
+      <a href="/docs/">Docs</a>
+      <a href="/post/">News</a>
+      <a href="/tags/talks/">Talks</a>
+      <a href="/about/">About</a>
+      <a class="btn btn-ghost btn-sm" href="https://github.com/sippy/rtpproxy"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 00-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.58 9.58 0 015 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0012 2z"/></svg>GitHub</a>
+    </nav>
+  </div>
+</header>
 
+  <main id="main">
+    
 
-<div class="navbar navbar-default" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a href="https://www.rtpproxy.org//"><p class="navbar-brand">RTPProxy</p></a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-					
-					
-					<li><a href="/about/">About</a></li>
-					
-					<li><a href="/post/">News</a></li>
-					
-					<li><a href="https://github.com/sippy/rtpproxy/releases/latest">Release Information (Stable)</a></li>
-					
-					<li><a href="/doc/master/release_info.html">Release Information (Unstable)</a></li>
-					
-					<li><a href="/doc/master/user_manual.html">User Manual</a></li>
-					
-					<li><a href="/doc/master/rtpproxy.8.html">Manual Page: rtpproxy(8)</a></li>
-					
-					<li><a href="/doc/master/extractaudio.1.html">Manual Page: extractaudio(1)</a></li>
-					
-					<li><a href="/doc/master/makeann.1.html">Manual Page: makeann(1)</a></li>
-					
-          </ul>
-        </div>
+<section class="hero">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <a class="pill" href="/post/v3.2release/"><span class="pill-tag">New</span> RTPProxy v3.2.0 is out <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <h1>The media relay that keeps <span class="grad">SIP calls flowing</span>.</h1>
+      <p class="lead">RTPProxy is a fast, battle-tested RTP proxy for VoIP networks. It handles NAT traversal, bridges IPv4 and IPv6, lets WebRTC clients talk to plain SIP endpoints, and records, forks and injects media on demand. OpenSIPS, Kamailio or Sippy B2BUA drive it over a simple control protocol.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="#get-started">Get started <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-ghost" href="/docs/"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5V5a2 2 0 012-2h14v16H6a2 2 0 00-2 2.5zM20 19v3H6"/></svg>Documentation</a>
+        <a class="btn btn-ghost" href="https://github.com/sippy/rtpproxy"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 00-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.58 9.58 0 015 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0012 2z"/></svg>GitHub</a>
+      </div>
+      <ul class="hero-facts">
+        <li><b>2003</b><span>in production since</span></li>
+        <li><b>BSD-2</b><span>permissive license</span></li>
+        <li><b>Linux &amp; FreeBSD</b><span>also macOS &amp; Docker</span></li>
+      </ul>
+    </div>
+    <div class="terminal" role="img" aria-label="Example RTPProxy control session">
+      <div class="terminal-bar"><i></i><i></i><i></i><span>rtpproxy control socket</span></div>
+<pre><code><span class="c"># start a relay with a control socket</span>
+<span class="p">$</span> rtpproxy -f -l 203.0.113.10 -s unix:/var/run/rtpproxy.sock
+
+<span class="c"># INVITE: create a session for the caller</span>
+<span class="o">&gt;</span> U a84b4c76e66710 198.51.100.7 49170 as8d7f
+<span class="i">&lt;</span> 35012 203.0.113.10
+
+<span class="c"># 200 OK: look up the session for the callee</span>
+<span class="o">&gt;</span> L a84b4c76e66710 192.0.2.44 51372 as8d7f 9fxced76
+<span class="i">&lt;</span> 35014 203.0.113.10
+
+<span class="c"># media now flows through 203.0.113.10</span></code></pre>
+    </div>
+  </div>
+</section>
+
+<section id="features" class="block">
+  <div class="wrap">
+    <header class="block-head">
+      <p class="eyebrow">Capabilities</p>
+      <h2>Everything your media plane needs</h2>
+      <p>One small daemon covers NAT traversal, call recording and WebRTC. Load modules for what you need and leave the rest out.</p>
+    </header>
+    <div class="grid grid-3 features">
+      <article class="card feature">
+        <div class="feature-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3-7 4 14 3-7h4"/></svg></div>
+        <h3>NAT traversal</h3>
+        <p>Symmetric latching learns each party's real address from the first packet it sends, so calls work through NAT and firewalls without client changes.</p>
+      </article>
+      <article class="card feature">
+        <div class="feature-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/><path d="M10 8.5v3l3-1.5z"/></svg></div>
+        <h3>WebRTC ready</h3>
+        <p>The dtls_gw and ice_lite modules bridge plain RTP and DTLS-SRTP, answer ICE connectivity checks and multiplex RTCP, so browsers can talk to legacy SIP gear.</p>
+      </article>
+      <article class="card feature">
+        <div class="feature-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.5" fill="currentColor"/></svg></div>
+        <h3>Recording &amp; forking</h3>
+        <p>Record sessions to local files or stream copies to remote listeners in real time, a natural fit for SIPREC recorders and live transcription.</p>
+      </article>
+      <article class="card feature">
+        <div class="feature-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10v4M8 7v10M12 4v16M16 8v8M20 11v2"/></svg></div>
+        <h3>Prompts &amp; MOH</h3>
+        <p>Inject pre-encoded announcements and music on hold into live streams, re-frame RTP payloads and detect DTMF digits on the fly.</p>
+      </article>
+      <article class="card feature">
+        <div class="feature-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="2.5"/><circle cx="19" cy="5" r="2.5"/><circle cx="19" cy="19" r="2.5"/><path d="M7.3 11l9.4-4.8M7.3 13l9.4 4.8"/></svg></div>
+        <h3>IPv4 / IPv6 gateway</h3>
+        <p>Bridge media between address families and between any number of labeled interfaces, with separate advertised addresses for NAT-ed deployments.</p>
+      </article>
+      <article class="card feature">
+        <div class="feature-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></div>
+        <h3>Observability</h3>
+        <p>Per-session and per-instance counters, RTCP reporting to HEP / Homer collectors and CSV accounting give you full visibility into media quality.</p>
+      </article>
+      <article class="card feature">
+        <div class="feature-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></div>
+        <h3>Built to scale</h3>
+        <p>A simple text control protocol over Unix, UDP or TCP sockets lets SIP proxies drive many instances for load balancing and failover, or use RTP Cluster for large deployments.</p>
+      </article>
+      <article class="card feature">
+        <div class="feature-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6l-6 6 6 6M16 6l6 6-6 6"/></svg></div>
+        <h3>Embeddable</h3>
+        <p>librtpproxy runs multiple independent instances inside your own process. RTP.io uses it to put the RTPProxy straight into OpenSIPS, and Python applications such as Sippy B2BUA can embed it too.</p>
+      </article>
+      <article class="card feature">
+        <div class="feature-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></div>
+        <h3>Battle-tested &amp; open</h3>
+        <p>In production since 2003, continuously fuzzed and tested in CI, and distributed under the permissive two-clause BSD license.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="block block-alt">
+  <div class="wrap">
+    <header class="block-head">
+      <p class="eyebrow">How it works</p>
+      <h2>Signalling stays in your proxy. Media goes through RTPProxy.</h2>
+    </header>
+    <ol class="steps">
+      <li>
+        <span class="step-n">1</span>
+        <h3>Offer</h3>
+        <p>When an INVITE arrives, your SIP proxy or B2BUA sends the call-id and the caller's media address to RTPProxy, which allocates a port pair and returns it. The controller rewrites the SDP to point at the proxy.</p>
+      </li>
+      <li>
+        <span class="step-n">2</span>
+        <h3>Answer</h3>
+        <p>On the 200 OK, the controller looks up the same session for the callee and rewrites that SDP as well. Both parties now send media to RTPProxy.</p>
+      </li>
+      <li>
+        <span class="step-n">3</span>
+        <h3>Relay &amp; latch</h3>
+        <p>RTPProxy relays packets both ways. It latches onto the real source address of each side, so endpoints behind NAT just work. Idle sessions expire automatically.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section id="get-started" class="block">
+  <div class="wrap get-started">
+    <header class="block-head left">
+      <p class="eyebrow">Get started</p>
+      <h2>Up and running in minutes</h2>
+      <p>Use pre-built packages and container images, or build it from source. Then point your SIP server's rtpproxy module at the control socket.</p>
+      <p><a class="link" href="/doc/master/user_manual.html">Read the installation guide <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></p>
+    </header>
+    <div class="tabs">
+      <div class="tab-list" role="tablist">
+        <button role="tab" aria-selected="true" aria-controls="tab-docker" id="t-docker">Docker</button>
+        <button role="tab" aria-selected="false" aria-controls="tab-deb" id="t-deb" tabindex="-1">Debian / Ubuntu</button>
+        <button role="tab" aria-selected="false" aria-controls="tab-bsd" id="t-bsd" tabindex="-1">FreeBSD</button>
+        <button role="tab" aria-selected="false" aria-controls="tab-src" id="t-src" tabindex="-1">Source</button>
+      </div>
+      <div class="tab-panel" role="tabpanel" id="tab-docker" aria-labelledby="t-docker">
+<pre><code><span class="c"># images on Docker Hub and ghcr.io, updated on every commit</span>
+docker run --rm --network host sippylabs/rtpproxy \
+    -l 203.0.113.10 -s udp:127.0.0.1:22222</code></pre>
+      </div>
+      <div class="tab-panel" role="tabpanel" id="tab-deb" aria-labelledby="t-deb" hidden>
+<pre><code><span class="c"># grab the .deb for your release from the GitHub release page</span>
+sudo apt install ./rtpproxy_*.deb
+sudo systemctl enable --now rtpproxy.socket
+sudo systemctl start rtpproxy.service</code></pre>
+      </div>
+      <div class="tab-panel" role="tabpanel" id="tab-bsd" aria-labelledby="t-bsd" hidden>
+<pre><code>pkg install rtpproxy
+sysrc rtpproxy_enable=YES
+service rtpproxy start</code></pre>
+      </div>
+      <div class="tab-panel" role="tabpanel" id="tab-src" aria-labelledby="t-src" hidden>
+<pre><code>git clone -b master https://github.com/sippy/rtpproxy.git
+git -C rtpproxy submodule update --init --recursive
+cd rtpproxy
+./configure
+make
+sudo make install</code></pre>
       </div>
     </div>
+  </div>
+</section>
 
+<section class="block block-alt">
+  <div class="wrap">
+    <header class="block-head">
+      <p class="eyebrow">Integrations</p>
+      <h2>Works with the SIP stack you already run</h2>
+    </header>
+    <div class="grid grid-3 logos">
+      <a class="card logo-card" href="https://opensips.org">
+        <span class="logo-tile"><img src="/img/opensips_logo.png" alt="" loading="lazy"></span>
+        <strong>OpenSIPS</strong>
+        <span class="muted">rtpproxy and rtp.io modules</span>
+      </a>
+      <a class="card logo-card" href="https://www.kamailio.org">
+        <span class="logo-tile"><img src="/img/kamailio_logo.jpg" alt="" loading="lazy"></span>
+        <strong>Kamailio</strong>
+        <span class="muted">rtpproxy module</span>
+      </a>
+      <a class="card logo-card" href="https://github.com/sippy/b2bua">
+        <span class="logo-tile"><img src="/img/b2bua_logo.png" alt="" loading="lazy"></span>
+        <strong>Sippy B2BUA</strong>
+        <span class="muted">Built-in media control</span>
+      </a>
+      <a class="card logo-card" href="https://github.com/sippy/go-b2bua">
+        <span class="logo-tile logo-text">go-b2bua</span>
+        <strong>go-b2bua</strong>
+        <span class="muted">Go port of the Sippy B2BUA</span>
+      </a>
+      <a class="card logo-card" href="https://siphon-sip.org/">
+        <span class="logo-tile logo-text">SIPhon</span>
+        <strong>SIPhon</strong>
+        <span class="muted">SIP proxy &amp; B2BUA with Python scripting</span>
+      </a>
+      <a class="card logo-card" href="https://github.com/resiprocate/legacy-b2bua">
+        <span class="logo-tile"><img src="/img/resiprocate_logo.png" alt="" loading="lazy"></span>
+        <strong>reSIProcate B2BUA</strong>
+        <span class="muted">Legacy B2BUA</span>
+      </a>
+    </div>
+    <p class="center muted small">Need more scale? <a href="https://github.com/sippy/rtp_cluster">RTP Cluster</a> load-balances many RTPProxy nodes behind a single control endpoint.</p>
+  </div>
+</section>
 
+<section class="block">
+  <div class="wrap two-col">
+    <div>
+      <header class="block-head left">
+        <p class="eyebrow">News</p>
+        <h2>Latest updates</h2>
+      </header>
+      <ul class="post-list">
+        <li class="post-item">
+  <time datetime="2026-04-30">Apr 30, 2026</time>
+  <a href="/post/2026-opensips-summit-demo/">Demo: Sippy, 20 years from VoIP to AI and beyond</a><span class="chip chip-talks">talks</span>
+</li>
 
-       
-       <div id="sidebar-wrapper">
-        <ul class="sidebar-nav">
-          <li class="sidebar-brand"><a href="https://www.rtpproxy.org//"><h1 class="brand">RTPProxy</h1></a><h3></h3></li>
-          <hr />
-					
-						<li><a href="/about/">About</a></li>
-					
-						<li><a href="/post/">News</a></li>
-					
-						<li><a href="https://github.com/sippy/rtpproxy/releases/latest">Release Information (Stable)</a></li>
-					
-						<li><a href="/doc/master/release_info.html">Release Information (Unstable)</a></li>
-					
-						<li><a href="/doc/master/user_manual.html">User Manual</a></li>
-					
-						<li><a href="/doc/master/rtpproxy.8.html">Manual Page: rtpproxy(8)</a></li>
-					
-						<li><a href="/doc/master/extractaudio.1.html">Manual Page: extractaudio(1)</a></li>
-					
-						<li><a href="/doc/master/makeann.1.html">Manual Page: makeann(1)</a></li>
-					
-          <hr />
-          <div id="social-wrapper">
-           <li> <a href="https://twitter.com/sippylabs"><i class="fa fa-twitter-square"></i> @SippyLabs</a></li>
-           
-           
-           <li> <a href="https://github.com/sippy/rtpproxy"><i class="fa fa-github-square"></i> Sippy/RTPProxy</a> </li>
-           <li> <a href="https://groups.google.com/forum/#!forum/rtpproxy"><i class="fa fa-envelope"></i> Mailing List</a> </li>
-         </div>
-       </ul>
-     </div>
+        <li class="post-item">
+  <time datetime="2026-03-16">Mar 16, 2026</time>
+  <a href="/post/v3.2release/">RTPProxy v3.2.0 release</a><span class="chip chip-releases">releases</span>
+</li>
 
+        <li class="post-item">
+  <time datetime="2025-05-29">May 29, 2025</time>
+  <a href="/post/2025-opensips-summit-demo/">Demo: Building software-defined networks with Sippy components</a><span class="chip chip-talks">talks</span>
+</li>
 
+        <li class="post-item">
+  <time datetime="2025-05-28">May 28, 2025</time>
+  <a href="/post/2025-opensips-summit-webrtc/">Talk: Enabling WebRTC in Infernos with Embedded RTPProxy</a><span class="chip chip-talks">talks</span>
+</li>
 
-     <div class="container">
+        <li class="post-item">
+  <time datetime="2025-02-25">Feb 25, 2025</time>
+  <a href="/post/v3.1.1release/">RTPProxy v3.1.1 release</a><span class="chip chip-releases">releases</span>
+</li>
 
+        <li class="post-item">
+  <time datetime="2024-09-25">Sep 25, 2024</time>
+  <a href="/post/v3.1release/">RTPProxy v3.1.0 release</a><span class="chip chip-releases">releases</span>
+</li>
 
-  <div id="article">
-      <h3>A high-performance software proxy that brings control to your VoIP network</h3> 
-
-
-      <h3>RTPProxy Enables:</h3>
-      <ul>
-        <li>VoIP traverse NAT firewalls</li>
-        <li>Relaying of voice, video or any RTP stream of data</li>
-        <li>Playing of pre-encoded in-band announcements</li>
-        <li>RTP payload re-framing</li>
-        <li>Optimizing packet flow</li>
-        <li>Routing VoIP calls over VPN links</li>
-        <li>Real-time stream copying</li>
       </ul>
-			<h3>RTPProxy provides:</h3>
-      <ul>
-				<li>Support for FreeBSD and Linux</li>
-				<li>A simple control protocol allowing for integration with other systems</li>
-				<li>BSD Clause-2 licensed code</li>
-				<li>Clustering across geographic areas (with assistance from rtp_cluser)
-				<li>Integration with SER, Kamailio and Sippy B2BUA</li>
-      </ul>
-      <h3>RTPProxy works with:</h3>
-      <div class="row">
-        <div class="col-sm-2">
-          <p>
-            <img src="/img/opensips_logo.png">
-          </p>
-          <p class="text-center">
-            <a href="http://www.opensips.org">OpenSIPS</a>
-          </p>
-        </div>
-        <div class="col-sm-2">
-          <p>
-            <img src="/img/kamailio_logo.jpg">
-          </p>
-          <p class="text-center">
-            <a href="http://www.kamailio.org/w/">Kamailio</a>
-          </p>
-        </div>
-        <div class="col-sm-2">
-          <p>
-            <img src="/img/b2bua_logo.png">
-          </p>
-          <p class="text-center">
-            <a href="http://github.com/sippy/b2bua">Sippy B2BUA</a>
-          </p>
-        </div>
-        <div class="col-sm-2">
-          <p>
-            <img src="/img/resiprocate_logo.png">
-          </p>       
-          <p class="text-center">
-            <a href="https://github.com/resiprocate/legacy-b2bua">reSIProcate B2BUA</a>
-          </p>
-        </div>				
+      <a class="link" href="/post/">All news <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+    <div>
+      <header class="block-head left">
+        <p class="eyebrow">Talks</p>
+        <h2>Watch &amp; learn</h2>
+      </header>
+      <div class="talks">
+        <a class="card talk" href="/post/2026-opensips-summit-demo/">
+          <span class="talk-play"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="15" height="14" rx="2"/><path d="M17 10l5-3v10l-5-3"/></svg></span>
+          <span>
+            <strong>Sippy, 20 years from VoIP to AI and beyond</strong>
+            <span class="muted small">April 2026</span>
+          </span>
+        </a>
+        <a class="card talk" href="/post/2025-opensips-summit-demo/">
+          <span class="talk-play"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="15" height="14" rx="2"/><path d="M17 10l5-3v10l-5-3"/></svg></span>
+          <span>
+            <strong>Building software-defined networks with Sippy components</strong>
+            <span class="muted small">May 2025</span>
+          </span>
+        </a>
+        <a class="card talk" href="/post/2025-opensips-summit-webrtc/">
+          <span class="talk-play"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="15" height="14" rx="2"/><path d="M17 10l5-3v10l-5-3"/></svg></span>
+          <span>
+            <strong>Enabling WebRTC in Infernos with Embedded RTPProxy</strong>
+            <span class="muted small">May 2025</span>
+          </span>
+        </a>
+        <a class="card talk" href="/post/2023-kamailio-world/">
+          <span class="talk-play"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="15" height="14" rx="2"/><path d="M17 10l5-3v10l-5-3"/></svg></span>
+          <span>
+            <strong>The RTPProxy: Past, Present And Future</strong>
+            <span class="muted small">June 2023</span>
+          </span>
+        </a>
       </div>
-  <h3>Recent News and Updates:</h3>
-  <ul class="posts">
-      
-      <li><span><a href="https://www.rtpproxy.org/post/">News</a><time class="pull-right post-list">Thu, Apr 30, 2026</h3></time></span></span></li>
-      
-      <li><span><a href="https://www.rtpproxy.org/about/">Backstory</a><time class="pull-right post-list">Thu, Jun 19, 2014</h3></time></span></span></li>
-      
-  </ul>
-    <footer>
+      <a class="link" href="/tags/talks/">All talks <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
 
-        <p class="text-muted credit">&copy; 2026. All rights reserved. </p>
-    </footer>
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+<section class="block">
+  <div class="wrap">
+    <div class="cta-band">
+      <div>
+        <h2>Join the community</h2>
+        <p>Ask questions on the mailing list, report bugs on GitHub, or send a pull request. Contributions are welcome.</p>
+      </div>
+      <div class="cta">
+        <a class="btn btn-primary" href="https://github.com/sippy/rtpproxy"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 00-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.58 9.58 0 015 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0012 2z"/></svg>Star on GitHub</a>
+        <a class="btn btn-ghost" href="https://groups.google.com/forum/#!forum/rtpproxy"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Mailing list</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-      ga('create', 'UA-2295417-4', 'rtpproxy.org');
-      ga('send', 'pageview');
+  </main>
+  <footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-about">
+      <a class="brand" href="/"><span>RTP<b>Proxy</b></span></a>
+      <p>A high-performance software proxy that brings control to your VoIP network.</p>
+      <p class="muted">Open source under the two-clause BSD license. Developed and maintained by <a href="https://www.sippysoft.com">Sippy Software, Inc.</a> and contributors.</p>
+    </div>
+    <div>
+      <h4>Project</h4>
+      <a href="https://github.com/sippy/rtpproxy">Source code</a>
+      <a href="https://github.com/sippy/rtpproxy/releases">Releases</a>
+      <a href="https://github.com/sippy/rtpproxy/issues">Issue tracker</a>
+      <a href="https://hub.docker.com/r/sippylabs/rtpproxy">Docker images</a>
+    </div>
+    <div>
+      <h4>Learn</h4>
+      <a href="/docs/">Documentation</a>
+      <a href="https://github.com/sippy/rtpproxy/wiki/RTPProxy-Command-Protocol">Control protocol</a>
+      <a href="/tags/talks/">Talks &amp; demos</a>
+      <a href="/about/">About</a>
+    </div>
+    <div>
+      <h4>Community</h4>
+      <a href="https://groups.google.com/forum/#!forum/rtpproxy">Mailing list</a>
+      <a href="https://twitter.com/sippylabs">@sippylabs</a>
+      <a href="/post/">News</a>
+      <a href="/index.xml">RSS feed</a>
+    </div>
+  </div>
+  <div class="wrap footer-base">
+    <span>&copy; 2026 Sippy Software, Inc.</span>
+    <a href="https://github.com/sippy/rtpproxy/blob/master/LICENSE">BSD 2-Clause License</a>
+  </div>
+</footer>
 
-    </script>
- 
-    <script src="https://www.rtpproxy.org//js/jquery-1.10.2.min.js"></script>
-    <script src="https://www.rtpproxy.org//js/bootstrap.min.js"></script>
-    <script src="https://www.rtpproxy.org//js/bootstrap.js"></script>
-    <script type="text/javascript" src="https://www.rtpproxy.org//js/hc.js"></script>
+  <script src="/js/site.js" defer></script>
 </body>
-
 </html>
-

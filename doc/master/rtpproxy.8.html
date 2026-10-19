@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>rtpproxy</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" /></head><body><div class="refentry"><a id="id1337"></a><div class="titlepage"></div><div class="refnamediv"><a id="refnamediv"></a><h2>Name</h2><p>rtpproxy — RTP (Real-time Transport Protocol) Proxy Server</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="cmdsynopsis"><p><a id="SYNOPSIS"></a><code class="command">rtpproxy</code>  [<code class="option">-?</code>] [<code class="option">-2</code>] [<code class="option">-f</code>] [<code class="option">-v</code>] [<code class="option">-V</code>] [<code class="option">-R</code>] [<code class="option">-l</code>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>rtpproxy</title><link rel="stylesheet" type="text/css" href="/css/site.css" /><link rel="stylesheet" type="text/css" href="/css/docs.css" /><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta name="theme-color" content="#0b1220" /><link rel="icon" href="/favicon.svg" type="image/svg+xml" /></head><body class="is-inner is-doc"><header class="site-header"><div class="wrap nav"><a class="brand" href="/" aria-label="RTPProxy home"><img class="logo" src="/favicon.svg" alt="" /><span>RTP<b>Proxy</b></span></a><nav class="nav-links doc-nav" aria-label="Main"><a href="/docs/" aria-current="page">Docs</a><a href="/post/">News</a><a href="/about/">About</a><a class="btn btn-ghost btn-sm" href="https://github.com/sippy/rtpproxy">GitHub</a></nav></div></header><div class="wrap doc-crumbs"><a href="/docs/">← Documentation</a></div><div class="refentry" id="id1337"><div class="titlepage"></div><div class="refnamediv" id="refnamediv"><h2>Name</h2><p>rtpproxy — RTP (Real-time Transport Protocol) Proxy Server</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="cmdsynopsis"><p id="SYNOPSIS"><code class="command">rtpproxy</code>  [<code class="option">-?</code>] [<code class="option">-2</code>] [<code class="option">-f</code>] [<code class="option">-v</code>] [<code class="option">-V</code>] [<code class="option">-R</code>] [<code class="option">-l</code>
       <em class="replaceable"><code>addr1[<span class="optional">/addr2</span>]</code></em>...] [<code class="option">-l</code>
       <em class="replaceable"><code>[<span class="optional">label@</span>]address[<span class="optional">=advertized_address</span>]</code></em>...] [<code class="option">-6</code>
       <em class="replaceable"><code>addr1[<span class="optional">/addr2</span>]</code></em>...] [<code class="option">-6</code>
@@ -24,7 +24,7 @@
       <em class="replaceable"><code>fifo|rr</code></em>] [<code class="option">--nice</code>
       <em class="replaceable"><code>level</code></em>] [<code class="option">-D</code>] [<code class="option">--no_redirect</code>] [<code class="option">--config</code>
       <em class="replaceable"><code>config_file</code></em>] [<code class="option">--dso</code>
-      <em class="replaceable"><code>module</code></em>...] [<code class="option">--bridge_symmetric</code>] [<code class="option">--no_resolve</code>]</p></div><div class="cmdsynopsis"><p><code class="command">rtpproxy</code>   <code class="option">-C</code> </p></div></div><div class="refsect1"><a id="id1338"></a><h2>DESCRIPTION</h2><div class="highlights"><a id="DESCRIPTION"></a><p>The <span class="command"><strong>rtpproxy</strong></span> is a generic-purpose RTP proxy
+      <em class="replaceable"><code>module</code></em>...] [<code class="option">--bridge_symmetric</code>] [<code class="option">--no_resolve</code>]</p></div><div class="cmdsynopsis"><p id="id1338"><code class="command">rtpproxy</code>   <code class="option">-C</code> </p></div></div><div class="refsect1" id="id1339"><h2>DESCRIPTION</h2><div class="highlights" id="DESCRIPTION"><p>The <span class="command"><strong>rtpproxy</strong></span> is a generic-purpose RTP proxy
       server designed to be used in conjunction with a SIP Controller capable
       of rewriting SDP contents. OpenSIPS, Kamailio, and Sippy B2BUA support
       <span class="command"><strong>rtpproxy</strong></span>.</p><p>The rtpproxy can be used to facilitate RTP sessions between SIP
@@ -44,7 +44,7 @@
       replacement, Music-on-Hold, disclaimer announcements etc).</p><p>The rtpproxy tracks various important operational metrics about
       RTP sessions (calls), such as number of packets sent, received, lost,
       forwarded and so forth. Real-time metrics can then be retrieved by
-      issuing appropriate command via control socket interface.</p></div></div><div class="refsect1"><a id="id1339"></a><h2>OPTIONS</h2><div class="variablelist"><a id="OPTIONS"></a><dl class="variablelist"><dt><span class="term"><code class="option">-?</code></span></dt><dd><p>Show summary of options.</p></dd><dt><span class="term"><code class="option">-2</code></span></dt><dd><p>Send every RTP packet twice in sessions that use low-bitrate
+      issuing appropriate command via control socket interface.</p></div></div><div class="refsect1" id="id1340"><h2>OPTIONS</h2><div class="variablelist" id="OPTIONS"><dl class="variablelist"><dt><span class="term"><code class="option">-?</code></span></dt><dd><p>Show summary of options.</p></dd><dt><span class="term"><code class="option">-2</code></span></dt><dd><p>Send every RTP packet twice in sessions that use low-bitrate
           codecs. Only packets that are smaller than 128 bytes will be sent
           twice. This option can improve audio quality on lossy links.</p></dd><dt><span class="term"><code class="option">-f</code></span></dt><dd><p>rtpproxy will stay in foreground mode if this option is
           set.</p></dd><dt><span class="term"><code class="option">-V</code></span></dt><dd><p>Show version of program.</p></dd><dt><span class="term"><code class="option">-v</code></span></dt><dd><p>Show supported rtpp command protocol revisions.</p></dd><dt><span class="term"><code class="option">-l</code>
@@ -68,29 +68,40 @@
           used to fetch stats from the rtpproxy process, or about specific
           media sessions. Format of <em class="replaceable"><code>ctrl_socket</code></em> is
           &lt;type&gt;:&lt;socket&gt;. Following types are supported:
-          </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><a id="udp"></a><span class="emphasis"><em>udp:</em></span> Create UDP control socket. In
+          </p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem" id="udp"><p><span class="emphasis"><em>udp:</em></span> Create UDP control socket. In
                 this mode rtpproxy will listen on a UDP socket for control
                 messages from the call controlle.</p><p>Example: -s udp:127.0.0.1:9000</p><p>IP address can be '*' in which case rtpproxy will listen
                 on all local interfaces. If port is omitted then port 22222
-                will be used.</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>rtpproxy control protocol has no built-in security
+                will be used.</p><div class="note"><h3 class="title">Note</h3><p>rtpproxy control protocol has no built-in security
                   mechanisms. Make sure that you protect the listening IP and
                   port properly when using rtpproxy with UDP control
-                  socket.</p></div></li><li class="listitem"><p><a id="udp6"></a><span class="emphasis"><em>udp6:</em></span> Create IPv6 UDP control
+                  socket.</p></div></li><li class="listitem" id="udp6"><p><span class="emphasis"><em>udp6:</em></span> Create IPv6 UDP control
                 socket. In this mode rtpproxy will listen on UDP/IPv6 for
-                control messages from the SIP Controller.</p><p>Example: -s udp6:::1:9000</p></li><li class="listitem"><p><a id="tcp"></a><span class="emphasis"><em>tcp:</em></span> Create IPv4 TCP control
+                control messages from the SIP Controller.</p><p>Example: -s udp6:::1:9000</p></li><li class="listitem" id="tcp"><p><span class="emphasis"><em>tcp:</em></span> Create IPv4 TCP control
                 socket. In this mode rtpproxy will listen on TCP/IPv4 for
-                control messages from the SIP Controller.</p><p>Example: -s tcp:192.168.0.1:9001</p></li><li class="listitem"><p><a id="tcp6"></a><span class="emphasis"><em>tcp6:</em></span> Create IPv6 TCP control
+                control messages from the SIP Controller.</p><p>Example: -s tcp:192.168.0.1:9001</p></li><li class="listitem" id="tcp6"><p><span class="emphasis"><em>tcp6:</em></span> Create IPv6 TCP control
                 socket. In this mode rtpproxy will listen on TCP/IPv6 for
-                control messages from the SIP Controller.</p><p>Example: -s tcp6:::1:9002</p></li><li class="listitem"><p><a id="unix"></a><span class="emphasis"><em>unix:</em></span> Create UNIX domain socket in
+                control messages from the SIP Controller.</p><p>Example: -s tcp6:::1:9002</p></li><li class="listitem" id="unix"><p><span class="emphasis"><em>unix:</em></span> Create UNIX domain socket in
                 a datagram-like mode for control interface. In this mode the
                 SIP Controller and rtpproxy must be running on the same host.
                 This is traditional mode when rtpproxy would close connection
-                after processing each command and sending reply.</p><p>Example: -s unix:/var/run/rtpproxy.sock</p></li><li class="listitem"><p><a id="cunix"></a><span class="emphasis"><em>cunix:</em></span> Create UNIX domain socket
+                after processing each command and sending reply.</p><p>Example: -s unix:/var/run/rtpproxy.sock</p></li><li class="listitem" id="cunix"><p><span class="emphasis"><em>cunix:</em></span> Create UNIX domain socket
                 for control interface. In this mode the SIP Controller and
                 rtpproxy must be running on the same host. Similar to
                 <span class="emphasis"><em>unix:</em></span> above, but the rtpproxy would keep
                 control socket open and accept multiple commands via the same
-                connection.</p><p>Example: -s cunix:/var/run/rtpproxy.sock</p></li></ul></div><p>Default value is
+                connection.</p><p>Example: -s cunix:/var/run/rtpproxy.sock</p></li><li class="listitem" id="fd"><p><span class="emphasis"><em>fd:</em></span> Use socket
+                <em class="replaceable"><code>N</code></em>, inherited from the parent
+                process, instead of creating one. The type of the control
+                socket is determined from the socket: a datagram IPv4/IPv6
+                socket is used as <span class="emphasis"><em>udp:</em></span> /
+                <span class="emphasis"><em>udp6:</em></span>, a listening IPv4/IPv6 or UNIX
+                domain stream socket as <span class="emphasis"><em>tcp:</em></span> /
+                <span class="emphasis"><em>tcp6:</em></span> / <span class="emphasis"><em>cunix:</em></span>,
+                and a connected stream socket as a single control channel to
+                the SIP Controller. The rtpproxy does not change the ownership
+                or permissions of such a socket, and does not remove its path
+                on exit.</p><p>Example: -s fd:3</p></li></ul></div><p>Default value is
           <code class="filename">unix:/var/run/rtpproxy.sock</code>.</p></dd><dt><span class="term"><code class="option">-t</code> <em class="replaceable"><code>tos</code></em></span></dt><dd><p>Set ToS (Type of Service) in the outgoing IP header. Default
           value is 0xB8. Setting this parameter to -1 disables setting ToS
           resulting in operating system default ToS being used instead.</p></dd><dt><span class="term"><code class="option">-r</code> <em class="replaceable"><code>rec_dir</code></em></span></dt><dd><p>Directory to write recorded RTP sessions.</p></dd><dt><span class="term"><code class="option">-S</code> <em class="replaceable"><code>spool_dir</code></em></span></dt><dd><p>Spool directory for recording of RTP streams. When the session
@@ -165,7 +176,7 @@
           and will not produce an error. It will ignore the notification
           request.</p><p>Format of <em class="replaceable"><code>timeout_socket</code></em> is
           &lt;type&gt;:&lt;socket&gt;. Following types are supported:
-          </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><span class="emphasis"><em>unix:</em></span> Connect to UNIX domain socket
+          </p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p><span class="emphasis"><em>unix:</em></span> Connect to UNIX domain socket
                 for sending timeout notifications. In this mode B2BUA and
                 rtpproxy must be running on the same host.</p><p>Example: -n unix:/var/run/rtpproxy_timeout.sock</p></li><li class="listitem"><p><span class="emphasis"><em>tcp:</em></span> Connect to a remote host using
                 TCP/IP for sending timeout notifications. Format of the
@@ -212,7 +223,7 @@
           this way, use <code class="option">--config</code> instead.</p></dd><dt><span class="term"><code class="option">--bridge_symmetric</code></span></dt><dd><p>In the bridging mode, do not treat all sessions as asymmetric,
           which is the default in that mode for historical reasons.</p></dd><dt><span class="term"><code class="option">--no_resolve</code></span></dt><dd><p>Only accept numeric IP addresses, in the command line
           arguments and in the control commands, instead of resolving host
-          names.</p></dd></dl></div></div><div class="refsect1"><a id="id1340"></a><h2>PRINCIPLES OF OPERATION</h2><p>When the SIP controller receives an INVITE request, it extracts the
+          names.</p></dd></dl></div></div><div class="refsect1" id="id1341"><h2>PRINCIPLES OF OPERATION</h2><p>When the SIP controller receives an INVITE request, it extracts the
     Call-ID and from_tag from INVITE. The call controller communicates it with
     the rtpproxy via Unix domain socket or a UDP socket. rtpproxy looks for an
     existing session with the given Call-ID and from_tag.</p><p>If rtpproxy finds a session that is already associated with the
@@ -242,8 +253,8 @@
     parties.</p><p>The rtpproxy tracks idle time for each of existing sessions (i.e.
     time interval within which there were no packets relayed), and
     automatically cleans up sessions whose idle times exceed the idle time
-    (60 seconds by default).</p></div><div class="refsect1"><a id="id1341"></a><h2>FILES</h2><p><code class="filename">rtpproxy</code></p><p><code class="filename">makeann</code></p><p><code class="filename">extractaudio</code></p></div><div class="refsect1"><a id="id1342"></a><h2>SEE ALSO</h2><p><span class="citerefentry"><span class="refentrytitle">extractaudio</span>(1)</span>,
-    <span class="citerefentry"><span class="refentrytitle">makeann</span>(1)</span></p></div><div class="refsect1"><a id="id1343"></a><h2>LICENSE</h2><p>All components of the rtpproxy are licensed under the BSD 2-Clause
+    (60 seconds by default).</p></div><div class="refsect1" id="id1342"><h2>FILES</h2><p><code class="filename">rtpproxy</code></p><p><code class="filename">makeann</code></p><p><code class="filename">extractaudio</code></p></div><div class="refsect1" id="id1343"><h2>SEE ALSO</h2><p><span class="citerefentry"><span class="refentrytitle">extractaudio</span>(1)</span>,
+    <span class="citerefentry"><span class="refentrytitle">makeann</span>(1)</span></p></div><div class="refsect1" id="id1344"><h2>LICENSE</h2><p>All components of the rtpproxy are licensed under the BSD 2-Clause
     License. See <code class="filename">LICENSE</code> file in the top of source tree
-    for details.</p></div><div class="refsect1"><a id="id1344"></a><h2>AVAILABILITY</h2><p>The latest version of this program and its components can be found
-    at <a class="ulink" href="http://www.rtpproxy.org/" target="_top">http://www.rtpproxy.org/</a>.</p></div></div></body></html>
+    for details.</p></div><div class="refsect1" id="id1345"><h2>AVAILABILITY</h2><p>The latest version of this program and its components can be found
+    at <a class="ulink" href="http://www.rtpproxy.org/" target="_top">http://www.rtpproxy.org/</a>.</p></div></div><footer class="site-footer doc-footer"><div class="wrap footer-base"><span>Generated from the <a href="https://github.com/sippy/rtpproxy/tree/master/doc">rtpproxy source tree</a>.</span><a href="https://github.com/sippy/rtpproxy/blob/master/LICENSE">BSD 2-Clause License</a></div></footer></body></html>

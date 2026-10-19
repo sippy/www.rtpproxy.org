@@ -2,140 +2,99 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>New Snapshot: Solaris, you compile me.</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
-  <link href="https://www.rtpproxy.org/index.xml" rel="alternate" type="application/rss+xml" title="RTPProxy" />
-  <link href="https://www.rtpproxy.org//css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://www.rtpproxy.org//css/hc.css" rel="stylesheet">
-  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>New Snapshot: Solaris, you compile me. | RTPProxy</title>
+  <meta name="description" content="New snapshot from the 1.2 development branch.
+This snapshot includes Sun Solaris fixes (now it should compile and run clearly) and improvments to the disconnect notification feature.
+">
+  <meta name="theme-color" content="#0b1220">
+  <meta property="og:site_name" content="RTPProxy">
+  <meta property="og:title" content="New Snapshot: Solaris, you compile me.">
+  <meta property="og:description" content="New snapshot from the 1.2 development branch.
+This snapshot includes Sun Solaris fixes (now it should compile and run clearly) and improvments to the disconnect notification feature.
+">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.rtpproxy.org/post/solaris_you_compile_me/">
+  <link rel="canonical" href="https://www.rtpproxy.org/post/solaris_you_compile_me/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="alternate" type="application/rss+xml" href="https://www.rtpproxy.org/index.xml" title="RTPProxy">
+  <link rel="stylesheet" href="/css/site.css">
+</head>
+<body class="is-inner">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="/" aria-label="RTPProxy home">
+      <svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="url(#lg)"/><path d="M6 13h6l2.5-5 3 16 2.5-11h6" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="lg" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse"><stop stop-color="#14b8a6"/><stop offset="1" stop-color="#2563eb"/></linearGradient></defs></svg>
+<span>RTP<b>Proxy</b></span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Menu"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    <nav id="nav-links" class="nav-links" aria-label="Main">
+      <a href="/#features">Features</a>
+      <a href="/docs/">Docs</a>
+      <a href="/post/" aria-current="page">News</a>
+      <a href="/tags/talks/">Talks</a>
+      <a href="/about/">About</a>
+      <a class="btn btn-ghost btn-sm" href="https://github.com/sippy/rtpproxy"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 00-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.58 9.58 0 015 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0012 2z"/></svg>GitHub</a>
+    </nav>
+  </div>
+</header>
+
+  <main id="main">
     
-    </head>
-    <body>
-<div class="nav-toggle"><i class="fa fa-bars fa-2x"></i> Herring Cove </div>
-      <div id = "wrapper">
-
-
-<div class="navbar navbar-default" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a href="https://www.rtpproxy.org//"><p class="navbar-brand">RTPProxy</p></a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-					
-					
-					<li><a href="/about/">About</a></li>
-					
-					<li><a href="/post/">News</a></li>
-					
-					<li><a href="https://github.com/sippy/rtpproxy/releases/latest">Release Information (Stable)</a></li>
-					
-					<li><a href="/doc/master/release_info.html">Release Information (Unstable)</a></li>
-					
-					<li><a href="/doc/master/user_manual.html">User Manual</a></li>
-					
-					<li><a href="/doc/master/rtpproxy.8.html">Manual Page: rtpproxy(8)</a></li>
-					
-					<li><a href="/doc/master/extractaudio.1.html">Manual Page: extractaudio(1)</a></li>
-					
-					<li><a href="/doc/master/makeann.1.html">Manual Page: makeann(1)</a></li>
-					
-          </ul>
-        </div>
-      </div>
-    </div>
-
-
-
-       
-       <div id="sidebar-wrapper">
-        <ul class="sidebar-nav">
-          <li class="sidebar-brand"><a href="https://www.rtpproxy.org//"><h1 class="brand">RTPProxy</h1></a><h3></h3></li>
-          <hr />
-					
-						<li><a href="/about/">About</a></li>
-					
-						<li><a href="/post/">News</a></li>
-					
-						<li><a href="https://github.com/sippy/rtpproxy/releases/latest">Release Information (Stable)</a></li>
-					
-						<li><a href="/doc/master/release_info.html">Release Information (Unstable)</a></li>
-					
-						<li><a href="/doc/master/user_manual.html">User Manual</a></li>
-					
-						<li><a href="/doc/master/rtpproxy.8.html">Manual Page: rtpproxy(8)</a></li>
-					
-						<li><a href="/doc/master/extractaudio.1.html">Manual Page: extractaudio(1)</a></li>
-					
-						<li><a href="/doc/master/makeann.1.html">Manual Page: makeann(1)</a></li>
-					
-          <hr />
-          <div id="social-wrapper">
-           <li> <a href="https://twitter.com/sippylabs"><i class="fa fa-twitter-square"></i> @SippyLabs</a></li>
-           
-           
-           <li> <a href="https://github.com/sippy/rtpproxy"><i class="fa fa-github-square"></i> Sippy/RTPProxy</a> </li>
-           <li> <a href="https://groups.google.com/forum/#!forum/rtpproxy"><i class="fa fa-envelope"></i> Mailing List</a> </li>
-         </div>
-       </ul>
-     </div>
-
-
-
-     <div class="container">
-
-
-  <div id="article">
-   <div class="article-title">New Snapshot: Solaris, you compile me.</div>
-   <p class="meta"><small>&nbsp;<i class="fa fa-calendar-o"></i> 2008-12-08</small></p> <hr/>
-   <div class="post">
-     <p>New snapshot from the 1.2 development branch.</p>
+<article class="wrap narrow page">
+  <header class="page-head">
+    <a class="back" href="/post/">&larr; News</a>
+    <h1>New Snapshot: Solaris, you compile me.</h1>
+    <p class="meta">
+      <time datetime="2008-12-08">December 8, 2008</time><span>@sobomax</span>
+    </p>
+  </header>
+  <div class="prose">
+    <p>New snapshot from the 1.2 development branch.</p>
 <p>This snapshot includes Sun Solaris fixes (now it should compile and run clearly) and improvments to the disconnect notification feature.</p>
 
-   </div>
- </div>
+  </div>
+  <nav class="pager" aria-label="More news"><a class="card" href="/post/beta_one_point_two/"><span class="muted small">&larr; Newer</span>Beta 1.2</a><a class="card right" href="/post/ability_to_fork/"><span class="muted small">Older &rarr;</span>Solaris, improved re-INVITES, port randomness and more.</a>
+  </nav>
+</article>
 
-
- <a href="https://twitter.com/share" class="twitter-share-button " data-size="small" data-count="none">Tweet</a>
- <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
- <ul class="pager">
-      &nbsp;<li class="previous"><a href="https://www.rtpproxy.org/post/ability_to_fork/"> Solaris, improved re-INVITES, port randomness and more.</a></li>
-      &nbsp;<li class="next"><a href="https://www.rtpproxy.org/post/beta_one_point_two/"> Beta 1.2</a></li>
-</ul>
-
-
-
-    </ul>
+  </main>
+  <footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-about">
+      <a class="brand" href="/"><span>RTP<b>Proxy</b></span></a>
+      <p>A high-performance software proxy that brings control to your VoIP network.</p>
+      <p class="muted">Open source under the two-clause BSD license. Developed and maintained by <a href="https://www.sippysoft.com">Sippy Software, Inc.</a> and contributors.</p>
     </div>
-    <footer>
+    <div>
+      <h4>Project</h4>
+      <a href="https://github.com/sippy/rtpproxy">Source code</a>
+      <a href="https://github.com/sippy/rtpproxy/releases">Releases</a>
+      <a href="https://github.com/sippy/rtpproxy/issues">Issue tracker</a>
+      <a href="https://hub.docker.com/r/sippylabs/rtpproxy">Docker images</a>
+    </div>
+    <div>
+      <h4>Learn</h4>
+      <a href="/docs/">Documentation</a>
+      <a href="https://github.com/sippy/rtpproxy/wiki/RTPProxy-Command-Protocol">Control protocol</a>
+      <a href="/tags/talks/">Talks &amp; demos</a>
+      <a href="/about/">About</a>
+    </div>
+    <div>
+      <h4>Community</h4>
+      <a href="https://groups.google.com/forum/#!forum/rtpproxy">Mailing list</a>
+      <a href="https://twitter.com/sippylabs">@sippylabs</a>
+      <a href="/post/">News</a>
+      <a href="/index.xml">RSS feed</a>
+    </div>
+  </div>
+  <div class="wrap footer-base">
+    <span>&copy; 2026 Sippy Software, Inc.</span>
+    <a href="https://github.com/sippy/rtpproxy/blob/master/LICENSE">BSD 2-Clause License</a>
+  </div>
+</footer>
 
-        <p class="text-muted credit">&copy; 2026. All rights reserved. </p>
-    </footer>
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-2295417-4', 'rtpproxy.org');
-      ga('send', 'pageview');
-
-    </script>
- 
-    <script src="https://www.rtpproxy.org//js/jquery-1.10.2.min.js"></script>
-    <script src="https://www.rtpproxy.org//js/bootstrap.min.js"></script>
-    <script src="https://www.rtpproxy.org//js/bootstrap.js"></script>
-    <script type="text/javascript" src="https://www.rtpproxy.org//js/hc.js"></script>
+  <script src="/js/site.js" defer></script>
 </body>
-
 </html>
-

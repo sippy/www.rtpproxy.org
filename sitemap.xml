@@ -11,6 +11,15 @@
     <loc>https://www.rtpproxy.org/</loc>
     <lastmod>2026-04-30T12:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://www.rtpproxy.org/tags/</loc>
+    <lastmod>2026-04-30T12:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.rtpproxy.org/tags/talks/</loc>
+    <lastmod>2026-04-30T12:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.rtpproxy.org/tags/releases/</loc>
+    <lastmod>2026-03-16T22:19:39+00:00</lastmod>
+  </url><url>
     <loc>https://www.rtpproxy.org/post/v3.2release/</loc>
     <lastmod>2026-03-16T22:19:39+00:00</lastmod>
   </url><url>
@@ -77,9 +86,18 @@
     <loc>https://www.rtpproxy.org/post/solaris_you_compile_me/</loc>
     <lastmod>2008-12-08T04:04:56+00:00</lastmod>
   </url><url>
+    <loc>https://www.rtpproxy.org/tags/ser/</loc>
+    <lastmod>2008-11-11T03:56:51+00:00</lastmod>
+  </url><url>
+    <loc>https://www.rtpproxy.org/tags/solaris/</loc>
+    <lastmod>2008-11-11T03:56:51+00:00</lastmod>
+  </url><url>
     <loc>https://www.rtpproxy.org/post/ability_to_fork/</loc>
     <lastmod>2008-11-11T03:56:51+00:00</lastmod>
   </url><url>
-    <loc>https://www.rtpproxy.org/vendors/</loc>
+    <loc>https://www.rtpproxy.org/tags/syslog/</loc>
+    <lastmod>2008-11-11T03:56:51+00:00</lastmod>
+  </url><url>
+    <loc>https://www.rtpproxy.org/docs/</loc>
   </url>
 </urlset>

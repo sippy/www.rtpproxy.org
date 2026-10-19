@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Syslog on RTPProxy</title>
+		<link>https://www.rtpproxy.org/tags/syslog/</link>
+		<description>Recent content in Syslog on RTPProxy</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+		
+			<lastBuildDate>Tue, 11 Nov 2008 03:56:51 +0000</lastBuildDate>
+		
+			<atom:link href="https://www.rtpproxy.org/tags/syslog/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Solaris, improved re-INVITES, port randomness and more.</title>
+				<link>https://www.rtpproxy.org/post/ability_to_fork/</link>
+				<pubDate>Tue, 11 Nov 2008 03:56:51 +0000</pubDate>
+				<guid>https://www.rtpproxy.org/post/ability_to_fork/</guid>
+				<description>&lt;p&gt;Latest snapshot of development 1.2 version of RTPProxy has been released.&lt;/p&gt;&#xA;&lt;p&gt;This release includes many bug fixes and new features, including:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Solaris compatibility fixes&lt;/li&gt;&#xA;&lt;li&gt;Support for the new &lt;code&gt;rtpproxy_stream2xxx()&lt;/code&gt; command in SER&lt;/li&gt;&#xA;&lt;li&gt;Improved support for re-INVITE&lt;/li&gt;&#xA;&lt;li&gt;Port randomization support&lt;/li&gt;&#xA;&lt;li&gt;syslog support.&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+	</channel>
+</rss>
