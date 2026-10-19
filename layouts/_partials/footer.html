@@ -1,0 +1,34 @@
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-about">
+      <a class="brand" href="{{ "/" | relURL }}"><span>RTP<b>Proxy</b></span></a>
+      <p>{{ site.Params.Subtitle }}.</p>
+      <p class="muted">Open source under the two-clause BSD license. Developed and maintained by <a href="https://www.sippysoft.com">Sippy Software, Inc.</a> and contributors.</p>
+    </div>
+    <div>
+      <h4>Project</h4>
+      <a href="{{ site.Params.github }}">Source code</a>
+      <a href="{{ site.Params.releases }}">Releases</a>
+      <a href="{{ site.Params.github }}/issues">Issue tracker</a>
+      <a href="{{ site.Params.docker }}">Docker images</a>
+    </div>
+    <div>
+      <h4>Learn</h4>
+      <a href="{{ "docs/" | relURL }}">Documentation</a>
+      <a href="{{ site.Params.protocol }}">Control protocol</a>
+      <a href="{{ "tags/talks/" | relURL }}">Talks &amp; demos</a>
+      <a href="{{ "about/" | relURL }}">About</a>
+    </div>
+    <div>
+      <h4>Community</h4>
+      <a href="{{ site.Params.mailinglist }}">Mailing list</a>
+      <a href="{{ site.Params.twitter }}">@sippylabs</a>
+      <a href="{{ "post/" | relURL }}">News</a>
+      {{ with site.Home.OutputFormats.Get "rss" }}<a href="{{ .RelPermalink }}">RSS feed</a>{{ end }}
+    </div>
+  </div>
+  <div class="wrap footer-base">
+    <span>&copy; {{ now.Format "2006" }} Sippy Software, Inc.</span>
+    <a href="{{ site.Params.github }}/blob/master/LICENSE">BSD 2-Clause License</a>
+  </div>
+</footer>

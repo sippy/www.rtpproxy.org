@@ -1,0 +1,26 @@
+{{ define "main" }}
+<article class="wrap narrow page">
+  <header class="page-head">
+    {{- if eq .Section "post" }}
+    <a class="back" href="{{ "post/" | relURL }}">&larr; News</a>
+    {{- end }}
+    <h1>{{ .Title }}</h1>
+    {{- if eq .Section "post" }}
+    <p class="meta">
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+      {{- with .Params.author }}<span>{{ . }}</span>{{ end }}
+      {{- range .GetTerms "tags" }}<a class="chip chip-{{ .Name | urlize }}" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>{{ end }}
+    </p>
+    {{- end }}
+  </header>
+  <div class="prose">
+    {{ .Content }}
+  </div>
+  {{- if eq .Section "post" }}
+  <nav class="pager" aria-label="More news">
+    {{- with .NextInSection }}<a class="card" href="{{ .RelPermalink }}"><span class="muted small">&larr; Newer</span>{{ .Title }}</a>{{ else }}<span></span>{{ end }}
+    {{- with .PrevInSection }}<a class="card right" href="{{ .RelPermalink }}"><span class="muted small">Older &rarr;</span>{{ .Title }}</a>{{ end }}
+  </nav>
+  {{- end }}
+</article>
+{{ end }}

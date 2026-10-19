@@ -1,31 +1,38 @@
-baseurl: 'https://www.rtpproxy.org'
+baseURL: 'https://www.rtpproxy.org/'
 locale: en-us
 title: RTPProxy
 params:
   Subtitle: A high-performance software proxy that brings control to your VoIP network
+  description: >-
+    RTPProxy is a high-performance, BSD-licensed media relay for SIP networks:
+    NAT traversal, IPv4/IPv6 gatewaying, WebRTC (DTLS-SRTP and ICE-lite),
+    recording, announcements and more, controlled by OpenSIPS, Kamailio or
+    Sippy B2BUA.
   twitter: 'https://twitter.com/sippylabs'
   github: 'https://github.com/sippy/rtpproxy'
   mailinglist: 'https://groups.google.com/forum/#!forum/rtpproxy'
-  # Navigation menu, in the order shown
-  links:
-    - name: About
-      url: '/about/'
+  releases: 'https://github.com/sippy/rtpproxy/releases'
+  protocol: 'https://github.com/sippy/rtpproxy/wiki/RTPProxy-Command-Protocol'
+  docker: 'https://hub.docker.com/r/sippylabs/rtpproxy'
+menus:
+  main:
+    - name: Features
+      url: '/#features'
+      weight: 10
+    - name: Docs
+      url: '/docs/'
+      weight: 20
     - name: News
       url: '/post/'
-    - name: Release Information (Stable)
-      url: 'https://github.com/sippy/rtpproxy/releases/latest'
-    - name: Release Information (Unstable)
-      url: '/doc/master/release_info.html'
-    - name: User Manual
-      url: '/doc/master/user_manual.html'
-    - name: 'Manual Page: rtpproxy(8)'
-      url: '/doc/master/rtpproxy.8.html'
-    - name: 'Manual Page: extractaudio(1)'
-      url: '/doc/master/extractaudio.1.html'
-    - name: 'Manual Page: makeann(1)'
-      url: '/doc/master/makeann.1.html'
+      weight: 30
+    - name: Talks
+      url: '/tags/talks/'
+      weight: 40
+    - name: About
+      url: '/about/'
+      weight: 50
 taxonomies:
-  vendor: vendors
+  tag: tags
 privacy:
   youtube:
     privacyEnhanced: true

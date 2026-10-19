@@ -1,0 +1,50 @@
+# Feature cards shown on the home page, in order.
+# "icon" refers to a symbol defined in layouts/_partials/icon.html.
+- icon: nat
+  title: NAT traversal
+  text: >-
+    Symmetric latching learns each party's real address from the first packet
+    it sends, so calls work through NAT and firewalls without client changes.
+- icon: webrtc
+  title: WebRTC ready
+  text: >-
+    The dtls_gw and ice_lite modules bridge plain RTP and DTLS-SRTP, answer
+    ICE connectivity checks and multiplex RTCP, so browsers can talk to legacy
+    SIP gear.
+- icon: record
+  title: Recording &amp; forking
+  text: >-
+    Record sessions to local files or stream copies to remote listeners in
+    real time, a natural fit for SIPREC recorders and live transcription.
+- icon: play
+  title: Prompts &amp; MOH
+  text: >-
+    Inject pre-encoded announcements and music on hold into live streams,
+    re-frame RTP payloads and detect DTMF digits on the fly.
+- icon: network
+  title: IPv4 / IPv6 gateway
+  text: >-
+    Bridge media between address families and between any number of labeled
+    interfaces, with separate advertised addresses for NAT-ed deployments.
+- icon: chart
+  title: Observability
+  text: >-
+    Per-session and per-instance counters, RTCP reporting to HEP / Homer
+    collectors and CSV accounting give you full visibility into media quality.
+- icon: scale
+  title: Built to scale
+  text: >-
+    A simple text control protocol over Unix, UDP or TCP sockets lets SIP
+    proxies drive many instances for load balancing and failover, or use RTP
+    Cluster for large deployments.
+- icon: embed
+  title: Embeddable
+  text: >-
+    librtpproxy runs multiple independent instances inside your own process.
+    RTP.io uses it to put the RTPProxy straight into OpenSIPS, and Python
+    applications such as Sippy B2BUA can embed it too.
+- icon: shield
+  title: Battle-tested &amp; open
+  text: >-
+    In production since 2003, continuously fuzzed and tested in CI, and
+    distributed under the permissive two-clause BSD license.

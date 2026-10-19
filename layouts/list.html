@@ -1,0 +1,30 @@
+{{ define "main" }}
+{{- $tags := site.Taxonomies.tags }}
+<section class="wrap narrow page">
+  <header class="page-head">
+    {{- if eq .Kind "term" }}
+    <a class="back" href="{{ "post/" | relURL }}">&larr; All news</a>
+    <h1>{{ with .Params.heading }}{{ . }}{{ else }}{{ .Title | title }}{{ end }}</h1>
+    {{- else }}
+    <h1>{{ .Title }}</h1>
+    {{- end }}
+    {{ with .Content }}<div class="lead">{{ . }}</div>{{ end }}
+  </header>
+  <nav class="filters" aria-label="Filter by topic">
+    <a href="{{ "post/" | relURL }}"{{ if eq .Kind "section" }} aria-current="page"{{ end }}>All</a>
+    {{- range (slice "releases" "talks") }}
+    {{- with index $tags . }}
+    <a href="{{ .Page.RelPermalink }}"{{ if eq $.RelPermalink .Page.RelPermalink }} aria-current="page"{{ end }}>{{ .Page.Title | title }} <span>{{ .Count }}</span></a>
+    {{- end }}
+    {{- end }}
+  </nav>
+  {{- range .Pages.GroupByDate "2006" }}
+  <h2 class="year">{{ .Key }}</h2>
+  <ul class="post-list">
+    {{- range .Pages }}
+    {{ partial "post-item.html" . }}
+    {{- end }}
+  </ul>
+  {{- end }}
+</section>
+{{ end }}

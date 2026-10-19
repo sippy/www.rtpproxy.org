@@ -1,0 +1,20 @@
+{{ define "main" }}
+<section class="wrap page">
+  <header class="page-head">
+    <h1>{{ .Title }}</h1>
+    <div class="lead">{{ .Content }}</div>
+  </header>
+  {{- range .Params.groups }}
+  <h2 class="group-title">{{ .name }}</h2>
+  <div class="grid grid-3">
+    {{- range .items }}
+    <a class="card doc-card" href="{{ .url | relURL }}">
+      <span class="feature-icon">{{ partial "icon.html" .icon }}</span>
+      <strong>{{ .title }}{{ if hasPrefix .url "http" }} {{ partial "icon.html" "external" }}{{ end }}</strong>
+      <span class="muted">{{ .text }}</span>
+    </a>
+    {{- end }}
+  </div>
+  {{- end }}
+</section>
+{{ end }}

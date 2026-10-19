@@ -1,0 +1,16 @@
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="{{ "/" | relURL }}" aria-label="{{ site.Title }} home">
+      {{ partial "logo.html" . }}<span>RTP<b>Proxy</b></span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Menu">{{ partial "icon.html" "menu" }}</button>
+    <nav id="nav-links" class="nav-links" aria-label="Main">
+      {{- $cur := . }}
+      {{- range site.Menus.main }}
+      {{- $active := and (ne .URL "/#features") (hasPrefix $cur.RelPermalink .URL) }}
+      <a href="{{ .URL | relURL }}"{{ if $active }} aria-current="page"{{ end }}>{{ .Name }}</a>
+      {{- end }}
+      <a class="btn btn-ghost btn-sm" href="{{ site.Params.github }}">{{ partial "icon.html" "github" }}GitHub</a>
+    </nav>
+  </div>
+</header>

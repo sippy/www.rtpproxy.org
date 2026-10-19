@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {{- $title := cond .IsHome (printf "%s: %s" site.Title site.Params.Subtitle) (printf "%s | %s" .Title site.Title) }}
+  {{- $desc := or .Description .Summary site.Params.description | plainify | truncate 200 }}
+  <title>{{ $title }}</title>
+  <meta name="description" content="{{ $desc }}">
+  <meta name="theme-color" content="#0b1220">
+  <meta property="og:site_name" content="{{ site.Title }}">
+  <meta property="og:title" content="{{ cond .IsHome site.Title .Title }}">
+  <meta property="og:description" content="{{ $desc }}">
+  <meta property="og:type" content="{{ cond .IsPage "article" "website" }}">
+  <meta property="og:url" content="{{ .Permalink }}">
+  <link rel="canonical" href="{{ .Permalink }}">
+  <link rel="icon" href="{{ "favicon.svg" | relURL }}" type="image/svg+xml">
+  {{ with site.Home.OutputFormats.Get "rss" }}<link rel="alternate" type="application/rss+xml" href="{{ .Permalink }}" title="{{ site.Title }}">{{ end }}
+  <link rel="stylesheet" href="{{ "css/site.css" | relURL }}">
+</head>
+<body class="{{ if .IsHome }}is-home{{ else }}is-inner{{ end }}">
+  <a class="skip" href="#main">Skip to content</a>
+  {{ partial "header.html" . }}
+  <main id="main">
+    {{ block "main" . }}{{ end }}
+  </main>
+  {{ partial "footer.html" . }}
+  <script src="{{ "js/site.js" | relURL }}" defer></script>
+</body>
+</html>

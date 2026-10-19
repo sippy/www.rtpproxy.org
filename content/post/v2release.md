@@ -8,8 +8,6 @@ author = "@sobomax"
 
 +++
 
-# RTPProxy v2.0.0 Release Notes
-
 This is the first official release since version 1.2 in March 2009. v2.0 release brings 5-years worth of extensive improvements in performance, quality, and test coverage. This release has been heavily tested in production environments, and has had significant contributions from the open-source community.
 
 This is the first release since we moved the project to github, and travis-ci for automated test coverage.

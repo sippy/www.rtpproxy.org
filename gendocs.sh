@@ -7,7 +7,7 @@ set -e
 
 RTPPROXY_DIR="${RTPPROXY_DIR:-../rtpproxy}"
 DOC_BRANCH="${DOC_BRANCH:-master}"
-XSL="http://docbook.sourceforge.net/release/xsl/current/xhtml/docbook.xsl"
+XSL="${XSL:-docbook/site.xsl}"
 ODIR="static/doc/${DOC_BRANCH}"
 
 render() {

@@ -1,0 +1,5 @@
+<li class="post-item">
+  <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+  <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+  {{- with .Params.tags }}{{ range first 1 . }}<span class="chip chip-{{ urlize . }}">{{ . }}</span>{{ end }}{{ end }}
+</li>

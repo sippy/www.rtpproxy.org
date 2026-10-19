@@ -1,0 +1,24 @@
+# Signalling software that can control the RTPProxy, shown on the home page.
+# Entries without a "logo" get a text wordmark instead.
+- name: OpenSIPS
+  url: 'https://opensips.org'
+  logo: /img/opensips_logo.png
+  note: rtpproxy and rtp.io modules
+- name: Kamailio
+  url: 'https://www.kamailio.org'
+  logo: /img/kamailio_logo.jpg
+  note: rtpproxy module
+- name: Sippy B2BUA
+  url: 'https://github.com/sippy/b2bua'
+  logo: /img/b2bua_logo.png
+  note: Built-in media control
+- name: go-b2bua
+  url: 'https://github.com/sippy/go-b2bua'
+  note: Go port of the Sippy B2BUA
+- name: SIPhon
+  url: 'https://siphon-sip.org/'
+  note: SIP proxy &amp; B2BUA with Python scripting
+- name: reSIProcate B2BUA
+  url: 'https://github.com/resiprocate/legacy-b2bua'
+  logo: /img/resiprocate_logo.png
+  note: Legacy B2BUA

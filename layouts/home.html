@@ -1,0 +1,204 @@
+{{ define "main" }}
+{{- $posts := where site.RegularPages "Section" "post" }}
+{{- $releases := where $posts "Params.tags" "intersect" (slice "releases") }}
+{{- $talks := where $posts "Params.tags" "intersect" (slice "talks") }}
+{{- $latest := index $releases.ByDate.Reverse 0 }}
+{{- $ver := index (findRE `v[0-9][0-9.]*` $latest.Title 1) 0 }}
+
+<section class="hero">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      {{ with $latest }}<a class="pill" href="{{ .RelPermalink }}"><span class="pill-tag">New</span> RTPProxy {{ $ver }} is out {{ partial "icon.html" "arrow" }}</a>{{ end }}
+      <h1>The media relay that keeps <span class="grad">SIP calls flowing</span>.</h1>
+      <p class="lead">RTPProxy is a fast, battle-tested RTP proxy for VoIP networks. It handles NAT traversal, bridges IPv4 and IPv6, lets WebRTC clients talk to plain SIP endpoints, and records, forks and injects media on demand. OpenSIPS, Kamailio or Sippy B2BUA drive it over a simple control protocol.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="#get-started">Get started {{ partial "icon.html" "arrow" }}</a>
+        <a class="btn btn-ghost" href="{{ "docs/" | relURL }}">{{ partial "icon.html" "book" }}Documentation</a>
+        <a class="btn btn-ghost" href="{{ site.Params.github }}">{{ partial "icon.html" "github" }}GitHub</a>
+      </div>
+      <ul class="hero-facts">
+        <li><b>2003</b><span>in production since</span></li>
+        <li><b>BSD-2</b><span>permissive license</span></li>
+        <li><b>Linux &amp; FreeBSD</b><span>also macOS &amp; Docker</span></li>
+      </ul>
+    </div>
+    <div class="terminal" role="img" aria-label="Example RTPProxy control session">
+      <div class="terminal-bar"><i></i><i></i><i></i><span>rtpproxy control socket</span></div>
+<pre><code><span class="c"># start a relay with a control socket</span>
+<span class="p">$</span> rtpproxy -f -l 203.0.113.10 -s unix:/var/run/rtpproxy.sock
+
+<span class="c"># INVITE: create a session for the caller</span>
+<span class="o">&gt;</span> U a84b4c76e66710 198.51.100.7 49170 as8d7f
+<span class="i">&lt;</span> 35012 203.0.113.10
+
+<span class="c"># 200 OK: look up the session for the callee</span>
+<span class="o">&gt;</span> L a84b4c76e66710 192.0.2.44 51372 as8d7f 9fxced76
+<span class="i">&lt;</span> 35014 203.0.113.10
+
+<span class="c"># media now flows through 203.0.113.10</span></code></pre>
+    </div>
+  </div>
+</section>
+
+<section id="features" class="block">
+  <div class="wrap">
+    <header class="block-head">
+      <p class="eyebrow">Capabilities</p>
+      <h2>Everything your media plane needs</h2>
+      <p>One small daemon covers NAT traversal, call recording and WebRTC. Load modules for what you need and leave the rest out.</p>
+    </header>
+    <div class="grid grid-3 features">
+      {{- range hugo.Data.features }}
+      <article class="card feature">
+        <div class="feature-icon">{{ partial "icon.html" .icon }}</div>
+        <h3>{{ .title | safeHTML }}</h3>
+        <p>{{ .text | safeHTML }}</p>
+      </article>
+      {{- end }}
+    </div>
+  </div>
+</section>
+
+<section class="block block-alt">
+  <div class="wrap">
+    <header class="block-head">
+      <p class="eyebrow">How it works</p>
+      <h2>Signalling stays in your proxy. Media goes through RTPProxy.</h2>
+    </header>
+    <ol class="steps">
+      <li>
+        <span class="step-n">1</span>
+        <h3>Offer</h3>
+        <p>When an INVITE arrives, your SIP proxy or B2BUA sends the call-id and the caller's media address to RTPProxy, which allocates a port pair and returns it. The controller rewrites the SDP to point at the proxy.</p>
+      </li>
+      <li>
+        <span class="step-n">2</span>
+        <h3>Answer</h3>
+        <p>On the 200 OK, the controller looks up the same session for the callee and rewrites that SDP as well. Both parties now send media to RTPProxy.</p>
+      </li>
+      <li>
+        <span class="step-n">3</span>
+        <h3>Relay &amp; latch</h3>
+        <p>RTPProxy relays packets both ways. It latches onto the real source address of each side, so endpoints behind NAT just work. Idle sessions expire automatically.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section id="get-started" class="block">
+  <div class="wrap get-started">
+    <header class="block-head left">
+      <p class="eyebrow">Get started</p>
+      <h2>Up and running in minutes</h2>
+      <p>Use pre-built packages and container images, or build it from source. Then point your SIP server's rtpproxy module at the control socket.</p>
+      <p><a class="link" href="{{ "doc/master/user_manual.html" | relURL }}">Read the installation guide {{ partial "icon.html" "arrow" }}</a></p>
+    </header>
+    <div class="tabs">
+      <div class="tab-list" role="tablist">
+        <button role="tab" aria-selected="true" aria-controls="tab-docker" id="t-docker">Docker</button>
+        <button role="tab" aria-selected="false" aria-controls="tab-deb" id="t-deb" tabindex="-1">Debian / Ubuntu</button>
+        <button role="tab" aria-selected="false" aria-controls="tab-bsd" id="t-bsd" tabindex="-1">FreeBSD</button>
+        <button role="tab" aria-selected="false" aria-controls="tab-src" id="t-src" tabindex="-1">Source</button>
+      </div>
+      <div class="tab-panel" role="tabpanel" id="tab-docker" aria-labelledby="t-docker">
+<pre><code><span class="c"># images on Docker Hub and ghcr.io, updated on every commit</span>
+docker run --rm --network host sippylabs/rtpproxy \
+    -l 203.0.113.10 -s udp:127.0.0.1:22222</code></pre>
+      </div>
+      <div class="tab-panel" role="tabpanel" id="tab-deb" aria-labelledby="t-deb" hidden>
+<pre><code><span class="c"># grab the .deb for your release from the GitHub release page</span>
+sudo apt install ./rtpproxy_*.deb
+sudo systemctl enable --now rtpproxy.socket
+sudo systemctl start rtpproxy.service</code></pre>
+      </div>
+      <div class="tab-panel" role="tabpanel" id="tab-bsd" aria-labelledby="t-bsd" hidden>
+<pre><code>pkg install rtpproxy
+sysrc rtpproxy_enable=YES
+service rtpproxy start</code></pre>
+      </div>
+      <div class="tab-panel" role="tabpanel" id="tab-src" aria-labelledby="t-src" hidden>
+<pre><code>git clone -b master https://github.com/sippy/rtpproxy.git
+git -C rtpproxy submodule update --init --recursive
+cd rtpproxy
+./configure
+make
+sudo make install</code></pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block block-alt">
+  <div class="wrap">
+    <header class="block-head">
+      <p class="eyebrow">Integrations</p>
+      <h2>Works with the SIP stack you already run</h2>
+    </header>
+    <div class="grid grid-3 logos">
+      {{- range hugo.Data.integrations }}
+      <a class="card logo-card" href="{{ .url }}">
+        {{- with .logo }}
+        <span class="logo-tile"><img src="{{ . | relURL }}" alt="" loading="lazy"></span>
+        {{- else }}
+        <span class="logo-tile logo-text">{{ .name }}</span>
+        {{- end }}
+        <strong>{{ .name }}</strong>
+        <span class="muted">{{ .note | safeHTML }}</span>
+      </a>
+      {{- end }}
+    </div>
+    <p class="center muted small">Need more scale? <a href="https://github.com/sippy/rtp_cluster">RTP Cluster</a> load-balances many RTPProxy nodes behind a single control endpoint.</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap two-col">
+    <div>
+      <header class="block-head left">
+        <p class="eyebrow">News</p>
+        <h2>Latest updates</h2>
+      </header>
+      <ul class="post-list">
+        {{- range first 6 $posts.ByDate.Reverse }}
+        {{ partial "post-item.html" . }}
+        {{- end }}
+      </ul>
+      <a class="link" href="{{ "post/" | relURL }}">All news {{ partial "icon.html" "arrow" }}</a>
+    </div>
+    <div>
+      <header class="block-head left">
+        <p class="eyebrow">Talks</p>
+        <h2>Watch &amp; learn</h2>
+      </header>
+      <div class="talks">
+        {{- range first 4 $talks.ByDate.Reverse }}
+        <a class="card talk" href="{{ .RelPermalink }}">
+          <span class="talk-play">{{ partial "icon.html" "video" }}</span>
+          <span>
+            <strong>{{ replaceRE `^(Talk|Demo):\s*` "" .Title }}</strong>
+            <span class="muted small">{{ .Date.Format "January 2006" }}</span>
+          </span>
+        </a>
+        {{- end }}
+      </div>
+      <a class="link" href="{{ "tags/talks/" | relURL }}">All talks {{ partial "icon.html" "arrow" }}</a>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="cta-band">
+      <div>
+        <h2>Join the community</h2>
+        <p>Ask questions on the mailing list, report bugs on GitHub, or send a pull request. Contributions are welcome.</p>
+      </div>
+      <div class="cta">
+        <a class="btn btn-primary" href="{{ site.Params.github }}">{{ partial "icon.html" "github" }}Star on GitHub</a>
+        <a class="btn btn-ghost" href="{{ site.Params.mailinglist }}">{{ partial "icon.html" "mail" }}Mailing list</a>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
