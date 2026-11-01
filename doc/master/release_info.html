@@ -46,7 +46,10 @@
         configuration of a module was rejected, e.g. because of an unknown
         or invalid parameter.</p></li><li class="listitem"><p><span class="command"><strong>make install</strong></span> put the packet port headers
         of the librtpproxy into <code class="filename">include/src/librtpproxy</code>
-        instead of <code class="filename">include/librtpproxy</code>.</p></li></ul></div></div><div class="chapter" id="id1348"><div class="titlepage"><div><div><h1 class="title">Performance Improvements</h1></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>Sockets cache their session and stream, skipping the hash table
+        instead of <code class="filename">include/librtpproxy</code>.</p></li><li class="listitem"><p>Syntax errors in the configuration file
+        (<code class="option">--config</code>) were reported with an empty error
+        message instead of the location and description of the
+        problem.</p></li></ul></div></div><div class="chapter" id="id1348"><div class="titlepage"><div><div><h1 class="title">Performance Improvements</h1></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>Sockets cache their session and stream, skipping the hash table
         lookup for the second and subsequent packets.</p></li><li class="listitem"><p>The sender of a stream is obtained via a weak reference, and
         locking in the packet receive path has been reduced.</p></li><li class="listitem"><p>Atomic operations have been relaxed where strict ordering is
         not needed.</p></li></ul></div></div><div class="chapter" id="id1349"><div class="titlepage"><div><div><h1 class="title">Documentation</h1></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>New manual pages for <span class="command"><strong>extractaudio</strong></span>(1) and
@@ -65,4 +68,6 @@
         runs all of its playbacks at once. As a result, the functional
         test suite now completes more than twice as fast.</p></li><li class="listitem"><p>The test suite can be run as root, with the rtpproxy and the
         tools dropping privileges to a dedicated user.</p></li><li class="listitem"><p>The CI builds now cover Ubuntu 26.04 and use bcg729
-        1.1.2.</p></li></ul></div></div></div><footer class="site-footer doc-footer"><div class="wrap footer-base"><span>Generated from the <a href="https://github.com/sippy/rtpproxy/tree/master/doc">rtpproxy source tree</a>.</span><a href="https://github.com/sippy/rtpproxy/blob/master/LICENSE">BSD 2-Clause License</a></div></footer><script src="/js/docs.js" defer="defer"> </script></body></html>
+        1.1.2.</p></li><li class="listitem"><p>The bundled libucl has been updated from 0.9.2 to 0.9.4,
+        which brings fixes for several memory safety issues in the
+        parser, the JSON emitter and the object API.</p></li></ul></div></div></div><footer class="site-footer doc-footer"><div class="wrap footer-base"><span>Generated from the <a href="https://github.com/sippy/rtpproxy/tree/master/doc">rtpproxy source tree</a>.</span><a href="https://github.com/sippy/rtpproxy/blob/master/LICENSE">BSD 2-Clause License</a></div></footer><script src="/js/docs.js" defer="defer"> </script></body></html>
